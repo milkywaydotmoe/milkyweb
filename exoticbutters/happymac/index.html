@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ＨＡＰＰＹ ＭＡＣ</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+        }
+
+        #canvasContainer {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: white; /* Initial white background */
+            opacity: 0; /* Initially hide the canvas */
+            transition: opacity 0.5s ease; /* Smooth transition for opacity change */
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+            image-rendering: pixelated; /* Make pixels sharp */
+        }
+
+        #mac {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="canvasContainer">
+        <canvas id="shaderCanvas"></canvas>
+    </div>
+    <img id="mac" src="happymac.png" alt="Happy Mac">
+    <audio id="backgroundMusic">
+        <source src="acidjazzed.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        document.getElementById('mac').addEventListener('click', function() {
+            document.getElementById('canvasContainer').style.opacity = '1';
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

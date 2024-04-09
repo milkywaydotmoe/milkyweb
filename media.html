@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/favicon.png"> 
+    <link rel="stylesheet" type="text/css" href="cursor.css">
+    <title>MEDIA ARCHIVE.</title>
+<style>
+
+*{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+@font-face {
+    font-family:title;
+    src:url(/fonts/GoldenGirdle.otf);
+    }
+
+@font-face {
+    font-family:bitmap;
+    src:url(/fonts/MDJPG16.TTF);
+    }
+
+body{
+background: rgb(255,255,255);
+background: linear-gradient(90deg, rgba(113,255,17,1) 0%, rgba(53,255,72,1) 38%, rgba(255,255,255,1) 100%);
+font-family: bitmap;
+font-size: 16px;
+color: #111;
+overflow-x: hidden;
+}
+
+.bgimg{
+position: fixed;
+bottom: 0;
+left: 150px;
+width: 1024px;
+}
+
+.sidewrapper{
+position: fixed;
+left: 0;
+top: 0;
+height: 100%;
+z-index: 4;
+}
+
+.sidewrapper2{
+display: flex;
+flex-direction: row;
+height: 100%;
+}
+
+.side1{
+background-color: #000;
+width: 150px;
+height: 100%;
+display: flex;
+flex-direction: column;
+text-align: center;
+font-size: 28px;
+font-family: bitmap;
+padding: 1.5rem 0 1.5rem 0;
+overflow: scroll;
+overflow-x: hidden;
+}
+
+.side2{
+background-color: #000;
+opacity: 0.7;
+width: 50px;
+height: 100%;
+}
+
+.headerwrapper{
+width: 100%;
+display: flex;
+flex-direction: column;
+position: relative;
+z-index: 3;
+}
+
+.headerborder{
+background: rgba(0, 0, 0, 0.8);
+width: 100%;
+height: 25px;
+}
+
+.header{
+margin-left: 200px;
+font-size: 56px;
+padding-top: 3rem;
+line-height: 38px;
+font-family: title;
+text-shadow: 3px 3px 0px #3ab835;
+color: #000;
+}
+
+.footerwrapper{
+width: 100%;
+background-color: #000;
+opacity: 0.7;
+height: 40px;
+position: fixed;
+bottom: 0;
+left: 0;
+z-index: 2;
+}
+
+.container{
+display: flex;
+flex-direction: column;
+padding: 3rem 3rem 5rem 3rem;
+gap: 1rem;
+}
+
+.box{
+background: rgba(255, 255, 255, 0.9);
+border: 5px ridge #4ce346;
+margin-left: 200px;
+position: relative;
+z-index: 1;
+}
+
+.content{
+padding: 1rem;
+}
+
+.subheaders{
+background-color: #000;
+color: #fff;
+border-bottom: 3px ridge #4ce346;
+font-weight: normal;
+text-transform: uppercase;
+font-size: 16px;
+}
+
+.altimitlogo{
+position: fixed;
+right: 1rem;
+top: 42%;
+width: 480px;
+}
+
+a{
+color: #17d446;
+text-decoration: none;
+}
+
+.side1 a{
+color: #fff;
+text-decoration: none;
+}
+
+a:visited{
+color: #17d446;
+}
+
+.side1 a:visited{
+color: #fff;
+}
+
+a:hover{
+font-weight: bold;
+text-shadow: none;
+}
+
+.side1 a:hover{
+font-weight: normal;
+text-shadow: 0 0 5px #fff;
+color: #17d446;
+}
+
+a:active{
+font-weight: normal;
+}
+
+::-webkit-scrollbar{
+width: 8px; 
+}
+    
+::-webkit-scrollbar-track{
+background-color: #000;
+}
+
+::-webkit-scrollbar-thumb{
+background-color: #4ce346;
+}
+
+.side1::-webkit-scrollbar{
+width: 3px; 
+}
+    
+.side1::-webkit-scrollbar-track{
+background-color: #000;
+}
+
+.side1::-webkit-scrollbar-thumb{
+background: rgba(255, 255, 255, 0.3);
+}
+
+#credit{
+color: #fff;
+font-size: 12px;
+position: fixed; 
+bottom: 0;
+right: 0;
+z-index: 3;
+}
+
+@media(max-width:750px){
+body{
+background: rgb(255,255,255);
+background: linear-gradient(90deg, rgba(113,255,17,1) 0%, rgba(53,255,72,1) 38%, rgba(255,255,255,1) 100%);
+}
+.bgimg{
+position: fixed;
+bottom: 0;
+left: 0;
+}
+.img{
+width: 300px;
+}
+.headerwrapper{
+position: relative;
+z-index: 4;
+}
+.header{
+margin: 0;
+}
+.headerborder{
+display: none;
+}
+.sidewrapper{
+position: relative;
+z-index: 5;
+position: sticky;
+top: 0;
+}
+.sidewrapper2{
+display: flex;
+flex-direction: column;
+width: 100%;
+}
+.side1{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+width: 100%;
+height: auto;
+padding: 0.5rem;
+font-size: 18px;
+}
+.side1 img{
+width: 48px;
+}
+.side2{
+width: 100%;
+height: 25px;
+}
+.container{
+padding: 1rem 1rem 4rem 1rem;
+}
+.box{
+margin: 0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<img class="bgimg" src="/media/metalheart.png">
+
+<!-- HEADER -->
+<div class="headerwrapper">
+
+<h1 class="header">Media Archive Center</h1>
+<div class="headerborder">.</div>
+
+</div>
+
+<div class="sidewrapper">
+<div class="sidewrapper2">
+
+<!-- SIDEBAR LINKS -->
+<div class="side1">
+<a href="/media.html"><img style="max-width:75px;"src="/media/a1.png"><p>MEDIA ARCHIVE</a></p>
+<a href="/"><img style="max-width:75px;"src="/media/a2.png"><p>BACK TO HOME</a></p>
+</div>
+
+<div class="side2">
+.
+</div>
+</div>
+</div>
+
+<div class="container">
+
+<!-- BOX 1 -->
+<div class="box">
+<h3 class="subheaders">MUSIC & GFX</h3>
+<div class="content">
+<img style="float:right;margin:0px 0px 10px 10px;max-width:230px;border:1px solid #17d446;" src="/media/drywall.gif"><img>
+<p>Things that i've made related to music and graphics</p>
+	<a href="https://open.spotify.com/artist/4O6jSxt0RTMpKCYCyoo1SO">Jairus B. Project (Spotify)</a><br>
+	<a href="https://open.spotify.com/artist/6NX4Qfb2H8Pq0QNYwc3jsY">DJ MiLKTEA Project (Spotify)</a><br>
+	<a href="https://open.spotify.com/artist/2O2ZgaqjrP9a8mwXjAVt51">Project Dystopia (Spotify)</a><br>
+	<a href="https://open.spotify.com/artist/3ZysRxr2jcY1hJNQZQDgFy">hima_online Project (Spotify)</a><br>
+	<a href="https://open.spotify.com/artist/5pg9ixTso8Q3qsejz0QOT6">MiLKY-Produx Project (Spotify)</a><br>
+<br>
+</div>
+</div>
+
+<!-- BOX 2 -->
+<div class="box">
+<h3 class="subheaders">ET CETERA</h3>
+<div class="content">
+<img style="float:right;margin:0px 0px 10px 10px;max-width:230px;border:1px solid #17d446;" src="/media/iklive.gif"><img>
+<p>Things that i've made related to other fields</p>
+	<a href="https://prismlauncher.org/">Prism Launcher (Filipino Translation)</a><br>
+	<a href="https://discord.com/invite/AKYtf2BDtd">Futura UI (Designer, OST, Translator)</a><br>
+<br>
+</div>
+</div>
+
+</div>
+
+<img class="altimitlogo" src="/media/logo.png">
+</div>
+
+<div class="footerwrapper">
+.
+</div>
+
+<p id="credit">Theme by <a href="https://repth.neocities.org/index.html">Repth</a></p>
+
+</body>
+
+</html>

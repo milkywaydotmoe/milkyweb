@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>random soup</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <script>
+    const INGREDIENTS = [
+    "a",
+    "cream of mushroom",
+    "undefined",
+    "crab n corn",
+    "alphabet",
+    "famous homemade chicken",
+    "inedible",
+    "tomato",
+    "cool",
+    "hot",
+    "estrogen",
+    "testosterone",
+    "pongon donut",
+    "gnu linux",
+    "primordial",
+    "potato",
+    "milk",
+    "ramen",
+    "pho",
+    "beef noodle",
+    "french onion",
+    "lentil",
+    "blood of jesus",
+    "red bean",
+    "chilled cucumber",
+    "covid bat",
+    "vodka",
+    "bulalo",
+    "bone broth",
+    "coffee bean",
+    "caldo de queso",
+    "femboy milk",
+    "chorba beiida",
+    "swiss barley",
+    "bread",
+    "onion",
+    "chicken noodle",
+    "dumplings filled with",
+    "toilet",
+    "airport",
+    "bird nest",
+    "shirako",
+    "vietnamese blood",
+    "iguana",
+    "beer",
+    "tiger peen",
+    "chicken testicle",
+    "snake"
+  ];
+
+    function getsoup() {
+      var i1 = INGREDIENTS[Math.floor(Math.random() * INGREDIENTS.length)];  // pick random ingredient
+      console.log(Math.floor(Math.random() * INGREDIENTS.length))
+      var soup_name = i1 + " soup";
+
+      document.getElementById("soupName").innerText = soup_name;
+    }
+  </script>
+
+<img src="goofylilguy.gif" style="height: 400px; margin: auto; display: block;">
+<p><b>random soup</b></p>
+<p>javascript credit to "a" of trwnh.com</p>
+<br>
+
+<h1 id="soupName"></h1>
+<button onclick="getsoup();">Reroll</button>
+<br>
+<br>
+<br>
+<br>
+<br>
+<a href="/">go home</a>
+
+</body>
+</html>

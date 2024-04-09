@@ -1,0 +1,69 @@
+body {
+  background: #285275 url("/img/pexels-pixabay_70365_cropsmall.jpg"); /*Replace with your own background image! :)*/
+	background-size: cover;
+	background-attachment: fixed;
+  background-position:center;
+	background-size: cover; 
+	font-family: sans-serif;
+	font-size:14px;
+  }
+  
+a {
+  color: #05225e;
+  }
+  
+/*Everything goes inside this.*/
+.container {
+  margin: 0 auto;
+  width:800px;
+  margin-top:5px;
+  margin-bottom:5px;
+  }
+  
+/*Main boxes.*/
+.main {
+  background: #ffffff;
+  border:3px double black;
+  margin-left:200px;
+  padding: 12px 17px;
+  margin-bottom:35px;
+  margin-top:35px;
+  }
+
+/*Sidebar*/
+.side {
+  background: #ffffff;
+  padding:10px 12px;
+  border: 3px double black;
+  margin-top:225px;
+  max-height:300px;
+  overflow:auto;
+  width:135px;
+  position:fixed;
+  text-align:center;
+  }
+  
+.side img {
+  border: 3px double black;
+  margin: 0 auto;
+  margin-left: -3px; /*border pushes it to the right otherwise*/
+  }
+
+/*Prevent image overflow*/  
+.main img, .side img {
+  max-width: 100%;
+  height: auto;
+  }
+  
+  
+/*For narrower screens.*/
+@media(max-width:850px) {
+  .container {
+    width:700px;
+  }
+  .main {
+    margin-left:175px;
+    }
+  .side {
+    width:100px;}
+  }

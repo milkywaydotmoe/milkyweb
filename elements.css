@@ -1,0 +1,66 @@
+/* This file defines how custom elements will look like, setting CSS that breaks main nekoweb site on purpose is prohibited and may result in ban and site deletion! */
+
+/* Must start with ".site-box". Change how your website will appear on main nekoweb site: https://lune.dimden.dev/405a44b7e5.png */
+.site-box {
+    text-align: left;
+    background-image: url(https://milkyway.nekoweb.org/assets/sitebox.png); /* Only nekoweb URLs allowed, use full url to your site like https://example.nekoweb.org/images/coolbg.png */
+    background-repeat: no-repeat;
+    color: #00ff00;
+}
+.site-box > a > p {
+    color: #00ff00;
+    margin-left: 10px;
+    margin-top: 4px;
+    text-shadow: 1px 2px 0px #009900;
+
+}
+.site-box > a > span {
+    z-index: 0;
+    color:  #00ff00;
+    text-shadow: 1px 2px 0px #009900;
+    margin-left: 10px;
+}
+
+.site-box::after {
+    content:url(https://milkyway.nekoweb.org/assets/full_sitebox.png);
+    position:absolute;
+    top: -18.5%;
+    left: -14.5%
+}
+
+.screenshot {
+  max-height: 100%;
+  width: auto;
+  image-rendering: auto;
+  margin-left: 0.2px;
+  width: 244px;
+  height: 138px;
+}
+
+body {
+  margin: 0;
+  overflow-x: show;
+}
+
+html {
+  font-family: "MS UI Gothic", Verdana, sans-serif;
+  font-size: 16px;
+  background: url("/assets/nekopattern.png") repeat;
+  padding: 0px;
+  margin: 0px;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  -webkit-font-smoothing: none;
+  font-smooth: never;
+}
+
+.site-box .follow{content: url(https://milkyway.nekoweb.org/favicons/normal.png); height: 32px; float: right; margin-right: 15px; margin-top: 6px;}
+.site-box .follow:hover{content: url(https://milkyway.nekoweb.org/favicons/stars.png);}
+.site-box .following{content: url(https://milkyway.nekoweb.org/favicons/umu.png); height: 32px; float: right; margin-right: 15px; margin-top: 6px;}
+.site-box .following:hover;{content: url(https://milkyway.nekoweb.org/favicons/sad.png);}
+
+* {
+    cursor: url('https://milkyway.nekoweb.org/cursor/default-cursor.png'), auto !important;
+}

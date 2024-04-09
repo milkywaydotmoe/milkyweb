@@ -1,0 +1,1 @@
+var buttonState=0;function toggleStylesheet(){var t=document.getElementById("stylesheet"),t=("index_lite.css"===t.getAttribute("href")?t.setAttribute("href","index_dark.css"):t.setAttribute("href","index_lite.css"),document.getElementById("toggleButton"));buttonState=0===buttonState?(t.src="day.png",1):(t.src="night.png",0)}

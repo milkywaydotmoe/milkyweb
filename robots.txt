@@ -1,0 +1,69 @@
+# robots.txt
+# Page is under the FOPL-ZERO license
+# https://owly.fans/license/fopl-zero
+
+# This page is also on git:
+# Please feel free to suggest a change to this file
+# https://github.com/DynTylluan/owly.fans/blob/main/robots.txt (main)
+# https://notabug.org/DynTylluan/owly.fans/src/main/robots.txt (mirror)
+# https://tildegit.org/cass/owly.fans/src/branch/main/robots.txt (mirror)
+
+# GPTBot is OpenAI's web crawler.
+# I do not want it to use my content as it does not cite its sources.
+# https://platform.openai.com/docs/gptbot
+User-agent: GPTBot
+User-agent: ChatGPT-User
+Disallow: /
+
+# Common Crawl bot.
+# From what I've leant from reading online, «[t]he majority of ChatGPT's
+# training data comes from the Common Crawl crawler bot».
+# Quote: https://datadome.co/threat-research/how-chatgpt-openai-might-use-your-content-now-in-the-future
+# https://commoncrawl.org/faq
+User-agent: CCBot
+Disallow: /
+
+# Google's AI training bot.
+# I also don't want to have my content used without giving me credit.
+# https://blog.google/technology/ai/an-update-on-web-publisher-controls
+User-agent: Google-Extended
+Disallow: /
+
+# Amazon
+# Used for Alexa - does not cite sources.
+# https://developer.amazon.com/support/amazonbot
+User-Agent: Amazonbot
+Disallow: /
+
+# Apple's bot.
+# Used for Siri and Spotlight Suggestions. Does not cite its sources.
+# https://support.apple.com/en-us/HT204683
+User-Agent: Applebot
+User-Agent: AppleNewsBot
+Disallow: /
+
+# Kitty
+# This bot is cool - go wild, queen
+User-Agent: digikitty_x86
+Allow: /
+
+# This is where I copy Bytemoth
+# I am taking it in good faith that Bytemoth knows what he's doing and that
+# the following bots are for marketers - so I am blocking them.
+# As taken from the following URL: http://bytemoth.nfshost.com/robots.txt
+User-agent: adsbot
+User-agent: AhrefsBot
+User-agent: BLEXBot
+User-agent: dotbot
+User agent: MTRobot
+User-agent: SemrushBot
+User-agent: SemrushBot-SA
+User-agent: SemrushBot-BA
+User-agent: SemrushBot-SI
+User-agent: SemrushBot-SWA
+User-agent: SemrushBot-CT
+User-agent: SemrushBot-BM
+User-agent: serpstatbot
+User-agent: Pandalytics
+User-agent: PageThing
+Disallow: /

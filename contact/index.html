@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>contactme.sh</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #2e2e2e;
+        color: #d6d6d6;
+        font-family: 'Fira Mono', monospace;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        height: 100vh;
+        overflow: hidden;
+    }
+    .terminal {
+        width: 100%;
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: #2e2e2e;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .terminal pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        padding: 0;
+        margin: 0;
+        line-height: 1;
+        font-size: 16px;
+        font-family: 'Web437_IBM_VGA_8x16', monospace;
+        -webkit-font-smoothing: none;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Include the Web437 font */
+    @font-face {
+        font-family: 'Web437_IBM_VGA_8x16';
+        src: url('Web437_IBM_VGA_8x16.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    /* Monokai Pro colors */
+    .green-text { color: #b4d273; }
+    .cyan-text { color:#6c99bb; }
+    .magenta-text { color: #b05279; }
+
+    /* Disable scrolling */
+    html, body {
+        overflow: hidden;
+    }
+
+    pre a {
+        color: #6c99bb;
+        text-decoration: none;
+        transition: underline 0.2s ease;
+    }
+    pre a:hover {
+        text-decoration: underline;
+    }
+
+    .rainbow-text {
+        background: -webkit-linear-gradient(45deg, #ffb3ba, #ffdfba, #ffffba, #baffc9, #bae1ff, #ffb3ba);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+    }
+
+    /* Styling for the fallback text */
+    #fallback-text {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        padding: 20px; /* Adjust padding */
+        margin: 0;
+        line-height: 1;
+        font-size: 16px;
+        font-family: 'Web437_IBM_VGA_8x16', monospace;
+        -webkit-font-smoothing: none;
+        -moz-osx-font-smoothing: grayscale;
+    }
+</style>
+
+</head>
+<body>
+<div class="terminal">
+<pre id="typed-text"></pre>
+</div>
+
+<script>
+    // Check if JavaScript is enabled
+    document.addEventListener('DOMContentLoaded', function() {
+        // Fetch text from external file and insert it into the pre element with typing effect
+        fetch('text.html')
+            .then(response => response.text())
+            .then(text => {
+                const lines = text.split('\n');
+                const pre = document.getElementById('typed-text');
+                let index = 0;
+
+                function type() {
+                    pre.innerHTML += lines[index++] + '';
+                    pre.scrollTop = pre.scrollHeight; // Scroll to bottom
+                    if (index < lines.length) {
+                        setTimeout(type, 45); // Adjust typing speed (milliseconds)
+                    }
+                }
+                type();
+            })
+            .catch(error => console.error('Error fetching text:', error));
+
+        // Hide the fallback content
+        const fallbackText = document.getElementById('fallback-text');
+        if (fallbackText) {
+            fallbackText.style.display = 'none';
+        }
+    });
+</script>
+
+<!-- Fallback content in a separate pre element -->
+<pre id="fallback-text" style="text-align: left; position: absolute;">
+<span class="green-text">user@milkyway.moe:</span><span class="cyan-text">~</span><span class="magenta-text">$</span> chmod +x contactme.sh && ./contactme.sh<br>
+=================================================
+<span style="color: #ff7c7c"> </span><span style="color: #ff857c">•</span><span style="color: #ff8f7c"> </span><span style="color: #ff987c">▌</span><span style="color: #ffa17b"> </span><span style="color: #ffaa7b">▄</span><span style="color: #ffb47b"> </span><span style="color: #ffbd7b">·</span><span style="color: #ffc67c">.</span><span style="color: #ffd07d"> </span><span style="color: #ffd97e">▪</span><span style="color: #ffe37f"> </span><span style="color: #ffec80"> </span><span style="color: #fff681">▄</span><span style="color: #ffff82">▄</span><span style="color: #eeff83">▌</span><span style="color: #deff85"> </span><span style="color: #cdff86"> </span><span style="color: #bdff87">▄</span><span style="color: #acff88"> </span><span style="color: #9cff8a">•</span><span style="color: #8bff8b">▄</span><span style="color: #8bff9e"> </span><span style="color: #8cffb2"> </span><span style="color: #8cffc5">▄</span><span style="color: #8cffd8">·</span><span style="color: #8dffec"> </span><span style="color: #8dffff">▄</span><span style="color: #8ff0ff">▌</span><span style="color: #90e2ff">▄</span><span style="color: #92d3ff">▄</span><span style="color: #93c4ff">▌</span><span style="color: #95b5ff"> </span><span style="color: #96a7ff">▐</span><span style="color: #9898ff"> </span><span style="color: #a19bff">▄</span><span style="color: #aa9dff">▌</span><span style="color: #b3a0ff"> </span><span style="color: #bda2ff">▄</span><span style="color: #c6a5ff">▄</span><span style="color: #cfa7ff">▄</span><span style="color: #d8aaff">·</span><span style="color: #dea8f1"> </span><span style="color: #e3a7e4"> </span><span style="color: #e9a5d6">▄</span><span style="color: #eea4c8">·</span><span style="color: #f4a2ba"> </span><span style="color: #f9a1ad">▄</span><span style="color: #ff9f9f">▌</span>
+<span style="color: #ff7c7c"> </span><span style="color: #ff857c">·</span><span style="color: #ff8f7c">█</span><span style="color: #ff987c">█</span><span style="color: #ffa17b"> </span><span style="color: #ffaa7b">▐</span><span style="color: #ffb47b">█</span><span style="color: #ffbd7b">█</span><span style="color: #ffc67c">█</span><span style="color: #ffd07d">▪</span><span style="color: #ffd97e">█</span><span style="color: #ffe37f">█</span><span style="color: #ffec80"> </span><span style="color: #fff681">█</span><span style="color: #ffff82">█</span><span style="color: #eeff83">•</span><span style="color: #deff85"> </span><span style="color: #cdff86"> </span><span style="color: #bdff87">█</span><span style="color: #acff88">▌</span><span style="color: #9cff8a">▄</span><span style="color: #8bff8b">▌</span><span style="color: #8bff9e">▪</span><span style="color: #8cffb2">▐</span><span style="color: #8cffc5">█</span><span style="color: #8cffd8">▪</span><span style="color: #8dffec">█</span><span style="color: #8dffff">█</span><span style="color: #8ff0ff">▌</span><span style="color: #90e2ff">█</span><span style="color: #92d3ff">█</span><span style="color: #93c4ff">·</span><span style="color: #95b5ff"> </span><span style="color: #96a7ff">█</span><span style="color: #9898ff">▌</span><span style="color: #a19bff">▐</span><span style="color: #aa9dff">█</span><span style="color: #b3a0ff">▐</span><span style="color: #bda2ff">█</span><span style="color: #c6a5ff"> </span><span style="color: #cfa7ff">▀</span><span style="color: #d8aaff">█</span><span style="color: #dea8f1"> </span><span style="color: #e3a7e4">▐</span><span style="color: #e9a5d6">█</span><span style="color: #eea4c8">▪</span><span style="color: #f4a2ba">█</span><span style="color: #f9a1ad">█</span><span style="color: #ff9f9f">▌</span>
+<span style="color: #ff7c7c"> </span><span style="color: #ff857c">▐</span><span style="color: #ff8f7c">█</span><span style="color: #ff987c"> </span><span style="color: #ffa17b">▌</span><span style="color: #ffaa7b">▐</span><span style="color: #ffb47b">▌</span><span style="color: #ffbd7b">▐</span><span style="color: #ffc67c">█</span><span style="color: #ffd07d">·</span><span style="color: #ffd97e">▐</span><span style="color: #ffe37f">█</span><span style="color: #ffec80">·</span><span style="color: #fff681">█</span><span style="color: #ffff82">█</span><span style="color: #eeff83">▪</span><span style="color: #deff85"> </span><span style="color: #cdff86"> </span><span style="color: #bdff87">▐</span><span style="color: #acff88">▀</span><span style="color: #9cff8a">▀</span><span style="color: #8bff8b">▄</span><span style="color: #8bff9e">·</span><span style="color: #8cffb2">▐</span><span style="color: #8cffc5">█</span><span style="color: #8cffd8">▌</span><span style="color: #8dffec">▐</span><span style="color: #8dffff">█</span><span style="color: #8ff0ff">▪</span><span style="color: #90e2ff">█</span><span style="color: #92d3ff">█</span><span style="color: #93c4ff">▪</span><span style="color: #95b5ff">▐</span><span style="color: #96a7ff">█</span><span style="color: #9898ff">▐</span><span style="color: #a19bff">▐</span><span style="color: #aa9dff">▌</span><span style="color: #b3a0ff">▄</span><span style="color: #bda2ff">█</span><span style="color: #c6a5ff">▀</span><span style="color: #cfa7ff">▀</span><span style="color: #d8aaff">█</span><span style="color: #dea8f1"> </span><span style="color: #e3a7e4">▐</span><span style="color: #e9a5d6">█</span><span style="color: #eea4c8">▌</span><span style="color: #f4a2ba">▐</span><span style="color: #f9a1ad">█</span><span style="color: #ff9f9f">▪</span>
+<span style="color: #ff7c7c"> </span><span style="color: #ff857c">█</span><span style="color: #ff8f7c">█</span><span style="color: #ff987c"> </span><span style="color: #ffa17b">█</span><span style="color: #ffaa7b">█</span><span style="color: #ffb47b">▌</span><span style="color: #ffbd7b">▐</span><span style="color: #ffc67c">█</span><span style="color: #ffd07d">▌</span><span style="color: #ffd97e">▐</span><span style="color: #ffe37f">█</span><span style="color: #ffec80">▌</span><span style="color: #fff681">▐</span><span style="color: #ffff82">█</span><span style="color: #eeff83">▌</span><span style="color: #deff85">▐</span><span style="color: #cdff86">▌</span><span style="color: #bdff87">▐</span><span style="color: #acff88">█</span><span style="color: #9cff8a">.</span><span style="color: #8bff8b">█</span><span style="color: #8bff9e">▌</span><span style="color: #8cffb2"> </span><span style="color: #8cffc5">▐</span><span style="color: #8cffd8">█</span><span style="color: #8dffec">▀</span><span style="color: #8dffff">·</span><span style="color: #8ff0ff">.</span><span style="color: #90e2ff">▐</span><span style="color: #92d3ff">█</span><span style="color: #93c4ff">▌</span><span style="color: #95b5ff">█</span><span style="color: #96a7ff">█</span><span style="color: #9898ff">▐</span><span style="color: #a19bff">█</span><span style="color: #aa9dff">▌</span><span style="color: #b3a0ff">▐</span><span style="color: #bda2ff">█</span><span style="color: #c6a5ff"> </span><span style="color: #cfa7ff">▪</span><span style="color: #d8aaff">▐</span><span style="color: #dea8f1">▌</span><span style="color: #e3a7e4"> </span><span style="color: #e9a5d6">▐</span><span style="color: #eea4c8">█</span><span style="color: #f4a2ba">▀</span><span style="color: #f9a1ad">·</span><span style="color: #ff9f9f">.</span>
+<span style="color: #ff7c7c"> </span><span style="color: #ff857c">▀</span><span style="color: #ff8f7c">▀</span><span style="color: #ff987c"> </span><span style="color: #ffa17b"> </span><span style="color: #ffaa7b">█</span><span style="color: #ffb47b">▪</span><span style="color: #ffbd7b">▀</span><span style="color: #ffc67c">▀</span><span style="color: #ffd07d">▀</span><span style="color: #ffd97e">▀</span><span style="color: #ffe37f">▀</span><span style="color: #ffec80">▀</span><span style="color: #fff681">.</span><span style="color: #ffff82">▀</span><span style="color: #eeff83">▀</span><span style="color: #deff85">▀</span><span style="color: #cdff86"> </span><span style="color: #bdff87">·</span><span style="color: #acff88">▀</span><span style="color: #9cff8a"> </span><span style="color: #8bff8b"> </span><span style="color: #8bff9e">▀</span><span style="color: #8cffb2"> </span><span style="color: #8cffc5"> </span><span style="color: #8cffd8">▀</span><span style="color: #8dffec"> </span><span style="color: #8dffff">•</span><span style="color: #8ff0ff"> </span><span style="color: #90e2ff"> </span><span style="color: #92d3ff">▀</span><span style="color: #93c4ff">▀</span><span style="color: #95b5ff">▀</span><span style="color: #96a7ff">▀</span><span style="color: #9898ff"> </span><span style="color: #a19bff">▀</span><span style="color: #aa9dff">▪</span><span style="color: #b3a0ff"> </span><span style="color: #bda2ff">▀</span><span style="color: #c6a5ff"> </span><span style="color: #cfa7ff"> </span><span style="color: #d8aaff">▀</span><span style="color: #dea8f1"> </span><span style="color: #e3a7e4"> </span><span style="color: #e9a5d6"> </span><span style="color: #eea4c8">▀</span><span style="color: #f4a2ba"> </span><span style="color: #f9a1ad">•</span><span style="color: #ff9f9f"> </span>
+================== contact me! ==================
+
+You can contact me or check me out using these links!
+
+<span style="color: #61617b">Tumblr:</span>          <a href="https://www.tumblr.com/blog/milkyautism">tumblr.com/blog/milkyautism</a>
+<span style="color: #ffffff">Github:</span>          <a href="https://github.com/milkytism">github.com/milkytism</a>
+<span style="color: #FF0000">YouTube:</span>         <a href="https://www.youtube.com/@milkyproduxions">youtube.com/@milkyproduxions</a>
+<span style="color: #6441a5">Twitch:</span>          <a href="https://twitch.tv/milkiivt">twitch.tv/milkiivt</a>
+<span style="color: #66c0f4">Steam:</span>           <a href="https://steamcommunity.com/id/himaonline/">steamcommunity.com/id/himaonline/</a>
+<span style="color: #c3000d">last.fm:</span>         <a href="https://last.fm/user/jairusbmusic">last.fm/user/jairusbmusic/</a>
+<span style="color: #a9f643">Misskey:</span>         <a href="https://misskey.io/@milkyautism/">misskey.io/@milkyautism/</a>
+<span style="color: #1D4ED8">Spacehey:</span>        <a href="https://spacehey.com/profile?id=2582545">spacehey.com/profile?id=2582545/</a>
+
+or contact me on these platforms
+Discord (DMs):   milky.hima // milkytrax#7744
+Email:           <a href="mailto:webmaster@milkyway.moe">webmaster@milkyway.moe</a>
+CRK:             milkytism (on Pure Vanilla Server)
+Geometry Dash:   MiLKYP
+
+<a href="/">Or you can go home by clicking this link!</a>
+
+<span class="green-text">user@milkyway.moe:</span><span class="cyan-text">~</span><span class="magenta-text">$</span>
+</pre>
+
+</body>
+</html>

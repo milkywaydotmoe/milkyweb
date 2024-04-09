@@ -1,0 +1,116 @@
+body {
+  background-color: #121212; /* Dark background */
+  color: #fff; /* Light text */
+  font-family: bitmap;
+  image-rendering: smooth;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px; /* Add some margin between rows */
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.profile {
+  width: 200px; /* Set width to 150px */
+  height: 200px; /* Set height to 150px */
+  margin: 5px;
+  position: relative;
+  border: 2px solid #fff; /* Adding stroke to the border */
+}
+
+.profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure image covers the entire profile div */
+  border-radius: inherit; /* Preserve border-radius from parent div */
+  transition: transform 0.3s ease;
+
+}
+
+.profile:hover {
+  transform: scale(1.1); /* Scale the profile container */
+  font-family: cgafont;
+}
+
+.profile .overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 5px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-family: cgafont;
+}
+
+.profile:hover .overlay {
+  opacity: 1;
+}
+
+.banner-logo {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 25%; /* Set the width to 50% */
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeSpeed;
+  image-rendering: pixelated;
+}
+
+a {
+    color: #fff;
+    animation: linkrbw linear infinite;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:link {
+    color: #fff;
+    animation: linkrbw linear infinite;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #fff;
+    animation: linkrbw linear infinite;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: url("/cursor/link.gif"), auto;
+}
+
+@keyframes linkrbw {
+    0%, 100% {color: #ff6969;}
+    12.5% {color: #ffa769;}
+    25% {color: #f7ff69;}
+    37.5% {color: #69ff7f;}
+    50% {color: #69faff;}
+    62.5% {color: #7069ff;}
+    75% {color: #b969ff;}
+    87.5% {color: #ff69dc;}
+}
+
+* {
+
+}

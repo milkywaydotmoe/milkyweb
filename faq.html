@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+
+<title>frequently asked questions</title>
+<style>
+/* Change colors and fonts here */
+:root {
+    /* FONTS */
+	--bodyfont:monospace;
+	--headerfont:monospace;
+
+	/* COLORS */
+    --background:#191919; /* Background color */
+
+    /* These colors are a text/background pair, so check for contrast! */
+    --dark:#191919; /* Light mode text, dark mode background */
+    --light:#dbddcd; /* Dark mode text, light mode background */
+    
+    /* Accent colors */
+    --accent1:#b0c123; /* Menu link color, and body link color in dark mode (make sure it's light enough) */
+    --accent2:#7a9015; /* Header background color, can be whatever */
+    --accent3:#485803; /* Body link color in light mode (make sure it's dark enough) */
+}
+
+* { margin:0; padding:0; }
+
+/* Note: All font sizes here are for MOBILE! Scroll to the first @media tag for desktop. */
+
+body {
+    font: 1rem var(--bodyfont);
+    background: var(--background);
+}
+
+::selection {
+    background: var(--dark);
+    color:var(--light);
+}
+
+/* Container styling */
+
+#container {
+    max-width:600px;
+    margin:15px;
+    border:0.5px solid var(--light);
+}
+
+/* Header styling */
+
+#main-header {
+    height:160px; /* If you change the height here, you'll probably need to modify the margins for nav */
+    background: var(--accent2); /* Can add a background image */
+    width:100%;
+}
+
+/* Top "window bar" */
+
+#bar {
+    font:0.8rem var(--bodyfont);
+    /* This is where the icons.png background image path should go: */
+    background:var(--dark) url(/assets/icons.png) no-repeat center right; 
+    color:var(--light);
+    height:15px;
+    padding:3px;
+}
+
+/* Navigation styling */ 
+
+#main-menu {
+    text-align:center;
+    font:1rem var(--bodyfont);
+    padding: 12px;
+    margin-top:120px; /* Might need to fiddle with this if you change the height of the header*/
+}
+
+#main-menu ul {
+    list-style:none;
+    display:inline;
+}
+
+#main-menu li {
+    display:inline;
+}
+
+#main-menu a {
+    color:var(--accent1);
+    text-decoration:none;
+    background:var(--dark);
+    border: solid;
+    border-color: var(--accent1);
+    border-width: 1px;
+    padding:6px;
+    margin:2px;
+}
+
+#main-menu a:hover {
+    background:var(--accent1);
+    color:var(--dark);
+    border-color: var(--dark);
+    border-width: 1px;
+}
+
+/* Content styling */
+
+main {
+    padding:30px 15px 15px 15px;
+    background:var(--light);
+    color:var(--dark);
+}
+
+main a {
+    color:var(--accent3);
+    text-decoration:none;
+    margin:8px 0 8px 0;
+    line-height:0.8;
+}
+
+main p a, main li a {
+    border-bottom:1px solid var(--dark);
+    margin:8px 0 8px 0;
+    line-height:0.8;
+}
+
+main a:hover {
+    color:var(--dark);
+}
+
+main ul {
+    list-style-position:outside;
+    margin-left:10px;
+}
+
+main li {
+    margin:5px 0 5px 5px;
+    line-height:1.4;
+}
+
+main h1 {
+    padding:5px;
+    font: 2em var(--headerfont);
+}
+
+main h1::after {
+    content:"_"
+}
+
+main h2 {
+    font: 1.7em var(--headerfont);
+    margin:12px 0 8px 0;
+}
+
+main h3 {
+    font: 1.5em var(--headerfont);
+}
+
+p {
+    margin:8px 0 8px 0;
+    line-height:1;
+}
+
+main img {
+    max-width:80%;
+    margin:5px;
+}
+
+/* Form elements */
+
+input, select, textarea {
+    font:1rem var(--bodyfont);
+    background:var(--light);
+    color:var(--dark);
+    border:1px solid var(--accent3);
+    padding:5px;
+}
+
+button {
+    background:var(--dark);
+    color:var(--accent1);
+    border:1px solid var(--light);
+    padding:10px;
+    font:1rem var(--bodyfont);
+}
+
+button:hover {
+    background:var(--accent1);
+    color:var(--dark);
+    cursor:pointer;
+}
+
+/* Footer styling */
+
+#main-footer {
+    background:var(--dark);
+    color:var(--light);
+    padding:5px;
+    text-align:center;
+    font-size:0.9em;
+}
+
+#main-footer a {
+    color:var(--accent1);
+}
+
+/* Skip to content */
+#skip a {
+    position:absolute;
+    display:inline-block;
+    left:0px;
+    top:-1000px;
+    overflow:hidden;
+    transition:top 0.5s ease;
+    background:var(--dark);
+    color:var(--light);
+    z-index:1000;
+    padding:5px;
+}
+ 
+#skip a:focus {
+    top: 0;
+    transition:top 0.5s ease;
+}
+
+/* Desktop-only styling */
+
+@media screen and (min-width: 650px) {
+        #container {
+            margin:35px auto;
+        }
+        
+        #main-menu {
+            font-size:1.3rem;
+        }
+}
+
+/* Dark mode styling */
+
+@media (prefers-color-scheme: dark) {
+    main img {
+        opacity:0.6;
+        transition:opacity 0.5s ease;
+    }
+    
+    main img:hover {
+        opacity:1;
+        transition:opacity 0.5s ease;
+    }
+    
+    main {
+        background:var(--dark);
+        color:var(--light);
+    }
+    
+    main a {
+        color:var(--accent1);
+    }
+    
+    main a:hover {
+        color:var(--light);
+    }
+
+    input, select, textarea {
+        background:var(--dark);
+        color:var(--light);
+        border:1px solid var(--accent1);
+    }
+    
+    ::selection {
+        background: var(--light);
+        color:var(--dark);
+    }
+}
+</style>
+</head>
+
+<body>
+<!-- Please don't delete the next 2 lines -->
+<div id="top"></div>
+<div id="skip"><a href="#content">Skip to content</a></div>
+
+<div id="container">
+<!-- Header -->
+<header id="main-header">
+<!-- Top window bar -->
+<div id="bar">frequentlyasked.htm</div>
+
+<!-- Navigation -->
+<nav id="main-menu">
+<ul>
+    <!-- Links (Limit to 4 for mobile users) -->
+    <li><a href="/">Index</a></li>
+    <li><a href="/contact/index.html">Links</a></li>
+    <li><a href="404.html">404</a></li>
+    <li><a href="/exoticbutters/index.html">Butters</a></li>
+</ul>
+</nav></header>
+
+<!-- Content -->
+<main id="content">
+<h1>Frequently Asked Questions</h1>
+
+<p>1. Who are you?</p>
+<p>MilKY / Hima</p><br>
+
+<p>2. What is this site about??</p>
+<p>The things i love. For example: Retro Tech, Cinnamoroll, Games, Anime, Pixelart, etc...</p><br>
+
+<p>3. Do you have a life?</p>
+<p>Yes. Despite what other records may imply, i actually DO have a life and touch grass.</p><br>
+
+<p>4. Did you program all this yourself?</p>
+<p>Saying that would be false and undermine the work of every single graphic maker, layout coder, and artist.</p><br>
+
+<p>5. What HTML Editor did you use?</p>
+<p>Sublime Text mostly. I also use the nekoweb editor for quick edits.</p><br>
+
+<p>6. But with ___ you can do this and that-</p>
+<a href="https://www.youtube.com/watch?v=MYwe96E2yAY">Refer to this youtube video.</a><br><br>
+
+<p>7. Can i hotlink your stuff?</p>
+<p>You can! Nekoweb gives me unlimited bandwidth. Do hotlink within reason though.</p><br>
+
+<p>8. What image software do you use?</p>
+<p>I use Photoshop and Procreate mainly for the hi-res assets. I use Pixaki for pixelart (like the 88x31 buttons)</p><br>
+
+<p>9. How did you learn to do all this???</p>
+<p>Youtube tutorials, W3School, and asking people online.</p><br>
+
+<p>10. What browser is this site for?</p>
+<p>Use any web browser. And yes, i take that as a challenge. Email me the wackiest places you've opened this website on (with proof) and you get to join my "Weird Wide Web" page for the people who've impressed me with their sheer spite. (coming soon.)</p><br>
+
+<p>11. What are the minimum requirements for this site?</p>
+<p>Support for HTTPS, HTML5, CSS3, and JS. OpenGL is also recommended for some of the pages but you don't need it on the index.</p><br>
+
+<p>12. Where do you host this site?</p>
+<p>I host this site on Nekoweb (2024-Now), and in the past i used Neocities (2023-2024) and a dedicated VPS (2022-2O24)</p><br>
+
+<p>13. How often do you update this site?</p>
+<p>I try to update this site almost daily! Sometimes i may miss a few days because of important family business.</p><br>
+
+<p>14. Why is ____ not completed???</p>
+<p>Shut. the fuck up.</p><br>
+
+<p>15. Is this site W3 Compliant?</p>
+<p>Eh.... for most purposes. yes, otherwise, there are a few non-compliant parts that dont affect the site.</p><br>
+
+<p>16. How many layout and structure changes have you gone through?</p>
+<p>More than i'd like to admit.</p><br>
+
+<p>17. Can i be on "The Cool PPL List", the button area, etc...</p>
+<p>Email me. You can email me.</p><br>
+
+<p>18. Why didn't you use this centering method or this font or blah blah blah....</p>
+<a href="https://www.youtube.com/watch?v=MYwe96E2yAY">Again. Refer to this youtube video.</a><br><br>
+
+<p>19. I would be interested in making an NFT project with you-</p>
+<p>KILL YOURSELF. NOW!!</p><br>
+
+<p>20. Will you ever finish __________</p>
+<p>All things will be finished in due time. Have patience.</p><br>
+
+<p>21. Why do you not have a Tw*tter?</p>
+<p>Elon bonked my account for some strange reason. Still haven't gotten back to it yet.</p><br>
+
+<p>22. Do you expect people to read all this?</p>
+<p>Honestly, no. If you did however, you can email me to get a special "I read through this FAQ" award that you can put on your website.</p><br>
+
+<!-- Footer -->
+<footer id="main-footer">
+<p>:3</p>
+<p><a href="/">Back to index</a></p>
+</footer>
+</div>
+</body>
+</html>

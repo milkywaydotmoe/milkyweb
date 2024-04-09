@@ -1,0 +1,1 @@
+const INGREDIENTS=["a","b","z"];function getsoup(){var t=INGREDIENTS[Math.floor(Math.random*INGREDIENTS.length)]+" soup";document.getElementById("soupName").innerText=t}

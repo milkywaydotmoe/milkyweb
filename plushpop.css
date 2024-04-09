@@ -1,0 +1,31 @@
+        /* Style for the pop-up image */
+        #popupImage {
+            display: none; /* Initially hidden */
+            position: fixed;
+            max-width: 170px;
+            bottom: -19%;
+            right: 20px;
+            z-index: 9999; /* Ensure it's above other elements */
+            max-width: 350px; /* Set max width */
+            animation: bounceInOut 0.5s; /* Apply bounce-in bounce-out animation */
+        }
+
+        /* Keyframes for bounce-in bounce-out animation */
+        @keyframes bounceInOut {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            50% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            89% {
+                transform: translateY(5px);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(0px);
+                opacity: 1;
+            }
+        }

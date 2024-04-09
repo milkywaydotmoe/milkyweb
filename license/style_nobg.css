@@ -1,0 +1,120 @@
+/* See humans.txt for full thanks */
+
+body {
+	max-width: 800px ;
+	margin: auto ;
+	background: #00181E;
+	color:#7F92FF;
+}
+
+h1 {
+	text-align: left ;
+}
+
+/* unvisited link */
+a:link {
+    color: #A17FFF;
+}
+
+/* visited link */
+a:visited {
+    color: #D67FFF;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF7FED;
+}
+
+/* selected link */
+a:active {
+    color: #FF7FB6;
+}
+
+ .blackstar {
+ position:fixed;
+ bottom:151;
+ left:15%;
+}
+
+/* This removed the underline for links */
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:active { text-decoration: underline; }
+
+/* What font to use */
+h1, h2, h3, a, th, blockquote, ubuntu, center {
+	font-family: Ubuntu, "Noto Sans", "Liberation Sans", Helvetica, Arial, sans-serif;
+}
+
+pre, tt, xmp, ubuntu-mono {
+font-family: monospace, "Ubuntu Monospace", Courier;
+}
+
+p {
+	font-family: Ubuntu, "Noto Sans", "Liberation Sans", Helvetica, Arial, sans-serif;
+}
+
+a {
+	text-decoration: underline;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* Thank you to Job of joppiesaus.neocities.org for not only writing the following CSS, but also allowing me to use it */
+/* Job has been a friend of mine for a few years now, and it would really make me happy if you checked out their website */
+figure {
+	display: block;
+	margin: 0 auto;
+	max-width: 95vw;
+	border: 1px solid #000;
+	background: #000;
+	background: rgba(0, 0, 0, 0.5);
+	width: min-content;
+	border-radius: 2px;
+}
+figure {
+	float: right;
+	max-width: 33vw;
+	margin: 3px;
+	margin-left: 5px;
+	margin-right: 0;
+}
+
+/* The Following code has been written by Randy and has given his consent for me to use it */
+/* I am unsure if the following code *can* even be copyrighted due to how generic it is */
+blockquote {
+	border-left: 0.1em solid #cc66ff; 
+	padding-left: 0.3em;
+}
+
+/* The following was written by devils.gay - thank you */
+uppercase,yell {
+	text-transform: uppercase;
+}
+
+/* The following has been taken from the below URL */
+/* https://learn2dev.com/articles/css-shorts/spoilers */
+.spoiler-text {
+  background: black;
+  color: transparent;
+  cursor: help;
+  user-select: none;
+  transition: background 0.3s ease 0.2s, color 0.2s ease 0.25s;
+}
+
+.spoiler-text:hover,
+.spoiler-text:focus {
+  background: #e8e8e8;
+  color: inherit;
+}
+
+.tag {
+	padding: 10px;
+	border: 5px solid gray;
+	margin: 0;
+	background-color: #4D4A7C;
+}

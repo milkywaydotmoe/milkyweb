@@ -1,0 +1,17 @@
+@font-face {
+  font-family: Ashh;
+  src: url(Ashh-Regular.otf);
+}
+
+@font-face {
+  font-family: Ashh;
+  src: url(Ashhmillr-Regular.otf);
+  font-weight: bold;
+}
+
+
+body {
+	align-content: center;
+	text-align: center;
+	font-family: Ashh;
+}

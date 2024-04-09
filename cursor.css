@@ -1,0 +1,38 @@
+/* Custom cursor for links and buttons */
+a,
+button,
+iframe, {
+    cursor: url('/cursor/link-button-cursor.png'), pointer !important;
+}
+
+/* Custom cursor for paragraphs */
+p {
+    cursor: url('/cursor/paragraph-cursor.png'), text !important;
+}
+
+/* Custom cursor for images */
+img {
+    cursor: url('/cursor/link-button-cursor.png'), zoom-in !important;
+}
+
+/* Custom cursor for not-allowed */
+[disabled],
+[aria-disabled="true"],
+[aria-disabled="true"]:hover,
+[disabled]:hover {
+    cursor: url('/cursor/not-allowed-cursor.png'), not-allowed !important;
+}
+
+#disabled {
+    cursor: url('/cursor/not-allowed-cursor.png'), not-allowed !important;
+}
+
+
+/* Custom cursor when just hovering over the page */
+html {
+    cursor: url('/cursor/default-cursor.png'), auto !important;
+}
+
+* {
+    cursor: url('/cursor/default-cursor.png'), auto !important;
+}
