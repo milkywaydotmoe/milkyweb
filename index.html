@@ -239,6 +239,13 @@
     <script src="plushpop.js" async></script>
     <script src="buttons.js"></script>
 
+    <!--[if IE]>
+    <script src="/oneko/oneko-ie6.js"></script>
+    <![endif]-->
+    <!--[if !IE]><!-->
+    <script data-cat="/oneko/oneko.gif" src="/oneko/oneko.js"></script>
+    <!--<![endif]-->
+
     <script>
     document.getElementById("disabled").addEventListener("click", function(event) {
         event.preventDefault(); // Prevent the default link behavior
