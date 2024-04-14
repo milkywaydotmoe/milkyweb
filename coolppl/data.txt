@@ -16,3 +16,4 @@
 {"name": "rooot", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/rooot.png", "site": "https://rooot.gay/"}
 {"name": "kokoscript", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/koko.png", "site": "https://yiff.life/@koko"}
 {"name": "can of soda", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/sodaimage.png", "site": "https://www.youtube.com/channel/UC5N1vLR9ISkIUA-EhCXc-SQ"}
+{"name": "cinnamoroll", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/cinnamoroll.jpg", "site": "https://twitter.com/cinnamon_sanrio"}
