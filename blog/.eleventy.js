@@ -11,8 +11,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/styles/");
   eleventyConfig.addPassthroughCopy("./src/images");
   eleventyConfig.addWatchTarget("./src/images/");
-  eleventyConfig.addPassthroughCopy("./src/fonts");
-  eleventyConfig.addWatchTarget("./src/fonts/");
 
   // Load the RSS plugin
   eleventyConfig.addPlugin(pluginRss);
