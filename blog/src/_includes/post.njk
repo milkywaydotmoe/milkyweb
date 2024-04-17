@@ -1,0 +1,85 @@
+---
+title: "My Cool Blog: {{ title }}"
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MiLKY-Blog: {{ title }}</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link href="https://yourwebsitehere.com/rss.xml" rel="alternate" type="application/rss+xml" title="RSS feed for MiLKY-Blog!">
+    <link href="styles/style.css" rel="stylesheet" type="text/css" media="all">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A blog written by a disaster!">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:url" content="https://milkyway.moe/{{ permalink }}">
+    <meta property="og:image" content="{{ featured_image }}">
+    <meta property="og:description" content="{{ description }}">
+  </head>
+  
+  <body>
+    <main id="container">
+
+      <div id="headerArea">
+        <!--If you wanted to put in a header image, this is where you would do it-->
+        <nav id="navbar">
+        <!--This is where you edit the navbar links at the top of the page-->
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../archives.html">Archives</a></li>
+            <li><a href="../links.html">Links</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!--This is where the bulk of your page lives-->
+      <div id="flex">
+        <article>
+          <h1>{{ title }}</h1>
+          
+          <!--You can change how topDate looks in your .eleventy.js file-->
+          <strong>{{ date | topDate }}</strong>
+          
+          {{ content | safe }}
+          
+          <!--This will take you to the next/previous blog entries if they exist-->
+          <nav id="nextprev">
+          {% if nextPost.url %}
+          <a class="next" href="{{ nextPost.url }}">« Next</a> |
+          {% endif %}
+          <a href="../archives.html">Archives</a>
+          {% if prevPost.url %}
+          | <a class="previous" href="{{ prevPost.url }}">Previous »</a>
+          {% endif %}
+          </nav>
+        </article>
+      </div>
+
+      <!--Edit in your footer here, or delete it entirely if you want-->
+      <footer id="footer">:3</footer>
+
+    </main>
+    
+    <!--this will add a 'Go to top' button on your site-->
+    <button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
+    
+    <script>
+      let topbutton = document.getElementById("topBtn");
+      window.onscroll = function() {scrollFunction()};
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          topbutton.style.display = "block";
+        } else {
+          topbutton.style.display = "none";
+        }
+      }
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+    <!--end top button code-->
+
+  </body>
+</html>

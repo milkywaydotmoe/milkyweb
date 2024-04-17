@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MiLKY-Blog: MiLKY-Blog!</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link href="https://yourwebsitehere.com/rss.xml" rel="alternate" type="application/rss+xml" title="RSS feed for My Cool Blog">
+    <link href="styles/style.css" rel="stylesheet" type="text/css" media="all">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A blog written by a disaster!">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MiLKY-Blog!">
+    <meta property="og:url" content="https://milkyway.moe/index.html">
+    <meta property="og:image" content="favicon.png">
+    <meta property="og:description" content="A blog written by a disaster of a person!">
+  </head>
+  
+  <body>
+    <main id="container">
+
+      <div id="headerArea">
+        <!--If you wanted to put in a header image, this is where you would do it-->
+        <nav id="navbar">
+        <!--This is where you edit the navbar links at the top of the page-->
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="archives.html">Archives</a></li>
+            <li><a href="links.html">Links</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!--This is where the bulk of your page lives-->
+      <div id="flex">
+        <article>
+          
+          <h1>MiLKY-Blog!</h1>
+          
+          <p>Thanks for visiting my blog! I write about stuff i like. Is it gonna be videogames or obscure amiga trackers, you'll never know :3</p>
+<hr>
+<!-- This next part will show your top three most recent posts. You can change how readableDate looks in your .eleventy.js file-->
+<h2>Recent Blog Posts</h2>
+<div id="recentpostlistdiv">
+  <ul>
+  <li><a href="posts/2024-04-17-Hello-World.html">2024-04-17 » Hello, World!</a></li>
+	<li class="moreposts"><a href="archives.html">» Archives</a></li><li class="moreposts"><a href="rss.xml">» RSS feed</a></li></ul>
+</div>
+
+        </article>
+      </div>
+
+      <!--Edit in your footer here, or delete it entirely if you want-->
+      <footer id="footer">:3</footer>
+
+    </main>
+    
+    <!--this will add a 'Go to top' button on your site-->
+    <button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
+    
+    <script>
+      let topbutton = document.getElementById("topBtn");
+      window.onscroll = function() {scrollFunction()};
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          topbutton.style.display = "block";
+        } else {
+          topbutton.style.display = "none";
+        }
+      }
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+    <!--end top button code-->
+
+  </body>
+</html>
