@@ -39,3 +39,5 @@ Thumbs.db
 # the git directory  #
 ######################
 .git/
+blog/node_modules/
+node_modules/
