@@ -183,11 +183,11 @@ ul.none {
   background-color: #b3e0ff;
 }
 
-@font-face{font-family:riffic;src:url(/fonts/RifficFree-Bold.ttf)}
-@font-face{font-family:title;src:url(/fonts/GoldenGirdle.otf)}
-@font-face{font-family:bitmap;src:url(/fonts/JF-Dot-milkjf16.ttf)}
-@font-face{font-family:miami;src:url(/fonts/miamiwriting.ttf)}
-@font-face{font-family:dosfont;src:url(/fonts/Web437_Nix8810_M15.woff)}
-@font-face{font-family:dosfont2;src:url(/fonts/Web437_NEC_APC3_8x16.woff)}
-@font-face{font-family:cgafont;src:url(/fonts/Px437_Acer710_CGA-2y.ttf)}
-@font-face{font-family:widecga;src:url(/fonts/Px437_IBM_CGA.ttf)}
+@font-face{font-family:riffic;src:url(https://milkyway.moe/fonts/RifficFree-Bold.ttf)}
+@font-face{font-family:title;src:url(https://milkyway.moe/fonts/GoldenGirdle.otf)}
+@font-face{font-family:bitmap;src:url(https://milkyway.moe/fonts/JF-Dot-milkjf16.ttf)}
+@font-face{font-family:miami;src:url(https://milkyway.moe/fonts/miamiwriting.ttf)}
+@font-face{font-family:dosfont;src:url(https://milkyway.moe/fonts/Web437_Nix8810_M15.woff)}
+@font-face{font-family:dosfont2;src:url(https://milkyway.moe/fonts/Web437_NEC_APC3_8x16.woff)}
+@font-face{font-family:cgafont;src:url(https://milkyway.moe/fonts/Px437_Acer710_CGA-2y.ttf)}
+@font-face{font-family:widecga;src:url(https://milkyway.moe/fonts/Px437_IBM_CGA.ttf)}
