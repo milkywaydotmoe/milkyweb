@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MiLKY-Blog: Optimizing my site</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link href="https://milkyway.moe/rss.xml" rel="alternate" type="application/rss+xml" title="RSS feed for MiLKY-Blog!">
+    <link href="../styles/style.css" rel="stylesheet" type="text/css" media="all">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A blog written by a disaster!">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Optimizing my site">
+    <meta property="og:url" content="https://milkyway.moe/posts/2024-04-26-Optimizing-My-Site.html">
+    <meta property="og:image" content="https://file.garden/ZgvLyuxekygVJeux/blog/emuwhitehouse.webp">
+    <meta property="og:description" content="Detailing how i got my site to load faster.">
+  </head>
+  
+  <body>
+    <main id="container">
+
+      <div id="headerArea">
+        <!--If you wanted to put in a header image, this is where you would do it-->
+        <nav id="navbar">
+        <!--This is where you edit the navbar links at the top of the page-->
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../archives.html">Archives</a></li>
+            <li><a href="../links.html">Links</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!--This is where the bulk of your page lives-->
+      <div id="flex">
+        <article>
+          <h1>Optimizing my site</h1>
+          
+          <!--You can change how topDate looks in your .eleventy.js file-->
+          <strong>2024 April 26</strong>
+          
+          <p>Well, its that time of the year. When i finally realize my site is an absolute <em><strong>DUMPSTER FIRE</strong></em> and i need to optimize it because frankly, my site loads slow, <strong>EVEN LOCALLY</strong>.</p>
+<p>I'm currently writing this blog post as i go so watch me girlboss my way into somehow finding a fix powered by prayers and hope.</p>
+<p>Firstly, tackling why the layout takes so long to load...</p>
+<p><script src="marquee.js" async></script>
+<script src="unix.js" defer></script>
+<script src="darkmode.js"></script>
+<script src="plushpop.js" async></script>
+<script src="buttons.js"></script></p>
+<p><!--[if IE]>
+    <script src="/oneko/oneko-ie6.js"></script>
+    <![endif]-->
+<!--[if !IE]><!-->
+<script data-cat="/oneko/trans.png" src="/oneko/oneko.js"></script>
+<!--<![endif]--></p>
+<p><script>
+document.getElementById(&quot;disabled&quot;).addEventListener(&quot;click&quot;, function(event) {
+event.preventDefault(); // Prevent the default link behavior
+});
+</script></p>
+<p>Yep. Maybe that's the problem. I'll try that first....</p>
+<p>I examine it's the same. Well, maybe i should try having the JS load as soon as the site is done loading.</p>
+<p><img src="https://i.stack.imgur.com/FcAKu.png" alt="Script tags."></p>
+<p>I then came across this image. Most of my tags load with async or defer.</p>
+<p>I try using the type=module and BOOM. It loads with a decent pace... well, locally, We'll see how the network fares.</p>
+<p>Next to tackle is the font loading.</p>
+<p>I'll convert them into WOFF files, and after that.... well, font loading got slightly faster. No more initializing.
+<img src="https://file.garden/ZgvLyuxekygVJeux/blog/fonts.png" alt="fonts converted to woff"></p>
+<p>Now for the images. It can't be that bad right?
+<img src="https://file.garden/ZgvLyuxekygVJeux/blog/ohgod.png" alt="GOD HAVE MERCY">
+It's that bad. Oh jeez.</p>
+<p>Well, i did research on what image formats were the fastest loading... and...
+<img src="https://file.garden/ZgvLyuxekygVJeux/blog/webp.png" alt="copium">
+NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+WHY DID IT HAVE TO BE WEBP</p>
+<p>Well... lets just disregard that.
+Blog post finished. I refuse to use WEBP.
+Well maybe i'll do it on a few items (the worst offenders)</p>
+
+          
+          <!--This will take you to the next/previous blog entries if they exist-->
+          <nav id="nextprev">
+          
+          <a href="../archives.html">Archives</a>
+          
+          | <a class="previous" href="/posts/2024-04-17-Hello-World.html">Previous »</a>
+          
+          </nav>
+        </article>
+      </div>
+
+      <!--Edit in your footer here, or delete it entirely if you want-->
+      <footer id="footer">:3 - <a href="https://milkyway.moe">go home!</a> - :3</footer>
+
+    </main>
+    
+    <!--this will add a 'Go to top' button on your site-->
+    <button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
+    
+    <script>
+      let topbutton = document.getElementById("topBtn");
+      window.onscroll = function() {scrollFunction()};
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          topbutton.style.display = "block";
+        } else {
+          topbutton.style.display = "none";
+        }
+      }
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+    <!--end top button code-->
+
+  </body>
+</html>

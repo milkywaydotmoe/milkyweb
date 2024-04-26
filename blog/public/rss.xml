@@ -3,11 +3,18 @@
   <title>MiLKY-Blog</title>
   <subtitle>A blog written by a disaster of a person!</subtitle>
   <link href="https://blog.milkyway.moe/rss.xml" rel="self"/>
-  <updated>2024-04-17T00:00:00Z</updated>
+  <updated>2024-04-26T00:00:00Z</updated>
   <id>https://blog.milkyway.moe</id>
   <author>
     <name>MiLKY-P</name>
   </author>
+  <entry>
+    <title>Optimizing my site</title>
+    <link href="https://blog.milkyway.moe/posts/2024-04-26-Optimizing-My-Site.html"/>
+    <updated>2024-04-26T00:00:00Z</updated>
+    <id>https://blog.milkyway.moe/posts/2024-04-26-Optimizing-My-Site.html</id>
+    <content xml:lang="" type="html"><![CDATA[<img src="https://yourwebsitehere.com/images/https://file.garden/ZgvLyuxekygVJeux/blog/emuwhitehouse.webp">]]>Detailing how i got my site to load faster.</content>
+  </entry>
   <entry>
     <title>Hello, World!</title>
     <link href="https://blog.milkyway.moe/posts/2024-04-17-Hello-World.html"/>
