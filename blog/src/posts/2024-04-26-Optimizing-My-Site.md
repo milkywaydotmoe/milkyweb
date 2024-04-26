@@ -1,6 +1,6 @@
 ---
 layout: post.njk
-permalink: posts/2024-04-17-Hello-World.html
+permalink: posts/2024-04-26-Optimizing-My-Site.html
 title: Optimizing my site
 date: 2024-04-26
 description: Detailing how i got my site to load faster.
