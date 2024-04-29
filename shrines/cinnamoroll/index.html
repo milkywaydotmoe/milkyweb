@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+
+<!--
+ 
+    /// "MELODY" template made by awhe @ https://awhe.neocities.org/
+ 
+    /// NOTE: Feel free to delete the above credits included in the code. I do not require credit, and I encourage copying from me as much as you'd like. As always: The internet is made for sharing, and so I'm happy to be able to share this with you!
+ 
+    /// This template was made simply because I wanted to make something really cute and really pink. That's it. I ended up heavily editing it to use for my current (4th Aug 2023) index page anyway, but this version is just too cute...
+ 
+    /// I'm bad at spelling. If you see any spelling errors, no you don't! (I'm sorry, even after checking, I still usually miss something.)
+ 
+    ==============================================================
+ 
+                    -USEFUL INFO-
+ 
+    // margin: refers to the space AROUND an element.
+    // padding: refers to the space INSIDE an element.
+    // color: refers to TEXT COLOR.
+    // background: refers to the BACKGROUND COLOR of an element.
+    // favicon: refers to the tiny image that shows up on your website tab at the top.
+    // body: refers to the main structure of the site. think of the plain white screen before adding all your code, that's the body. 
+ 
+    // https://www.w3schools.com/ (This site has all the help you need if you require more assistance.)
+    // https://codepen.io/ (This site allows live previews of your code, which can be helpful when you're changing parts and still learning.)
+    // https://awhe.neocities.org/links (Shameless self plug, but I've included many many links here regarding HTML (among other things!) that may prove useful.)
+    // https://blog.hubspot.com/website/web-safe-html-css-fonts (Displays "web safe fonts" which are fonts that'll adapt to any browser on any device.)
+    // https://www.w3schools.com/tags/ref_colornames.asp (Shows you the names of colors supported by all browsers!)
+ 
+    ==============================================================
+ 
+    /// Just a small reminder that:
+        - You can and you should copy from me if you'd like. I don't care. My url is: https://awhe.neocities.org/
+        - Credit is always optional, whatever you feel like.
+        - For a cleaner look, I recommend removing my text additions whenever you feel comfortable to.
+        - I recommend editing on a live preview, so you can see the immediate effects of any changes you make.
+        - Have fun! Add, change, edit, etc, whatever you want! The net is yours.
+ 
+-->
+
+<title>CINNAMOROLL!</title>
+<!-- remove the text "MY MELODY ☆" and replace it with whatever you want to title your site as! it shows up on the tab of your site. -->
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="/"> 
+<!-- remove the "/" here with a url link to your image of choice that you'd like to use as your website "favicon". -->
+
+<style>
+     ::-webkit-scrollbar {
+        width: 15px;
+        height: 15px; 
+    }
+    /* above is the custom scrollbar, you can delete it if you want to use the default or another custom scrollbar. */
+
+    ::-webkit-scrollbar-thumb {
+        border: 1px solid #000;
+    }
+    /* above is the custom scrollbar, you can delete it if you want to use the default or another custom scrollbar. */
+
+    ::-webkit-scrollbar-button:start:decrement,
+    ::-webkit-scrollbar-button:end:increment {
+        height: 15px;
+        width: 15px;cp
+        display: block;
+        background-repeat: no-repeat;
+        border: 1px solid #000;  
+    }
+    /* above is the custom scrollbar, you can delete it if you want to use the default or another custom scrollbar. */
+
+    ::-webkit-scrollbar-button:vertical:decrement {s
+        background-image: url();
+    }
+    /* above is the custom scrollbar, you can delete it if you want to use the default or another custom scrollbar. */
+
+    ::-webkit-scrollbar-button:vertical:increment {
+        background-image: url();
+    }
+    /* above is the custom scrollbar, you can delete it if you want to use the default or another custom scrollbar. */
+
+    @font-face {
+        font-family:bubbly;
+        src:url(Double_Bubble_shadow.otf)
+    }
+
+    body {
+        text-align: left;
+        font-family: ms gothic, monospace;
+        background-image: url('gallery-cinnamon4.png');
+        /* replace this line of code with a link to your background image. */
+        /* or remove it entierly if you want to use a color or something. */
+        font-size: 16px;
+    }
+ 
+    span {
+        font-family:'bubbly'; 
+        font-size: 6vh;
+        color: #69f;
+    }
+    /* delete this code if you don't want to use a custom font. */
+
+    p{
+        margin:2.5%;
+    }
+
+    hr {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, white, #69f, white);
+    }
+
+    a{
+        color: #69f;
+        text-decoration: none;
+    }
+        /* this is the link color. */
+
+    a:hover{
+        color: #69f;
+        text-decoration: none;
+    }
+        /* this is the link color when the cursor hovers it */
+
+    #title{
+        top:12%;
+        position:absolute;
+        left:35%;
+        text-shadow: 2px 2px white;
+
+    }
+
+    .container {  
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 10fr 5fr 5fr 5fr 0.1fr;
+        grid-auto-columns: 1fr;
+        gap: 10px 1%;
+        grid-auto-flow: row;
+        justify-content: center;
+        align-content: center;
+        justify-items: center;
+        align-items: center;
+        grid-template-areas:
+        ". header header header ."
+        ". profile1 main main ."
+        ". profile2 main main ."
+        ". profile3 foot foot ."
+        ". . . . .";
+        margin: 0 auto;
+        margin-top: 8%;
+        margin-left: 22%;
+        width:60%;
+        height:700px;
+    }
+
+    .header { 
+        grid-area: header; 
+        background-color: aqua;
+        border: #69f 1px solid; 
+        width:100%;
+        height:100%;
+    }
+
+    #header_img{
+        width:100%;
+        height:100%;
+        object-fit: fill;
+        background-position: 57% 50%; 
+        background-image:url('https://file.garden/ZgvLyuxekygVJeux/other%20assets/cimmonroll.webp');
+    }
+    /* this is the image that'll show up in your header. change the position values to... reposition it! */
+
+    .profile1 { 
+        grid-area: profile1; 
+        background-color: white;
+        height:100%;
+        width:100%;
+        border: #69f 1px solid; 
+    }
+    /* this is where the baby is sleeping :D */
+
+    .profile2 { 
+        grid-area: profile2; 
+        background-color: white;
+        height:100%;
+        width:100%;
+        border: #69f 1px solid; 
+        overflow:auto;
+    }
+    /* this is where i put the links */
+
+    .main { 
+        grid-area: main; 
+        background-color: white;
+        height:100%;
+        width:100%;
+        border: #69f 1px solid; 
+        overflow:auto;
+    }
+    /* this is this biggest bulk of text. the main content. */
+
+    .profile3 { 
+        grid-area: profile3; 
+        background-color: white;
+        height:100%;
+        width:100%;
+        border: #69f 1px solid; 
+        overflow:auto;
+    }
+    /* this is where you can put stats or whatever! the bottom box on the lef thand side */
+
+    .foot { 
+        grid-area: foot; 
+        background-color: white;
+        height:100%;
+        width:100%;
+        border: #69f 1px solid; 
+        overflow:auto;
+    }
+    /* and lastly, the "footer". */
+
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* this centers images if you add "class=center" to the end of them */
+
+    ul{
+        list-style-type: none;
+        margin-left:15%;
+    }
+    /* you can change the list style type to whatever you want, i just don't like bullet points. */
+
+    
+    /* and lastly, below is styling for mobile users. you can tinker with this if you'd like! */
+    @media only screen and (max-width: 640px) {
+      
+      .container{
+        display: flex; 
+        flex-flow: column; 
+        position:relative;
+        width:95%;
+        right:19%;
+        margin-top:3%;
+        font-size:2vh;
+      }
+
+      .header{
+        height:150%;
+        order: 1;
+      }
+      
+      .main{
+        order:2;
+        height:250%;
+      }
+
+      .profile1{
+        display:none
+      }
+      /* be mindful that this will remove this section from mobile. if you'd like that section to be shown then you have to edit it! */
+
+      .profile2{
+        height:25%;
+        order:3;
+        height:150%;
+      }
+
+      body{
+        font-size: 3vh;
+      }
+
+      ul{
+        margin-left:28%;
+      }
+
+      .profile3{
+        order:4;
+      }
+
+      .foot{
+        order:5;
+      }
+
+      #title{
+        display:none;
+      }
+
+    }
+    
+
+</style>
+
+<body>
+
+    <div id="title"><span>cinnamoroll !</span></div>
+
+    <div class="container">
+        <div class="header">
+            <div id="header_img"></div>
+        </div>
+        
+        <div class="profile1">
+            <img src="eepy.png" width="70%" height="auto" class="center">
+            <p style="text-align: center;">shh... the baby is sleeping... <3</p>
+        </div>
+
+        <div class="profile2">
+            <div style="text-align: center;"><span style="font-size: 3vh;">LINKS</span></div>
+            <ul>
+                <li><a href="https://www.youtube.com/@cinnamon_sanrio">cinnamoroll yt</a></li>
+                <li><a href="https://twitter.com/cinnamon_sanrio">cinnamoroll twt</a></li>
+                <li><a href="https://www.instagram.com/47mon_sanrio_official/">cinnamoroll ig</a></li>
+                <li><a href="https://www.tiktok.com/@47mon_sanrio">cinnamoroll tiktok</a></li>
+                <li><a href="https://www.sanrio.co.jp/characters/cinnamon/">cinnamoroll site</a></li>
+            </ul>            
+        </div>
+
+        <div class="main">
+            <div style="text-align: center;"><span style="font-size: 3vh;">who is cinnamoroll, why him?</span></div>
+            <hr>
+            <p style="text-align: center;">Cinnamon (シナモン), better known as Cinnamoroll (シナモロール), is a Sanrio character and the title character of the Cinnamoroll universe.</p>
+
+            <p style="text-align: center;">He's a small, shy chubby doggo with white fur, blue eyes, pink cheeks, and a plump and curly tail that resembles a cinnamon roll!!!, He also has long ears that enable him to fly.</p>
+
+            <img src="gunmoroll.jpg" class="center" style="text-align: center;">
+
+            <p style="text-align: center;">I discovered him via the hit game Project Sekai, with the collaboration between WonderShow and Sanrio, and it just so happens cinnamoroll was paired up with my other fav, Emu Otori!! After that, the hyperfixation just flhjdaljkffdsasdaf-</p>
+
+            <img src="mrbeast.gif" width="70%" height="auto" class="center">
+
+        </div>
+
+        <div class="profile3">
+            <div style="text-align: center;"><span style="font-size: 3vh;">:3</span></div>
+            <p style="text-align: center;"><b>cimmon roll my scrunky bunky splingo bloingo bing</b></p>
+        </div>
+
+        <div class="foot" style="text-align: center;">
+            <div style="text-align: center;"><span style="font-size: 3vh;">EXTRA</span></div>
+            <p style="text-align: center;">Did you know that cinnaminnaminnaminnaminnaminnaminnymoroll is cuuute?</p>
+            <a href="/">💙 go home 💙</a>
+        </div>
+      </div>
+
+</body>
+</html>

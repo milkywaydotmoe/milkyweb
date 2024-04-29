@@ -1,0 +1,118 @@
+
+body { max-width: 95%; margin: auto; color: black; text-align: center;}
+
+header {
+	text-align: center;
+}
+
+div.mid {display: flex; flex-direction: row; text-align: center}
+aside.left {flex: 3;}
+main {flex: 9;}
+aside.right {flex: 3; }
+aside.right div { text-align: initial;}
+
+footer {
+	text-align: center;
+	min-height: 10vh
+}
+
+#mainbutton {
+	width: 90%;
+	display: grid;
+	margin-left: auto;
+    margin-right: auto;
+	justify-content: center;
+	align-content: flex-start;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, min(200px, 15vw));
+	grid-column-gap: 15px;
+	grid-row-gap: 15px;
+}
+
+#mainbutton img {width: 180px; max-width: 15vw; height: auto; display: block;}
+main img.divider {max-width: 30vw;}
+
+.mainbutton img{
+	transition: all 0.1s ease-in-out;
+}
+
+.mainbutton img:hover {
+	animation: tiltAnimation 2s ease-in-out infinite, rainbowGlow 3s linear infinite;
+}
+
+#swatchClock {color: #F8312F;}
+#statuscafe { padding: .5em; background-color: #d6c8fc; color: #00249c; border: 3px double #000032; }
+#statuscafe-username { margin-bottom: .5em; }
+#statuscafe-content { margin: 0 1em 0.5em 1em; }
+#lastfm { padding: .5em; background-color: #d6c8fc; color: #00249c; border: 3px double #000032; }
+#lastfm-username { margin-bottom: .5em; }
+#lastfm-content { margin: 0 1em 0.5em 1em; }
+
+@media only screen and (max-width: 500px) {
+	div.mid {display: flex; flex-direction: column;}
+	aside.left {width: 100%; text-align: center;}
+	aside.right {width: 100%; text-align: center;}
+	main {width: 100%; text-align: center;}
+
+	#mainbutton {display: block; text-align: center; width: fit-content;}
+	#mainbutton section {display: inline; width: fit-content;}
+	#mainbutton section img {max-width: none;}
+	main img.divider {max-width: 100%;}
+	main {order: 1}
+	aside.left {order: 2}
+	aside.right {order: 3}
+}
+
+@keyframes tiltAnimation {
+	0%, 100% {
+	  transform: rotate(-20deg) scale(1.05);
+	}
+	50% {
+	  transform: rotate(20deg) scale(1.15); /* Adjust the angle as needed */
+	}
+}
+
+.rotateGirl {
+	animation: rotateGirl 5s infinite linear;
+}
+
+#spinIcosa {
+	animation: rotation 5s infinite linear;
+	max-width: 80vw;
+	max-height: 80vh;
+	width: 30vw;
+	aspect-ratio: 1 / 1;
+	position: relative;
+	top: 50%;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(-45deg);
+    }
+    to {
+        transform: rotate(314deg);
+    }
+}
+
+@keyframes rotateGirl {
+    0% {
+        transform: rotate(0deg) scale(1);
+		background-size: 4vh;
+    }
+	25% {
+        transform: rotate(90deg) scale(0.5);
+    }
+	50% {
+        transform: rotate(180deg) scale(0);
+		background-size: 1px;
+		background-color: #000000;
+	}
+	75% {
+        transform: rotate(270deg) scale(0.5);
+	}
+	100% {
+        transform: rotate(360deg) scale(1);
+		background-size: 4vh;
+	}
+}

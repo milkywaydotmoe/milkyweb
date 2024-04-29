@@ -1,0 +1,190 @@
+@font-face {
+  font-family: "ibmvga";
+  src: url("ibmvga.woff2") format("woff2");
+}
+.ibm { font-family: "ibmvga";}
+
+:root {
+  --red: #F8312F;
+  --red-opacity: #e6134e30
+}
+
+.bold { font-weight: bold; }
+
+* {
+  image-rendering: pixelated;
+  padding: 0;
+  margin: 0;
+}
+a img, [href], [onclick] {
+}
+
+body {
+  min-height: 100vh;
+  background-image: url(../misc/rhombille.gif );
+  background-color: white;
+  color: white;
+  background-blend-mode: multiply;
+  background-size: 4vh;   
+  background-repeat: repeat;
+  font-family: ibmvga, firemono, monospace;
+  overflow-wrap: anywhere;
+  font-size: 130%;
+}
+
+a { color: inherit }
+
+::selection {
+  color: var(--red);
+  background: var(--red-opacity);
+}
+
+.flex-container {display: flex;}
+.flex-child {flex: 1;}
+.display_only_mobile { display: none; }
+.display_only_pc { display: block; }
+
+.divider {text-align: center; padding: 10px 0; max-width: 100%; overflow: hidden}
+.cul {list-style-type: none; font-size: larger; justify-content: center; }
+.horizul {display: flex; flex-wrap:wrap; padding: 0; margin: 0; list-style-type: none; justify-content: space-evenly; }
+.horizul li {font-size: larger; padding-top: 0px; padding-right:10px; }
+
+.button { width: auto; height: 31px; }
+.blinkie { height: 40px; width: auto; }
+.stamp { width: auto; height: 56px; }
+.badge { width: auto; height: 15px; }
+.userbox { width: auto; height: 25px; }
+.otherthing { width: auto; height: 15px; }
+
+@media only screen and (max-width: 500px) {
+  .flex-container { flex-direction: column; }
+  .display_only_mobile { display: block; }
+  .display_only_pc { display: none; }
+}
+
+.rainbow{
+  animation: rainbow 8s linear;
+  animation-iteration-count: infinite;
+}
+.rainbow-bg{
+  animation: rainbow-bg 8s linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rainbow-bg{
+  100%,0%{
+    background-color: rgb(255,0,0);
+  }
+  8%{
+    background-color: rgb(255,127,0);
+  }
+  16%{
+    background-color: rgb(255,255,0);
+  }
+  25%{
+    background-color: rgb(127,255,0);
+  }
+  33%{
+    background-color: rgb(0,255,0);
+  }
+  41%{
+    background-color: rgb(0,255,127);
+  }
+  50%{
+    background-color: rgb(0,255,255);
+  }
+  58%{
+    background-color: rgb(0,127,255);
+  }
+  66%{
+    background-color: rgb(0,0,255);
+  }
+  75%{
+    background-color: rgb(127,0,255);
+  }
+  83%{
+    background-color: rgb(255,0,255);
+  }
+  91%{
+    background-color: rgb(255,0,127);
+  }
+}
+
+
+@keyframes rainbowGlow{
+  100%,0%{
+    box-shadow: 10px 10px rgb(255,0,0);
+  }
+  8%{
+    box-shadow: 10px 10px rgb(255,127,0);
+  }
+  16%{
+    box-shadow: 10px 10px rgb(255,255,0);
+  }
+  25%{
+    box-shadow: 10px 10px rgb(127,255,0);
+  }
+  33%{
+    box-shadow: 10px 10px rgb(0,255,0);
+  }
+  41%{
+    box-shadow: 10px 10px rgb(0,255,127);
+  }
+  50%{
+    box-shadow: 10px 10px rgb(0,255,255);
+  }
+  58%{
+    box-shadow: 10px 10px rgb(0,127,255);
+  }
+  66%{
+    box-shadow: 10px 10px rgb(0,0,255);
+  }
+  75%{
+    box-shadow: 10px 10px rgb(127,0,255);
+  }
+  83%{
+    box-shadow: 10px 10px rgb(255,0,255);
+  }
+  91%{
+    box-shadow: 10px 10px rgb(255,0,127);
+  }
+}
+
+@keyframes rainbow{
+  100%,0%{
+    color: rgb(255,0,0);
+  }
+  8%{
+    color: rgb(255,127,0);
+  }
+  16%{
+    color: rgb(255,255,0);
+  }
+  25%{
+    color: rgb(127,255,0);
+  }
+  33%{
+    color: rgb(0,255,0);
+  }
+  41%{
+    color: rgb(0,255,127);
+  }
+  50%{
+    color: rgb(0,255,255);
+  }
+  58%{
+    color: rgb(0,127,255);
+  }
+  66%{
+    color: rgb(0,0,255);
+  }
+  75%{
+    color: rgb(127,0,255);
+  }
+  83%{
+    color: rgb(255,0,255);
+  }
+  91%{
+    color: rgb(255,0,127);
+  }
+}

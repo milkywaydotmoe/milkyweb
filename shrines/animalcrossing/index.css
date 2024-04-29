@@ -1,0 +1,161 @@
+
+body{
+background-color: #f7fff7;
+background-image: url("wallp.jpg");
+font-family: 'FortySeven Micro NBP', sans-serif;
+}
+
+#container{
+display: flex;
+justify-content: center;
+align-items: center;
+width: 800px;
+margin: 0 auto;
+border: 1px solid #289c4b;
+padding: 3px;
+}
+
+#box{
+width: 800px;
+background-color: #f7fff7;
+color: #000;
+border: 1px solid #289c4b;
+}
+
+#header{
+margin-bottom: 10px;
+padding: 10px;
+border-bottom: 1px solid #289c4b;
+background-image: url("bg.gif");
+color: #fff;
+letter-spacing: 3px;
+}
+
+#header h1{
+margin: 0px;
+}
+
+#side{
+float: left;
+width: 145px;
+padding: 0px 0px 5px 10px;
+overflow: hidden;
+}
+
+.sidebox{
+border: 1px solid #289c4b;
+margin: 0px 0px 5px 0px;
+}
+
+.sidecontent{
+padding: 0px 0px 0px 5px;
+color: #6e5057;
+font-size: 17px;
+letter-spacing: 1px;
+}
+
+.sidecontent ul, li{
+margin: 0px;
+list-style-type: none;
+padding-left: 0px;
+}
+
+a{
+text-decoration: none;
+color: #289c4b;
+}
+
+a:visited{
+color: #289c4b;
+}
+
+a:hover{
+text-shadow: 0px 0px 2px #78beff;
+}
+
+#scrollcontainer{
+padding: 5px;
+}
+
+#scrolly{
+overflow: scroll;
+overflow-x: hidden;
+width: 110px;
+height:110px;
+border: 1px solid #289c4b;
+margin: 0 auto;
+text-align: center;
+}
+
+#scrollyheader{
+margin: 0px;
+border-bottom: 1px dotted #289c4b;
+}
+
+#main{
+float: right;
+width: 624px;
+overflow: hidden;
+padding: 0px 10px 5px 0px;
+}
+
+.mainboxes{
+border: 1px solid #289c4b;
+padding: 0px;
+margin: 0px 0px 5px 0px;
+}
+
+.subheader{
+background-image: url("bg.gif");
+border-bottom: 1px solid #289c4b;
+padding: 3px;
+color: #fff;
+letter-spacing: 3px;
+}
+
+.subheader h3{
+margin: 0px;
+}
+
+.mainboxescontent{
+padding: 0px 15px 0px 15px;
+color: #6e5057;
+font-size: 17px;
+}
+
+#footer{
+clear: both;
+padding: 3px;
+border-top: 1px solid #289c4b;
+background-image: url("bg.gif");
+color: #fff;
+font-size: 14px;
+}
+
+#footer p{
+margin: 0px;
+}
+
+::-webkit-scrollbar{
+width: 8px; 
+}
+    
+::-webkit-scrollbar-track{
+background-color: #f7fff7;
+}
+
+::-webkit-scrollbar-thumb{
+background-color: #289c4b;  
+}
+
+#credit{
+font-size: 12px;
+position: fixed;
+bottom: 0;
+right: 0;
+}
+
+img{
+width: 100%;
+height: 100%;
+}
