@@ -18,53 +18,64 @@
     <meta property="og:image" content="/favicons/normal.png">
     <meta property="og:description" content="MiLKY-P's website, powered by autism!">
 
-    <script src="lastfm.js" type="module" onload></script>
+    <script src="lastfm.js" type="module" async></script>
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"></script>
     <script src="clicksplosion.js" async></script>
     <script src="marquee.js" type="module" onload></script>
     <script src="unix.js" type="module" onload></script>
     
 
     <style>
-    .track-info {
-    display: flex;
-    align-items: center;
-    }
+        /* Basic CSS styling for the track info */
+        .track-container {
+            display: flex;
+            align-items: flex-start;
+            margin: 10px 0;
+        }
 
-    .track-container {
-        display: flex;
-    }
+        .album-art {
+            flex: 0 0 200px; /* Fix the size of the album art */
+            padding-right: 10px;
+        }
 
-    .album-art img {
-        height: 200px;
-        border-radius: 5px;
-    }
+        .album-art img {
+            max-width: 100%;
+            max-height: 200px;
+        }
 
-    .track-details {
-        margin-left: 20px; /* Adjusts space between album art and track details */
-    }
+        .track-details {
+            flex-grow: 1; /* Allow the details to grow */
+        }
 
-    .track-title {
-        font-size: 2em;
-        font-weight: bold;
-    }
+        .track-details ul {
+            list-style-type: none; /* Remove default bullet points */
+            margin: 0;
+            padding: 0; /* Reset margins and paddings */
+        }
 
-    .track-subtext {
-        font-size: 1.1em;
-        color: gray;
-    }
+        .track-details li {
+            padding-left: 20px; /* Add space for the custom bullet */
+            position: relative; /* Position relative for pseudo-element */
+        }
 
-    #recent-tracks {
-        margin-top: 20px;
-    }
+        .track-details li::before {
+            content: '💽'; /* Mini-disc emoji */
+            position: absolute; /* Position the emoji */
+            left: 0; /* Align to the start of the list item */
+        }
 
-    #recent-tracks ul {
-        list-style-type: disc;
-        padding-left: 20px; /* Indents the list */
-    }
+        .track-details strong {
+            font-weight: bold;
+        }
 
-    #recent-tracks li {
-        font-size: 0.9em;
-    }
+        .track-title {
+            font-size: 1.2em;
+        }
+
+        .track-subtext {
+            color: gray;
+            font-size: 0.9em;
+        }
     </style>
 
 </head>
@@ -156,7 +167,7 @@
             <br>
             <span style="font-size: 2.5vh; letter-spacing: 2px; text-align:center; font-family: dosfont;"> update corner</span>
             <hr>
-            <p style="font-size: medium; text-align: justify;">the shrines are back :3</p>
+            <p style="font-size: medium; text-align: justify;">live display of my last dot fm plays now up! powered by texpiloxtl's servers and 100% home grown organic node.js spaghetti!</p>
         </div> 
 
         <div class="nav">
@@ -250,12 +261,10 @@
             <div><span class="welcome" style="font-size: 2.5vh; letter-spacing: 3px; align-self: center;">lastfm</span></div>
             <hr>
             <div style="margin:10px;">
-                <div id="last-track-info" class="track-info">
-                    Loading...
+                <div id="track-info-container">
+        <!-- This div will be updated by JavaScript -->
                 </div>
-                <div id="recent-tracks">
-                    <!-- List of the five most recent tracks -->
-                </div>
+
             </div>    
         </div>
 
