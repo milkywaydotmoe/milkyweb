@@ -18,9 +18,54 @@
     <meta property="og:image" content="/favicons/normal.png">
     <meta property="og:description" content="MiLKY-P's website, powered by autism!">
 
+    <script src="lastfm.js" type="module" onload></script>
     <script src="clicksplosion.js" async></script>
     <script src="marquee.js" type="module" onload></script>
     <script src="unix.js" type="module" onload></script>
+    
+
+    <style>
+    .track-info {
+    display: flex;
+    align-items: center;
+    }
+
+    .track-container {
+        display: flex;
+    }
+
+    .album-art img {
+        height: 200px;
+        border-radius: 5px;
+    }
+
+    .track-details {
+        margin-left: 20px; /* Adjusts space between album art and track details */
+    }
+
+    .track-title {
+        font-size: 2em;
+        font-weight: bold;
+    }
+
+    .track-subtext {
+        font-size: 1.1em;
+        color: gray;
+    }
+
+    #recent-tracks {
+        margin-top: 20px;
+    }
+
+    #recent-tracks ul {
+        list-style-type: disc;
+        padding-left: 20px; /* Indents the list */
+    }
+
+    #recent-tracks li {
+        font-size: 0.9em;
+    }
+    </style>
 
 </head>
 
@@ -162,7 +207,7 @@
             <hr>
             <div style="display: flex; center; justify-content: center; height: auto; width: auto;">
                 <div style="text-align: center;">
-                    <div style="text-align: center;">‎‎‎‎‎‎‎‎‎‎‎‎</div>
+                    <div style="text-align: center;"></div>
                     <div id="bonki-ring">
                         <script type="text/javascript" src="https://bonkiscoolsite.neocities.org/bonkiring/bonkiring-widget.js"></script>
                     </div>
@@ -202,9 +247,16 @@
         <!-- Panel 2 -->
         <div class="panel2">
             <hr>
-            <div><span class="welcome" style="font-size: 2.5vh; letter-spacing: 3px; align-self: center;">uhh</span></div>
+            <div><span class="welcome" style="font-size: 2.5vh; letter-spacing: 3px; align-self: center;">lastfm</span></div>
             <hr>
-                <p class="main">Purr for no reason asdflkjaertvlkjasntvkjn (sits on keyboard), but eat a rug and furry furry hairs everywhere oh no human coming lie on counter don't get off counter. Why dog in house? i'm the sole ruler of this home and its inhabitants smelly, stupid dogs, inferior furballs time for night-hunt, human freakout throw down all the stuff in the kitchen. Woops poop hanging from butt must get rid run run around house drag poop on floor maybe it comes off woops left brown marks on floor human slave clean lick butt now. Hate dogs. At four in the morning wake up owner meeeeeeooww scratch at legs and beg for food then cry and yowl until they wake up at two pm jump on window and sleep while observing the bootyful cat next door that u really like but who already has a boyfriend end up making babies with her and let her move in instead of drinking water from the cat bowl, make sure to steal water from the toilet for catching very fast laser pointer. To pet a cat, rub its belly, endure blood and agony, quietly weep, keep rubbing belly unwrap toilet paper so cats go for world domination so love and coo around boyfriend who purrs and makes the perfect moonlight eyes so i can purr and swat the glittery gleaming yarn to him (the yarn is from a $125 sweater), sit on the laptop lick the other cats. Rub against owner because nose is wet. Find something else more interesting dead stare with ears cocked but scream for no reason at 4 am. Always ensure to lay down in such a manner that tail can lightly brush human's nose tuxedo cats always looking dapper for throw down all the stuff in the kitchen so why can't i catch that stupid red dot massacre a bird in the living room and then look like the cutest and most innocent animal on the planet. Mew. Hit you unexpectedly. Small kitty warm kitty little balls of fur jump on human and sleep on her all night long be long in the bed, purr in the morning and then give a bite to every human around for not waking up request food, purr loud scratch the walls, the floor, the windows, the humans, scratch the postman wake up lick paw wake up owner meow meow. Floof tum, tickle bum, jellybean footies curly toes meow to be let in but flee in terror at cucumber discovered on floor or meow meow pee in shoe or find empty spot in cupboard and sleep all day. </p>
+            <div style="margin:10px;">
+                <div id="last-track-info" class="track-info">
+                    Loading...
+                </div>
+                <div id="recent-tracks">
+                    <!-- List of the five most recent tracks -->
+                </div>
+            </div>    
         </div>
 
         <div class="cbox"> 
