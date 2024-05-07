@@ -1,4 +1,4 @@
-const serverEndpoint = 'ws://himawariin-lfm.tepiloxtl.net:443'; // WebSocket endpoint
+const serverEndpoint = 'wss://himawariin-lfm.tepiloxtl.net:443'; // WebSocket endpoint
 const fallbackAlbumArt = 'https://file.garden/ZgvLyuxekygVJeux/other%20assets/mkt.png';
 
 let ws;
