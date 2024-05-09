@@ -18,60 +18,6 @@
     <meta property="og:image" content="/favicons/normal.png">
     <meta property="og:description" content="MiLKY-P's website, powered by autism!">
 
-    <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', (event) => {
-          // Optimize image loading with lazy loading
-          const images = document.querySelectorAll('img');
-          images.forEach(img => {
-            if (!img.hasAttribute('loading')) {
-              img.setAttribute('loading', 'lazy');
-            }
-          });
-
-          // Defer non-critical scripts
-          const deferScripts = [
-            'lastfm.js',
-            'clicksplosion.js',
-            'marquee.js',
-            'unix.js',
-            'darkmode.js',
-            'plushpop.js',
-            'buttons.js',
-            '/oneko/oneko.js'
-          ];
-
-          deferScripts.forEach(src => {
-            const scriptTags = document.querySelectorAll(`script[src="${src}"]`);
-            scriptTags.forEach(scriptTag => {
-              scriptTag.setAttribute('defer', '');
-            });
-          });
-
-          // Add async to external scripts without affecting execution order
-          const asyncScripts = [
-            'https://twemoji.maxcdn.com/v/latest/twemoji.min.js'
-          ];
-
-          asyncScripts.forEach(src => {
-            const scriptTags = document.querySelectorAll(`script[src="${src}"]`);
-            scriptTags.forEach(scriptTag => {
-              scriptTag.setAttribute('async', '');
-            });
-          });
-
-          // Prevent default action without interfering with other scripts
-          const disabledLink = document.getElementById('disabled');
-          if (disabledLink) {
-            disabledLink.addEventListener('click', function(event) {
-              event.preventDefault();
-            });
-          }
-
-          // Additional optimizations can be added here based on further analysis
-        });
-        // Note: This script should be tested thoroughly to ensure compatibility and performance gains.
-    </script>
-
     <script src="lastfm.js" type="module" async></script>
     <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"></script>
     <script src="clicksplosion.js" async></script>
@@ -316,7 +262,7 @@
             <hr>
             <div style="margin:10px;">
                 <div id="track-info-container">
-        <!-- This div will be updated by JavaScript -->
+                Loading last.fm data... If it doesn't work within 10-15 seconds, please send all complaints to webmaster@milkyway.moe
                 </div>
 
             </div>    
