@@ -68,7 +68,7 @@ function updateTrackInfo(data) {
         const tracksHTML = recentTracksList
             .map((track) => {
                 const name = track.name;
-                const artist = track.artist['#text'];
+                const artist = track.artist['name'];
                 return `<li>${name} - ${artist}</li>`;
             })
             .join('');
