@@ -45,7 +45,7 @@ function connectWebSocket() {
 
 function updateTrackInfo(data) {
     const trackInfoContainer = document.getElementById('track-info-container');
-    
+
     if (!trackInfoContainer) {
         console.error("Element with ID 'track-info-container' not found");
         return;
@@ -56,6 +56,8 @@ function updateTrackInfo(data) {
         const trackName = lastTrack.name;
         const artistName = lastTrack.artist['name'];
         const albumName = lastTrack.album['#text'] || 'Unknown Album';
+
+        const lovedSymbol = lastTrack.loved === '1' ? '❤️' : ''; // Check if the track is loved
 
         const albumArtUrl =
             lastTrack.image.find((img) => img.size === 'extralarge')['#text'] ||
@@ -69,7 +71,8 @@ function updateTrackInfo(data) {
             .map((track) => {
                 const name = track.name;
                 const artist = track.artist['name'];
-                return `<li>${name} - ${artist}</li>`;
+                const loved = track.loved === '1' ? '❤️' : ''; // Add heart if track is loved
+                return `<li>${name} - ${artist} ${loved}</li>`;
             })
             .join('');
 
@@ -80,7 +83,7 @@ function updateTrackInfo(data) {
                 </div>
                 <div class="track-details">
                     <strong>Now Playing:</strong> <br>
-                    <strong class="track-title">${trackName}</strong> <br>
+                    <strong class="track-title">${trackName} ${lovedSymbol}</strong> <br>
                     <span class="track-subtext">${artistName} - ${albumName}</span> <br><br>
                     <strong>Recently Played:</strong>
                     <ul>${tracksHTML}</ul>
