@@ -1,1 +1,34 @@
-let message="";function wrapLettersInSpans(t){let a="",n=0;for(let e=0;e<t.length;e++){var s,r=t[e];" "===r?a+="&nbsp;":(s=.1*n+"s",a+=`<span style="animation-delay: ${s};">${r}</span>`,n++)}return a}async function fetchDataAndUpdateMessage(){try{var e=await(await fetch("https://nekoweb.org/api/site/info/milkyway")).json(),t=Intl.DateTimeFormat().resolvedOptions().timeZone,a=new Date(e.updated_at).toLocaleString("en-US",{timeZone:t});message=`MiLKYWay Systems, powered by autism! now at ${e.views} views and counting! last updated `+a,updateMarquee()}catch(e){console.error("Error fetching data:",e)}}function updateMarquee(){document.getElementById("marquee").innerHTML=wrapLettersInSpans(message)}fetchDataAndUpdateMessage();
+const fetchDataAndUpdateMessage = async () => {
+  try {
+    const response = await fetch("https://nekoweb.org/api/site/info/milkyway");
+    const data = await response.json();
+    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const updatedAt = new Date(data.updated_at).toLocaleString("en-US", { timeZone });
+    const message = `MiLKYWay Systems, powered by autism now at ${data.views} views and counting last updated ${updatedAt}`;
+    updateMarquee(message);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+};
+
+const wrapLettersInSpans = (text) => {
+  let result = "";
+  let delay = 0;
+  for (let i = 0; i < text.length; i++) {
+    const char = text[i];
+    if (char === " ") {
+      result += "&nbsp;";
+    } else {
+      result += `<span style="animation-delay: ${delay}s">${char}</span>`;
+      delay += 0.1;
+    }
+  }
+  return result;
+};
+
+const updateMarquee = (message) => {
+  const marqueeElement = document.getElementById("marquee");
+  marqueeElement.innerHTML = wrapLettersInSpans(message);
+};
+
+fetchDataAndUpdateMessage();
