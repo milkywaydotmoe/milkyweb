@@ -54,7 +54,7 @@ function updateTrackInfo(data) {
     if (data.recenttracks && data.recenttracks.track.length > 0) {
         const lastTrack = data.recenttracks.track[0];
         const trackName = lastTrack.name;
-        const artistName = lastTrack.artist['#text'];
+        const artistName = lastTrack.artist['name'];
         const albumName = lastTrack.album['#text'] || 'Unknown Album';
 
         const albumArtUrl =
