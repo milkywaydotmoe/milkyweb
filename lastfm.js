@@ -15,10 +15,16 @@ function getRandomFallbackAlbumArt() {
 }
 
 function getAlbumArt(lastTrack, callback) {
+    const existingArt = getAlbumArtFromWebSocket(lastTrack);
+    if (existingArt) {
+        callback(existingArt);
+        return;
+    }
+
     const artistName = lastTrack.artist['name'];
     const albumName = lastTrack.album['#text'];
 
-    // Start with Fanart.tv, then Discogs, CoverArtArchive, iTunes, then the WebSocket data, and finally fallback
+    // Start with Fanart.tv, then Discogs, CoverArtArchive, iTunes, and finally fallback
     fetchFromFanartTV(artistName, albumName, (imageUrl) => {
         if (imageUrl) {
             callback(imageUrl);
@@ -35,8 +41,8 @@ function getAlbumArt(lastTrack, callback) {
                                 if (imageUrl) {
                                     callback(imageUrl);
                                 } else {
-                                    const wsArt = getAlbumArtFromWebSocket(lastTrack);
-                                    callback(wsArt || getRandomFallbackAlbumArt());
+                                    // If all fail, use a random fallback
+                                    callback(getRandomFallbackAlbumArt());
                                 }
                             });
                         }
@@ -115,7 +121,6 @@ function fetchFromCoverArtArchive(artistName, albumName, callback) {
         .then((response) => {
             if (!response.ok) {
                 throw new Error(`Failed to fetch from Cover Art Archive: ${response.statusText}`);
-            
             }
             return response.json();
         })
@@ -136,7 +141,7 @@ function fetchFromiTunes(artistName, albumName, callback) {
     fetch(itunesEndpoint)
         .then((response) => {
             if (!response.ok) {
-                throw a new Error(`Failed to fetch from iTunes: ${response.statusText}`);
+                throw new Error(`Failed to fetch from iTunes: ${response.statusText}`);
             }
             return response.json();
         })
@@ -147,7 +152,7 @@ function fetchFromiTunes(artistName, albumName, callback) {
         })
         .catch((error) => {
             console.error("Error fetching from iTunes:", error);
-            callback(null); // If all fails, continue to the next step
+            callback(null); // If all fails, use fallback
         });
 }
 
@@ -203,7 +208,7 @@ function connectWebSocket() {
 
         // Attempt to reconnect every 10 seconds
         if (!reconnectInterval) {
-            reconnectInterval is setInterval(connectWebSocket, 10000);
+            reconnectInterval = setInterval(connectWebSocket, 10000);
         }
     };
 }
@@ -241,7 +246,7 @@ function updateTrackInfo(data) {
         const lastTrack = data.recenttracks.track[0];
         const trackName = lastTrack.name || 'Unknown Track';
         const artistName = lastTrack.artist['name'] || 'Unknown Artist';
-        const albumName lastTrack.album['#text'] || 'Unknown Album';
+        const albumName = lastTrack.album['#text'] || 'Unknown Album';
 
         const lovedSymbol = lastTrack.loved === '1' ? '❤️' : ''; // Check if the track is loved
 
