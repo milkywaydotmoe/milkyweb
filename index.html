@@ -6,10 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="index_lite.css" id="stylesheet">
     <link rel="stylesheet" type="text/css" href="fonts.css" id="stylesheet">
+    <link rel="stylesheet" type="text/css" href="lastfm.css" id="stylesheet">
     <link rel="icon" type="image/x-icon" href="/favicons/normal.png"> 
+
+    <script src="buttons.js"></script>
+    <script src="lastfm.js" async></script>
+
     <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css">
     <link rel="stylesheet" type="text/css" href="cursor.css">
     <link rel="stylesheet" type="text/css" href="plushpop.css" id="stylesheet">
+
+    <script src="darkmode.js"></script>
+    <script src="plushpop.js"></script>
 
     <meta name="description" content="MiLKY-P's website, powered by autism!">
     <meta property="og:type" content="website">
@@ -18,65 +26,9 @@
     <meta property="og:image" content="/favicons/normal.png">
     <meta property="og:description" content="MiLKY-P's website, powered by autism!">
 
-    <script src="lastfm.js" type="module" async></script>
-    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"></script>
-    <script src="clicksplosion.js" async></script>
-    <script src="marquee.js" type="module" onload></script>
-    <script src="unix.js" type="module" onload></script>
-    
-
-    <style>
-        /* Basic CSS styling for the track info */
-        .track-container {
-            display: flex;
-            align-items: flex-start;
-            margin: 10px 0;
-        }
-
-        .album-art {
-            flex: 0 0 200px; /* Fix the size of the album art */
-            padding-right: 10px;
-        }
-
-        .album-art img {
-            max-width: 100%;
-            max-height: 200px;
-        }
-
-        .track-details {
-            flex-grow: 1; /* Allow the details to grow */
-        }
-
-        .track-details ul {
-            list-style-type: none; /* Remove default bullet points */
-            margin: 0;
-            padding: 0; /* Reset margins and paddings */
-        }
-
-        .track-details li {
-            padding-left: 20px; /* Add space for the custom bullet */
-            position: relative; /* Position relative for pseudo-element */
-        }
-
-        .track-details li::before {
-            content: '💽'; /* Mini-disc emoji */
-            position: absolute; /* Position the emoji */
-            left: 0; /* Align to the start of the list item */
-        }
-
-        .track-details strong {
-            font-weight: bold;
-        }
-
-        .track-title {
-            font-size: 1.2em;
-        }
-
-        .track-subtext {
-            color: gray;
-            font-size: 0.9em;
-        }
-    </style>
+    <script src="clicksplosion.js"></script>
+    <script src="marquee.js"></script>
+    <script src="unix.js"></script>
 
 </head>
 
@@ -257,12 +209,9 @@
 
         <!-- Panel 2 -->
         <div class="panel2">
-            <hr>
-            <div><span class="welcome" style="font-size: 2.5vh; letter-spacing: 3px; align-self: center;">lastfm</span></div>
-            <hr>
             <div style="margin:10px;">
                 <div id="track-info-container">
-                Loading last.fm data... If it doesn't work within 10-15 seconds, please send all complaints to webmaster@milkyway.moe
+                Loading last.fm data... If it doesn't work within 10-15 seconds, please send all complaints to webmaster@milkyway.moe // Scrobbler written by Texpiloxtl @ texpilotl.net
                 </div>
 
             </div>    
@@ -307,9 +256,7 @@
     </div>
 
     <!-- JavaScript -->
-    <script src="darkmode.js" async></script>
-    <script src="plushpop.js" type="module" async></script>
-    <script src="buttons.js" type="module"></script>
+
 
     <!--[if IE]>
     <script src="/oneko/oneko-ie6.js"></script>

@@ -4,7 +4,7 @@ const fetchDataAndUpdateMessage = async () => {
     const data = await response.json();
     const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     const updatedAt = new Date(data.updated_at).toLocaleString("en-US", { timeZone });
-    const message = `MiLKYWay Systems, powered by autism now at ${data.views} views and counting last updated ${updatedAt}`;
+    const message = `MiLKYWay Systems, powered by autism!! now at ${data.views} views and counting last updated ${updatedAt}`;
     updateMarquee(message);
   } catch (error) {
     console.error("Error fetching data:", error);

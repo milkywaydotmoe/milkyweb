@@ -1,0 +1,53 @@
+/* Basic CSS styling for the track info */
+.track-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 1rem 0; /* Use rem for spacing based on root font size */
+}
+
+.album-art {
+    flex: 0 0 30%; /* Use a percentage to maintain proportional size */
+    padding-right: 1rem; /* Maintain spacing with a relative unit */
+}
+
+.album-art img {
+    max-width: 100%; /* Allow image to scale within its container */
+    max-height: 100%; /* Use vh to maintain a responsive height */
+    outline-width: 0.0625rem; /* 1px in rem for outline */
+    outline-style: solid; /* Keeps the outline solid */
+}
+
+.track-details {
+    flex-grow: 1; /* Allow the details to grow */
+}
+
+.track-details ul {
+    list-style-type: none; /* Remove default bullet points */
+    margin: 0;
+    padding: 0; /* Reset margins and paddings */
+}
+
+.track-details li {
+    padding-left: 1.25rem; /* Responsive padding for list items */
+    position: relative; /* Position relative for pseudo-element */
+}
+
+.track-details li::before {
+    content: '💽'; /* Mini-disc emoji */
+    position: absolute; /* Position the emoji */
+    left: 0; /* Align to the start of the list item */
+}
+
+.track-details strong {
+    font-weight: bold; /* Keep the strong tag bold */
+}
+
+.track-title {
+    font-size: 1.5rem; /* Responsive font size for track title */
+}
+
+.track-subtext {
+    color: gray; /* Keep the subtext in gray */
+    font-size: 0.9rem; /* Responsive font size for subtext */
+}
