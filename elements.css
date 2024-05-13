@@ -64,3 +64,21 @@ html {
 * {
     cursor: url('https://milkyway.nekoweb.org/cursor/default-cursor.png'), auto !important;
 }
+
+@font-face {
+    font-family:dosfont2;
+    src:url(/fonts/Web437_NEC_APC3_8x16.woff)
+}
+
+.follow {
+    background-color:#cfc;
+    border:1px solid #7f7;
+    border-radius:2px;
+    color:#2b2;
+    padding:2px 10px;
+    cursor:pointer;
+    font-family:dosfont2;
+    font-size:12px;
+    margin:0 auto;
+    display:block
+}
