@@ -1,4 +1,4 @@
-{"name": "velcrow101", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/velcrow101", "site": "https://www.tumblr.com/velcrow101"}
+{"name": "velcrow", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/velcrow101", "site": "https://www.tumblr.com/velcrow101"}
 {"name": "bits", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/bitsy.jpg", "site": "https://twitter.com/TH3M1SF1TSP4CK"}
 {"name": "cass", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/cass.jpg", "site": "https://owly.fans/"}
 {"name": "lunanesence", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/luna.jpg", "site": "https://lunanescence.uwu.ai/"}
@@ -17,3 +17,9 @@
 {"name": "kokoscript", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/koko.png", "site": "https://yiff.life/@koko"}
 {"name": "can of soda", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/sodaimage.png", "site": "https://www.youtube.com/channel/UC5N1vLR9ISkIUA-EhCXc-SQ"}
 {"name": "cinnamoroll", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/cinnamoroll.jpg", "site": "https://twitter.com/cinnamon_sanrio"}
+
+{"name": "elle", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/elle.jpg", "site": "https://ellestuff.neocities.org/"}
+{"name": "mozzi", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/mozzi.jpg", "site": "https://twitter.com/Specterart"}
+{"name": "leliel", "image": "https://lel.nekoweb.org/images/upside_down_lel.avif", "site": "https://lel.nekoweb.org/"}
+{"name": "tepiloxtl", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/bundle.png", "site": "https://tepiloxtl.net/"}
+{"name": "WVRMOE", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/wvr.jpg", "site": "https://wvr.moe"}
