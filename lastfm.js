@@ -259,63 +259,24 @@ function updateTrackInfo(data) {
                 return `<li>${name} - ${artist} ${loved}</li>`;
             }).join('');
 
-            processImage(albumArtUrl, (ditheredImageUrl) => {
-                trackInfoContainer.innerHTML = `
-                    <div class="track-container">
-                        <div class="album-art">
-                            <img src="${ditheredImageUrl}" alt="${trackName} album art" onerror="this.src='${getRandomFallbackAlbumArt()}'" />
-                        </div>
-                        <div class="track-details">
-                            <strong>Now Playing:</strong> <br>
-                            <strong class="track-title">${trackName} ${lovedSymbol}</strong> <br>
-                            <span class="track-subtext">${artistName} - ${albumName}</span> <br><br>
-                            <strong>Recently Played:</strong>
-                            <ul>${tracksHTML}</ul>
-                        </div>
+            trackInfoContainer.innerHTML = `
+                <div class="track-container">
+                    <div class="album-art">
+                        <img src="${albumArtUrl}" alt="${trackName} album art" onerror="this.src='${getRandomFallbackAlbumArt()}'" />
                     </div>
-                `;
-            });
+                    <div class="track-details">
+                        <strong>Now Playing:</strong> <br>
+                        <strong class="track-title">${trackName} ${lovedSymbol}</strong> <br>
+                        <span class="track-subtext">${artistName} - ${albumName}</span> <br><br>
+                        <strong>Recently Played:</strong>
+                        <ul>${tracksHTML}</ul>
+                    </div>
+                </div>
+            `;
         });
     } else {
         trackInfoContainer.innerText = 'No recent tracks found';
     }
-}
-
-function processImage(imageUrl, callback) {
-    const img = new Image();
-    img.crossOrigin = 'Anonymous'; // Needed to avoid CORS issues
-    img.src = imageUrl;
-
-    img.onload = () => {
-        const canvas = document.createElement('canvas');
-        const context = canvas.getContext('2d');
-
-        canvas.width = 200;
-        canvas.height = 200;
-
-        // Draw the image on the canvas with the desired size
-        context.drawImage(img, 0, 0, 200, 200);
-
-        // Get the image data from the canvas
-        const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
-
-        // Create a new dither instance
-        const dither = new Ditherjs();
-
-        // Apply dithering to the image data
-        const ditheredImageData = dither.ditherImageData(imageData, Ditherjs.matrices.FloydSteinberg);
-
-        // Put the dithered image data back to the canvas
-        context.putImageData(ditheredImageData, 0, 0);
-
-        // Convert the canvas to a data URL and pass it to the callback
-        const ditheredImageUrl = canvas.toDataURL();
-        callback(ditheredImageUrl);
-    };
-
-    img.onerror = () => {
-        callback(getRandomFallbackAlbumArt());
-    };
 }
 
 // Start the WebSocket connection
