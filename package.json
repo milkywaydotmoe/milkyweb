@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "ditherjs": "^0.10.0",
     "hexo": "^7.1.1"
   }
 }
