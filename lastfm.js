@@ -1,4 +1,3 @@
-// WebSocket endpoint and a set of fallback album art images
 const serverEndpoint = 'wss://scrobbled.tepiloxtl.net/ws/get_recent_tracks/milkywaydotmoe'; // WebSocket endpoint
 const fallbackAlbumArt = [
     'https://example.com/fallback1.png',
@@ -24,7 +23,6 @@ function getAlbumArt(lastTrack, callback) {
     const artistName = lastTrack.artist['name'];
     const albumName = lastTrack.album['#text'];
 
-    // Start with Fanart.tv, then Discogs, CoverArtArchive, iTunes, and finally fallback
     fetchFromFanartTV(artistName, albumName, (imageUrl) => {
         if (imageUrl) {
             callback(imageUrl);
@@ -41,7 +39,6 @@ function getAlbumArt(lastTrack, callback) {
                                 if (imageUrl) {
                                     callback(imageUrl);
                                 } else {
-                                    // If all fail, use a random fallback
                                     callback(getRandomFallbackAlbumArt());
                                 }
                             });
@@ -53,7 +50,6 @@ function getAlbumArt(lastTrack, callback) {
     });
 }
 
-// Fetch from Fanart.tv
 function fetchFromFanartTV(artistName, albumName, callback) {
     const fanartTVEndpoint = `https://webservice.fanart.tv/v3/music/${encodeURIComponent(artistName)}/albums?api_key=YOUR_FANART_TV_API_KEY`;
 
@@ -71,11 +67,10 @@ function fetchFromFanartTV(artistName, albumName, callback) {
         })
         .catch((error) => {
             console.error("Error fetching from Fanart.tv:", error);
-            callback(null); // Continue to the next step if failed
+            callback(null);
         });
 }
 
-// Fetch from Discogs
 function fetchFromDiscogs(artistName, albumName, callback) {
     const discogsEndpoint = `https://api.discogs.com/database/search?artist=${encodeURIComponent(artistName)}&release_title=${encodeURIComponent(albumName)}&key=YOUR_DISCOGS_CONSUMER_KEY&secret=YOUR_DISCOGS_CONSUMER_SECRET`;
 
@@ -93,11 +88,10 @@ function fetchFromDiscogs(artistName, albumName, callback) {
         })
         .catch((error) => {
             console.error("Error fetching from Discogs:", error);
-            callback(null); // Continue to the next step if failed
+            callback(null);
         });
 }
 
-// Fetch from Cover Art Archive
 function fetchFromCoverArtArchive(artistName, albumName, callback) {
     const musicBrainzEndpoint = `https://musicbrainz.org/ws/2/release-group/?query=artist:${encodeURIComponent(artistName)} AND release:${encodeURIComponent(albumName)}&fmt=json`;
 
@@ -130,11 +124,10 @@ function fetchFromCoverArtArchive(artistName, albumName, callback) {
         })
         .catch((error) => {
             console.error("Error fetching from Cover Art Archive:", error);
-            callback(null); // Continue to the next step if failed
+            callback(null);
         });
 }
 
-// Fetch from iTunes Album Art Database
 function fetchFromiTunes(artistName, albumName, callback) {
     const itunesEndpoint = `https://itunes.apple.com/search?term=${encodeURIComponent(artistName + " " + albumName)}&entity=album`;
 
@@ -152,11 +145,10 @@ function fetchFromiTunes(artistName, albumName, callback) {
         })
         .catch((error) => {
             console.error("Error fetching from iTunes:", error);
-            callback(null); // If all fails, use fallback
+            callback(null);
         });
 }
 
-// Utility function to get album art from WebSocket data
 function getAlbumArtFromWebSocket(lastTrack) {
     const priority = ['extralarge', 'large', 'medium', 'small'];
     for (const size of priority) {
@@ -165,14 +157,13 @@ function getAlbumArtFromWebSocket(lastTrack) {
             return img['#text'];
         }
     }
-    return null; // If no image is found
+    return null;
 }
 
-// WebSocket setup
 let ws;
 let reconnectInterval;
 let isConnected = false;
-let lastDataHash = ''; // To track the last received data
+let lastDataHash = '';
 
 function connectWebSocket() {
     ws = new WebSocket(serverEndpoint);
@@ -186,11 +177,8 @@ function connectWebSocket() {
             reconnectInterval = null;
         }
 
-        // Request the latest data immediately after connecting
         requestUpdate();
-
-        // Set a periodic message to request the latest data every 10 seconds
-        setInterval(requestUpdate, 10000); // 10-second interval
+        setInterval(requestUpdate, 10000);
     };
 
     ws.onmessage = (event) => {
@@ -206,7 +194,6 @@ function connectWebSocket() {
         console.warn('WebSocket connection closed');
         isConnected = false;
 
-        // Attempt to reconnect every 10 seconds
         if (!reconnectInterval) {
             reconnectInterval = setInterval(connectWebSocket, 10000);
         }
@@ -216,7 +203,7 @@ function connectWebSocket() {
 function requestUpdate() {
     if (isConnected) {
         console.log("Requesting update from WebSocket");
-        ws.send('REQUEST_UPDATE'); // Send a request for new data
+        ws.send('REQUEST_UPDATE');
     }
 }
 
@@ -226,8 +213,8 @@ function processWebSocketMessage(data) {
         const dataHash = JSON.stringify(parsedData);
 
         if (dataHash !== lastDataHash) {
-            updateTrackInfo(parsedData); // Refresh display with new data
-            lastDataHash = dataHash; // Store the hash of the current data
+            updateTrackInfo(parsedData);
+            lastDataHash = dataHash;
         }
     } catch (error) {
         console.error("Error parsing WebSocket data:", error);
@@ -248,10 +235,10 @@ function updateTrackInfo(data) {
         const artistName = lastTrack.artist['name'] || 'Unknown Artist';
         const albumName = lastTrack.album['#text'] || 'Unknown Album';
 
-        const lovedSymbol = lastTrack.loved === '1' ? '❤️' : ''; // Check if the track is loved
+        const lovedSymbol = lastTrack.loved === '1' ? '❤️' : '';
 
         getAlbumArt(lastTrack, (albumArtUrl) => {
-            const recentTracksList = data.recenttracks.track.slice(1, 6); // Get the next five tracks
+            const recentTracksList = data.recenttracks.track.slice(1, 6);
             const tracksHTML = recentTracksList.map((track) => {
                 const name = track.name || 'Unknown Track';
                 const artist = track.artist['name'] || 'Unknown Artist';
@@ -279,5 +266,6 @@ function updateTrackInfo(data) {
     }
 }
 
-// Start the WebSocket connection
-connectWebSocket();
+document.addEventListener('DOMContentLoaded', () => {
+    connectWebSocket();
+});

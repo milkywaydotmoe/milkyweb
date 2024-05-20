@@ -29,7 +29,7 @@
 }
 
 .track-details li {
-    padding-left: 1.25rem; /* Responsive padding for list items */
+    padding-left: 1.15rem; /* Responsive padding for list items */
     position: relative; /* Position relative for pseudo-element */
 }
 
