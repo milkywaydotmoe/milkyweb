@@ -13,140 +13,11 @@ function getRandomFallbackAlbumArt() {
     return fallbackAlbumArt[randomIndex];
 }
 
-function getAlbumArt(lastTrack, callback) {
-    const existingArt = getAlbumArtFromWebSocket(lastTrack);
-    if (existingArt) {
-        callback(existingArt);
-        return;
+function truncateText(text, maxLength) {
+    if (text.length > maxLength) {
+        return text.substring(0, maxLength - 3) + '...';
     }
-
-    const artistName = lastTrack.artist['name'];
-    const albumName = lastTrack.album['#text'];
-
-    fetchFromFanartTV(artistName, albumName, (imageUrl) => {
-        if (imageUrl) {
-            callback(imageUrl);
-        } else {
-            fetchFromDiscogs(artistName, albumName, (imageUrl) => {
-                if (imageUrl) {
-                    callback(imageUrl);
-                } else {
-                    fetchFromCoverArtArchive(artistName, albumName, (imageUrl) => {
-                        if (imageUrl) {
-                            callback(imageUrl);
-                        } else {
-                            fetchFromiTunes(artistName, albumName, (imageUrl) => {
-                                if (imageUrl) {
-                                    callback(imageUrl);
-                                } else {
-                                    callback(getRandomFallbackAlbumArt());
-                                }
-                            });
-                        }
-                    });
-                }
-            });
-        }
-    });
-}
-
-function fetchFromFanartTV(artistName, albumName, callback) {
-    const fanartTVEndpoint = `https://webservice.fanart.tv/v3/music/${encodeURIComponent(artistName)}/albums?api_key=YOUR_FANART_TV_API_KEY`;
-
-    fetch(fanartTVEndpoint)
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error(`Failed to fetch from Fanart.tv: ${response.statusText}`);
-            }
-            return response.json();
-        })
-        .then((data) => {
-            const album = data.albums?.find((album) => album.name.toLowerCase() === albumName.toLowerCase());
-            const imageUrl = album?.musicbanner || null;
-            callback(imageUrl);
-        })
-        .catch((error) => {
-            console.error("Error fetching from Fanart.tv:", error);
-            callback(null);
-        });
-}
-
-function fetchFromDiscogs(artistName, albumName, callback) {
-    const discogsEndpoint = `https://api.discogs.com/database/search?artist=${encodeURIComponent(artistName)}&release_title=${encodeURIComponent(albumName)}&key=YOUR_DISCOGS_CONSUMER_KEY&secret=YOUR_DISCOGS_CONSUMER_SECRET`;
-
-    fetch(discogsEndpoint)
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error(`Failed to fetch from Discogs: ${response.statusText}`);
-            }
-            return response.json();
-        })
-        .then((data) => {
-            const release = data.results?.find((r) => r.type === 'album');
-            const imageUrl = release?.cover_image || null;
-            callback(imageUrl);
-        })
-        .catch((error) => {
-            console.error("Error fetching from Discogs:", error);
-            callback(null);
-        });
-}
-
-function fetchFromCoverArtArchive(artistName, albumName, callback) {
-    const musicBrainzEndpoint = `https://musicbrainz.org/ws/2/release-group/?query=artist:${encodeURIComponent(artistName)} AND release:${encodeURIComponent(albumName)}&fmt=json`;
-
-    fetch(musicBrainzEndpoint)
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error(`Failed to fetch from MusicBrainz: ${response.statusText}`);
-            }
-            return response.json();
-        })
-        .then((data) => {
-            const releaseGroups = data.release_groups;
-            if (releaseGroups && releaseGroups.length > 0) {
-                const firstGroup = releaseGroups[0];
-                const coverArtEndpoint = `https://coverartarchive.org/release-group/${firstGroup.id}`;
-                return fetch(coverArtEndpoint);
-            } else {
-                throw new Error("No release groups found");
-            }
-        })
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error(`Failed to fetch from Cover Art Archive: ${response.statusText}`);
-            }
-            return response.json();
-        })
-        .then((data) => {
-            const imageUrl = data.images?.[0]?.image || null;
-            callback(imageUrl);
-        })
-        .catch((error) => {
-            console.error("Error fetching from Cover Art Archive:", error);
-            callback(null);
-        });
-}
-
-function fetchFromiTunes(artistName, albumName, callback) {
-    const itunesEndpoint = `https://itunes.apple.com/search?term=${encodeURIComponent(artistName + " " + albumName)}&entity=album`;
-
-    fetch(itunesEndpoint)
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error(`Failed to fetch from iTunes: ${response.statusText}`);
-            }
-            return response.json();
-        })
-        .then((data) => {
-            const album = data.results?.find((album) => album.collectionName.toLowerCase() === albumName.toLowerCase());
-            const imageUrl = album?.artworkUrl100?.replace('100x100', '600x600') || null;
-            callback(imageUrl);
-        })
-        .catch((error) => {
-            console.error("Error fetching from iTunes:", error);
-            callback(null);
-        });
+    return text;
 }
 
 function getAlbumArtFromWebSocket(lastTrack) {
@@ -157,7 +28,7 @@ function getAlbumArtFromWebSocket(lastTrack) {
             return img['#text'];
         }
     }
-    return null;
+    return null; // If no image is found
 }
 
 let ws;
@@ -237,30 +108,30 @@ function updateTrackInfo(data) {
 
         const lovedSymbol = lastTrack.loved === '1' ? '❤️' : '';
 
-        getAlbumArt(lastTrack, (albumArtUrl) => {
-            const recentTracksList = data.recenttracks.track.slice(1, 6);
-            const tracksHTML = recentTracksList.map((track) => {
-                const name = track.name || 'Unknown Track';
-                const artist = track.artist['name'] || 'Unknown Artist';
-                const loved = track.loved === '1' ? '❤️' : '';
-                return `<li>${name} - ${artist} ${loved}</li>`;
-            }).join('');
+        const albumArtUrl = getAlbumArtFromWebSocket(lastTrack) || getRandomFallbackAlbumArt();
 
-            trackInfoContainer.innerHTML = `
-                <div class="track-container">
-                    <div class="album-art">
-                        <img src="${albumArtUrl}" alt="${trackName} album art" onerror="this.src='${getRandomFallbackAlbumArt()}'" />
-                    </div>
-                    <div class="track-details">
-                        <strong>Now Playing:</strong> <br>
-                        <strong class="track-title">${trackName} ${lovedSymbol}</strong> <br>
-                        <span class="track-subtext">${artistName} - ${albumName}</span> <br><br>
-                        <strong>Recently Played:</strong>
-                        <ul>${tracksHTML}</ul>
-                    </div>
+        const recentTracksList = data.recenttracks.track.slice(1, 6);
+        const tracksHTML = recentTracksList.map((track) => {
+            const name = truncateText(track.name || 'Unknown Track', 20);
+            const artist = truncateText(track.artist['name'] || 'Unknown Artist', 20);
+            const loved = track.loved === '1' ? '❤️' : '';
+            return `<li>${name} - ${artist} ${loved}</li>`;
+        }).join('');
+
+        trackInfoContainer.innerHTML = `
+            <div class="track-container">
+                <div class="album-art">
+                    <img src="${albumArtUrl}" alt="${trackName} album art" onerror="this.src='${getRandomFallbackAlbumArt()}'" />
                 </div>
-            `;
-        });
+                <div class="track-details">
+                    <strong>Now Playing:</strong> <br>
+                    <strong class="track-title">${trackName} ${lovedSymbol}</strong> <br>
+                    <span class="track-subtext">${artistName} - ${albumName}</span> <br>
+                    <strong>Recently Played:</strong>
+                    <ul>${tracksHTML}</ul>
+                </div>
+            </div>
+        `;
     } else {
         trackInfoContainer.innerText = 'No recent tracks found';
     }
