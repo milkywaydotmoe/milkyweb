@@ -234,7 +234,7 @@ img{
         "pan1 pan1 pan1 pan1 pan1 pan2 pan2 pan2 pan2 pan2"
         "foot foot foot foot foot foot foot foot foot foot";
     width: 100%;
-    height: 190vh; /* Make the container take full viewport height */
+    height: 200vh; /* Make the container take full viewport height */
 }
 
 .head {
