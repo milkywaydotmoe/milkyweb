@@ -282,6 +282,7 @@ img{
     background-color: #121212;
     width: 100%;
     border: 1px solid #050505;
+    height: auto;
     text-align: center;
 }
 
