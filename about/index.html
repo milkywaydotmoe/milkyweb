@@ -1,115 +1,387 @@
-<style>
-body {font-size: 11px;
-font-family: tahoma;
-letter-spacing: 1px;
-color:#636159;
-background-color: #BDB2A8;
-background-image: url('http://cbimg6.com/layouts/10/07/36329ab.png');
-background-repeat: repeat-y}
-
-i{font-family: georgia; letter-spacing: 1px; color: 555555}
-
-h1 
-{font: normal 10px verdana; 
-text-transform:uppercase;
-color: #a29396; 
-letter-spacing: 5px;  
-text-align: left;  
-margin-bottom:5px}
-
-textarea {font-family:small fonts;  
-font-size: 7px; 
-font-weight: normal; 
-text-transform:uppercase;  
-color: 444444; 
-width: 150px; 
-height: 30px; 
-background-color: #fcfaf0; 
-border: 1px dotted; 
-border-color: 666666}
-
-a:link, a:visited, a:active
-{color: #c4b0af; text-decoration: none}
-a:hover{color: #a4736c; cursor: help}
-
-a:link.nav, a:visited.nav, a:active.nav
-{color: #89605e;
-display: block;
-background-color: #fff;
-font: 7px arial narrow;
-text-transform: uppercase;
-line-height: 12px;
-letter-spacing: 6px;
-text-decoration: none}
-a:hover.nav{color: #e4dac1; cursor:default}
-
-#content 
-{text-align: justify;
-position: absolute; 
-width: 447px;
-margin-left: 217px; 
-top: 430px;
-left: 0%;
-z-index: 5} 
-
-#navbar 
-{text-align: center;
-width: 125px;
-height: 200px; 
-position: absolute; 
-left: 0%;
-margin-left: 217px; 
-top: 190px; 
-z-index: 7} 
-
-</style>
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>aboutmii</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="https://unpkg.com/98.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #008080; /* Background color specified */
+            margin: 0;
+            text-rendering: optimizeSpeed; /* Set text rendering to optimize legibility */
+        }
+        .profile-box {
+            width: 600px;
+        }
+        .profile-pic {
+            margin-right: 20px;
+            background-size: cover;
+            background-position: center;
+            image-rendering: pixelated; /* Use nearest neighbor scaling for images */
+        }
+        .bio {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 0;
+            margin: 0;
+        }
+        .bio h2, .bio p {
+            margin: 0;
+            padding: 0;
+        }
+        .bio p {
+            margin-top: 10px;
+        }
+    </style>
 </head>
+<body>
+<div class="window profile-box">
+<div class="title-bar">
+    <div class="title-bar-text">Profile</div>
+    <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <a href="/"><button aria-label="Close"></button></a>
+    </div>
+</div>
+<div class="window-body">
+    <div style="display: flex;">
+        <div class="profile-pic"><img src="/assets/spinnymkt.gif"></div>
+        <div class="bio">
+            <h2 style="font-size: 24px;">About Me!~</h2>
+            <p>Hello!!! My name's Hima, aka MILKY! I made this website! I like to do lots of stuff, like making graphics, music, fonts, and websites! I was born June 30, 2006! I was born and currently live in the Philippines. (cringe) </p>
+            <br>
+            <p><b>My Pronouns: </b>she/they</p>
+            <p><b>My Age: </b><span id="age"></span></p>
+            <p><b>My Nationality: </b>Filipino</p>
+            <p><b>My Fav Color: </b>pastel greens and blues!</p>
+            <p><b>My Height: </b>166cm</p>
+            <p><b>My Relationship Status: </b>taken!</p>
+            <p><b>My Sexual Preference: </b>pansexual</p>
+            <p><b>My Gender Identity: </b>dude i dont even know the answer.</p>
+            <br>
+            <p><b>Here's my likes and dislikes!</b></p><br>
+            <ul class="tree-view">
+  <li>
+    <details open>
+	<summary>Things I Like</summary>
+	    <ul>
+	    <li>
+	        <details closed>
+	            <summary>Music</summary>
+	            <ul>
+	                <li>EDM</li>
+	                <li>Hip-hop</li>
+	                <li>Otamatones</li>
+	                <li>Synthesizers</li>
+	                <li>DNB (Drum and Bass)</li>
+	                <li>IDM (Intelligent Dance Music)</li>
+	                <li>Gospel choir</li>
+	                <li>DJing</li>
+	                <li>Drumming</li>
+	                <li>Music equipment</li>
+	            </ul>
+	        </details>
+	    </li>
 
-<div style=" position: absolute; left: 0px; top: 0px; padding: 0px; margin: 0px; z-index: 0;"><img src="http://cbimg6.com/layouts/10/07/36329aa.png" border="0"></DIV>
+	    <li>
+	        <details closed>
+	            <summary>Gaming</summary>
+	            <ul>
+	                <li>Retro gaming</li>
+	                <li>Maimai</li>
+	                <li>Chunithm</li>
+	                <li>Project Sekai</li>
+	                <li>Puyopuyo</li>
+	                <li>Minecraft</li>
+	                <li>Tetris</li>
+	                <li>Geometry Dash</li>
+	                <li>Pokemon</li>
+	                <li>Espgaluda</li>
+	                <li>Touhou</li>
+	                <li>Cookie Run Kingdom</li>
+	                <li>Arcaea</li>
+	                <li>Rubik's cubes</li>
+	                <li>Stardew Valley</li>
+	                <li>VRChat</li>
+	            </ul>
+	        </details>
+	    </li>
 
-<div id="content"> <h1>ABOUT ME!!!12!1!1!11.</h1> 
-Hello!!! My name's Hima, aka MILKY! I made this website! I like to do lots of stuff, like making graphics, music, fonts, and websites!
-<br><br>
+	    <li>
+	        <details closed>
+	            <summary>Visual and Entertainment</summary>
+	            <ul>
+	                <li>Anime</li>
+	                <li>Manga</li>
+	                <li>3D Renders</li>
+	                <li>Pixelart</li>
+	                <li>Graphic Design</li>
+	                <li>Typography</li>
+	                <li>Logo Design</li>
+	                <li>Character Design</li>
+	                <li>Watercolors</li>
+	                <li>ASCII art</li>
+	            </ul>
+	        </details>
+	    </li>
 
-I was born June 30, 2006! I was born and currently live in the Philippines. (cringe)
-<br><br>
+	    <li>
+	        <details closed>
+	            <summary>Tech and Computing</summary>
+	            <ul>
+	                <li>Linux</li>
+	                <li>Pixifonts</li>
+	                <li>Dual monitor setups</li>
+	                <li>Mechanical keyboards</li>
+	                <li>Coding</li>
+	                <li>MiniDiscs</li>
+	                <li>Blender</li>
+	                <li>The NEC PC-98 PC compatible</li>
+	                <li>The Commodore Amiga</li>
+	            </ul>
+	        </details>
+	    </li>
 
-<b>My pronouns are:</b> she/they<br>
-<b>My age is:</b> 17.98 years<br>
-<b>My nationality:</b> filipino<br>
-<b>My fav color:</b> pastel greens and blues<br>
-<b>My height:</b> 166cm<br>
-<b>My relationship status:</b> taken!!1<br>
-<b>My sexual preference:</b> pansexual<br>
-<b>My gender identity:</b> you'll never know~~~<br>
-<br><br>
-
-<b>I like:</b><br>edm, hip-hop, retro gaming, maimai, chunithm, project sekai, otamatones, synthesizers, puyopuyo, minecraft, tetris, geometry dash, pokemon, espgaluda, touhou, plushies, vrchat, manga, glasses, button pins, travelling, cookie run kingdom, arcaea, the nec pc-98 pc compatible, the commodore amiga, dnb, idm, linux, pixifonts, dual monitor setups, mechanical keyboards, djing, drumming, music equipment, coding, gospel choir, stardew valley, rubiks cubes, speculoos cookie butter and ascii art!
-<br><br>
-
-
-<b>I dislike:</b><br>
-games with brown gritty aesthetics, bitter things, headaches, finger pain, being cold with no blankie, running out of battery, my bank account, apple's paywalling, and my emotional distance with people irl
-<br><br>
-
-<b>My fav chars!!:</b><br>
-Emu Otori (Proseka), Tsukasa Tenma (Proseka), Cinnamoroll (Sanrio), Cirno (Touhou), Konata Izumi (Lucky Star), Tiki (Fire Emblem), Draco Centauros (Puyo Puyo), Hitori Gotoh (Bocchi The Rock!), Milk (Maimai), Rinu (Strawberry Prince), Fuwawa + Mococo Abyssgard (HoloEN), Rin Penrose (idolEN), Pipkin Pippa (Phase Connect), Kagamine Rin (Vocaloid), Sprigatito (Pokemon), Dropout Bear (KW), DJ Potaro (Porter Robinson), Pompom (Honkai Star Rail), Harvey (Stardew Valley), Xenia (Linux), Milkyway Cookie (CRK), Blade (NU:Carnival), Nahida (Genshin Impact), Trip (Sonic the Hedgehog), Jerry Attricks (Scott The Woz), Monika (DDLC), Chino Kafuu (Is The Order A Rabbit), Rem (Re:Zero), Louise de la Vallière (Familiar of Zero)
-<br><br>
-
-<br><br><br>
-<b>theme by aalekto.v.</b>
+	    <li>
+	        <details closed>
+	            <summary>Miscellaneous</summary>
+	            <ul>
+	                <li>Travelling</li>
+	                <li>Glasses</li>
+	                <li>Plushies</li>
+	                <li>Speculoos cookie butter</li>
+	                <li>Button pins</li>
+	            </ul>
+	        </details>
+	    </li>
+	</ul>
+  </li>
+  <li>
+  	<details closed>
+	<summary>Things I Dislike</summary>         
+    <ul>
+      <li>Games with brown gritty aesthetics</li>
+      <li>Bitter things</li>
+      <li>Headaches</li>
+      <li>Finger pain</li>
+      <li>Being cold with no blankie</li>
+      <li>Running out of battery</li>
+      <li>My bank account</li>
+      <li>Apple's paywalling</li>
+      <li>My emotional distance with people IRL</li>
+    </ul>
+  </li>
+</ul>
+	<p><b>Here's a list of my favorite characters!</b></p>
+	<div class="sunken-panel" style="height: 380px; width: 481px; overflow-y: scroll;">
+	  <table class="interactive">
+	    <thead>
+	      <tr>
+	        <th>Name</th>
+	        <th>Series</th>
+	        <th>Character Origin / Genre</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <tr>
+	        <td>Emu Otori</td>
+	        <td>Project Sekai: COLORFUL STAGE!</td>
+	        <td>Game / Gacha</td>
+	      </tr>
+	      <tr>
+	        <td>Tsukasa Tenma</td>
+	        <td>Project Sekai: COLORFUL STAGE!</td>
+	        <td>Game / Gacha</td>
+	      </tr>
+	      <tr>
+	        <td>Cinnamoroll</td>
+	        <td>Fluffy Fluffy Cinnamoroll</td>
+	        <td>Mascot / Sanrio</td>
+	      </tr>
+	      <tr>
+	        <td>Cirno</td>
+	        <td>Touhou Project</td>
+	        <td>Game / Bullet Hell</td>
+	      </tr>
+	      <tr>
+	        <td>Konata Izumi</td>
+	        <td>Lucky Star!</td>
+	        <td>Anime / Slice Of Life</td>
+	      </tr>
+	      <tr>
+	        <td>Tiki</td>
+	        <td>Fire Emblem: Awakening</td>
+	        <td>Game / T-RPG</td>
+	      </tr>
+	      <tr>
+	        <td>Draco Centauros</td>
+	        <td>Puyo Puyo Series</td>
+	        <td>Game / Puzzle</td>
+	      </tr>
+	      <tr>
+	        <td>Hitori Gotoh</td>
+	        <td>Bocchi The Rock!</td>
+	        <td>Anime / Slice Of Life</td>
+	      </tr>
+	      <tr>
+	        <td>Milk</td>
+	        <td>maimai DX UNiVERSE PLUS</td>
+	        <td>Game / Rhythm</td>
+	      </tr>
+	      <tr>
+	        <td>Rinu</td>
+	        <td>Strawberry Prince</td>
+	        <td>Music / Idol</td>
+	      </tr>
+	      <tr>
+	        <td>Fuwawa + Mococo Abyssgard</td>
+	        <td>Hololive EN</td>
+	        <td>Internet / VTuber</td>
+	      </tr>
+	      <tr>
+	        <td>Rin Penrose</td>
+	        <td>idolEN</td>
+	        <td>Internet / VTuber</td>
+	      </tr>
+	      <tr>
+	        <td>Pipkin Pippa</td>
+	        <td>Phase Connect</td>
+	        <td>Internet / VTuber</td>
+	      </tr>
+	      <tr>
+	        <td>Kagamine Rin</td>
+	        <td>Vocaloid</td>
+	        <td>Software / Vocaloid</td>
+	      </tr>
+	      <tr>
+	        <td>Sprigatito</td>
+	        <td>Pokemon Scarlet/Violet</td>
+	        <td>Game / RPG</td>
+	      </tr>
+	      <tr>
+	        <td>Dropout Bear</td>
+	        <td>Kanye West</td>
+	        <td>Mascot / Music</td>
+	      </tr>
+	      <tr>
+	        <td>DJ Potaro</td>
+	        <td>Porter Robinson: Second Sky</td>
+	        <td>Mascot / Music</td>
+	      </tr>
+	      <tr>
+	        <td>Pompom</td>
+	        <td>Honkai: Star Rail</td>
+	        <td>Game / Gacha</td>
+	      </tr>
+	      <tr>
+	        <td>Harvey</td>
+	        <td>Stardew Valley</td>
+	        <td>Game / Indie Sim</td>
+	      </tr>
+	      <tr>
+	        <td>Xenia</td>
+	        <td>Linux Community</td>
+	        <td>Mascot / Software</td>
+	      </tr>
+	      <tr>
+	        <td>Milkyway Cookie</td>
+	        <td>Cookie Run Kingdom</td>
+	        <td>Game / Gacha</td>
+	      </tr>
+	      <tr>
+	        <td>Blade</td>
+	        <td>NU:Carnival</td>
+	        <td>Game / NSFW</td>
+	      </tr>
+	      <tr>
+	        <td>Nahida</td>
+	        <td>Genshin Impact</td>
+	        <td>Game / Gacha</td>
+	      </tr>
+	      <tr>
+	        <td>Trip</td>
+	        <td>Sonic Superstars</td>
+	        <td>Game / Platformer</td>
+	      </tr>
+	      <tr>
+	        <td>Jerry Attricks</td>
+	        <td>Scott The Woz</td>
+	        <td>Internet / YT Series</td>
+	      </tr>
+	      <tr>
+	        <td>Monika</td>
+	        <td>Doki Doki Literature Club!</td>
+	        <td>Game / VN</td>
+	      </tr>
+	      <tr>
+	        <td>Chino Kafuu</td>
+	        <td>Is The Order a Rabbit?</td>
+	        <td>Anime / Slice Of Life</td>
+	      </tr>
+	      <tr>
+	        <td>Rem</td>
+	        <td>Re:Zero kara Hajimeru Isekai Seikatsu</td>
+	        <td>Anime / Isekai</td>
+	      </tr>
+	      <tr>
+	        <td>Louise de la Valli&egrave;re</td>
+	        <td>The Familiar of Zero</td>
+	        <td>Anime / Isekai</td>
+	      </tr>
+	    </tbody>
+	  </table>
+	</div>
+	<script>
+	  document.querySelectorAll('table.interactive').forEach(element => {
+	    element.addEventListener('click', (event) => {
+	      const row = event.path.find(element => element.tagName === 'TR' && element.parentElement.tagName === 'TBODY');
+	      if (row) {
+	        row.classList.toggle('highlighted');
+	      }
+	    })
+	  });
+	</script>
+	<p>Special thanks to the creators of 98.css for this theme</p>
+        </div>
+        </div>
+    </div>
+</div>
 </div>
 
-<div id="navbar">
-<a class="nav" href="/">go home</a><BR>
-</div>
+<script>
+    function updateAge() {
+        // Calculate the age
+        var birthDate = new Date('2006-06-30T00:00:00+08:00'); // Setting timezone offset to PHT
+        var currentDate = new Date();
+        var ageInMillis = currentDate - birthDate;
+        var ageInSeconds = Math.floor(ageInMillis / 1000);
+
+        var years = Math.floor(ageInSeconds / (60 * 60 * 24 * 365));
+        var months = Math.floor((ageInSeconds % (60 * 60 * 24 * 365)) / (60 * 60 * 24 * 30));
+        var days = Math.floor(((ageInSeconds % (60 * 60 * 24 * 365)) % (60 * 60 * 24 * 30)) / (60 * 60 * 24));
+        var hours = Math.floor((((ageInSeconds % (60 * 60 * 24 * 365)) % (60 * 60 * 24 * 30)) % (60 * 60 * 24)) / (60 * 60));
+        var minutes = Math.floor(((((ageInSeconds % (60 * 60 * 24 * 365)) % (60 * 60 * 24 * 30)) % (60 * 60 * 24)) % (60 * 60)) / 60);
+        var seconds = Math.floor((((((ageInSeconds % (60 * 60 * 24 * 365)) % (60 * 60 * 24 * 30)) % (60 * 60 * 24)) % (60 * 60)) % 60));
+
+        // Display the age
+        var ageElement = document.getElementById('age');
+        ageElement.textContent = years + " years, " + months + " months, " + days + " days, " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds";
+    }
+
+    // Call updateAge initially
+    updateAge();
+
+    // Update the age every second
+    setInterval(updateAge, 1000);
+</script>
 
 </body>
 </html>
-
-
