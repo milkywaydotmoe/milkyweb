@@ -3,11 +3,11 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    margin: 1rem 0; /* Use rem for spacing based on root font size */
+    margin: 1; /* Use rem for spacing based on root font size */
 }
 
 .album-art {
-    flex: 0 0 30%; /* Use a percentage to maintain proportional size */
+    flex: 0 0 32%; /* Use a percentage to maintain proportional size */
     padding-right: 1rem; /* Maintain spacing with a relative unit */
 }
 

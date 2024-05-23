@@ -159,12 +159,10 @@
     cursor:url("/cursor/link.gif"),auto
 }
  p{
-   padding: 1%; /* or adjust as needed */
    line-height: 16pt;
 }
 
 img{
-   padding: 0; /* or adjust as needed */
    line-height: 16pt;
 }
 
@@ -407,12 +405,27 @@ img{
         order: 3;
         display: none;
     }
-    .nav, .cbox, .miniblog, .panel1, .panel2 {
+    .nav{
         order: 4;
         height: auto;
     }
+    .cbox{
+         order: 5;
+        height: auto;
+    }
+    .miniblog{
+         order: 6;
+        height: auto;
+        min-height: 25vh;
+    }
+    .panel1, .panel2 {
+      order: 7;
+      height: auto;
+      min-height: 25vh;
+    }
+
     .footer {
-        order: 5;
+        order: 8;
     }
     .table-row {
         flex-direction: column;
