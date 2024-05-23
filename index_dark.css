@@ -160,12 +160,12 @@
 }
  p{
    padding: 1%; /* or adjust as needed */
-   line-height: 1.3;
+   line-height: 16pt;
 }
 
 img{
    padding: 0; /* or adjust as needed */
-   line-height: 0;
+   line-height: 16pt;
 }
 
  .owo img{
