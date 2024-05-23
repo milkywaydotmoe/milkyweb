@@ -18,6 +18,8 @@
         }
         .profile-box {
             width: 600px;
+            max-height: 80vh;
+            overflow: hidden; /* Hide overflow to prevent scrollbars on the profile box */
         }
         .profile-pic {
             margin-right: 20px;
@@ -31,6 +33,7 @@
             justify-content: flex-start;
             padding: 0;
             margin: 0;
+            overflow-y: auto; /* Add vertical scrolling when content exceeds max height */
         }
         .bio h2, .bio p {
             margin: 0;
@@ -38,6 +41,10 @@
         }
         .bio p {
             margin-top: 10px;
+        }
+        .likes-box {
+            max-height: 200px; /* Set a max-height for the "Things I Like" box */
+            overflow-y: auto; /* Add vertical scrolling when content exceeds max height */
         }
     </style>
 </head>
@@ -58,17 +65,36 @@
             <h2 style="font-size: 24px;">About Me!~</h2>
             <p>Hello!!! My name's Hima, aka MILKY! I made this website! I like to do lots of stuff, like making graphics, music, fonts, and websites! I was born June 30, 2006! I was born and currently live in the Philippines. (cringe) </p>
             <br>
-            <p><b>My Pronouns: </b>she/they</p>
             <p><b>My Age: </b><span id="age"></span></p>
-            <p><b>My Nationality: </b>Filipino</p>
             <p><b>My Fav Color: </b>pastel greens and blues!</p>
             <p><b>My Height: </b>166cm</p>
-            <p><b>My Relationship Status: </b>taken!</p>
-            <p><b>My Sexual Preference: </b>pansexual</p>
-            <p><b>My Gender Identity: </b>dude i dont even know the answer.</p>
+            <p><b>Some Identity Buttons!</b></p><br>
+        <div style="image-rendering: pixelated; image-resolution: 100%;">
+            <img src="https://i.imgur.com/cT5wndb.png">
+            <img src="https://i.imgur.com/tn0RSo5.png">
+            <img src="https://i.imgur.com/mTAp2ld.png">
+            <img src="https://i.imgur.com/32StX3n.png">
+            <img src="https://i.imgur.com/OPlf76y.png">
+            <img src="https://i.imgur.com/DoQJ9XF.png">
+            <img src="https://i.imgur.com/ypcKWM0.png">
+            <img src="https://i.imgur.com/ipXQ8Fw.png">
+            <img src="https://i.imgur.com/j2FRmdy.png">
+            <img src="https://i.imgur.com/HugYtfH.png">
+            <img src="https://i.imgur.com/LGvol4P.png">
+            <img src="https://i.imgur.com/KLFk3KG.png">
+            <img src="https://i.imgur.com/WFpPzZn.png">
+            <img src="https://i.imgur.com/pkY2oAO.png">
+            <img src="https://i.imgur.com/gBns0Su.png">
+            <img src="https://i.imgur.com/wthFnM3.png">
+            <img src="https://i.imgur.com/4SVfFPD.png">
+            <img src="https://i.imgur.com/ePwMD5G.png">
+            <img src="https://i.imgur.com/QUBFnZD.png">
+            <img src="https://i.imgur.com/joJXsVi.png">
+            <img src="https://i.imgur.com/qeWy3Ik.png">
+        </div>
             <br>
             <p><b>Here's my likes and dislikes!</b></p><br>
-            <ul class="tree-view">
+            <ul class="tree-view likes-box">
   <li>
     <details open>
 	<summary>Things I Like</summary>
@@ -180,8 +206,9 @@
     </ul>
   </li>
 </ul>
+
 	<p><b>Here's a list of my favorite characters!</b></p>
-	<div class="sunken-panel" style="height: 380px; width: 481px; overflow-y: scroll;">
+	<div class="sunken-panel" style="height: 120px; width: 481px; overflow-y: scroll;">
 	  <table class="interactive">
 	    <thead>
 	      <tr>
@@ -336,6 +363,196 @@
 	        <td>The Familiar of Zero</td>
 	        <td>Anime / Isekai</td>
 	      </tr>
+	      <tr>
+			  <td>Kiana Kaslana</td>
+			  <td>Honkai Impact 3rd</td>
+			  <td>Game / Gacha</td>
+			</tr>
+			<tr>
+			  <td>Hatsune Miku</td>
+			  <td>Vocaloid</td>
+			  <td>Software / Vocaloid</td>
+			</tr>
+			<tr>
+			  <td>Maple</td>
+			  <td>Bofuri: I Don't Want to Get Hurt, so I'll Max Out My Defense.</td>
+			  <td>Anime / Isekai</td>
+			</tr>
+			<tr>
+			  <td>Jibril</td>
+			  <td>No Game No Life</td>
+			  <td>Anime / Fantasy</td>
+			</tr>
+			<tr>
+			  <td>Yui Hirasawa</td>
+			  <td>K-On!</td>
+			  <td>Anime / Slice Of Life</td>
+			</tr>
+			<tr>
+			  <td>Misaka Mikoto</td>
+			  <td>Toaru Kagaku no Railgun</td>
+			  <td>Anime / Sci-Fi</td>
+			</tr>
+			<tr>
+			  <td>Rikka Takanashi</td>
+			  <td>Chuunibyou demo Koi ga Shitai!</td>
+			  <td>Anime / Romance</td>
+			</tr>
+			<tr>
+			  <td>Megumin</td>
+			  <td>KonoSuba</td>
+			  <td>Anime / Comedy</td>
+			</tr>
+			<tr>
+			  <td>Mio Akiyama</td>
+			  <td>K-On!</td>
+			  <td>Anime / Slice Of Life</td>
+			</tr>
+			<tr>
+			  <td>Remilia Scarlet</td>
+			  <td>Touhou Project</td>
+			  <td>Game / Bullet Hell</td>
+			</tr>
+			<tr>
+			  <td>Nico Yazawa</td>
+			  <td>Love Live! School Idol Project</td>
+			  <td>Anime / Idol</td>
+			</tr>
+			<tr>
+			  <td>Karen Kujou</td>
+			  <td>Kin-iro Mosaic</td>
+			  <td>Anime / Slice Of Life</td>
+			</tr>
+			<tr>
+			  <td>Shiro</td>
+			  <td>No Game No Life</td>
+			  <td>Anime / Fantasy</td>
+			</tr>
+			<tr>
+			  <td>Aqua</td>
+			  <td>KonoSuba</td>
+			  <td>Anime / Comedy</td>
+			</tr>
+			<tr>
+			  <td>Sagiri Izumi</td>
+			  <td>Eromanga Sensei</td>
+			  <td>Anime / Romance</td>
+			</tr>
+			<tr>
+			  <td>Yoshino</td>
+			  <td>Date A Live</td>
+			  <td>Anime / Fantasy</td>
+			</tr>
+			<tr>
+			  <td>Mashiro Shiina</td>
+			  <td>Sakurasou no Pet na Kanojo</td>
+			  <td>Anime / Romance</td>
+			</tr>
+		<tr>
+		  <td>Gawr Gura</td>
+		  <td>Hololive EN</td>
+		  <td>Internet / VTuber</td>
+		</tr>
+		<tr>
+		  <td>Nyatasha Nyanners</td>
+		  <td>VShojo</td>
+		  <td>Internet / VTuber</td>
+		</tr>
+		<tr>
+		  <td>Ironmouse</td>
+		  <td>VShojo</td>
+		  <td>Internet / VTuber</td>
+		</tr>
+		<tr>
+		  <td>Kizuna AI</td>
+		  <td>Independent</td>
+		  <td>Internet / VTuber</td>
+		</tr>
+		<tr>
+		  <td>Kureiji Ollie</td>
+		  <td>Hololive ID</td>
+		  <td>Internet / VTuber</td>
+		</tr>
+		<tr>
+		  <td>Shirakami Fubuki</td>
+		  <td>Hololive JP</td>
+		  <td>Internet / VTuber</td>
+		</tr>
+		<tr>
+		  <td>Inugami Korone</td>
+		  <td>Hololive JP</td>
+		  <td>Internet / VTuber</td>
+		</tr>
+		<tr>
+		  <td>Usada Pekora</td>
+		  <td>Hololive JP</td>
+		  <td>Internet / VTuber</td>
+		</tr>
+		<tr>
+		  <td>Houshou Marine</td>
+		  <td>Hololive JP</td>
+		  <td>Internet / VTuber</td>
+		</tr>
+		<tr>
+		  <td>Watson Amelia</td>
+		  <td>Hololive EN</td>
+		  <td>Internet / VTuber</td>
+		</tr>
+		<tr>
+		  <td>Hakos Baelz</td>
+		  <td>Hololive EN</td>
+		  <td>Internet / VTuber</td>
+		</tr>
+		<tr>
+		  <td>Takanashi Kiara</td>
+		  <td>Hololive EN</td>
+		  <td>Internet / VTuber</td>
+		</tr>
+		<tr>
+		  <td>Mori Calliope</td>
+		  <td>Hololive EN</td>
+		  <td>Internet / VTuber</td>
+		</tr>
+		<tr>
+		  <td>Tsukumo Sana</td>
+		  <td>Hololive EN</td>
+		  <td>Internet / VTuber</td>
+		</tr>
+		<tr>
+		  <td>Veibae</td>
+		  <td>VShojo</td>
+		  <td>Internet / VTuber</td>
+		</tr>
+		<tr>
+		  <td>Sakura Miko</td>
+		  <td>Hololive JP</td>
+		  <td>Internet / VTuber</td>
+		</tr>
+		<tr>
+		  <td>Ninomae Ina'nis</td>
+		  <td>Hololive EN</td>
+		  <td>Internet / VTuber</td>
+		</tr>
+		<tr>
+		  <td>Ayunda Risu</td>
+		  <td>Hololive ID</td>
+		  <td>Internet / VTuber</td>
+		</tr>
+		<tr>
+		  <td>Moona Hoshinova</td>
+		  <td>Hololive ID</td>
+		  <td>Internet / VTuber</td>
+		</tr>
+		<tr>
+		  <td>Pavolia Reine</td>
+		  <td>Hololive ID</td>
+		  <td>Internet / VTuber</td>
+		</tr>
+		<tr>
+		  <td>Himemori Luna</td>
+		  <td>Hololive JP</td>
+		  <td>Internet / VTuber</td>
+		</tr>
 	    </tbody>
 	  </table>
 	</div>
@@ -381,6 +598,29 @@
 
     // Update the age every second
     setInterval(updateAge, 1000);
+</script>
+
+<script>
+  document.querySelectorAll('.sunken-panel table').forEach(table => {
+    table.addEventListener('click', event => {
+      const categoryIndex = event.target.cellIndex; // Get the index of the clicked category cell
+      const tbody = table.querySelector('tbody');
+      const rows = Array.from(tbody.querySelectorAll('tr'));
+
+      // Sort the rows based on the content of the clicked category
+      rows.sort((a, b) => {
+        const textA = a.cells[categoryIndex].textContent.trim().toLowerCase();
+        const textB = b.cells[categoryIndex].textContent.trim().toLowerCase();
+        return textA.localeCompare(textB);
+      });
+
+      // Remove existing rows from the table
+      rows.forEach(row => tbody.removeChild(row));
+
+      // Append sorted rows back to the table
+      rows.forEach(row => tbody.appendChild(row));
+    });
+  });
 </script>
 
 </body>
