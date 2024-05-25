@@ -20,8 +20,5 @@ jobs:
           git config --global credential.helper store
           git remote add milkyway https://git.nekoweb.org/milkyway.git
 
-      - name: Pull changes from the remote repository
-        run: git pull milkyway main
-
       - name: Push to Remote with force
         run: git push -f milkyway HEAD:main
