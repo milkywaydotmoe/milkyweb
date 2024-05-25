@@ -1,0 +1,22 @@
+name: Push to Remote
+
+on:
+  push:
+    branches:
+      - main  # Adjust branch name as needed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Push to Remote
+        run: |
+          git remote add milkyway https://git.nekoweb.org/milkyway.git
+          git push milkyway HEAD:main
+        env:
+          GIT_USERNAME: ${{ secrets.NW_USER }}
+          GIT_PASSWORD: ${{ secrets.NW_PASS }}
