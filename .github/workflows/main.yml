@@ -23,5 +23,5 @@ jobs:
       - name: Pull changes from the remote repository
         run: git pull milkyway main
 
-      - name: Push to Remote
-        run: git push milkyway HEAD:main
+      - name: Push to Remote with force
+        run: git push -f milkyway HEAD:main
