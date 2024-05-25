@@ -26,15 +26,19 @@ async function fetchGitHubEvents(url) {
             }
         });
 
-        // Check if there are more pages and fetch them if needed
-        const nextPageUrl = response.headers.get('Link').split(',').find(link => link.includes('rel="next"'));
-        if (nextPageUrl) {
-            await fetchGitHubEvents(nextPageUrl.split(';')[0].slice(1, -1));
+        // Check if the 'Link' header exists before trying to split it
+        const linkHeader = response.headers.get('Link');
+        if (linkHeader) {
+            const nextPageUrl = linkHeader.split(',').find(link => link.includes('rel="next"'));
+            if (nextPageUrl) {
+                await fetchGitHubEvents(nextPageUrl.split(';')[0].slice(1, -1));
+            }
         }
     } catch (error) {
         console.error('Error fetching GitHub events:', error);
     }
 }
+
 
 // Call the function to fetch GitHub events
 fetchGitHubEvents(GITHUB_API_URL);
