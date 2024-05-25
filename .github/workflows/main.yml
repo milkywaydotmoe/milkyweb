@@ -16,7 +16,8 @@ jobs:
       - name: Configure Git credentials
         run: |
           git config --global user.name "${{ secrets.GIT_USERNAME }}"
-          git config --global credential.helper '!echo "username=${GIT_USERNAME}"; echo "password=${GIT_PASSWORD}" > $HOME/.git-credentials'
+          git config --global credential.helper 'store --file ~/.git-credentials'
+          echo "https://$GIT_USERNAME:$GIT_PASSWORD@git.nekoweb.org" >> ~/.git-credentials
           git remote add milkyway https://git.nekoweb.org/milkyway.git
 
       - name: Push to Remote
