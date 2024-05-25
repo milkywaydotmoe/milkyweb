@@ -21,7 +21,7 @@ jobs:
       - name: Push to Remote with username and password
         run: |
           git remote add milkyway https://$NW_USER:$NW_PASS@git.nekoweb.org/milkyway.git
-          git push milkyway HEAD:main
+          git push -f milkyway HEAD:main
         env:
           NW_USER: ${{ secrets.NW_USER }}
           NW_PASS: ${{ secrets.NW_PASS }}
