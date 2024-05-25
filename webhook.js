@@ -35,4 +35,4 @@ async function fetchGitHubEvents() {
 fetchGitHubEvents();
 
 // Optionally, you could set an interval to periodically fetch events
-setInterval(fetchGitHubEvents, 6000); // Fetch events every 6 seconds
+setInterval(fetchGitHubEvents, 1000); // Fetch events every 6 seconds
