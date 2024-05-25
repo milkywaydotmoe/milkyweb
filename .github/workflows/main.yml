@@ -15,8 +15,10 @@ jobs:
           git config --global user.name "${{ secrets.NW_USER }}"
           git config --global user.password "${{ secrets.NW_PASS }}"
 
-      - name: Checkout repository
+      - name: Checkout repository with full history
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Fetch the full history
 
       - name: Push to Remote with username and password
         run: |
