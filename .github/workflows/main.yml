@@ -13,10 +13,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Push to Remote
+      - name: Configure Git credentials
         run: |
+          git config --global user.name "${{ secrets.GIT_USERNAME }}"
+          git config --global user.email "${{ secrets.GIT_EMAIL }}"
+          git config --global credential.helper store
           git remote add milkyway https://git.nekoweb.org/milkyway.git
-          git push milkyway HEAD:main
+
+      - name: Push to Remote
+        run: git push milkyway HEAD:main
         env:
           GIT_USERNAME: ${{ secrets.NW_USER }}
           GIT_PASSWORD: ${{ secrets.NW_PASS }}
