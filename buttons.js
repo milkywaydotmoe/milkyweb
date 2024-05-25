@@ -21,10 +21,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Function to update page navigation links
   function updatePageNavigation() {
-    document.getElementById('currentPage').textContent = currentPage;
-
-    // Update previous page link
+    const currentPageElement = document.getElementById('currentPage');
     const prevPageLink = document.getElementById('prevPage');
+    const nextPageLink = document.getElementById('nextPage');
+
+    currentPageElement.textContent = currentPage;
+
+    // Update previous and next page links
     if (currentPage === 1) {
       prevPageLink.removeAttribute('href');
       prevPageLink.classList.add('disabled');
@@ -33,8 +36,6 @@ document.addEventListener("DOMContentLoaded", function() {
       prevPageLink.classList.remove('disabled');
     }
 
-    // Update next page link
-    const nextPageLink = document.getElementById('nextPage');
     if (currentPage === totalPages) {
       nextPageLink.removeAttribute('href');
       nextPageLink.classList.add('disabled');
@@ -43,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
       nextPageLink.classList.remove('disabled');
     }
   }
+
 
   // Load initial page
   loadPage(currentPage);

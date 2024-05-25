@@ -59,6 +59,7 @@
             background-color: #666;
             margin: 20px auto;
             position: relative;
+            border-radius: 6px;
         }
         .loading-bar:before {
             content: '';
@@ -66,6 +67,7 @@
             width: 40%;
             height: 100%;
             background-color: #fff;
+            border-radius: 6px;
         }
         span {
             background-color: black;
@@ -75,10 +77,7 @@
 </head>
 <body>
 <div class="text-container">
-    <div class="text-layer">
-        <pre id="panic-text" style="font-family: 'Web437_ToshibaSat_8x14';">
-            <span>
-panic(cpu 1 caller [HEX]): initproc exited -- exit reason namespace 2 subcode 404 description: file not found
+<pre class="text-layer" id="panic-text" style="font-family: 'Web437_ToshibaSat_8x14';"><span>panic(cpu 1 caller [HEX]): initproc exited -- exit reason namespace 2 subcode 404 description: file not found
 Debugger called:
 uuid info:
  0x11b0a0b0 uuid = [random uuid string]
@@ -119,7 +118,7 @@ Kernel UUID: [random uuid string]
 Browser UserAgent: [browser name][browser version] 
 IP Address: [IPADDRESS]
             </span>
-        </pre>
+            </pre>
     </div>
 </div>
 <div class="center-layer">
