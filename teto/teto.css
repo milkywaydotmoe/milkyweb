@@ -1,0 +1,185 @@
+@font-face {
+    font-family: GNU Unifont;
+    src: url('/unifont.ttf');
+}
+
+@font-face {
+    font-family: GNU Unifont;
+    src: url('/ADDSBP.ttf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: GNU Unifont;
+    src: url('/unifont.ttf');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: GNU Unifont;
+    src: url('/ADDSBP.ttf');
+    font-style: italic;
+    font-weight: bold;
+}
+
+body {
+    background: url("catpink.png") fixed;
+    font-family: "GNU Unifont", serif;
+    font-size: 14px;
+    color: black;
+    }
+    
+  h1 {
+    }  
+  
+  /*The header bar that stays at the top of the screen*/
+  .top-bar {
+    text-transform: uppercase; /*Make the text in the header display as all caps*/
+    font-style: italic;
+    letter-spacing: 5px;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    background-image: url(piink.jpg);
+    color: white;
+    padding: 5px;
+    padding-left: 15px;
+    line-height: 25px;
+    overflow: auto;
+    }
+    
+  .main, .main-first {
+    margin-top: 30px;
+    margin-left: 450px;
+    width: 500px;
+    border: 1px solid black;
+    background: white;
+    padding: 15px 25px 15px 25px;
+    box-shadow: 7px 7px rgba(90, 0, 20, 0.8);
+    }
+    
+  /*Make sure the first main box has an extra top margin so it's not hidden by the header*/
+  .main-first {
+    margin-top: 60px;
+    }
+  
+  .sidebar {
+    position: fixed;
+    width: 350px;
+    min-height: 75px;
+    border: 1px solid black;
+    background: white;
+    margin-top:0px;
+    margin-left:25px;
+    /*The 7px is vertical and horizontal offset for the shadow, if you want to change it.*/
+    box-shadow: 7px 7px rgba(90, 0, 20, 0.78);
+    }
+    
+  /*Prevent image overflow*/  
+  .main img, .main-first img, .sidebar img {
+    max-width: 100%;
+    height: auto;
+    }
+    
+  
+  .sidebar-pic { /*not in use, currently looks like SHIT*/
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background: black;
+    border-radius: 51px;
+    padding: 2px;
+    border: 0;
+    }
+  
+  .sidebar-pic img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    }
+    
+  /*Text section in sidebar.*/  
+  .sidebar-description {
+    padding: 15px;
+    }
+    
+  .sidebar-links {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+    background-image: url(piink.jpg);
+    color: white;
+    width: 100%;
+    height: 30px;
+    }
+    
+  .button {
+    padding: 5px;
+    padding-left: 10px;
+    display: inline-block
+    }
+    
+  .sidebar-links a {
+    color: white;
+    text-decoration: none;
+    }
+    
+  .sidebar-links a:hover {
+    color: #bbb;
+    }
+    
+  /*Text at bottom below main divs*/
+  .footer {
+    text-align: right;
+    margin-left: 475px;
+    width: 500px;
+    font-size: 13px;
+    font-style: italic;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    }
+    
+  /*For narrow screens*/
+  @media (max-width: 1100px) {
+      .sidebar {
+        width: 275px;
+        margin-left: 10px;
+        }
+      .main, .main-first {
+        width: 420px;
+        margin-left: 315px;
+        }
+    }
+    
+  /*Mobile compatibility.*/
+  @media (orientation: portrait) {
+    .sidebar {
+      margin: 0 auto;
+      position: static;
+      margin-top: 60px;
+      margin-bottom: 15px;
+      width: 90%;
+      }
+      
+    .main, .main-first {
+      margin: 0 auto;
+      margin-top: 20px;
+      width: 80%;
+      }
+      
+    .footer {
+      width: 80%;
+      padding: 5%;
+      margin: 0 auto;
+      }
+      
+    .top-bar {
+      font-size: 13.5px;
+      letter-spacing: 4px;
+      font-size: 90%; /*To help reduce height if it overflows the first line.*/
+      }
+    }

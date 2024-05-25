@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+body, html {
+	padding: 0;
+	margin: 0;
+	font-size: 13px;
+	background: #000;
+	color: lime;
+	font-family: 'Source Code Pro', monospace;
+	font-size: 12px;
+}
+
+img {
+	max-width: 100%;
+}
+
+.page {
+	padding: 24px;
+}
+
+.page h1:first-child {
+	margin-top: 0;
+}
+
+.header-image {
+	height: 200px;
+	margin: auto;
+	display: block;
+}
+
+.wrapper {
+	margin: auto;
+	margin-top: 24px;
+	width: 753px;
+}
+
+.menu {
+	text-align: center;
+	margin-bottom: 24px;
+	margin-top: 24px;
+}
+
+.menu a {
+	color: lime;
+}
+
+.main {
+	height: 480px;
+	width: 753px;
+	background-image: url('bg.jpg');
+	position: relative;
+}
+
+.main iframe {
+	border: none;
+	border: none;
+	position: absolute;
+	top: 35px;
+	left: 7px;
+	width: 739px;
+	height: 439px;
+}
+
+h1, h2, h3, h4, h5 {
+	font-size: 12px;
+}
+
+h1 {
+	border-bottom: 1px solid lime;
+}
+
+h2 {
+	border-bottom: 1px dotted lime;
+}
+
+a {
+	color: red;
+}
