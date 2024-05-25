@@ -1,9 +1,8 @@
-// Replace 'YOUR_USERNAME' and 'YOUR_REPOSITORY' with your GitHub username and repository name
-const GITHUB_API_URL = 'https://api.github.com/repos/milkywaydotmoe/milkyweb/events';
+const GITHUB_API_URL = 'https://api.github.com/repos/milkywaydotmoe/milkyweb/events?timestamp=' + new Date().getTime();
 
 function updateCommitInfo(event) {
     // Extract commit information from the event
-    const commitHash = event.payload.commits[0].sha.substring(0, 7); // Truncate to 7 characters
+    const commitHash = event.payload.commits[0].sha.substring(0, 6); // Truncate to 6 characters
     const commitMessage = event.payload.commits[0].message;
     const commitAuthorName = event.payload.commits[0].author.name;
     const commitAuthorEmail = event.payload.commits[0].author.email;
@@ -13,9 +12,9 @@ function updateCommitInfo(event) {
     document.getElementById('commit-info').innerHTML = commitInfo;
 }
 
-async function fetchGitHubEvents() {
+async function fetchGitHubEvents(url) {
     try {
-        const response = await fetch(GITHUB_API_URL);
+        const response = await fetch(url);
         const events = await response.json();
         
         // Assuming events is an array of GitHub events
@@ -26,13 +25,19 @@ async function fetchGitHubEvents() {
                 return;
             }
         });
+
+        // Check if there are more pages and fetch them if needed
+        const nextPageUrl = response.headers.get('Link').split(',').find(link => link.includes('rel="next"'));
+        if (nextPageUrl) {
+            await fetchGitHubEvents(nextPageUrl.split(';')[0].slice(1, -1));
+        }
     } catch (error) {
         console.error('Error fetching GitHub events:', error);
     }
 }
 
 // Call the function to fetch GitHub events
-fetchGitHubEvents();
+fetchGitHubEvents(GITHUB_API_URL);
 
 // Optionally, you could set an interval to periodically fetch events
-setInterval(fetchGitHubEvents, 1000); // Fetch events every 6 seconds
+setInterval(() => fetchGitHubEvents(GITHUB_API_URL), 6000); // Fetch events every 6 seconds
