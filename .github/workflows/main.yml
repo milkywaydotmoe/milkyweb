@@ -10,15 +10,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
       - name: Configure Git credentials
         run: |
           git config --global user.name "${{ secrets.NW_USER }}"
           git config --global user.password "${{ secrets.NW_PASS }}"
-          echo "https://git.nekoweb.org/milkyway.git" | git credential-store store
-          git remote add milkyway https://git.nekoweb.org/milkyway.git
 
-      - name: Push to Remote
-        run: git push milkyway HEAD:main
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Push to Remote with username and password
+        run: |
+          git remote add milkyway https://$NW_USER:$NW_PASS@git.nekoweb.org/milkyway.git
+          git push milkyway HEAD:main
+        env:
+          NW_USER: ${{ secrets.NW_USER }}
+          NW_PASS: ${{ secrets.NW_PASS }}
