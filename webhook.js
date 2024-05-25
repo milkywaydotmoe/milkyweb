@@ -26,18 +26,19 @@ async function fetchGitHubEvents(url) {
             }
         });
 
-        // Check if the 'Link' header exists before trying to split it
+        // Check if the response has a 'Link' header and if it contains a 'rel="next"' link
         const linkHeader = response.headers.get('Link');
-        if (linkHeader) {
-            const nextPageUrl = linkHeader.split(',').find(link => link.includes('rel="next"'));
-            if (nextPageUrl) {
-                await fetchGitHubEvents(nextPageUrl.split(';')[0].slice(1, -1));
-            }
+        if (linkHeader && linkHeader.includes('rel="next"')) {
+            // Extract the URL for the next page
+            const nextPageUrl = linkHeader.match(/<([^>]+)>;\s*rel="next"/)[1];
+            // Fetch the next page recursively
+            await fetchGitHubEvents(nextPageUrl);
         }
     } catch (error) {
         console.error('Error fetching GitHub events:', error);
     }
 }
+
 
 
 // Call the function to fetch GitHub events
