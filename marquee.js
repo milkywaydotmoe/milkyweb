@@ -20,7 +20,7 @@ const wrapLettersInSpans = (text) => {
       result += "&nbsp;";
     } else {
       result += `<span style="animation-delay: ${delay}s">${char}</span>`;
-      delay += 0.1;
+      delay += -0.1;
     }
   }
   return result;

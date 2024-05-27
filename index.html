@@ -297,6 +297,35 @@
                         event.preventDefault(); // Prevent the default link behavior
          });
     </script>
+
+    <script type="text/javascript" async>
+    window['libopenmpt'] = {};
+    libopenmpt.locateFile = function (filename) {
+      return "/chiptune2js/" + filename;
+    };
+    libopenmpt.onRuntimeInitialized = function () {
+        var player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1, 0, 0)); // Adjust stereoSeparation and interpolationFilter here
+
+        function playModTrack(modUrl) {
+            player.load(modUrl, function(buffer) {
+                player.play(buffer);
+
+                // Loop the track when it ends
+                player.onEnded(function() {
+                    player.play(buffer);
+                });
+            });
+        }
+
+        // Start playing the .mod track as soon as the page is loaded
+        window.onload = function() {
+            playModTrack('/modfiles/rollingdownthestreet.xm');
+        };
+    };
+</script>
+<script type="text/javascript" src="/chiptune2js/libopenmpt.js" async></script>
+<script type="text/javascript" src="/chiptune2js/chiptune2.js" async></script>
+
 </body>
 
 </html>

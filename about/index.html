@@ -7,6 +7,7 @@
       <meta property="og:type" content="website">
       <meta property="og:title" content="About MiLKY!">
       <link rel="icon" type="image/x-icon" href="/assets/spinnymkt.gif">
+      <script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.5.0"></script>
     <title>About Me</title>
     <link rel="stylesheet" href="https://unpkg.com/98.css">
     <style>
@@ -50,6 +51,9 @@
             max-height: 200px; /* Set a max-height for the "Things I Like" box */
             overflow-y: auto; /* Add vertical scrolling when content exceeds max height */
         }
+        midi-player {
+    		display: none;
+  		}
     </style>
 </head>
 <body>
@@ -576,6 +580,13 @@
 	  });
 	</script>
 	<p>Special thanks to the creators of 98.css for this theme</p>
+	<midi-player
+	id="player"
+    src="/modfiles/passport.mid"
+    sound-font="https://storage.googleapis.com/magentadata/js/soundfonts/sgm_plus"
+    loop
+  >
+	</midi-player>
         </div>
         </div>
     </div>
@@ -631,6 +642,31 @@
     });
   });
 </script>
+
+<script>
+window.addEventListener('DOMContentLoaded', (event) => {
+    const player = document.getElementById('player');
+
+    // Add event listeners
+    player.addEventListener('load', () => {
+        console.log('Content loaded and ready to play');
+        player.start();
+    });
+
+    player.addEventListener('loop', () => {
+        console.log('Playback looped');
+    });
+
+    player.addEventListener('start', () => {
+        console.log('Playback started');
+    });
+
+    player.addEventListener('stop', (event) => {
+        console.log(`Playback stopped. Finished: ${event.detail.finished}`);
+    });
+});
+</script>
+
 
 </body>
 </html>
