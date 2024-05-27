@@ -3,33 +3,40 @@
 <head>
     <title>My Art Gallery</title>
     <style>
-        body {
-            background-image: url(leavesbg.gif);
-            font-family: "Comic Sans MS", sans-serif;
-            color: #0000cd;
-            text-align: center;
-        }
-        h1 {
-            color: #ff4500;
-            text-shadow: 2px 2px #ffd700;
-        }
-        .art-piece {
-            border: 5px solid #ff69b4;
-            margin: 20px;
-            padding: 10px;
-            background-color: #fffacd;
-            display: inline-block;
-        }
-        .art-piece img {
-            max-height: 200px;
-            width: auto;
-            border: 2px solid #4682b4;
-        }
-        .footer {
-            margin-top: 50px;
-            font-size: small;
-        }
-    </style>
+    body {
+        background-image: url(leavesbg.gif);
+        font-family: "Comic Sans MS", sans-serif;
+        color: #0000cd;
+        text-align: center;
+        animation: wave 5s infinite ease-in-out;
+
+    }
+    h1 {
+        color: #ff4500;
+        text-shadow: 2px 2px #ffd700;
+    }
+    .art-piece {
+        border: 5px solid #ff69b4;
+        margin: 20px;
+        padding: 10px;
+        background-color: #fffacd;
+        display: inline-block;
+    }
+    .art-piece img {
+        max-height: 200px;
+        width: auto;
+        border: 2px solid #4682b4;
+    }
+    .footer {
+        margin-top: 50px;
+        font-size: small;
+    }
+    @keyframes wave {
+        0% { background-position: -50px 0; }
+        50% { background-position: 0px 250px; }
+        100% { background-position: 50px 0; }
+    }
+</style>
 </head>
 <body>
     <h1>Welcome to My Art Gallery!</h1>
@@ -195,5 +202,33 @@
         <p>Thanks for visiting my gallery! Come back soon!</p>
         <p><a href="/">Go Home</a></p>
     </div>
+
 </body>
+<script type="text/javascript" async>
+    window['libopenmpt'] = {};
+    libopenmpt.locateFile = function (filename) {
+      return "/chiptune2js/" + filename;
+    };
+    libopenmpt.onRuntimeInitialized = function () {
+        var player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1, 50, 1)); // Adjust stereoSeparation and interpolationFilter here
+
+        function playModTrack(modUrl) {
+            player.load(modUrl, function(buffer) {
+                player.play(buffer);
+
+                // Loop the track when it ends
+                player.onEnded(function() {
+                    player.play(buffer);
+                });
+            });
+        }
+
+        // Start playing the .mod track as soon as the page is loaded
+        window.onload = function() {
+            playModTrack('/modfiles/camille_in_my_heart.mod');
+        };
+    };
+</script>
+<script type="text/javascript" src="/chiptune2js/libopenmpt.js" async></script>
+<script type="text/javascript" src="/chiptune2js/chiptune2.js" async></script>
 </html>

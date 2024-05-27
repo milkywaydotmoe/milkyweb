@@ -44,9 +44,38 @@
         <canvas id="shaderCanvas"></canvas>
     </div>
     <img id="mac" src="happymac.png" alt="Happy Mac">
-    <audio id="backgroundMusic">
-        <source src="acidjazzed.mp3" type="audio/mpeg">
-    </audio>
+
+<script type="text/javascript" async>
+window['libopenmpt'] = {};
+libopenmpt.locateFile = function (filename) {
+  return "/chiptune2js/" + filename;
+};
+libopenmpt.onRuntimeInitialized = function () {
+  var player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1, 0, 1)); // Adjust stereoSeparation and interpolationFilter here
+
+  function playModTrack(modUrl) {
+    player.load(modUrl, function(buffer) {
+      player.play(buffer);
+
+      // Loop the track when it ends
+      player.onEnded(function() {
+        player.play(buffer);
+      });
+    });
+  }
+
+  // Add click event listener to the element with ID "mac"
+  document.getElementById('mac').addEventListener('click', function playOnce() {
+    playModTrack('/modfiles/acidjazz.xm');
+
+    // Remove the event listener after the first click
+    this.removeEventListener('click', playOnce);
+  });
+};
+</script>
+<script type="text/javascript" src="/chiptune2js/libopenmpt.js" async></script>
+<script type="text/javascript" src="/chiptune2js/chiptune2.js" async></script>
+
     <script>
         document.getElementById('mac').addEventListener('click', function() {
             document.getElementById('canvasContainer').style.opacity = '1';
