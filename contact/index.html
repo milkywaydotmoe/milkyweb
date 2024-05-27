@@ -1,162 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/x-icon" href="/favicons/normal.png"> 
-<title>contactme.sh</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/fonts.css">
+    <title>Placeholder Page</title>
+    <style>
+        @font-face {
+            font-family: 'Web437_IBM_VGA_8x16';
+            src: url('Web437_IBM_VGA_8x16.woff') format('woff');
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
+            color: #fff;
+            max-height: 100vh;
+            overflow: auto;
+            text-rendering: optimizeSpeed; /* Disable anti-aliasing for text rendering */
+        }
 
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        background-color: #2e2e2e;
-        color: #d6d6d6;
-        font-family: 'Fira Mono', monospace;
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-        height: 100vh;
-        overflow: hidden;
-    }
-    .terminal {
-        width: 100%;
-        border-radius: 8px;
-        overflow: hidden;
-        background-color: #2e2e2e;
-        padding: 20px;
-        box-sizing: border-box;
-    }
-    .terminal pre {
-        white-space: pre-wrap;
-        word-wrap: break-word;
-        padding: 0;
-        margin: 0;
-        line-height: 1;
-        font-size: 16px;
-        font-family: 'Web437_IBM_VGA_8x16', monospace;
-        -webkit-font-smoothing: none;
-        -moz-osx-font-smoothing: grayscale;
-    }
+        a {
+            color: #fff; /* Default link color */
+            text-decoration: none; /* Remove default underline */
+            font-style: normal; /* Remove default italics */
+        }
 
-    /* Include the Web437 font */
-    @font-face {
-        font-family: 'Web437_IBM_VGA_8x16';
-        src: url('Web437_IBM_VGA_8x16.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    }
+        a:hover {
+            text-decoration: underline; /* Add underline on hover */
+            font-style: italic; /* Add italics on hover */
+        }
+        .nfo-content {
+            font-family: 'Web437_IBM_VGA_8x16';
+            white-space: pre;
+            max-height: 100vh;          
+        }
 
-    /* Monokai Pro colors */
-    .green-text { color: #b4d273; }
-    .cyan-text { color:#6c99bb; }
-    .magenta-text { color: #b05279; }
+                @keyframes rainbow {
+            0% { color: #f22; }
+            14% { color: #ff2; }
+            28% { color: #5f2; }
+            42% { color: #2fd; }
+            56% { color: #32f; }
+            70% { color: #92f; }
+            84% { color: #f2c; }
+            100% { color: #f22; }
+        }
+        @keyframes sway {
+            0%, 100% { transform: translateX(-80px); }
+            50% { transform: translateX(80px); }
+        }
+        .animated-line:nth-child(1) { animation-delay: -0.1s; }
+        .animated-line:nth-child(2) { animation-delay: -0.2s; }
+        .animated-line:nth-child(3) { animation-delay: -0.3s; }
+        .animated-line:nth-child(4) { animation-delay: -0.4s; }
+        .animated-line:nth-child(5) { animation-delay: -0.5s; }
+        .animated-line:nth-child(6) { animation-delay: -0.6s; }
+        .animated-line:nth-child(7) { animation-delay: -0.7s; }
+        .animated-line:nth-child(8) { animation-delay: -0.8s; }
+        .animated-line:nth-child(9) { animation-delay: -0.9s; }
+        .animated-line:nth-child(10) { animation-delay: -1s; }
+        .animated-line:nth-child(11) { animation-delay: -1.1s; }
+        .animated-line:nth-child(12) { animation-delay: -1.2s; }
+        .animated-line:nth-child(13) { animation-delay: -1.3s; }
+        .animated-line:nth-child(14) { animation-delay: -1.4s; }
+        .animated-line:nth-child(15) { animation-delay: -1.5s; }
+        .animated-line:nth-child(16) { animation-delay: -1.6s; }
+        .animated-line:nth-child(17) { animation-delay: -1.7s; }
+        .animated-line:nth-child(18) { animation-delay: -1.8s; }
+        .animated-line:nth-child(19) { animation-delay: -1.9s; }
+        .animated-line:nth-child(20) { animation-delay: -2s; }
 
-    /* Disable scrolling */
-    html, body {
-        overflow: hidden;
-    }
+        .animated-line:nth-child(21) { animation-delay: -0.1s; }
+        .animated-line:nth-child(22) { animation-delay: -0.2s; }
+        .animated-line:nth-child(23) { animation-delay: -0.3s; }
 
-    pre a {
-        color: #6c99bb;
-        text-decoration: none;
-        transition: underline 0.2s ease;
-    }
-    pre a:hover {
-        text-decoration: underline;
-    }
+        .animated-line:nth-child(24) { animation-delay: -0.4s; }
+        .animated-line:nth-child(25) { animation-delay: -0.5s; }
+        .animated-line:nth-child(26) { animation-delay: -0.6s; }
 
-    .rainbow-text {
-        background: -webkit-linear-gradient(45deg, #ffb3ba, #ffdfba, #ffffba, #baffc9, #bae1ff, #ffb3ba);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        display: inline-block;
-    }
-
-    /* Styling for the fallback text */
-    #fallback-text {
-        white-space: pre-wrap;
-        word-wrap: break-word;
-        padding: 20px; /* Adjust padding */
-        margin: 0;
-        line-height: 1;
-        font-size: 16px;
-        font-family: 'Web437_IBM_VGA_8x16', monospace;
-        -webkit-font-smoothing: none;
-        -moz-osx-font-smoothing: grayscale;
-    }
-</style>
-
+        .animated-line:nth-child(27) { animation-delay: -0.7s; }
+        .animated-line:nth-child(28) { animation-delay: -0.8s; }
+        .animated-line:nth-child(29) { animation-delay: -0.9s; }
+        .animated-line {
+            animation: rainbow 5s steps(6) infinite;
+        }
+        .sway {
+            animation: sway 3s ease-in-out  infinite;
+        }
+    </style>
 </head>
 <body>
-<div class="terminal">
-<pre id="typed-text"></pre>
-</div>
+<div class="nfo-content">
+<div class="sway">
+<pre style="font-family: 'Web437_IBM_VGA_8x16';">
+<span class="animated-line"> ░          ▄███████ █ █ █▀</span>
+<span class="animated-line"> ▒░     ░   █                             -= milkyway.moe =-</span>
+<span class="animated-line"> ▓▒░   ░▒░  █   █▄       ▄█     █</span>
+<span class="animated-line"> █▓▒░ ░▒▓▒░ █   ███▄   ▄███ █▄  ██▄    █▄</span>
+<span class="animated-line"> ██▓▒░▒▓█▓▒ ░   █░█▀█▄█▀█░█ █▓█ █░█    ███       █▄  ▀▄▄</span>
+<span class="animated-line"> ▓██▓▒▓███▓ ▒   █▒█  █  █▒█     █▒█    █░█       █░█   ██          ▌</span>
+<span class="animated-line"> ▒▓██▓██▓██ ▓   █▓█  █  █▓█ ███ █▓█    █▒█    ▄▄ ▄▄▄▄▄▄▄▄▄▄▄▄▄     █</span>
+<span class="animated-line"> ░▒▓███▓▒▓█ ▓   █▓█  █      █░█ █▓█    █▓█  ▄█▀▀ █▒█ ░ █▒█   ▀█    █</span>
+<span class="animated-line">  ░▒▓█▓▒░▒▓ ▒   █▒█     █▒█ █▒█ █▓█    █▓█▄█▀    █▓█ ░ █▓█    ▀█   █ ░</span>
+<span class="animated-line">   ░▒▓▒░ ░▒ ░   █░█  █      █░█ █▓█    █▒█ ▄     █▒█ ░ █▒█    ▄█   ░ ▒░     ░</span>
+<span class="animated-line">    ░▒░   ░ █           █░█ ███ █▒█    █░█ █▄    █░█ ░ █░█▄█▀▀▀    ▒ ▓▒░   ░▒░</span>
+<span class="animated-line">     ░      █   ███  █       ▀█ █░█    ▀██  ▀█▄  ▀██▄▄▄███         ▓ █▓▒░ ░▒▓▒░</span>
+<span class="animated-line">            █           ███     █████▄▄▄            ▄▀█▓█          ▓ ██▓▒░▒▓█▓▒</span>
+<span class="animated-line">            ▌   █▀              ██▀    ▀█▄         █  █▒█    ▄ ▄▄  ▒ ▓██▓▒▓███▓</span>
+<span class="animated-line">                         ▀█     █         ▀▀▀    ▄▀  █░█       ▄▄▌ ░ ▒▓██▓██▓██</span>
+<span class="animated-line">                                                 █  █ █      ▀   ▌ █ ░▒▓███▓▒▓█</span>
+<span class="animated-line">                     < b!less^BGSPA >            ▀▄▄██         ▀▀  █  ░▒▓█▓▒░▒▓</span>
+<span class="animated-line">                                                                   █   ░▒▓▒░ ░▒</span>
+<span class="animated-line">                                                    ▀█ █ █ ████████▀    ░▒░   ░</span>
+<span class="animated-line">                                                                         ░</span>
+</div></pre>
 
-<script>
-    // Check if JavaScript is enabled
-    document.addEventListener('DOMContentLoaded', function() {
-        // Fetch text from external file and insert it into the pre element with typing effect
-        fetch('text.html')
-            .then(response => response.text())
-            .then(text => {
-                const lines = text.split('\n');
-                const pre = document.getElementById('typed-text');
-                let index = 0;
+                            -=  p r o u d l y  p r e s e n t =-
 
-                function type() {
-                    pre.innerHTML += lines[index++] + '';
-                    pre.scrollTop = pre.scrollHeight; // Scroll to bottom
-                    if (index < lines.length) {
-                        setTimeout(type, 45); // Adjust typing speed (milliseconds)
-                    }
-                }
-                type();
-            })
-            .catch(error => console.error('Error fetching text:', error));
+            ▄█▓▒░    <span class="animated-line">╦═╗╔═╗╦  ╔═╗╔═╗╔═╗╔═╗</span>    ░▒▓█▄
+          ▄███▓▒░    <span class="animated-line">╠╦╝║╣ ║  ║╣ ╠═╣╚═╗║╣ </span>    ░▒▓███▄
+      ▄███████▓▒░    <span class="animated-line">╩╚═╚═╝╩═╝╚═╝╩ ╩╚═╝╚═╝</span>    ░▒▓█████████████████████▄     M
+      ██▀                                                            ▀██
+      ██                      +  MILKYWAYDOTMOE +                     ██    I
+      ██                   (C) 2024 milkyway systems                  ██
+      ██                                                              ██    L
+      ██ ═ ══ ══════════════════════════════════════════════════ ══ ═ ██
+      ██                                                              ██    K
+      ██  CRACKER : MiLKY-P             RELEASE DATE:                 ██
+      ██  SUPPLIER: MiLKY-P             LINES:                        ██    Y
+      ██  PACKAGER: nekoweb             RELEASE TYPE: WORLD WIDE WEB  ██
+      ██▄                                                            ▄██    W
+      ▀███████▓▒░                             ░▒▓██████████████████████▀
+          ████▓▒░    <span class="animated-line">╔═╗╔═╗╔╗╔╔╦╗╔═╗╔═╗╔╦╗</span>    ░▒▓████                       A
+          ████▓▒░    <span class="animated-line">║  ║ ║║║║ ║ ╠═╣║   ║</span>     ░▒▓████ ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
+          ████▓▒░    <span class="animated-line">╚═╝╚═╝╝╚╝ ╩ ╩ ╩╚═╝ ╩ </span>    ░▒▓████                       Y
+      ▄███████▓▒░                             ░▒▓█████████████████████▄
+      ██▀                                                            ▀██    ☼
+      ██  =  You can contact me or check me out using these links! =  ██
+      ██                                                              ██    D
+      ██            <span style="color: #667">Tumblr:</span>          <a href="https://www.tumblr.com/blog/milkyautism">@milkyautism</a>                     ██
+      ██            <span style="color: #fff">Github:</span>          <a href="https://github.com/milkywaydotmoe">milkywaydotmoe</a>                   ██    O
+      ██            <span style="color: #F00">YouTube:</span>         <a href="https://www.youtube.com/@milkyproduxions">@milkyproduxions</a>                 ██
+      ██            <span style="color: #56F">Discord:</span>         <a href="https://discord.com/users/1132113269428076594">milky.hima</a>                       ██    T
+      ██            <span style="color: #1AF">Twitter:</span>         <a href="https://twitter.com/milkywaydotmoe">@milkywaydotmoe</a>                  ██
+      ██            <span style="color: #64a">Twitch:</span>          <a href="https://twitch.tv/milkiivt">milkiivt</a>                         ██    ☼
+      ██            <span style="color: #6cf">Steam:</span>           <a href="https://steamcommunity.com/id/himaonline/">himaonline</a>                       ██
+      ██            <span style="color: #c00">last.fm:</span>         <a href="https://last.fm/user/milkywaydotmoe">milkywaydotmoe</a>                   ██    M
+      ██            <span style="color: #af4">Misskey:</span>         <a href="https://misskey.io/@milkyautism/">@milkyautism</a>                     ██
+      ██            <span style="color: #14D">Spacehey:</span>        <a href="https://spacehey.com/profile?id=2582545">milkyway</a>                         ██    O
+      ██            <span style="color: #18f">Bluesky:</span>         <a href="https://bsky.app/profile/milky-p.bsky.social">milky-p.bsky.social</a>              ██
+      ██                                                              ██    E
+      ██            = or contact me on these platforms =              ██
+      ██                                                              ██    ☼
+      ██  Email:           webmaster@milkyway.moe                     ██
+      ██  CRK:             milkytism (on Pure Vanilla Server)         ██    C
+      ██  Geometry Dash:   MiLKYP                                     ██
+      ██▄                                                            ▄██    O
+      ▀███████▓▒░                             ░▒▓██████████████████████▀
+          ████▓▒░    <span class="animated-line">╔═╗╦═╗╔═╗╔═╗╔╦╗╔═╗╔═╗</span>    ░▒▓████                       N
+          ████▓▒░    <span class="animated-line">║ ╦╠╦╝║╣ ║╣  ║ ╚═╗╔═╝</span>    ░▒▓████ ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
+          ████▓▒░    <span class="animated-line">╚═╝╩╚═╚═╝╚═╝ ╩ ╚═╝╚═╝</span>    ░▒▓████                       T
+      ▄███████▓▒░                             ░▒▓█████████████████████▄
+      ██▀                                                            ▀██    A
+      ██    dimden, rooot, bang1338, ctrix, ellestuff, gd flaaroni,   ██
+      ██     colon, aislynweaver, tepiloxtl, velcrow102, twylight,    ██    C
+      ██        vman2002, trl, max, rizer, leliel, ava, sapero,       ██
+      ██     mooniecometmoone, kagame, cream unicorn, mozzarella,     ██    T
+      ██     kkclue, robtop, absolllute, titan, revision, openai,     ██
+      ██    github, ashton, ate bit, desire, paradox, crtc, hornet,   ██    ☼
+      ██    viler, razor1911, fitgirl repacks, r2r, trixter, pouet,   ██
+      ██   modarchive, ggboy, funnygame, flustix, cootieqt, reselim,  ██    L
+      ██       fuckwad, yungtron, kitty, blakeiyazoi, core, raid,     ██
+      ██      disire, bgspa, syrupyy, dilik, tom_rus, michigun, el    ██    I
+      ██                                                              ██
+      ██          and all peoples we know and forgotten :3            ██    N
+      ██▄                                                            ▄██
+      ▀█████████████████████████▓▒░ <a href="/">MiLKY!</a> ░▒▓█████████████████████████▀    K
 
-        // Hide the fallback content
-        const fallbackText = document.getElementById('fallback-text');
-        if (fallbackText) {
-            fallbackText.style.display = 'none';
-        }
-    });
-</script>
+       ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡     S
 
-<!-- Fallback content in a separate pre element -->
-<pre id="fallback-text" style="text-align: left; position: absolute;">
-<span class="green-text">user@milkyway.moe:</span><span class="cyan-text">~</span><span class="magenta-text">$</span> chmod +x contactme.sh && ./contactme.sh<br>
-=================================================
-<span style="color: #ff7c7c"> </span><span style="color: #ff857c">•</span><span style="color: #ff8f7c"> </span><span style="color: #ff987c">▌</span><span style="color: #ffa17b"> </span><span style="color: #ffaa7b">▄</span><span style="color: #ffb47b"> </span><span style="color: #ffbd7b">·</span><span style="color: #ffc67c">.</span><span style="color: #ffd07d"> </span><span style="color: #ffd97e">▪</span><span style="color: #ffe37f"> </span><span style="color: #ffec80"> </span><span style="color: #fff681">▄</span><span style="color: #ffff82">▄</span><span style="color: #eeff83">▌</span><span style="color: #deff85"> </span><span style="color: #cdff86"> </span><span style="color: #bdff87">▄</span><span style="color: #acff88"> </span><span style="color: #9cff8a">•</span><span style="color: #8bff8b">▄</span><span style="color: #8bff9e"> </span><span style="color: #8cffb2"> </span><span style="color: #8cffc5">▄</span><span style="color: #8cffd8">·</span><span style="color: #8dffec"> </span><span style="color: #8dffff">▄</span><span style="color: #8ff0ff">▌</span><span style="color: #90e2ff">▄</span><span style="color: #92d3ff">▄</span><span style="color: #93c4ff">▌</span><span style="color: #95b5ff"> </span><span style="color: #96a7ff">▐</span><span style="color: #9898ff"> </span><span style="color: #a19bff">▄</span><span style="color: #aa9dff">▌</span><span style="color: #b3a0ff"> </span><span style="color: #bda2ff">▄</span><span style="color: #c6a5ff">▄</span><span style="color: #cfa7ff">▄</span><span style="color: #d8aaff">·</span><span style="color: #dea8f1"> </span><span style="color: #e3a7e4"> </span><span style="color: #e9a5d6">▄</span><span style="color: #eea4c8">·</span><span style="color: #f4a2ba"> </span><span style="color: #f9a1ad">▄</span><span style="color: #ff9f9f">▌</span>
-<span style="color: #ff7c7c"> </span><span style="color: #ff857c">·</span><span style="color: #ff8f7c">█</span><span style="color: #ff987c">█</span><span style="color: #ffa17b"> </span><span style="color: #ffaa7b">▐</span><span style="color: #ffb47b">█</span><span style="color: #ffbd7b">█</span><span style="color: #ffc67c">█</span><span style="color: #ffd07d">▪</span><span style="color: #ffd97e">█</span><span style="color: #ffe37f">█</span><span style="color: #ffec80"> </span><span style="color: #fff681">█</span><span style="color: #ffff82">█</span><span style="color: #eeff83">•</span><span style="color: #deff85"> </span><span style="color: #cdff86"> </span><span style="color: #bdff87">█</span><span style="color: #acff88">▌</span><span style="color: #9cff8a">▄</span><span style="color: #8bff8b">▌</span><span style="color: #8bff9e">▪</span><span style="color: #8cffb2">▐</span><span style="color: #8cffc5">█</span><span style="color: #8cffd8">▪</span><span style="color: #8dffec">█</span><span style="color: #8dffff">█</span><span style="color: #8ff0ff">▌</span><span style="color: #90e2ff">█</span><span style="color: #92d3ff">█</span><span style="color: #93c4ff">·</span><span style="color: #95b5ff"> </span><span style="color: #96a7ff">█</span><span style="color: #9898ff">▌</span><span style="color: #a19bff">▐</span><span style="color: #aa9dff">█</span><span style="color: #b3a0ff">▐</span><span style="color: #bda2ff">█</span><span style="color: #c6a5ff"> </span><span style="color: #cfa7ff">▀</span><span style="color: #d8aaff">█</span><span style="color: #dea8f1"> </span><span style="color: #e3a7e4">▐</span><span style="color: #e9a5d6">█</span><span style="color: #eea4c8">▪</span><span style="color: #f4a2ba">█</span><span style="color: #f9a1ad">█</span><span style="color: #ff9f9f">▌</span>
-<span style="color: #ff7c7c"> </span><span style="color: #ff857c">▐</span><span style="color: #ff8f7c">█</span><span style="color: #ff987c"> </span><span style="color: #ffa17b">▌</span><span style="color: #ffaa7b">▐</span><span style="color: #ffb47b">▌</span><span style="color: #ffbd7b">▐</span><span style="color: #ffc67c">█</span><span style="color: #ffd07d">·</span><span style="color: #ffd97e">▐</span><span style="color: #ffe37f">█</span><span style="color: #ffec80">·</span><span style="color: #fff681">█</span><span style="color: #ffff82">█</span><span style="color: #eeff83">▪</span><span style="color: #deff85"> </span><span style="color: #cdff86"> </span><span style="color: #bdff87">▐</span><span style="color: #acff88">▀</span><span style="color: #9cff8a">▀</span><span style="color: #8bff8b">▄</span><span style="color: #8bff9e">·</span><span style="color: #8cffb2">▐</span><span style="color: #8cffc5">█</span><span style="color: #8cffd8">▌</span><span style="color: #8dffec">▐</span><span style="color: #8dffff">█</span><span style="color: #8ff0ff">▪</span><span style="color: #90e2ff">█</span><span style="color: #92d3ff">█</span><span style="color: #93c4ff">▪</span><span style="color: #95b5ff">▐</span><span style="color: #96a7ff">█</span><span style="color: #9898ff">▐</span><span style="color: #a19bff">▐</span><span style="color: #aa9dff">▌</span><span style="color: #b3a0ff">▄</span><span style="color: #bda2ff">█</span><span style="color: #c6a5ff">▀</span><span style="color: #cfa7ff">▀</span><span style="color: #d8aaff">█</span><span style="color: #dea8f1"> </span><span style="color: #e3a7e4">▐</span><span style="color: #e9a5d6">█</span><span style="color: #eea4c8">▌</span><span style="color: #f4a2ba">▐</span><span style="color: #f9a1ad">█</span><span style="color: #ff9f9f">▪</span>
-<span style="color: #ff7c7c"> </span><span style="color: #ff857c">█</span><span style="color: #ff8f7c">█</span><span style="color: #ff987c"> </span><span style="color: #ffa17b">█</span><span style="color: #ffaa7b">█</span><span style="color: #ffb47b">▌</span><span style="color: #ffbd7b">▐</span><span style="color: #ffc67c">█</span><span style="color: #ffd07d">▌</span><span style="color: #ffd97e">▐</span><span style="color: #ffe37f">█</span><span style="color: #ffec80">▌</span><span style="color: #fff681">▐</span><span style="color: #ffff82">█</span><span style="color: #eeff83">▌</span><span style="color: #deff85">▐</span><span style="color: #cdff86">▌</span><span style="color: #bdff87">▐</span><span style="color: #acff88">█</span><span style="color: #9cff8a">.</span><span style="color: #8bff8b">█</span><span style="color: #8bff9e">▌</span><span style="color: #8cffb2"> </span><span style="color: #8cffc5">▐</span><span style="color: #8cffd8">█</span><span style="color: #8dffec">▀</span><span style="color: #8dffff">·</span><span style="color: #8ff0ff">.</span><span style="color: #90e2ff">▐</span><span style="color: #92d3ff">█</span><span style="color: #93c4ff">▌</span><span style="color: #95b5ff">█</span><span style="color: #96a7ff">█</span><span style="color: #9898ff">▐</span><span style="color: #a19bff">█</span><span style="color: #aa9dff">▌</span><span style="color: #b3a0ff">▐</span><span style="color: #bda2ff">█</span><span style="color: #c6a5ff"> </span><span style="color: #cfa7ff">▪</span><span style="color: #d8aaff">▐</span><span style="color: #dea8f1">▌</span><span style="color: #e3a7e4"> </span><span style="color: #e9a5d6">▐</span><span style="color: #eea4c8">█</span><span style="color: #f4a2ba">▀</span><span style="color: #f9a1ad">·</span><span style="color: #ff9f9f">.</span>
-<span style="color: #ff7c7c"> </span><span style="color: #ff857c">▀</span><span style="color: #ff8f7c">▀</span><span style="color: #ff987c"> </span><span style="color: #ffa17b"> </span><span style="color: #ffaa7b">█</span><span style="color: #ffb47b">▪</span><span style="color: #ffbd7b">▀</span><span style="color: #ffc67c">▀</span><span style="color: #ffd07d">▀</span><span style="color: #ffd97e">▀</span><span style="color: #ffe37f">▀</span><span style="color: #ffec80">▀</span><span style="color: #fff681">.</span><span style="color: #ffff82">▀</span><span style="color: #eeff83">▀</span><span style="color: #deff85">▀</span><span style="color: #cdff86"> </span><span style="color: #bdff87">·</span><span style="color: #acff88">▀</span><span style="color: #9cff8a"> </span><span style="color: #8bff8b"> </span><span style="color: #8bff9e">▀</span><span style="color: #8cffb2"> </span><span style="color: #8cffc5"> </span><span style="color: #8cffd8">▀</span><span style="color: #8dffec"> </span><span style="color: #8dffff">•</span><span style="color: #8ff0ff"> </span><span style="color: #90e2ff"> </span><span style="color: #92d3ff">▀</span><span style="color: #93c4ff">▀</span><span style="color: #95b5ff">▀</span><span style="color: #96a7ff">▀</span><span style="color: #9898ff"> </span><span style="color: #a19bff">▀</span><span style="color: #aa9dff">▪</span><span style="color: #b3a0ff"> </span><span style="color: #bda2ff">▀</span><span style="color: #c6a5ff"> </span><span style="color: #cfa7ff"> </span><span style="color: #d8aaff">▀</span><span style="color: #dea8f1"> </span><span style="color: #e3a7e4"> </span><span style="color: #e9a5d6"> </span><span style="color: #eea4c8">▀</span><span style="color: #f4a2ba"> </span><span style="color: #f9a1ad">•</span><span style="color: #ff9f9f"> </span>
-================== contact me! ==================
-
-You can contact me or check me out using these links!
-
-<span style="color: #61617b">Tumblr:</span>          <a href="https://www.tumblr.com/blog/milkyautism">@milkyautism</a>
-<span style="color: #ffffff">Github:</span>          <a href="https://github.com/milkywaydotmoe">milkywaydotmoe</a>
-<span style="color: #FF0000">YouTube:</span>         <a href="https://www.youtube.com/@milkyproduxions">@milkyproduxions</a>
-<span style="color: #5865F2">Discord:</span>         <a href="https://discord.com/users/1132113269428076594">milky.hima</a>
-<span style="color: #1DA1F2">Twitter:</span>         <a href="https://twitter.com/milkywaydotmoe">@milkywaydotmoe</a>
-<span style="color: #6441a5">Twitch:</span>          <a href="https://twitch.tv/milkiivt">milkiivt</a>
-<span style="color: #66c0f4">Steam:</span>           <a href="https://steamcommunity.com/id/himaonline/">himaonline</a>
-<span style="color: #c3000d">last.fm:</span>         <a href="https://last.fm/user/milkywaydotmoe">milkywaydotmoe</a>
-<span style="color: #a9f643">Misskey:</span>         <a href="https://misskey.io/@milkyautism/">@milkyautism</a>
-<span style="color: #1D4ED8">Spacehey:</span>        <a href="https://spacehey.com/profile?id=2582545">milkyway</a>
-<span style="color: #1083fe">Bluesky:</span>         <a href="https://bsky.app/profile/milky-p.bsky.social">milky-p.bsky.social</a>
-
-or contact me on these platforms
-Email:           <a href="mailto:webmaster@milkyway.moe">webmaster@milkyway.moe</a>
-CRK:             milkytism (on Pure Vanilla Server)
-Geometry Dash:   MiLKYP
-
-<a href="/">Or you can go home by clicking this link!</a>
-
-<span class="green-text">user@milkyway.moe:</span><span class="cyan-text">~</span><span class="magenta-text">$</span>
+    <span style="color: #aaa">┌───────────────────────────────────────────────────────────────────────┐
+    │  :3             :3                                     :3             │
+    │         :3           :3        :3        :3     :3             :3     │
+    │    :3                                                                 │
+    │            :3       nfo by  bang1338^BGSPA             :3     :3      │
+    │  :3                  bang1338.nekoweb.org                             │
+    │        :3         :3                        :3             :3     :3  │
+    │   :3          :3         :3          :3             :3                │
+    │                                                                       │
+    └───────────────────────────────────────────────────────────────────────┘</span>
 </pre>
+</div>
+    <script>
+        // Function to convert RGB to 3-digit hex
+        function rgbTo3DigitHex(rgb) {
+            return '#' + rgb.map(c => Math.round(c / 17).toString(16)).join('');
+        }
 
+        // Function to sample and posterize colors during animation
+        function updateColorsDuringAnimation() {
+            const elements = document.querySelectorAll('.animated-line');
+            elements.forEach(element => {
+                const style = window.getComputedStyle(element);
+                const color = style.getPropertyValue('color');
+                if (color.startsWith('rgb')) {
+                    const rgb = color.match(/\d+/g).map(Number);
+                    const newColor = rgbTo3DigitHex(rgb);
+                    element.style.color = newColor;
+                }
+            });
+        }
+
+        // Update colors during animation at regular intervals
+        setInterval(updateColorsDuringAnimation, 1); // Adjust interval as needed
+    </script>
+
+    <script type="module">
+import { ModPlayer } from 'https://atornblad.se/files/js-mod-player/player.js';
+
+document.addEventListener('DOMContentLoaded', async () => {
+    const player = new ModPlayer(new AudioContext());
+    await player.load(URL_OF_YOUR_MOD_FILE);
+    document.addEventListener('click', () => player.play());
+});
+    </script>
 </body>
 </html>
