@@ -92,6 +92,10 @@
             animation: sway 3s ease-in-out  infinite;
         }
     </style>
+
+    <script src="/a1k0n/xm.js"></script>
+	<script src="/a1k0n/xmeffects.js"></script>
+	<script src="/a1k0n/shell.js"></script>
 </head>
 <body>
 <div class="nfo-content">
@@ -220,12 +224,51 @@
     </script>
 
 <script type="text/javascript">
+    // Play the XM file
+    function play() {
+        XMPlayer.play();
+    }
+
+    // Initialize the player
+    function init(){
+        XMPlayer.init();
+    }
+
+
+    // Load the XM file
+    fetch('test1.xm')
+        .then(response => response.arrayBuffer())
+        .then(buffer => {
+            XMPlayer.load(buffer);
+        });
+
+    // Pause the XM file
+    function pause() {
+        XMPlayer.pause();
+    }
+
+    // Stop the XM file
+    function stop() {
+        XMPlayer.stop();
+    }
+
+    window.onload = function() {
+        init();
+    }
+
+    window.onmousedown = function()
+    {
+        console.log("Playing, I guess");
+        play();
+    };
+    /* bang1338: Screw libopenmpt
     window['libopenmpt'] = {};
     libopenmpt.locateFile = function (filename) {
       return "/chiptune2js/" + filename;
     };
+
     libopenmpt.onRuntimeInitialized = function () {
-        var player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1, 50, 1)); // Adjust stereoSeparation and interpolationFilter here
+        var player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1, 50, 1)); // Adjust stereoSeparation and interpolationFilter here;
 
         function playModTrack(modUrl) {
             player.load(modUrl, function(buffer) {
@@ -243,21 +286,23 @@
             // For PC
             window.onmousedown = function()
             {
+                console.log("Playing, I guess");
                 playModTrack('test1.mod');
             };
 
             // TODO: adding mobile support
-            /*
             // For mobile, didn't work somehow
             window.addEventListener("touchstart", function() {
                 playModTrack('test1.mod')
             });
-            */
 
         };
     };
+    */
 </script>
+<!--
 <script type="text/javascript" src="/chiptune2js/libopenmpt.js"></script>
 <script type="text/javascript" src="/chiptune2js/chiptune2.js"></script>
+-->
 </body>
 </html>
