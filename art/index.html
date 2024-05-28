@@ -247,7 +247,8 @@ libopenmpt.onRuntimeInitialized = function () {
 
   if (isChrome) {
     // Attach event listeners for mouse movement and touch input
-    window.addEventListener('DOMContentLoaded', onFirstInteraction);
+    window.addEventListener('mousemove', onFirstInteraction, { once: true });
+    window.addEventListener('touchstart', onFirstInteraction, { once: true });
   } else {
     // For non-Chrome browsers, use click or touchstart
     window.addEventListener('click', onFirstInteraction);

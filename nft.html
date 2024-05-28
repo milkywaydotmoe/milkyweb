@@ -29,59 +29,13 @@
         Your browser does not support the audio element.
     </audio>
 
-<script>
-document.addEventListener('DOMContentLoaded', (event) => {
-    const player = document.getElementById('player');
-    const audio = document.getElementById('badToTheBoneAudio');
-    let initialized = false;
-
-    // Function to initialize player and play audio
-    const initializePlayer = () => {
-        if (!initialized) {
-            initialized = true;
-
-            // Resume AudioContext if needed and start player
-            if (typeof player.audioContext !== 'undefined' && player.audioContext.state === 'suspended') {
-                player.audioContext.resume().then(() => {
-                    console.log('AudioContext resumed');
-                    console.log('Content loaded and ready to play');
-                    player.start();
-                    audio.play();
-                });
-            } else {
-                console.log('Content loaded and ready to play');
-                player.start();
-                audio.play();
-            }
-
-            player.addEventListener('loop', () => {
-                console.log('Playback looped');
-            });
-
-            player.addEventListener('start', () => {
-                console.log('Playback started');
-            });
-
-            player.addEventListener('stop', (event) => {
-                console.log(`Playback stopped. Finished: ${event.detail.finished}`);
-            });
-        }
-    };
-
-    // Function to detect Chrome browser
-    const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-
-    if (isChrome) {
-        // For Chrome, use first mouse movement or touch input
-    // Attach event listeners for mouse movement and touch input
-    window.addEventListener('DOMContentLoaded', onFirstInteraction);
-    } else {
-        // For other browsers, use first click or touch input
-        window.addEventListener('click', initializePlayer, { once: true });
-        window.addEventListener('touchstart', initializePlayer, { once: true });
-    }
-});
-</script>
-
+    <script>
+        // Wait for the DOM content to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Play the audio when the DOM is loaded
+            var audio = document.getElementById('badToTheBoneAudio');
+            audio.play();
+        });
+    </script>
 </body>
 </html>
