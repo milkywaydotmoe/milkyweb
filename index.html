@@ -298,32 +298,58 @@
          });
     </script>
 
-    <script type="text/javascript" async>
-    window['libopenmpt'] = {};
-    libopenmpt.locateFile = function (filename) {
-      return "/chiptune2js/" + filename;
-    };
-    libopenmpt.onRuntimeInitialized = function () {
-        var player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1, 50, 1)); // Adjust stereoSeparation and interpolationFilter here
+<script type="text/javascript" async>
+window['libopenmpt'] = {};
+libopenmpt.locateFile = function (filename) {
+  return "/chiptune2js/" + filename;
+};
 
-        function playModTrack(modUrl) {
-            player.load(modUrl, function(buffer) {
-                player.play(buffer);
+libopenmpt.onRuntimeInitialized = function () {
+  var player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1, 50, 1)); // Adjust stereoSeparation and interpolationFilter here
 
-                // Loop the track when it ends
-                player.onEnded(function() {
-                    player.play(buffer);
-                });
-            });
-        }
+  function playModTrack(modUrl) {
+    player.load(modUrl, function(buffer) {
+      player.play(buffer);
 
-        // Start playing the .mod track as soon as the page is loaded
-        window.onload = function() {
-            playModTrack('/modfiles/rollingdownthestreet.xm');
-        };
-    };
+      // Loop the track when it ends
+      player.onEnded(function() {
+        player.play(buffer);
+      });
+    });
+  }
+
+  function resumeAudioContext() {
+    if (player.context.state === 'suspended') {
+      return player.context.resume();
+    }
+    return Promise.resolve();
+  }
+
+  // Function to handle the first user interaction
+  function onFirstInteraction() {
+    resumeAudioContext().then(() => {
+      playModTrack('/modfiles/rollingdownthestreet.xm');
+    });
+
+    // Remove the event listeners after the first interaction
+    window.removeEventListener('click', onFirstInteraction);
+    window.removeEventListener('touchstart', onFirstInteraction);
+  }
+
+  // Detect if the browser is Chrome
+  var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+
+  if (isChrome) {
+    // Attach event listeners for mouse movement and touch input
+    window.addEventListener('DOMContentLoaded', onFirstInteraction);
+  } else {
+    // For non-Chrome browsers, use click or touchstart
+    window.addEventListener('click', onFirstInteraction);
+    window.addEventListener('touchstart', onFirstInteraction);
+  }
+};
 </script>
-<script type="text/javascript" src="/chiptune2js/libopenmpt.js" async></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/deskjet/chiptune2.js@master/libopenmpt.js" async></script>
 <script type="text/javascript" src="/chiptune2js/chiptune2.js" async></script>
 
 </body>

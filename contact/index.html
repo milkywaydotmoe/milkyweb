@@ -223,86 +223,58 @@
         setInterval(updateColorsDuringAnimation, 1); // Adjust interval as needed
     </script>
 
-<script type="text/javascript">
-    // Play the XM file
-    function play() {
-        XMPlayer.play();
+<script type="text/javascript" async>
+window['libopenmpt'] = {};
+libopenmpt.locateFile = function (filename) {
+  return "/chiptune2js/" + filename;
+};
+
+libopenmpt.onRuntimeInitialized = function () {
+  var player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1, 50, 1)); // Adjust stereoSeparation and interpolationFilter here
+
+  function playModTrack(modUrl) {
+    player.load(modUrl, function(buffer) {
+      player.play(buffer);
+
+      // Loop the track when it ends
+      player.onEnded(function() {
+        player.play(buffer);
+      });
+    });
+  }
+
+  function resumeAudioContext() {
+    if (player.context.state === 'suspended') {
+      return player.context.resume();
     }
+    return Promise.resolve();
+  }
 
-    // Initialize the player
-    function init(){
-        XMPlayer.init();
-    }
+  // Function to handle the first user interaction
+  function onFirstInteraction() {
+    resumeAudioContext().then(() => {
+      playModTrack('test1.mod');
+    });
 
+    // Remove the event listeners after the first interaction
+    window.removeEventListener('click', onFirstInteraction);
+    window.removeEventListener('touchstart', onFirstInteraction);
+  }
 
-    // Load the XM file
-    fetch('test1.xm')
-        .then(response => response.arrayBuffer())
-        .then(buffer => {
-            XMPlayer.load(buffer);
-        });
+  // Detect if the browser is Chrome
+  var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 
-    // Pause the XM file
-    function pause() {
-        XMPlayer.pause();
-    }
-
-    // Stop the XM file
-    function stop() {
-        XMPlayer.stop();
-    }
-
-    window.onload = function() {
-        init();
-    }
-
-    window.onmousedown = function()
-    {
-        console.log("Playing, I guess");
-        play();
-    };
-    /* bang1338: Screw libopenmpt
-    window['libopenmpt'] = {};
-    libopenmpt.locateFile = function (filename) {
-      return "/chiptune2js/" + filename;
-    };
-
-    libopenmpt.onRuntimeInitialized = function () {
-        var player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1, 50, 1)); // Adjust stereoSeparation and interpolationFilter here;
-
-        function playModTrack(modUrl) {
-            player.load(modUrl, function(buffer) {
-                player.play(buffer);
-
-                // Loop the track when it ends
-                player.onEnded(function() {
-                    player.play(buffer);
-                });
-            });
-        }
-
-        // Start playing the .mod track as soon as the page is loaded
-        window.onload = function() {
-            // For PC
-            window.onmousedown = function()
-            {
-                console.log("Playing, I guess");
-                playModTrack('test1.mod');
-            };
-
-            // TODO: adding mobile support
-            // For mobile, didn't work somehow
-            window.addEventListener("touchstart", function() {
-                playModTrack('test1.mod')
-            });
-
-        };
-    };
-    */
+  if (isChrome) {
+    // Attach event listeners for mouse movement and touch input
+    window.addEventListener('DOMContentLoaded', onFirstInteraction);
+  } else {
+    // For non-Chrome browsers, use click or touchstart
+    window.addEventListener('click', onFirstInteraction);
+    window.addEventListener('touchstart', onFirstInteraction);
+  }
+};
 </script>
-<!--
-<script type="text/javascript" src="/chiptune2js/libopenmpt.js"></script>
-<script type="text/javascript" src="/chiptune2js/chiptune2.js"></script>
--->
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/deskjet/chiptune2.js@master/libopenmpt.js" async></script>
+<script type="text/javascript" src="/chiptune2js/chiptune2.js" async></script>
 </body>
 </html>
