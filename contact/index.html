@@ -240,7 +240,20 @@
 
         // Start playing the .mod track as soon as the page is loaded
         window.onload = function() {
-            playModTrack('test1.mod');
+            // For PC
+            window.onmousedown = function()
+            {
+                playModTrack('test1.mod');
+            };
+
+            // TODO: adding mobile support
+            /*
+            // For mobile, didn't work somehow
+            window.addEventListener("touchstart", function() {
+                playModTrack('test1.mod')
+            });
+            */
+
         };
     };
 </script>
