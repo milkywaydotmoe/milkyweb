@@ -90,8 +90,8 @@ libopenmpt.onRuntimeInitialized = function () {
     window.addEventListener('touchstart', onFirstInteraction, { once: true });
   } else {
     // For non-Chrome browsers, use click or touchstart
-    window.addEventListener('click', onFirstInteraction);
-    window.addEventListener('touchstart', onFirstInteraction);
+    window.addEventListener('click', onFirstInteraction, { once: true });
+    window.addEventListener('touchstart', onFirstInteraction, { once: true });
   }
 };
 </script>

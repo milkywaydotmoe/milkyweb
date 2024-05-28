@@ -210,12 +210,12 @@ libopenmpt.onRuntimeInitialized = function () {
     window.addEventListener('touchstart', onFirstInteraction, { once: true });
   } else {
     // For non-Chrome browsers, use click or touchstart
-    window.addEventListener('click', onFirstInteraction);
-    window.addEventListener('touchstart', onFirstInteraction);
+    window.addEventListener('click', onFirstInteraction, { once: true });
+    window.addEventListener('touchstart', onFirstInteraction, { once: true });
   }
 };
 </script>
-<script type="text/javascript" src="/chiptune2js//libopenmpt.js" async></script>
+<script type="text/javascript" src="/chiptune2js/libopenmpt.js" async></script>
 <script type="text/javascript" src="/chiptune2js/chiptune2.js" async></script>
 </body>
 </html>

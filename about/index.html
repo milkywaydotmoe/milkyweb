@@ -643,40 +643,61 @@
   });
 </script>
 
-    <script>
-        window.addEventListener('DOMContentLoaded', (event) => {
-            const player = document.getElementById('player');
-            let started = false;
+<script type="text/javascript" async>
+window['libopenmpt'] = {};
+libopenmpt.locateFile = function (filename) {
+  return "/chiptune2js/" + filename;
+};
 
-            // Add event listeners
-            player.addEventListener('loadeddata', () => {
-                console.log('Content loaded and ready to play');
-            });
+libopenmpt.onRuntimeInitialized = function () {
+  var player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1, 50, 1)); // Adjust stereoSeparation and interpolationFilter here
 
-            player.addEventListener('play', () => {
-                console.log('Playback started');
-            });
+  function playModTrack(modUrl) {
+    player.load(modUrl, function(buffer) {
+      player.play(buffer);
 
-            player.addEventListener('ended', () => {
-                console.log('Playback ended');
-            });
+      // Loop the track when it ends
+      player.onEnded(function() {
+        player.play(buffer);
+      });
+    });
+  }
 
-            // Start playback on any click event
-            document.addEventListener('click', () => {
-                if (!started) {
-                    player.play();
-                    started = true;
-                }
-            });
+  function resumeAudioContext() {
+    if (player.context.state === 'suspended') {
+      return player.context.resume();
+    }
+    return Promise.resolve();
+  }
 
-            // Stop playback on right-click (context menu)
-            document.addEventListener('contextmenu', (event) => {
-                event.preventDefault();
-                player.pause();
-                console.log(`Playback stopped. Finished: ${player.currentTime >= player.duration}`);
-            });
-        });
-    </script>
+  // Function to handle the first user interaction
+  function onFirstInteraction() {
+    resumeAudioContext().then(() => {
+      playModTrack('/modfiles/PASSPORT.mptm');
+    });
+
+    // Remove the event listeners after the first interaction
+    window.removeEventListener('click', onFirstInteraction);
+    window.removeEventListener('touchstart', onFirstInteraction);
+  }
+
+  // Detect if the browser is Chrome
+  var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+
+  if (isChrome) {
+    // Attach event listeners for mouse movement and touch input
+    window.addEventListener('mousemove', onFirstInteraction, { once: true });
+    window.addEventListener('touchstart', onFirstInteraction, { once: true });
+  } else {
+    // For non-Chrome browsers, use click or touchstart
+    window.addEventListener('click', onFirstInteraction, { once: true });
+    window.addEventListener('touchstart', onFirstInteraction, { once: true });
+  }
+};
+</script>
+<script type="text/javascript" src="/chiptune2js/libopenmpt.js" async></script>
+<script type="text/javascript" src="/chiptune2js/chiptune2.js" async></script>
+
 
 
 
