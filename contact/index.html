@@ -92,10 +92,6 @@
             animation: sway 3s ease-in-out  infinite;
         }
     </style>
-
-    <script src="/a1k0n/xm.js"></script>
-	<script src="/a1k0n/xmeffects.js"></script>
-	<script src="/a1k0n/shell.js"></script>
 </head>
 <body>
 <div class="nfo-content">
@@ -134,8 +130,8 @@
       ██                                                              ██    L
       ██ ═ ══ ══════════════════════════════════════════════════ ══ ═ ██
       ██                                                              ██    K
-      ██  CRACKER : MiLKY-P             RELEASE DATE:                 ██
-      ██  SUPPLIER: MiLKY-P             LINES:                        ██    Y
+      ██  CRACKER : MiLKY-P             RELEASE DATE: MAY 28TH 2024   ██
+      ██  SUPPLIER: MiLKY-P             VERSION     : u know          ██    Y
       ██  PACKAGER: nekoweb             RELEASE TYPE: WORLD WIDE WEB  ██
       ██▄                                                            ▄██    W
       ▀███████▓▒░                             ░▒▓██████████████████████▀
@@ -264,14 +260,17 @@ libopenmpt.onRuntimeInitialized = function () {
   // Detect if the browser is Chrome
   var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 
+  // better way: using mousedown in case if mouse movement, click and touch input doesn't work :wail:
   if (isChrome) {
     // Attach event listeners for mouse movement and touch input
     window.addEventListener('mousemove', onFirstInteraction, { once: true });
     window.addEventListener('touchstart', onFirstInteraction, { once: true });
+    window.addEventListener('mousedown', onFirstInteraction, { once: true });
   } else {
     // For non-Chrome browsers, use click or touchstart
     window.addEventListener('click', onFirstInteraction);
     window.addEventListener('touchstart', onFirstInteraction);
+    window.addEventListener('mousedown', onFirstInteraction, { once: true });
   }
 };
 </script>
