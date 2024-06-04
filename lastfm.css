@@ -7,7 +7,7 @@
 }
 
 .album-art {
-    flex: 0 0 32%; /* Use a percentage to maintain proportional size */
+    flex: 0 0 28%; /* Use a percentage to maintain proportional size */
     padding-right: 1rem; /* Maintain spacing with a relative unit */
 }
 
