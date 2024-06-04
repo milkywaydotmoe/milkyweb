@@ -68,7 +68,7 @@
 <body>
     <div class="main-text">[ MUSiC SAVED MY LiFE ]</div>
     <div class="circle">
-        <img src="/assets/HIMALOGO.PNG" alt="Music Saved My Life Icon" style="height: 50%; width: auto;">
+        <img src="https://milkyway.moe/assets/HIMALOGO.PNG" alt="Music Saved My Life Icon" style="height: 50%; width: auto;">
         <svg viewBox="0 0 300 300">
             <defs>
                 <path id="circlePath" d="M150,150 m-140,0 a140,140 0 1,1 280,0 a140,140 0 1,1 -280,0"/>
@@ -85,7 +85,7 @@
 <script type="text/javascript" async>
 window['libopenmpt'] = {};
 libopenmpt.locateFile = function (filename) {
-  return "/chiptune2js/" + filename;
+  return "https://milkyway.moe/chiptune2js/" + filename;
 };
 
 libopenmpt.onRuntimeInitialized = function () {
@@ -112,7 +112,7 @@ libopenmpt.onRuntimeInitialized = function () {
   // Function to handle the first user interaction
   function onFirstInteraction() {
     resumeAudioContext().then(() => {
-      playModTrack('/modfiles/BITTERSWEETPOETRY.xm');
+      playModTrack('https://milkyway.moe/modfiles/BITTERSWEETPOETRY.xm');
     });
 
     // Remove the event listeners after the first interaction
@@ -134,7 +134,7 @@ libopenmpt.onRuntimeInitialized = function () {
   }
 };
 </script>
-<script type="text/javascript" src="/chiptune2js/libopenmpt.js" async></script>
-<script type="text/javascript" src="/chiptune2js/chiptune2.js" async></script>
+<script type="text/javascript" src="https://milkyway.moe/chiptune2js/libopenmpt.js" async></script>
+<script type="text/javascript" src="https://milkyway.moe/chiptune2js/chiptune2.js" async></script>
 
 </html>
