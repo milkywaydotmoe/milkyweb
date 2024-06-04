@@ -1,14 +1,52 @@
 const GITHUB_API_URL = 'https://api.github.com/repos/milkywaydotmoe/milkyweb/events';
+const NEKOWEB_API_URL = 'https://nekoweb.org/api/site/info/milkyway';
 
-function updateCommitInfo(commit) {
+function updateCommitInfo(commit, timeSinceLastUpdate) {
     const commitHash = commit.sha.substring(0, 7); // Truncate to 7 characters
     const commitMessage = commit.message;
     const commitAuthorName = commit.author.name;
     const commitAuthorEmail = commit.author.email;
     let commitAuthor = commitAuthorName;
     let commitEmail = commitAuthorEmail || 'N/A';
-    const commitInfo = `<strong>Commit: </strong>${commitMessage}<br><strong>Hash: </strong>${commitHash}<br><strong>Author: </strong>${commitAuthor}<br><strong>Email: </strong>${commitEmail}`;
+    const commitInfo = `<strong>Commit: </strong>${commitMessage}<br><strong>Hash: </strong>${commitHash}<br><strong>Author: </strong>${commitAuthor}<br><strong>Email: </strong>${commitEmail}<br><strong>Time Since Last Update: </strong>${timeSinceLastUpdate}`;
     document.getElementById('commit-info').innerHTML = commitInfo;
+}
+
+async function fetchNekoWebData() {
+    try {
+        const response = await fetch(NEKOWEB_API_URL);
+        const data = await response.json();
+        return data.updated_at;
+    } catch (error) {
+        console.error('Error fetching Nekoweb data:', error);
+        return null;
+    }
+}
+
+function timeSince(date) {
+    const seconds = Math.floor((new Date() - new Date(date)) / 1000);
+    let interval = Math.floor(seconds / 31536000);
+
+    if (interval > 1) {
+        return interval + " years";
+    }
+    interval = Math.floor(seconds / 2592000);
+    if (interval > 1) {
+        return interval + " months";
+    }
+    interval = Math.floor(seconds / 86400);
+    if (interval > 1) {
+        return interval + " days";
+    }
+    interval = Math.floor(seconds / 3600);
+    if (interval > 1) {
+        return interval + " hours";
+    }
+    interval = Math.floor(seconds / 60);
+    if (interval > 1) {
+        return interval + " minutes";
+    }
+    return Math.floor(seconds) + " seconds";
 }
 
 async function fetchGitHubEvents() {
@@ -16,21 +54,19 @@ async function fetchGitHubEvents() {
         const response = await fetch(GITHUB_API_URL);
         const events = await response.json();
         
-        // Find the most recent PushEvent
         const pushEvent = events.find(event => event.type === 'PushEvent');
         
         if (pushEvent && pushEvent.payload && pushEvent.payload.commits.length > 0) {
-            // Get the latest commit from the most recent PushEvent
             const latestCommit = pushEvent.payload.commits[0];
-            updateCommitInfo(latestCommit);
+            const updatedAt = await fetchNekoWebData();
+            const timeSinceLastUpdate = updatedAt ? timeSince(updatedAt) : 'N/A';
+            updateCommitInfo(latestCommit, timeSinceLastUpdate);
         }
     } catch (error) {
         console.error('Error fetching GitHub events:', error);
     }
 }
 
-// Call the function to fetch GitHub events
 fetchGitHubEvents();
 
-// Optionally, you could set an interval to periodically fetch events
-setInterval(fetchGitHubEvents, 60000); // Fetch events every 60 seconds
+setInterval(fetchGitHubEvents, 6000);

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>bainfuck</title>
+<style>
+body {
+    background-image: url("comp016.gif");
+    background-repeat: repeat;    
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #FF00FF;
+    text-align: center;
+}
+h1 {
+    font-size: 3em;
+    color: #ffF;
+}
+table {
+    width: 100%;
+    border: 1px solid #0000FF;
+}
+td {
+    padding: 10px;
+    background-color: #FFFF00;
+}
+textarea, input {
+    width: 80%;
+    padding: 10px;
+    font-size: 1.2em;
+}
+#output {
+    border: 2px dashed #FF0000;
+    padding: 10px;
+    margin-top: 10px;
+    height: 100px;
+    overflow: auto;
+    background-color: #FFFFFF;
+    color: #000000;
+}
+.blink {
+    animation: blinker 1s linear infinite;
+}
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+marquee {
+    font-size: 1.5em;
+    color: #00FFFF;
+}
+</style>
+</head>
+<body>
+
+<h1>BrainFuck Interpreter</h1>
+<marquee>please end me please end me please end me please end me please end me please end me please end me please end me</marquee>
+
+<table>
+    <tr>
+        <td>
+            <textarea id="code" rows="10" placeholder="Enter your BrainFuck code here..."></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" id="input" placeholder="Input for BrainFuck program...">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="button" value="Run" onclick="runBrainFuck()">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div id="output">Output will be displayed here...</div>
+        </td>
+    </tr>
+</table>
+
+<script src="bf_interpreter.js"></script>
+
+<marquee direction="right" class="blink">please end me please end me please end me please end me please end me please end me please end me please end me</marquee>
+
+<script type="text/javascript" async>
+window['libopenmpt'] = {};
+libopenmpt.locateFile = function (filename) {
+  return "/chiptune2js/" + filename;
+};
+
+libopenmpt.onRuntimeInitialized = function () {
+  var player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1, 50, 1)); // Adjust stereoSeparation and interpolationFilter here
+
+  function playModTrack(modUrl) {
+    player.load(modUrl, function(buffer) {
+      player.play(buffer);
+
+      // Loop the track when it ends
+      player.onEnded(function() {
+        player.play(buffer);
+      });
+    });
+  }
+
+  function resumeAudioContext() {
+    if (player.context.state === 'suspended') {
+      return player.context.resume();
+    }
+    return Promise.resolve();
+  }
+
+  // Function to handle the first user interaction
+  function onFirstInteraction() {
+    resumeAudioContext().then(() => {
+      playModTrack('/modfiles/crack_rox.xm');
+    });
+
+    // Remove the event listeners after the first interaction
+    window.removeEventListener('click', onFirstInteraction);
+    window.removeEventListener('touchstart', onFirstInteraction);
+  }
+
+  // Detect if the browser is Chrome
+  var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+
+  if (isChrome) {
+    // Attach event listeners for mouse movement and touch input
+    window.addEventListener('mousemove', onFirstInteraction, { once: true });
+    window.addEventListener('touchstart', onFirstInteraction, { once: true });
+  } else {
+    // For non-Chrome browsers, use click or touchstart
+    window.addEventListener('click', onFirstInteraction, { once: true });
+    window.addEventListener('touchstart', onFirstInteraction, { once: true });
+  }
+};
+</script>
+<script type="text/javascript" src="/chiptune2js/libopenmpt.js" async></script>
+<script type="text/javascript" src="/chiptune2js/chiptune2.js" async></script>
+
+</body>
+</html>
