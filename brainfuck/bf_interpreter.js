@@ -1,3 +1,13 @@
+// the magic html sanitizer
+function sanitizeHTML(unsafe) {
+    return unsafe
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
 function runBrainFuck() {
     const code = document.getElementById('code').value;
     const input = document.getElementById('input').value;
@@ -58,5 +68,6 @@ function runBrainFuck() {
         codePointer++;
     }
 
-    outputDiv.innerHTML = output || 'Output will be displayed here...';
+    // sanitize html before output it lol
+    outputDiv.innerHTML = sanitizeHTML(output) || 'Output will be displayed here...';
 }
