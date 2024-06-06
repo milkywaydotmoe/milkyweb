@@ -213,11 +213,17 @@ img{
     color:#fff;
     background:#369ff5
 }
- .title{
-    display:flex;
-    align-content:center;
-    text-align:center;
-    margin:10px
+.title {
+    max-height: 150px;        /* Maintain the image's maximum height */
+    image-rendering: smooth;  /* Ensure the image renders smoothly */
+    display: block;           /* Ensure the image respects the Flexbox properties */
+    margin: 0 auto;           /* Ensure the image is centered if display:block */
+}
+.image-wrapper {
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center;     /* Centers the image vertically if needed */
+    margin: 0 auto;          /* Ensures the container itself is centered if it's smaller than its parent */
 }
  .welcome{
     font-family:riffic;
