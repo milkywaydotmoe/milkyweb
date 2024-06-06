@@ -278,7 +278,7 @@ img{
     grid-area: pan1;
     background-color: #121212;
     width: 100%;
-    max-height: 27.778vh;
+    max-height: 30vh;
     border: 1px solid #050505;
     overflow: auto;
 }
@@ -287,7 +287,7 @@ img{
     grid-area: pan2;
     background-color: #121212;
     width: 100%;
-    max-height: 27.778vh;
+    max-height: 30vh;
     border: 1px solid #050505;
     overflow: hidden;
 }

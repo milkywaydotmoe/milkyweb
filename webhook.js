@@ -12,13 +12,13 @@ function updateCommitInfo(commit, timeSinceLastUpdate) {
     document.getElementById('commit-info').innerHTML = commitInfo;
 }
 
-async function fetchNekoWebData() {
+async function fetchGitHubRepoInfo() {
     try {
-        const response = await fetch(NEKOWEB_API_URL);
+        const response = await fetch(GITHUB_API_URL);
         const data = await response.json();
         return data.updated_at;
     } catch (error) {
-        console.error('Error fetching Nekoweb data:', error);
+        console.error('Error fetching GitHub repo info:', error);
         return null;
     }
 }
@@ -53,12 +53,12 @@ async function fetchGitHubEvents() {
     try {
         const response = await fetch(GITHUB_API_URL);
         const events = await response.json();
-        
+        console.log(events); // Log the events to see its structure
         const pushEvent = events.find(event => event.type === 'PushEvent');
         
         if (pushEvent && pushEvent.payload && pushEvent.payload.commits.length > 0) {
             const latestCommit = pushEvent.payload.commits[0];
-            const updatedAt = await fetchNekoWebData();
+            const updatedAt = await fetchGitHubRepoInfo();
             const timeSinceLastUpdate = updatedAt ? timeSince(updatedAt) : 'N/A';
             updateCommitInfo(latestCommit, timeSinceLastUpdate);
         }
