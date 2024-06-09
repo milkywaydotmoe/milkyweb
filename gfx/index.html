@@ -1,0 +1,323 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+ 
+        <!-- viewport - for mobile screens -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+        <!-- favicon & title -->
+        <link rel="shortcut icon" href="FAVICON LINK HERE">
+        <title>MILKYSOURCES</title>
+ 
+        <!-- fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500&display=swap" rel="stylesheet">
+    </head>
+    <style>
+        :root{
+            --lace: url("bnr.png");
+            image-rendering: pixelated;
+        }
+        
+        /****** fonts ******/
+        @font-face {
+            font-family: scratch boys;
+            src: url(1sb02z.ttf);
+        }
+        
+        @font-face {
+            font-family: cerl;
+            src: url(CHERL___.TTF);
+        }
+        
+        @font-face {
+            font-family: Adorable Doll;
+            src: url(AdorableDoll.ttf);
+        }
+        
+        @font-face{
+            font-family: vintage;
+            src: url(nwq0cf.ttf);
+        }
+        
+        /****** scrollbar ******/
+        ::-webkit-scrollbar{
+            display:none;
+        }
+ 
+        /****** select hightlight ******/
+        ::selection {
+            background: #2fed42;
+            color:#000;
+        }
+ 
+        ::-moz-selection {
+            background: #2fed42;
+            color:#000;
+        }
+        
+        /****** body ******/
+        body {
+            background-color:#000;
+            background-image:url();
+            background-repeat: repeat;
+            background-position: 0 0;
+            background-attachment: fixed;
+            color:#2fed42; /* default font color */
+            font-family:ms gothic; /* default font */
+            font-size:20px; /* default font size */
+            padding:10px;
+            background-image:  linear-gradient(#2fed42 1px, transparent 1px), linear-gradient(to right, #2fed42 1px, #000000 1px);
+            background-size: 20px 20px;
+        }
+ 
+        /****** links ******/
+        a{
+            text-decoration: none;
+            color:#000;
+            transition:0.3s;
+            text-shadow: -1px 0 #2fed42, 0 1px #2fed42, 1px 0 #2fed42, 0 -1px #2fed42;
+        }
+ 
+        a:hover{
+            cursor:help;
+            transition:0.3s;
+            color:#2fed42;
+            text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+        }
+ 
+        /****** wrappers ******/
+        #wrapper{
+            animation: fadeEffect 1s;
+            margin: auto;
+            width:fit-content;
+            width: -moz-fit-content;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position:absolute;
+        }
+ 
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        
+        /****** containers ******/
+        .container {  
+            display: grid;
+            margin: auto;
+            width:1000px;
+            grid-template-columns: 250px 1fr 1fr 250px;
+            grid-template-rows: 250px 250px 0.1fr;
+            gap: 10px 10px;
+            grid-auto-flow: row;
+            grid-template-areas:
+            "icon main main links"
+            "updates main main box"
+            "footer footer footer footer";
+            border-width:10px;
+            border-style:solid;
+            border-image: var(--lace) 8 fill round; 
+        }
+
+        .main { 
+            grid-area: main;
+            border-width:10px;
+            border-style:solid;
+            border-image: var(--lace) 8 fill round; 
+            padding:10px;
+            overflow:auto;
+        }
+
+        .icon { 
+            grid-area: icon;
+            border-width:10px;
+            border-style:solid;
+            border-image: var(--lace) 8 fill round; 
+            padding:10px;
+        }
+        
+        .icon img{
+            width:100%;
+            display:block;
+            height:100%;
+            image-rendering: pixelated;
+        }
+
+        .updates { 
+            grid-area: updates; 
+            border-width:10px;
+            border-style:solid;
+            border-image: var(--lace) 8 fill round;
+            padding:10px;
+            overflow:auto;
+            line-height:130%;
+        }
+
+        .links { 
+            grid-area: links; 
+            border-width:10px;
+            border-style:solid;
+            border-image: var(--lace) 8 fill round; 
+            padding:10px;
+            text-align: center;
+            display:flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .box { 
+            grid-area: box; 
+            border-width:10px;
+            border-style:solid;
+            border-image: var(--lace) 8 fill round;
+            padding:10px;
+        }
+        
+        .footer{
+            grid-area: footer;
+            text-align:center;
+            border-width:10px;
+            border-style:solid;
+            border-image: var(--lace) 8 fill round;
+        }
+        
+        header{
+            text-align: center;
+            font-family:Adorable Doll;
+            font-size:40px;
+            margin-bottom:10px;
+        }
+        
+        .cornerimg{
+            position:absolute;
+            bottom:0;
+            right:0;
+        }
+        
+        .highlight{
+            background-color:#2fed42;
+            color:#000;
+        }
+
+        .main img {
+            margin: 3px; /* 6px space between images (3px on each side) */
+            max-width: 100px;
+        }
+        
+    </style>
+    <body>
+        
+        <div id="wrapper">
+            
+            <div class="container">
+
+
+                <div class="main" style="text-align: center; margin: 3px; ">
+                    <span class="highlight" style="font-size: 24px;"">- FAVIS AND PIXELS -</span><hr>
+                    <div id="Pixels"></div>
+                    <hr>
+
+                    <span class="highlight" style="font-size: 24px;"">- BLINKIES -</span><hr>
+                    <div id="Blinkies"></div>
+                    <hr>
+
+                    <span class="highlight" style="font-size: 24px;"">- GIFS -</span><hr>
+                    <div id="GIFs"></div>
+                    <hr>
+                </div>
+
+                <div class="icon">
+                    <img src="mkpx.png">
+                </div>
+
+                <div class="updates">
+                    <header>ABOUT</header>
+                    <span style="font-size: 12px; letter-spacing: 1px;">GRAPHICS PAGE. CURATED BY MILKY. PLEASE DO NOT HOTLINK, IMAGE LOADING MAY BE SLOW AFTER A CACHE REFRESH OR IF THIS IS YOUR FIRST TIME VISITING THIS PAGE.</span>
+                </div>
+
+                <div class="links">
+                    <header>navigation</header>
+                    <a href="/">HOME</a>
+                    <a href="/">HOME</a>
+                    <a href="/">HOME</a>
+                    <a href="/">HOME</a>
+                    <a href="/">HOME</a>
+                    <a href="/">HOME</a>
+                </div>
+
+                <div class="box">
+                    Obstacles do not exist to be surrendered to, but only to be broken.
+                </div>
+                
+                <div class="footer">
+                    template by adilene @ adilene.net // gifs sourced from misc. sources.
+                </div>
+
+                <div class="cornerimg">
+                    <img src="">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+    // Define an array of image configurations
+    const imageConfigs = [
+        {
+            containerId: 'Pixels',
+            totalImages: 106,
+            baseUrl: 'https://file.garden/ZgvLyuxekygVJeux/res/pixels/pixels-'
+        },
+        {
+            containerId: 'Blinkies',
+            totalImages: 22,
+            baseUrl: 'https://file.garden/ZgvLyuxekygVJeux/res/blinkie/blink-'
+        },
+        {
+            containerId: 'GIFs',
+            totalImages: 100,
+            baseUrl: 'https://file.garden/ZgvLyuxekygVJeux/res/gif/gif-'
+        }
+    ];
+
+    const extensions = ['.png', '.webp', '.gif'];
+
+    // Function to check if an image URL exists
+    function checkImage(url) {
+        return new Promise((resolve) => {
+            const img = new Image();
+            img.onload = () => resolve(true);
+            img.onerror = () => resolve(false);
+            img.src = url;
+        });
+    }
+
+    // Function to find the first valid image URL
+    async function findValidImageUrl(baseUrl, index) {
+        for (const extension of extensions) {
+            const url = `${baseUrl}${index}${extension}`;
+            const exists = await checkImage(url);
+            if (exists) {
+                return url;
+            }
+        }
+        return null;
+    }
+
+    // Loop through each image configuration and append images to the respective container
+    imageConfigs.forEach(async (config) => {
+        const container = document.getElementById(config.containerId);
+        for (let i = 1; i <= config.totalImages; i++) {
+            const validUrl = await findValidImageUrl(config.baseUrl, i);
+            if (validUrl) {
+                const img = document.createElement('img');
+                img.src = validUrl;
+                container.appendChild(img);
+            }
+        }
+    });
+</script>
+
