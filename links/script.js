@@ -8,23 +8,8 @@ window.onload = function() {
             const tableBody = document.getElementById("directory").querySelector("tbody");
             let rowCount = 0;
 
-            // Determine the highest ID
-            const highestId = Math.max(...entries.map(profile => parseInt(profile.ID)));
-            console.log("Highest ID:", highestId);
-
-            // Initialize an array with null values up to the highest ID
-            const profilesArray = new Array(highestId).fill(null);
-
-            // Populate the array with the entries based on their ID
-            entries.forEach(profile => {
-                if (profile.ID) {
-                    const id = parseInt(profile.ID) - 1; // Convert ID to zero-based index
-                    profilesArray[id] = profile;
-                }
-            });
-
             // Process each profile in the array
-            profilesArray.forEach(profile => {
+            entries.forEach(profile => {
                 if (profile) {
                     console.log("Processing profile:", profile);
                     const { Name: name, Link: link, Description: description, Category: category, ID: id } = profile;
@@ -76,7 +61,7 @@ window.onload = function() {
     function createCell(content, link, category, isNameCell) {
         const cell = document.createElement("td");
         cell.className = isNameCell ? "url" : "cat";
-        if (link) {
+        if (link && isNameCell) {
             const linkElement = document.createElement("a");
             linkElement.href = link;
             linkElement.target = "_blank";
