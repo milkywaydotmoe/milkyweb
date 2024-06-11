@@ -1,21 +1,21 @@
 :root {
-  --accent: #643DB5;
-  --accent2: #ff8cff;
+  --accent: #587de7;
+  --accent2: #90fbaa;
 }
 
 @font-face {
   font-family: Digivolve;
-  src: url('https://web.archive.org/web/20220318221747im_/https://links.yesterweb.org/assets/fonts/Digivolve.otf');
+  src: url('Digivolve.otf');
 }
 
 @font-face {
   font-family: 'Dogica';
-  src: url('https://web.archive.org/web/20220318221747im_/https://links.yesterweb.org/assets/fonts/dogicapixel.ttf');
+  src: url('dogicapixel.ttf');
 }
 
 @font-face {
   font-family: 'Dogica';
-  src: url('https://web.archive.org/web/20220318221747im_/https://links.yesterweb.org/assets/fonts/dogicapixelbold.ttf');
+  src: url('dogicapixelbold.ttf');
   font-weight: bold;
 }
 
