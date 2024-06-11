@@ -1,0 +1,16 @@
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=S1zqJCYt" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+<script>
+    fetch("https://web.archive.org/web/20220325142510/https://miau.sadgrl.online/yesterlinks/yesterlinks.json")
+.then(response => {
+   return response.json();
+})    
+  .then((sites) => {
+      var random;
+      random = Math.floor(Math.random() * sites.length);
+          randomSite = sites[random].url;
+          console.log(randomSite);
+          window.location.href = randomSite;
+  })
+</script>
