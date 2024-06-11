@@ -1882,6 +1882,20 @@
       "Link": "https://grotto.wileywiggins.com/",
       "Description": "an experimental web space that treats html pages as rooms that human players navigate in real time",
       "Category": "games, html"
+    },
+    {
+      "ID": "271",
+      "Name": "SCI-Hub",
+      "Link": "https://sci-hub.se/mirrors",
+      "Description": "a site for getting academic papers for free",
+      "Category": "learning, educational, resources"
+    },
+    {
+      "ID": "272",
+      "Name": " Cobalt",
+      "Link": "https://cobalt.tools/",
+      "Description": "the best downloader tool i've found so far",
+      "Category": "resources"
     }
   ]
 }
