@@ -141,7 +141,8 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAMCAIA
     text-align:left;
     font-family:MKT UI Neko;
     font-smooth:never;
-    -webkit-font-smoothing:none
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing:none;
 }
  hr{
     border:0;
