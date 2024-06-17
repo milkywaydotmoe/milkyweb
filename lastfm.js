@@ -125,7 +125,7 @@ function updateTrackInfo(data) {
                 </div>
                 <div class="track-details">
                     <strong>Now Playing:</strong> <br>
-                    <strong class="track-title">${trackName} ${lovedSymbol}</strong> <br>
+                    <strong class="track-title rain" style="padding: 1px;">${trackName} ${lovedSymbol}</strong> <br>
                     <span class="track-subtext">${artistName} - ${albumName}</span> <br><br>
                     <strong>Recently Played:</strong>
                     <ul>${tracksHTML}</ul>

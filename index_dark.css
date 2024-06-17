@@ -31,6 +31,15 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAMCAIA
 }
 /* this is for the custom scrollbar. no i don't know why it's so long. */
 
+.rain {
+    padding-left: 8px;
+    padding-right: 32px;
+    padding: 3px;
+    text-align: center;
+    background: linear-gradient(to right, #0000, #FFB3BA, #FFDFBA, #FFFFBA, #BAFFC9, #BAE1FF, #B8BAFF, #E7B8FF, #0000);
+    display: inline-block;
+    color: #000;
+}
 
 .head{
     position:relative;
@@ -168,7 +177,7 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAMCAIA
     width:92%;
     color: #fff;
     text-align:left;
-    font-family:Didact Gothic;
+    font-family:MS UI Gothic, Didact Gothic, monospace;
     font-smooth:never;
     text-rendering: optimizeSpeed;
     -webkit-font-smoothing:none;
