@@ -87,77 +87,77 @@ nav a:hover{
     background-image: url(https://64.media.tumblr.com/b6acfa1044b46dfba842d2cd1bbede12/767055ab91487db8-57/s1280x1920/cf3b54bb77de7d5df57cff3b61c26742db1a9862.pnj);
 }
 
-#rules_header{
+#note_header{
     grid-area: 4/2/5/3;
     background-image: url(https://64.media.tumblr.com/5bab5e0e56d268ed29e768bb6f609e91/767055ab91487db8-48/s250x400/fff359ac62aa317d9f313080bf5a22bb3b04509c.pnj);
     background-repeat: no-repeat;
 }
 
-#faq_header{
-    grid-area: 4/4/5/5;
-    background-image: url(https://64.media.tumblr.com/5bab5e0e56d268ed29e768bb6f609e91/767055ab91487db8-48/s250x400/fff359ac62aa317d9f313080bf5a22bb3b04509c.pnj);
-    background-repeat: no-repeat;
-}
-
-#faq{
-    grid-area: 5/4/9/5; 
+#note{
+    grid-area: 5/2/6/3; 
     background-color: aliceblue;
     border: 2px black solid;
     overflow-y: auto;
 }
 
-#manual_header{
-    grid-area: 4/6/5/7;
-    background-image: url(https://64.media.tumblr.com/5bab5e0e56d268ed29e768bb6f609e91/767055ab91487db8-48/s250x400/fff359ac62aa317d9f313080bf5a22bb3b04509c.pnj);
+#example_header{
+    grid-area: 7/2/8/3;
+    background-image: url(https://64.media.tumblr.com/ae8b9ae5985848461052d208657afc3c/767055ab91487db8-c4/s250x400/215e48a9da54bafa8538ada8c3a66a526ee25967.pnj);
     background-repeat: no-repeat;
 }
 
-#manual{
-    grid-area: 5/6/9/7; 
+#example{
+    grid-area: 8/2/9/3; 
     background-color: aliceblue;
     border: 2px black solid;
     overflow-y: auto;
 }
 
-#rules_header p, #faq_header p, #manual_header p{
+#temp_header{
+    grid-area: 4/4/5/7;
+    background-image: url(https://64.media.tumblr.com/f04591e37ba72b9bf65ab677ce62c572/767055ab91487db8-e2/s500x750/1196117ace5c7dee244ef045811c825181911b1a.pnj);
+    background-repeat: no-repeat;
+}
+
+#temp{
+    grid-area: 5/4/9/7; 
+    border-top: 2px solid black;
+    overflow-y: auto;
+}
+
+#temp_header p, #example_header p, #note_header p{
     font-family: visitor1;
     font-size: 15px;
     padding: 4px 0px 0px 5px;
 }
 
-#rules{
-    grid-area: 5/2/9/3; 
-    background-color: aliceblue;
-    border: 2px black solid;
-    overflow-y: auto;
-}
 
 
-#rules p,  #faq p, #manual p{
+#temp p,  #example p, #note p{
     font-family: MSPGothic;
     font-size: 12px;
     padding: 2px 7px 5px 7px;
 }
 
-#rules a,  #faq a, #manual a{
+#temp a,  #example a, #note a{
     color:#40a6ff;
     text-decoration: none;
 }
 
-#rules a:hover,  #faq a:hover, #manual a:hover {
+#temp a:hover,  #example a:hover, #note a:hover {
     color:#40a6ff;
     text-decoration:underline;
 }
 
-#rules img,  #faq img, #manual img {
+#temp img,  #example img, #note img {
     padding: 5px
 }
 
-#rules img:hover,  #faq img:hover, #manual img:hover {
+#temp img:hover,  #example img:hover, #note img:hover {
     transform: scale(1.03);
 }
 
-#rules h6,  #faq h6, #manual h6{
+#temp h6,  #example h6, #note h6{
     font-family: visitor1;
     padding: 0px 7px;
     color: #40a6ff;

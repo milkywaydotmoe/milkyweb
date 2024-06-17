@@ -87,77 +87,51 @@ nav a:hover{
     background-image: url(https://64.media.tumblr.com/b6acfa1044b46dfba842d2cd1bbede12/767055ab91487db8-57/s1280x1920/cf3b54bb77de7d5df57cff3b61c26742db1a9862.pnj);
 }
 
-#rules_header{
-    grid-area: 4/2/5/3;
-    background-image: url(https://64.media.tumblr.com/5bab5e0e56d268ed29e768bb6f609e91/767055ab91487db8-48/s250x400/fff359ac62aa317d9f313080bf5a22bb3b04509c.pnj);
+#catalogue_header{
+    grid-area: 4/2/5/7;
+    background-image: url(https://64.media.tumblr.com/1743158519b4a45fadfe80ee6ff37ea3/767055ab91487db8-19/s1280x1920/e49fdb2845d6e58662689e8914c465541899467d.pnj);
     background-repeat: no-repeat;
 }
 
-#faq_header{
-    grid-area: 4/4/5/5;
-    background-image: url(https://64.media.tumblr.com/5bab5e0e56d268ed29e768bb6f609e91/767055ab91487db8-48/s250x400/fff359ac62aa317d9f313080bf5a22bb3b04509c.pnj);
-    background-repeat: no-repeat;
-}
-
-#faq{
-    grid-area: 5/4/9/5; 
-    background-color: aliceblue;
-    border: 2px black solid;
-    overflow-y: auto;
-}
-
-#manual_header{
-    grid-area: 4/6/5/7;
-    background-image: url(https://64.media.tumblr.com/5bab5e0e56d268ed29e768bb6f609e91/767055ab91487db8-48/s250x400/fff359ac62aa317d9f313080bf5a22bb3b04509c.pnj);
-    background-repeat: no-repeat;
-}
-
-#manual{
-    grid-area: 5/6/9/7; 
-    background-color: aliceblue;
-    border: 2px black solid;
-    overflow-y: auto;
-}
-
-#rules_header p, #faq_header p, #manual_header p{
+#catalogue_header p{
     font-family: visitor1;
     font-size: 15px;
     padding: 4px 0px 0px 5px;
 }
 
-#rules{
-    grid-area: 5/2/9/3; 
+#catalogue{
+    grid-area: 5/2/9/7; 
     background-color: aliceblue;
     border: 2px black solid;
-    overflow-y: auto;
+    overflow-y: scroll;
 }
 
 
-#rules p,  #faq p, #manual p{
+#catalogue p{
     font-family: MSPGothic;
     font-size: 12px;
-    padding: 2px 7px 5px 7px;
+    padding: 2px 7px 10px 7px;
 }
 
-#rules a,  #faq a, #manual a{
+#catalogue a{
     color:#40a6ff;
     text-decoration: none;
 }
 
-#rules a:hover,  #faq a:hover, #manual a:hover {
+#catalogue a:hover {
     color:#40a6ff;
     text-decoration:underline;
 }
 
-#rules img,  #faq img, #manual img {
-    padding: 5px
+#catalogue img {
+    padding: 10px
 }
 
-#rules img:hover,  #faq img:hover, #manual img:hover {
+#catalogue img:hover {
     transform: scale(1.03);
 }
 
-#rules h6,  #faq h6, #manual h6{
+#catalogue h6{
     font-family: visitor1;
     padding: 0px 7px;
     color: #40a6ff;

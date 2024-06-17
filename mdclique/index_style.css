@@ -87,77 +87,115 @@ nav a:hover{
     background-image: url(https://64.media.tumblr.com/b6acfa1044b46dfba842d2cd1bbede12/767055ab91487db8-57/s1280x1920/cf3b54bb77de7d5df57cff3b61c26742db1a9862.pnj);
 }
 
-#rules_header{
+#about_header{
     grid-area: 4/2/5/3;
-    background-image: url(https://64.media.tumblr.com/5bab5e0e56d268ed29e768bb6f609e91/767055ab91487db8-48/s250x400/fff359ac62aa317d9f313080bf5a22bb3b04509c.pnj);
-    background-repeat: no-repeat;
+    background-image: url(https://64.media.tumblr.com/ae8b9ae5985848461052d208657afc3c/767055ab91487db8-c4/s250x400/215e48a9da54bafa8538ada8c3a66a526ee25967.pnj);
 }
 
-#faq_header{
-    grid-area: 4/4/5/5;
-    background-image: url(https://64.media.tumblr.com/5bab5e0e56d268ed29e768bb6f609e91/767055ab91487db8-48/s250x400/fff359ac62aa317d9f313080bf5a22bb3b04509c.pnj);
-    background-repeat: no-repeat;
-}
-
-#faq{
-    grid-area: 5/4/9/5; 
-    background-color: aliceblue;
-    border: 2px black solid;
-    overflow-y: auto;
-}
-
-#manual_header{
-    grid-area: 4/6/5/7;
-    background-image: url(https://64.media.tumblr.com/5bab5e0e56d268ed29e768bb6f609e91/767055ab91487db8-48/s250x400/fff359ac62aa317d9f313080bf5a22bb3b04509c.pnj);
-    background-repeat: no-repeat;
-}
-
-#manual{
-    grid-area: 5/6/9/7; 
-    background-color: aliceblue;
-    border: 2px black solid;
-    overflow-y: auto;
-}
-
-#rules_header p, #faq_header p, #manual_header p{
+#about_header p, #otw_header p, #new_header p, #members_header p, #updates_header p{
     font-family: visitor1;
     font-size: 15px;
     padding: 4px 0px 0px 5px;
 }
 
-#rules{
-    grid-area: 5/2/9/3; 
+#about{
+    grid-area: 5/2/6/3; 
     background-color: aliceblue;
     border: 2px black solid;
-    overflow-y: auto;
+}
+
+#updates_header{
+    grid-area: 7/2/8/3;
+    background-image: url(https://64.media.tumblr.com/ae8b9ae5985848461052d208657afc3c/767055ab91487db8-c4/s250x400/215e48a9da54bafa8538ada8c3a66a526ee25967.pnj);
+}
+
+#updates{
+    grid-area: 8/2/9/3; 
+    background-color: aliceblue;
+    border: 2px black solid;
+    overflow-y: scroll;
+}
+
+#otw_header{
+    grid-area: 4/4/5/5;
+    background-image: url(https://64.media.tumblr.com/7eceac0257f5a6129919dad3324b3a73/767055ab91487db8-98/s250x400/8e6be3d5bc2071df1200c4bd6cfffa70b6f5c9ca.pnj);
+}
+
+#otw{
+    grid-area: 5/4/6/5;
+    background-color: aliceblue;
+    border: 2px black solid;
+}
+
+#new_header{
+    grid-area: 7/4/8/5;
+    background-image: url(https://64.media.tumblr.com/5bab5e0e56d268ed29e768bb6f609e91/767055ab91487db8-48/s250x400/fff359ac62aa317d9f313080bf5a22bb3b04509c.pnj);
+}
+
+#new{
+    grid-area: 8/4/9/5;
+    background-color: aliceblue;
+    border: 2px black solid;
+}
+
+#members_header{
+    grid-area: 4/6/5/7;
+    background-image: url(https://64.media.tumblr.com/ae8b9ae5985848461052d208657afc3c/767055ab91487db8-c4/s250x400/215e48a9da54bafa8538ada8c3a66a526ee25967.pnj);
+}
+
+#members{
+    grid-area: 5/6/9/7;
+    background-color: aliceblue;
+    border: 2px black solid;
 }
 
 
-#rules p,  #faq p, #manual p{
+#name_top p{
+    color: #40a6ff;
+    font-family: visitor1;
+    padding: 2px 7px;
+    
+}
+
+.name{
+    font-family: MSPGothic;
+    padding: 2px 7px;
+    font-size: 12px;
+}
+
+#about p, #otw p, #new p, #updates p{
     font-family: MSPGothic;
     font-size: 12px;
-    padding: 2px 7px 5px 7px;
+    padding: 2px 7px 0px 7px;
 }
 
-#rules a,  #faq a, #manual a{
+#about a, #otw a, #new a, #members a #updates a{
     color:#40a6ff;
     text-decoration: none;
 }
 
-#rules a:hover,  #faq a:hover, #manual a:hover {
+#about a:hover, #otw a:hover, #new a:hover, #members a:hover, #updates a:hover{
     color:#40a6ff;
     text-decoration:underline;
 }
 
-#rules img,  #faq img, #manual img {
-    padding: 5px
+#otw img, #new img {
+    padding: 1px 50px;
 }
 
-#rules img:hover,  #faq img:hover, #manual img:hover {
-    transform: scale(1.03);
+#new h6, #updates h6, #members h6{
+    font-family: visitor1;
+    padding: 2px 7px;
+    color: #40a6ff;
+    font-size: 12px;
 }
 
-#rules h6,  #faq h6, #manual h6{
+#members a {
+    color:#40a6ff;
+    text-decoration: none;
+}
+
+#otw h6 {
     font-family: visitor1;
     padding: 0px 7px;
     color: #40a6ff;
