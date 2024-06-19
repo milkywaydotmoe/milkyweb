@@ -93,13 +93,13 @@ function getWeatherDescription(weatherCode) {
 
 function getWeatherImageUrl(weatherCode) {
     const weatherImages = {
-        clear: "https://example.com/clear_sky.png",
-        cloudy: "https://example.com/cloudy.png",
-        fog: "https://example.com/fog.png",
-        drizzle: "https://example.com/drizzle.png",
-        rain: "https://example.com/rain.png",
-        snow: "https://example.com/snow.png",
-        thunderstorm: "https://example.com/thunderstorm.png"
+        clear:          "/weather/clear.png",
+        cloudy:         "/weather/cloudy.png",
+        fog:            "/weather/fog.png",
+        drizzle:        "/weather/drizzle.png",
+        rain:           "/weather/rain.png",
+        snow:           "/weather/snow.png",
+        thunderstorm:   "/weather/storm.png"
     };
     const weatherCodeMapping = {
         0: "clear",
@@ -131,5 +131,5 @@ function getWeatherImageUrl(weatherCode) {
         96: "thunderstorm",
         99: "thunderstorm"
     };
-    return weatherImages[weatherCodeMapping[weatherCode]] || "https://example.com/unknown.png";
+    return weatherImages[weatherCodeMapping[weatherCode]] || "/weather/clear.png";
 }
