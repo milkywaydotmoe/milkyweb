@@ -6,6 +6,7 @@
     <title>welcome. to autism!</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="uwubox.js"></script>
     <link rel="stylesheet" type="text/css" href="index_lite.css" id="stylesheet">
     <link rel="stylesheet" type="text/css" href="fonts.css" id="stylesheet">
     <link rel="stylesheet" type="text/css" href="lastfm.css" id="stylesheet">
@@ -24,6 +25,8 @@
 
     <script src="darkmode.js"></script>
     <script src="plushpop.js" async></script>
+
+    <script type="text/javascript" src="/weather.js"></script>
 
     <meta name="description" content="MiLKY-P's website, powered by autism!">
     <meta property="og:type" content="website">
@@ -223,14 +226,17 @@
         <br>
     </div>
 
-    <div class="miniblog" style="align-content: center; text-align: center;">
+    <div class="miniblog" style="align-content: top; text-align: center;">
         <br>
-        <span style="font-size: 2.5vh; letter-spacing: 2px; font-family: dosfont;"> navlink</span>
-        <br>
+        <div>
+            <a id="prevlink" href="#"><i class="nf nf-fa-backward"></i></a>
+            <span id="navText" style="font-size: 2.5vh; letter-spacing: 2px; font-family: dosfont;"> uwubox loading... </span>
+            <a id="nextlink" href="#"><i class="nf nf-fa-forward"></i></a>
         <hr>
-        <iframe width="180" height="180" style="align-content: center; text-align: center; image-rendering: pixelated;" src="https://dimden.neocities.org/navlink/" name="neolink"></iframe>
-        <br>
-        <img src="night.png" id="toggleButton" onclick="toggleStylesheet()" class="switchstyle" alt="Toggle Style">
+        </div>
+        <div class="uwu-container">
+            <div class="uwu" id="uwu"></div>
+        </div>
     </div>
 
     <div class="panel1">
@@ -312,6 +318,89 @@
                         event.preventDefault(); // Prevent the default link behavior
          });
     </script>
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+    // Select all links with href starting with '#'
+    var hashLinks = document.querySelectorAll('a[href^="#"]');
+    
+    // Add click event listener to each hash link
+    hashLinks.forEach(function(link) {
+        link.addEventListener("click", function(event) {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Optionally, you can handle the click event here, such as smooth scrolling to the target
+            // For example, smooth scrolling to the target element with vanilla JavaScript
+            var targetId = this.getAttribute("href").substring(1); // Remove the '#' from href
+            var targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                // Scroll to the target element smoothly
+                targetElement.scrollIntoView({
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+});
+
+</script>
+
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let currentIndex = 1;
+            const totalFiles = 10; // Adjust this number to the total number of HTML files
+
+            document.getElementById('prevlink').addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent default anchor behavior
+                if (currentIndex > 1) {
+                    currentIndex--;
+                    loadContent(currentIndex);
+                }
+            });
+
+            document.getElementById('nextlink').addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent default anchor behavior
+                if (currentIndex < totalFiles) {
+                    currentIndex++;
+                    loadContent(currentIndex);
+                }
+            });
+
+            function loadContent(index) {
+                fetch(`sidebox/${index}.html`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok ' + response.statusText);
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        // Create a temporary element to hold the fetched content
+                        let tempElement = document.createElement('div');
+                        tempElement.innerHTML = data;
+
+                        // Extract hidden element content from fetched HTML
+                        let hiddenContent = tempElement.querySelector('#hiddenElement').innerHTML;
+
+                        // Update navText with hiddenContent
+                        document.getElementById('navText').innerHTML = hiddenContent;
+
+                        // Display the hidden element (optional)
+                        // document.getElementById('navText').style.display = 'inline'; 
+
+                        // Update uwu with remaining content
+                        tempElement.querySelector('#hiddenElement').remove();
+                        document.getElementById('uwu').innerHTML = tempElement.innerHTML;
+                    })
+                    .catch(error => console.error('Error loading content:', error));
+            }
+
+            // Load initial content
+            loadContent(currentIndex);
+        });
+</script>
 
 <script type="text/javascript" async>
 window['libopenmpt'] = {};
