@@ -61,25 +61,43 @@ document.addEventListener("DOMContentLoaded", function() {
 function getWeatherData(position) {
     const lat = position.coords.latitude;
     const lon = position.coords.longitude;
+    const cacheKey = `weather_${lat}_${lon}`;
 
-    fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`)
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById("temperature").innerText = `${data.current_weather.temperature}°C`;
-            document.getElementById("weather").innerText = `${getWeatherDescription(data.current_weather.weathercode)}`;
-            document.getElementById("custom-image").style.backgroundImage = `url(${getWeatherImageUrl(data.current_weather.weathercode)})`;
+    // Check if cached data exists and is valid
+    const cachedWeather = JSON.parse(localStorage.getItem(cacheKey));
+    if (cachedWeather && Date.now() - cachedWeather.timestamp < 48 * 60 * 60 * 1000) {
+        // Use cached data
+        updateWeatherUI(cachedWeather.data);
+    } else {
+        // Fetch new weather data
+        fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`)
+            .then(response => response.json())
+            .then(data => {
+                const weatherData = {
+                    timestamp: Date.now(),
+                    data: {
+                        temperature: data.current_weather.temperature,
+                        weather: getWeatherDescription(data.current_weather.weathercode),
+                        imageUrl: getWeatherImageUrl(data.current_weather.weathercode)
+                    }
+                };
 
-            fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&zoom=10`)
-                .then(response => response.json())
-                .then(locationData => {
-                    const city = locationData.address.city || locationData.address.town || locationData.address.village || "Unknown city";
-                    const country = locationData.address.country || "Unknown country";
-                    document.getElementById("location").innerText = `Location: ${city}, ${country}`;
-                })
-                .catch(error => console.error('Error fetching the location data:', error));
-        })
-        .catch(error => console.error('Error fetching the weather data:', error));
+                // Cache the new weather data
+                localStorage.setItem(cacheKey, JSON.stringify(weatherData));
+
+                // Update UI with new weather data
+                updateWeatherUI(weatherData.data);
+            })
+            .catch(error => console.error('Error fetching the weather data:', error));
+    }
 }
+
+function updateWeatherUI(weather) {
+    document.getElementById("temperature").innerText = `${weather.temperature}°C`;
+    document.getElementById("weather").innerText = `${weather.weather}`;
+    document.getElementById("custom-image").style.backgroundImage = `url(${weather.imageUrl})`;
+}
+
 
 function showError(error) {
     switch(error.code) {
