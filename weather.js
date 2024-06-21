@@ -1,9 +1,61 @@
 document.addEventListener("DOMContentLoaded", function() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(getWeatherData, showError);
-    } else {
-        alert("Geolocation is not supported by this browser.");
+    const defaultLat = 14.2766;
+    const defaultLon = 121.4167;
+    let observer;
+
+    function initializeWeatherApp() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(getWeatherData, () => {
+                // Use default location if the user denies permission
+                getWeatherData({ coords: { latitude: defaultLat, longitude: defaultLon } });
+            });
+        } else {
+            // Use default location if geolocation is not supported
+            getWeatherData({ coords: { latitude: defaultLat, longitude: defaultLon } });
+            alert("Geolocation is not supported by this browser.");
+        }
     }
+
+    function setupObserver() {
+        const targetNode = document.body;
+        const config = { childList: true, subtree: true };
+
+        observer = new MutationObserver(() => {
+            const locationElement = document.getElementById("location");
+            const temperatureElement = document.getElementById("temperature");
+            const weatherElement = document.getElementById("weather");
+            const customImageElement = document.getElementById("custom-image");
+
+            if (locationElement && temperatureElement && weatherElement && customImageElement) {
+                observer.disconnect(); // Stop observing once elements are found
+                initializeWeatherApp();
+                monitorElements();
+            }
+        });
+
+        observer.observe(targetNode, config);
+    }
+
+    function monitorElements() {
+        const targetNode = document.body;
+        const config = { childList: true, subtree: true };
+
+        observer = new MutationObserver(() => {
+            const locationElement = document.getElementById("location");
+            const temperatureElement = document.getElementById("temperature");
+            const weatherElement = document.getElementById("weather");
+            const customImageElement = document.getElementById("custom-image");
+
+            if (!locationElement || !temperatureElement || !weatherElement || !customImageElement) {
+                observer.disconnect(); // Stop observing if any element is missing
+                setupObserver(); // Restart checking for elements
+            }
+        });
+
+        observer.observe(targetNode, config);
+    }
+
+    setupObserver();
 });
 
 function getWeatherData(position) {
@@ -13,13 +65,11 @@ function getWeatherData(position) {
     fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`)
         .then(response => response.json())
         .then(data => {
-            document.getElementById("location").innerText = `Location: (${lat.toFixed(2)}, ${lon.toFixed(2)})`;
             document.getElementById("temperature").innerText = `${data.current_weather.temperature}°C`;
             document.getElementById("weather").innerText = `${getWeatherDescription(data.current_weather.weathercode)}`;
             document.getElementById("custom-image").style.backgroundImage = `url(${getWeatherImageUrl(data.current_weather.weathercode)})`;
 
-            // Fetch country and city name using OpenStreetMap Nominatim API
-            fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`)
+            fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&zoom=10`)
                 .then(response => response.json())
                 .then(locationData => {
                     const city = locationData.address.city || locationData.address.town || locationData.address.village || "Unknown city";
@@ -47,6 +97,7 @@ function showError(error) {
             break;
     }
 }
+
 
 function getWeatherDescription(weatherCode) {
     const weatherDescriptions = {

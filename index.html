@@ -59,9 +59,23 @@
         .marquee-content {
             white-space: nowrap;
         }
+        .no-js-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://file.garden/ZgvLyuxekygVJeux/enablejs.jpg') no-repeat center center;
+            background-size: cover;
+            z-index: 9999; /* Ensure it covers everything */
+        }
     </style>
     <img class="sticky-element" src="/assets/hy2wm.png">
     <img id="popupImage" src="https://file.garden/ZgvLyuxekygVJeux/other%20assets/idiotplush.png">
+
+    <noscript>
+        <div class="no-js-image"></div>
+    </noscript>
 
     <div class="content">
     <div id="pop"><span class="welcome" style="font-size: 60pt; letter-spacing: 3px;"><img src="assets/minidisc.webp"> hewwo :3c <img src="assets/minidisc.webp"></span></div>
@@ -318,6 +332,15 @@
                         event.preventDefault(); // Prevent the default link behavior
          });
     </script>
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+    const noJsImage = document.querySelector('.no-js-image');
+    if (noJsImage) {
+        noJsImage.style.display = 'none';
+    }
+});
+</script>
 
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function() {
