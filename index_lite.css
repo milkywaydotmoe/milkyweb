@@ -51,7 +51,7 @@
     background-size:cover;
     background-image:url('/assets/emu_moroll.png');
     z-index:-1;
-    
+    border-radius: 1.2vh;
 }
  .marquee-container{
     position:absolute;
@@ -132,14 +132,16 @@
     top:0;
     z-index:-1
 }
- #bg1{
-    position:fixed;
-    width:100%;
-    height:100%;
-    left:0;
-    top:0;
-    background-image:url("/assets/mklight.png");
-    background-repeat:repeat;
+#bg1 {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-image: url("/assets/lbg.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
  body{
     background-color:#000;
@@ -234,7 +236,8 @@ img{
     background-color: #fff;
     width: 100%;
     height: auto;
-    border: 1px solid #4c4f69;
+    border: outset 2px #fff;
+    border-radius: 1.2vh;
 }
 
 .content {
@@ -243,7 +246,7 @@ img{
     width: 100%;
     height: 100%;
     max-height: auto; /* Adjust this value to limit content height */
-    border: 1px solid #4c4f69;
+    border: outset 2px #fff;
     overflow: auto;
     border-radius: 1.2vh;
 }
@@ -257,7 +260,7 @@ img{
     background-color: #fff;
     width: 100%;
     height: 30vh;
-    border: 1px solid #4c4f69;
+    border: outset 2px #fff;
     overflow: auto;
     border-radius: 1.2vh;
 }
@@ -267,7 +270,7 @@ img{
     background-color: #fff;
     width: 100%;
     height: 30vh;
-    border: 1px solid #4c4f69;
+    border: outset 2px #fff;
     overflow: hidden;
     border-radius: 1.2vh;
 }
@@ -277,7 +280,7 @@ img{
    background-color: #fff;
    width: 100%;
    height: auto;
-   border: 1px solid #4c4f69;
+   border: outset 2px #fff;
    text-align: center;
    margin: 0; /* Remove any margin */
    border-radius: 1.2vh;
@@ -287,7 +290,7 @@ img{
     grid-area: updt;
     background-color: #fff;
     width: 100%;
-    border: 1px solid #4c4f69;
+    border: outset 2px #fff;
     border-radius: 1.2vh;
 }
 
@@ -295,7 +298,7 @@ img{
     grid-area: navb;
     background-color: #fff;
     width: 100%;
-    border: 1px solid #4c4f69;
+    border: outset 2px #fff;
     overflow: auto;
     border-radius: 1.2vh;
 }
@@ -305,7 +308,7 @@ img{
     background-color: #fff;
     width: 100%;
     height: 18em;
-    border: 1px solid #4c4f69;
+    border: outset 2px #fff;
     overflow: auto;
     border-radius: 1.2vh;
 }
@@ -314,7 +317,7 @@ img{
     grid-area: cbox;
     background-color: #fff;
     width: 100%;
-    border: 1px solid #4c4f69;
+    border: outset 2px #fff;
     overflow: auto;
     text-align: center;
     border-radius: 1.2vh;
