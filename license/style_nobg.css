@@ -37,22 +37,22 @@ a:active {
 @media (prefers-color-scheme: dark) {
     :root {
         --color: #ffffff;
-        --link-color: #20bdec;
-        --bg-color: hsl(30, 36%, 4%);
+        --link-color: #43e9bf;
+        --bg-color: hsl(120, 38%, 6%);
     }
 /* unvisited link */
 a:link {
-	color: #ffa8de;
+	color: #6aa6ff;
 }
 
 /* visited link */
 a:visited {
-	color: #ffc5a8;
+	color: #b7ffa8;
 }
 
 /* mouse over link */
 a:hover {
-	color: #7fbfff;
+	color: #33ff2c;
 }
 
 /* selected link */
