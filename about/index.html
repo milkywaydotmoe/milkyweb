@@ -640,34 +640,62 @@
         </div>
     </div>
 </div>
-</div>
 
-<script>
-    function updateAge() {
-        // Calculate the age
-        var birthDate = new Date('2006-06-30T00:00:00+08:00'); // Setting timezone offset to PHT
-        var currentDate = new Date();
-        var ageInMillis = currentDate - birthDate;
-        var ageInSeconds = Math.floor(ageInMillis / 1000);
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Age Calculator</title>
+</head>
+<body>
+    <div id="age"></div>
+    
+    <script>
+        function updateAge() {
+            // Calculate the age
+            var birthDate = new Date('2006-06-30T10:00:00'); // Setting timezone offset to PHT
+            var currentDate = new Date();
+            
+            var years = currentDate.getFullYear() - birthDate.getFullYear();
+            var months = currentDate.getMonth() - birthDate.getMonth();
+            var days = currentDate.getDate() - birthDate.getDate();
+            var hours = currentDate.getHours() - birthDate.getHours();
+            var minutes = currentDate.getMinutes() - birthDate.getMinutes();
+            var seconds = currentDate.getSeconds() - birthDate.getSeconds();
 
-        var years = Math.floor(ageInSeconds / (60 * 60 * 24 * 365));
-        var months = Math.floor((ageInSeconds % (60 * 60 * 24 * 365)) / (60 * 60 * 24 * 30));
-        var days = Math.floor(((ageInSeconds % (60 * 60 * 24 * 365)) % (60 * 60 * 24 * 30)) / (60 * 60 * 24));
-        var hours = Math.floor((((ageInSeconds % (60 * 60 * 24 * 365)) % (60 * 60 * 24 * 30)) % (60 * 60 * 24)) / (60 * 60));
-        var minutes = Math.floor(((((ageInSeconds % (60 * 60 * 24 * 365)) % (60 * 60 * 24 * 30)) % (60 * 60 * 24)) % (60 * 60)) / 60);
-        var seconds = Math.floor((((((ageInSeconds % (60 * 60 * 24 * 365)) % (60 * 60 * 24 * 30)) % (60 * 60 * 24)) % (60 * 60)) % 60));
+            // Adjust for negative values
+            if (seconds < 0) {
+                seconds += 60;
+                minutes--;
+            }
+            if (minutes < 0) {
+                minutes += 60;
+                hours--;
+            }
+            if (hours < 0) {
+                hours += 24;
+                days--;
+            }
+            if (days < 0) {
+                var lastMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0);
+                days += lastMonth.getDate();
+                months--;
+            }
+            if (months < 0) {
+                months += 12;
+                years--;
+            }
 
-        // Display the age
-        var ageElement = document.getElementById('age');
-        ageElement.textContent = years + " years, " + months + " months, " + days + " days, " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds";
-    }
+            // Display the age
+            var ageElement = document.getElementById('age');
+            ageElement.textContent = years + " years, " + months + " months, " + days + " days, " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds";
+        }
 
-    // Call updateAge initially
-    updateAge();
+        // Call updateAge initially
+        updateAge();
 
-    // Update the age every second
-    setInterval(updateAge, 1000);
-</script>
+        // Update the age every second
+        setInterval(updateAge, 1000);
+    </script>
 
 <script>
   document.querySelectorAll('.sunken-panel table').forEach(table => {
