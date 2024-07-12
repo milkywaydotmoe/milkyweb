@@ -3,32 +3,75 @@
 body {
 	max-width: 800px ;
 	margin: auto ;
-	background: #00181E;
-	color:#7F92FF;
 }
 
 h1 {
 	text-align: left ;
+}/* LIGHT MODE */
+:root {
+    --color: #0f0f0f;
+    --link-color: #3b0000;
+    --bg-color: hsl(204, 44%, 65%);
 }
-
 /* unvisited link */
 a:link {
-    color: #A17FFF;
+    color: #975777;
 }
 
 /* visited link */
 a:visited {
-    color: #D67FFF;
+    color: #13131f;
 }
 
 /* mouse over link */
 a:hover {
-    color: #FF7FED;
+    color: #1313df;
 }
 
 /* selected link */
 a:active {
-    color: #FF7FB6;
+    color: #37374b;
+}
+
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color: #ffffff;
+        --link-color: #20bdec;
+        --bg-color: hsl(30, 36%, 4%);
+    }
+/* unvisited link */
+a:link {
+	color: #ffa8de;
+}
+
+/* visited link */
+a:visited {
+	color: #ffc5a8;
+}
+
+/* mouse over link */
+a:hover {
+	color: #7fbfff;
+}
+
+/* selected link */
+a:active {
+	color: #ffffff;
+}
+}
+
+body {
+    max-width: 800px ;
+    margin: auto ;
+    color: var(--color);
+    background-image: var(--bg-image);
+    background-color: var(--bg-color);
+}
+
+/* unvisited link */
+a:link {
+    color: var(--link-color);
 }
 
  .blackstar {
