@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<head>
+    <title>Synths for Dummies!</title>
+    <style>
+        html { 
+            zoom: 1.1; 
+        }
+        body {
+            background-color: #101012;
+            background-image: url('pixhcome.png');
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover; /* or use 'contain' if you want the entire image to be visible */
+            color: #000;
+            font-family: 'MS UI Gothic', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: none;
+            -moz-osx-font-smoothing: grayscale;
+            image-rendering: pixelated;
+        }
+        .background-div {
+            height: 100%;
+            background-image: url('path/to/your/image.jpg');
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            animation: pulse 5s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+        hr {
+            border-top: 3px solid #bbb;
+            width: 100%;
+            margin-bottom: 0px;
+        }
+        p, img {
+            margin:0%;
+            color: #f7f8ff;
+        }
+        .container {
+            max-width: 60%;
+            margin: 0 auto;
+            border: 2px solid #00ff7b;
+            padding: 20px;
+            background-color: #101012;
+            display: grid;
+            gap: 20px;
+        }
+        h1 {
+            color: #22f287;
+            font-size: 48px;
+            text-decoration: underline;
+            grid-column: 1 / -1;
+            margin:0%;
+        }
+        h2 {
+            color: #6effb4;
+            font-size: 36px;
+            font-style: bold;
+            text-align: left;
+            margin:0%;
+        }
+        h3 {
+            color: #b3ffd7;
+            font-size: 24px;
+            font-style: bold;
+            text-align: left;
+            margin:0%;
+            margin-top: 1%;
+            margin-bottom: 1%;
+        }
+        .box {
+            background-color: #101012;
+            border: 2px solid #008c52;
+            padding: 20px;
+            display: grid;
+            gap: 10px;
+        }
+        .box-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+            align-items: start;
+            text-align: left;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .synth-image {
+            width: 100%;
+            max-width: 450px;
+            image-rendering: pixelated;
+        }
+        .synth-description {
+            display: flex;
+            justify-content: left;
+            align-content: flex-start;
+            top:0%;
+        }
+    </style>
+</head>
+<body>
+<div class="container" style="margin-top: 1%; margin-bottom: 1%;">
+        <h1>Sound Synthesis: For Dummies!</h1>
+
+        <div class="box">
+            <h2>Types of Synthesis</h2>
+            <p style="text-align: left;">What kinds of synthesis are there? A lot. And aspiring VST makers and hobby electronics makers keep inventing new ones. I AM LOOKING SPECIFICALLY AT THE GUITAR PEDAL AND CASSETTE TAPE PEOPLE.</p>
+            <hr>
+            <div style="margin-top: 0;">
+                <h3 style="text-align: left;">Subtractive Synthesis</h3>
+                <div class="box-content" >
+                    <div class="image-container">
+                        <img src="synthtypes/Subtractive.gif" alt="Subtractive Synthesis" class="synth-image">
+                    </div>
+                    <div class="synth-description">
+                        <div>
+                            <p>Subtractive synthesis starts with something like a square wave or noise, You then carve out the wave using filters to get the sound you want!</p>
+                            <br>
+                            <p>Some synths that use this include the Moog Minimoog and the Roland Juno-60! Music producers may be more familiar with VSTs like Sylenth 1 and the like.</p>
+                            <br>
+                            <p>The NES and Sega Master System also use this method. Basically most PSG chiptune is made with subtractive synthesis!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 0;">
+                    <h3 style="text-align: left;">Additive Synthesis</h3>
+                    <div class="box-content" >
+                        <div class="image-container">
+                            <img src="synthtypes/Additive.gif" alt="Additive Synthesis" class="synth-image">
+                        </div>
+                        <div class="synth-description">
+                            <div>
+                                <p>Additive synthesis starts with a simple wave, and unlike subtractive synthesis, you need to build this synth sound by adding more sounds or "overtones" to the base wave.</p>
+                                <br>
+                                <p>Some synths that use this include the Kawai K5000! FL Studio's Harmor also uses this system of synthesis!</p>
+                            </div>
+                        </div>
+                 </div>
+
+                 <div style="margin-top: 0;">
+                    <h3 style="text-align: left;">FM Synthesis</h3>
+                    <div class="box-content" >
+                        <div class="image-container">
+                            <img src="synthtypes/FM.gif" alt="FM Synthesis" class="synth-image">
+                        </div>
+                        <div class="synth-description">
+                            <div>
+                                <p>FM (Frequency Modulation) Synthesis involves a ton of math (that i'm not qualified enough to explain) that makes two waves interact with each other in weird ways!</p>
+                                <br>
+                                <p>Some synths that use this include the Yamaha DX7, arguably the sound of the 80s. Another synth that uses FM is the Elektron Monomachine, which was used extensively in SOPHIE's discography.</p>
+                                <br>
+                                <p>A console that was famous for using FM Synthesis was the Sega Genesis. Another one from the PC side of things are the Creative Soundblasters, used in a multitude of 90s games.</p>
+                            </div>
+                        </div>
+                 </div>
+
+                 <div style="margin-top: 0;">
+                    <h3 style="text-align: left;">Wavetable Synthesis</h3>
+                    <div class="box-content" >
+                        <div class="image-container">
+                            <img src="synthtypes/Wavetable.gif" alt="Wavetable Synthesis" class="synth-image">
+                        </div>
+                        <div class="synth-description">
+                            <div>
+                                <p>Wavetable synthesis, self-explanatorily, uses a table of waves, and you slide around the table to make different sounds! Automation and LFOs are a big part of this kind of synthesis.</p>
+                                <br>
+                                <p>It's famously used in Xfer Serum, everyone's favorite vst <strike>to pirate</strike>! Other synths that use it include Phaseplant, commonly used by J-EDM artists.</p>
+                            </div>
+                        </div>
+                 </div>
+
+                 <div style="margin-top: 0;">
+                    <h3 style="text-align: left;">Sample-Based Synthesis</h3>
+                    <div class="box-content" >
+                        <div class="image-container">
+                            <img src="synthtypes/Sample.gif" alt="Sample-Based Synthesis" class="synth-image">
+                        </div>
+                        <div class="synth-description">
+                            <div>
+                                <p>Sample based synthesis uses pre-recorded samples to make new music, like how you would add drums to a project in FL!</p>
+                                <br>
+                                <p>Some hardware that uses this includes the Akai MPC, Ensoniq ASR-10, E-mu SP-1200, and the Roland S-950! If you have a DAW, you basically just have an overglorified sampler. They are mostly used in Hip-hop and occasionally the demoscene.</p>
+                                <br>
+                                <p>Some video game consoles and PCs that use this include the SNES, Commodore Amiga, Every console with a 'PCM' channel, the Sega CD, GBA, and even the PC you're using right now!</p>
+                            </div>
+                        </div>
+                 </div>
+
+        </div>         
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <div class="box">
+            <h2>ADSR (Attack, Decay, Sustain, Release)</h2>
+            <p style="text-align: left;">The backbone of all synthesis. Basically just automated volume-knobbery.</p>
+            <hr>
+            <div style="margin-top: 0;">
+                <h3 style="text-align: left;">Attack</h3>
+                <div class="box-content" >
+                    <div class="image-container">
+                        <img src="adsr/A.gif" alt="Attack" class="synth-image">
+                    </div>
+                    <div class="synth-description">
+                        <div>
+                            <p>This is how long it takes from your sound to get from 0 to its peak.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 0;">
+                    <h3 style="text-align: left;">Decay</h3>
+                    <div class="box-content" >
+                        <div class="image-container">
+                            <img src="adsr/D.gif" alt="Decay" class="synth-image">
+                        </div>
+                        <div class="synth-description">
+                            <div>
+                                <p>This is how long your sound takes to go from the peak to the sustain level after a key-press.</p>
+                            </div>
+                        </div>
+                 </div>
+
+                 <div style="margin-top: 0;">
+                    <h3 style="text-align: left;">Sustain</h3>
+                    <div class="box-content" >
+                        <div class="image-container">
+                            <img src="adsr/S.gif" alt="Sustain" class="synth-image">
+                        </div>
+                        <div class="synth-description">
+                            <div>
+                                <p>This is the volume of your sound when you hold the key.</p>
+                            </div>
+                        </div>
+                 </div>
+
+                 <div style="margin-top: 0;">
+                    <h3 style="text-align: left;">Release</h3>
+                    <div class="box-content" >
+                        <div class="image-container">
+                            <img src="adsr/R.gif" alt="Release" class="synth-image">
+                        </div>
+                        <div class="synth-description">
+                            <div>
+                                <p>This is how long your sound takes to go from the sustain level to 0 when you let go of the key!</p>
+                            </div>
+                        </div>
+                 </div>
+
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <div class="box">
+            <h2>Getting a synth.</h2>
+            <p style="text-align: left;">So you've decided to be in debt. Welcome to synths.</p>
+            <hr>
+            <div style="margin-top: 0;">
+                <h3 style="text-align: left;">Software Synths</h3>
+                <div class="box-content" >
+                    <div class="image-container">
+                        <img src="synths/software.gif" alt="Software Synth" class="synth-image">
+                    </div>
+                    <div class="synth-description">
+                        <div>
+                            <p>The most economical choice. You can get VSTs for free! As long as you have a compatible DAW, you can start experimenting with synths!</p>
+                            <br>
+                            <p>Some free synths i recommend are probably the ones that came with your DAW, and something more beefy like Synth1 and Vital! Another good collection is the Comet's Tail Toybox if you wanna get really weird!</p>
+                            <br>
+                            <p>Some paid synths i recommend are Serum, Sylenth1, and Phaseplant! Omnisphere and Kontakt are also really good, though they are absurdly expensive and/or large in filesize.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 0;">
+                    <h3 style="text-align: left;">Hardware Synths</h3>
+                    <div class="box-content" >
+                        <div class="image-container">
+                            <img src="synths/hardware.gif" alt="Hardware Synth" class="synth-image">
+                        </div>
+                        <div class="synth-description">
+                            <div>
+                                <p>This is more pricey but hardware is fun to play with! I recommend stuff from Teenage Engineering, KORG, Elektron, and Behringer. If you wanna get something iconic, prepare to sell a kidney for an 808! Ebay is your friend, Your local music store is a close 17th.
+                                </p>
+                            </div>
+                        </div>
+                 </div>
+
+                 <div style="margin-top: 0;">
+                    <h3 style="text-align: left;">Modular Synths</h3>
+                    <div class="box-content" >
+                        <div class="image-container">
+                            <img src="synths/modular.gif" alt="Modular Synths" class="synth-image">
+                        </div>
+                        <div class="synth-description">
+                            <div>
+                                <p>So, you've decided to get into debt. Welcome to Modular synths! While being the most fun to play with, its also the most expensive. You're gonna have to hunt down a rack, modules from different manufacturers that may or may not have it in stock, patch cables, an amp, a recorder, and a whole ass studio apartment to store it all! Your power bill is gonna go crazy. Well, depends on what you get and how big your module collection is.</p>
+                            </div>
+                        </div>
+                 </div>      
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="box">
+            <h2>Controlling a synthesizer!</h2>
+            <p style="text-align: left;">MIDI is a pain in the aaaaaaaaaaanal-og synthesis</p>
+            <hr>
+            <div style="margin-top: 0;">
+
+            <h3 style="text-align: left;">MIDI Keyboards.</h3>
+                <div class="box-content" >
+                    <div class="image-container">
+                        <img src="control/piano.gif" alt="Software Synth" class="synth-image">
+                    </div>
+                    <div class="synth-description">
+                        <div>
+                            <p>This is the most common way to play synths live! Sometimes synths already have keyboards built in, well. most of the time they do. They follow the common black and white key thing. Y'know, equal temperment?</p>
+                        </div>
+                    </div>
+                </div>
+
+        <h3 style="text-align: left;">DAWs / Trackers.</h3>
+            <div class="box-content" >
+                <div class="image-container">
+                    <img src="control/daw.gif" alt="Software Synth" class="synth-image">
+                </div>
+                <div class="synth-description">
+                    <div>
+                        <p>Sometimes you can't play the keyboard. That's where DAWs come in! They're also handy for playing back pre-recorded stuff. Reliable, a classic.</p>
+                    </div>
+                </div>
+            </div>
+
+        <h3 style="text-align: left;">CV</h3>
+            <div class="box-content" >
+                <div class="image-container">
+                    <img src="control/cv.gif" alt="Software Synth" class="synth-image">
+                </div>
+                <div class="synth-description">
+                    <div>
+                        <p>Also known as control voltage, CV is direct manipulation of the voltages coming into the synth. Controlling every knob down to each hertz, equal temperment be damned!</p>
+                    </div>
+                </div>
+            </div>
+
+        <h3 style="text-align: left;">Unorthodox Methods</h3>
+            <div class="box-content" >
+                <div class="image-container">
+                    <img src="control/yes.gif" alt="Software Synth" class="synth-image">
+                </div>
+                <div class="synth-description">
+                    <div>
+                        <p>This is where the weird stuff happens. Theremins that use wacky waving hands, Otamatones with its iconic sliding bar, Lego NXT being programmed to make synths, Synths controlled by your voice, Synths controlling YOUR VOICE, Synths using capacitive touch, you name it. There's probably a synth out there controlled by electrocuting people.</p>
+                    </div>
+                </div>
+        </div>
+
+
+</div>
+<p>Coded and written by MiLKY-P, all art is by me. Made for the 8-Bit Cafe's 5th Community Coding Jam</p>
+    </div>
+</body>
+</html>
