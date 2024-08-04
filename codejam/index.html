@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Code Jam Websites</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .logo {
+            margin-top: 20px;
+            max-width:50vh;
+            animation: logo 3s infinite linear;
+        }
+        @keyframes logo{
+            0% {transform: scale(1.00); }
+            25% { transform: scale(1.08); }
+            50% { transform: scale(1.10) ; }
+            75% { transform: scale(1.02); }
+            100% {transform: scale(1.00); }
+        }
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+        }
+        .website {
+            flex: 1 1 calc(50% - 40px); /* Adjust the width of each website */
+            max-width: calc(50% - 40px);
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 10px;
+            max-width: 30vw;
+        }
+        .preview {
+            max-width: 100%;
+            text-align: center;
+            height: auto;
+            border: 5px solid #22f287; /* Adding a stroke */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: rocking 8s infinite;
+        }
+        .preview:hover {
+            transform: scale(1.5);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+        @keyframes rocking {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+        .website a {
+            display: block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #0073e6;
+        }
+        .title {
+            font-size: 20px;
+            margin-bottom: 1%;
+        }
+        .subtitle {
+            font-size: 12px;
+        }
+        @media (max-width: 600px) {
+            .website {
+                flex: 1 1 100%; /* Make each website take full width on narrow screens */
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="codejamlogo.png" alt="Logo" class="logo">
+    <div class="container">
+        <div class="grid">
+
+            <div class="website">
+                <a href="commcodejam5/index.html"><img class="preview" src="testimg.png" alt="Website 1 Preview"></a>
+                <p class="title">Synthesizers for <br>Dummies</p>
+                <p class="subtitle">for 32-Bit Cafe Community Code Jam #5</p>
+            </div>
+
+        </div>
+
+        <p style="padding-top: 80px;">i made these. now go home</p>
+        <img src="ICON-CONSTRUCTION.gif">
+    </div>
+</body>
+</html>
