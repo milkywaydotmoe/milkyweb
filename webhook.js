@@ -3,7 +3,13 @@ const NEKOWEB_API_URL = 'https://nekoweb.org/api/site/info/milkyway';
 
 function updateCommitInfo(commit, timeSinceLastUpdate) {
     const commitHash = commit.sha.substring(0, 7); // Truncate to 7 characters
-    const commitMessage = commit.message;
+    let commitMessage = commit.message;
+
+    // Truncate the commit message if it exceeds 128 characters
+    if (commitMessage.length > 128) {
+        commitMessage = commitMessage.substring(0, 64) + '...';
+    }
+
     const commitAuthorName = commit.author.name;
     const commitAuthorEmail = commit.author.email;
     let commitAuthor = commitAuthorName;
