@@ -54,15 +54,25 @@
         midi-player {
     		display: none;
   		}
+		.maximized {
+			width:100vw;
+			height:100vh;
+			max-height:calc(100vh - 6px);
+		}
+		.minimized {
+			position:absolute;
+			left:0px;
+			bottom:0px;
+		}
     </style>
 </head>
 <body>
-<div class="window profile-box">
+<div class="window profile-box" id="windowMain">
 <div class="title-bar">
     <div class="title-bar-text">Profile</div>
     <div class="title-bar-controls">
-        <button aria-label="Minimize"></button>
-        <button aria-label="Maximize"></button>
+        <button aria-label="Minimize" onclick="minimize()"></button>
+        <button aria-label="Maximize" onclick="maximize()"></button>
         <a href="/"><button aria-label="Close"></button></a>
     </div>
 </div>
@@ -640,6 +650,16 @@
         </div>
     </div>
 </div>
+<div class="window minimized" id="windowMinimized" style="display:none">
+	<div class="title-bar" style="background-color: transparent;">
+		<div class="title-bar-text">Profile</div>
+		<div class="title-bar-controls">
+			<button aria-label="Minimize" onclick="unminimize()" class=""></button>
+			<button aria-label="Maximize" onclick="unminimize(); maximize()"></button>
+			<a href="https://milkyway.moe/"><button aria-label="Close"></button></a>
+		</div>
+	</div>
+</div>
 
 <!DOCTYPE html>
 <html>
@@ -771,6 +791,25 @@ libopenmpt.onRuntimeInitialized = function () {
     window.addEventListener('touchstart', onFirstInteraction, { once: true });
   }
 };
+
+function maximize() {
+	let a = windowMain.classList;
+	if (a.contains("maximized")) {
+		a.remove("maximized");
+	} else {
+		a.add("maximized");
+	}
+}
+
+function minimize() {
+	windowMain.style.display = "none";
+	windowMinimized.style.display = "block";
+}
+
+function unminimize() {
+	windowMain.style.display = "block";
+	windowMinimized.style.display = "none";
+}
 </script>
 <script type="text/javascript" src="/chiptune2js/libopenmpt.js" async></script>
 <script type="text/javascript" src="/chiptune2js/chiptune2.js" async></script>
