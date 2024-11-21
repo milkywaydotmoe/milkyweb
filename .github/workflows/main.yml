@@ -18,7 +18,7 @@ jobs:
       with:
         host: 45.86.153.175:22
         username: github
-        key: ${{ secrets.DEPLOY_KEY }}
+        password: ${{ secrets.SERVERPASSWD }}
         port: 22  # Default SSH port
         script: |
           cd /var/www/milkyway.moe/main
