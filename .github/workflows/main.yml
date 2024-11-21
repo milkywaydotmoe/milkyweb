@@ -10,8 +10,8 @@ jobs:
         uses: garygrossgarten/github-action-ssh@release
         with:
           command: cd /var/www/milkyway.moe/main && git reset --hard && git pull origin main
-          host: '45.86.153.175:22'
-          username: github
+          host: '45.86.153.175'
+          username: 'github'
           password: ${{ secrets.SERVERPASSWD }}
           privateKey: ${{ secrets.DEPLOY_KEY }}
         env:
