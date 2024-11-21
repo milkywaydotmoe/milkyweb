@@ -11,6 +11,7 @@ jobs:
         with:
           command: cd /var/www/milkyway.moe/main && git reset --hard && git pull origin main
           host: '45.86.153.175'
+          port: 22
           username: github
           password: ${{ secrets.SERVERPASSWD }}
           privateKey: ${{ secrets.DEPLOY_KEY }}
