@@ -1,29 +1,27 @@
-name: Push to Remote
+name: Deploy to Server
 
 on:
   push:
     branches:
-      - main  # Adjust branch name as needed
+      - main  # Replace 'main' with your default branch if different.
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Configure Git credentials
-        run: |
-          git config --global user.name "${{ secrets.NW_USER }}"
-          git config --global user.password "${{ secrets.NW_PASS }}"
+    - name: Checkout Code
+      uses: actions/checkout@v3
 
-      - name: Checkout repository with full history
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0  # Fetch the full history
-
-      - name: Push to Remote with username and password
-        run: |
-          git remote add milkyway https://$NW_USER:$NW_PASS@git.nekoweb.org/milkyway.git
-          git push -f milkyway HEAD:main
-        env:
-          NW_USER: ${{ secrets.NW_USER }}
-          NW_PASS: ${{ secrets.NW_PASS }}
+    - name: Deploy via SSH
+      uses: appleboy/ssh-action@v0.1.7
+      with:
+        host: 45.86.153.175:22
+        username: github
+        password: ${{ secrets.SERVERPASSWD }}
+        key: ${{ secrets.DEPLOY_KEY }}
+        port: 22  # Default SSH port
+        script: |
+          cd /var/www/milkyway.moe/main
+          git reset --hard
+          git pull origin main
