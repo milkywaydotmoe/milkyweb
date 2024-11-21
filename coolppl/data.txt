@@ -1,25 +1,29 @@
 {"name": "velcrow", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/velcrow101", "site": "https://www.tumblr.com/velcrow101"}
 {"name": "bits", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/bitsy.jpg", "site": "https://twitter.com/TH3M1SF1TSP4CK"}
+{"name": "VMan", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/veevee.jpg", "site": "https://bsky.app/profile/vman-2002.bsky.social"}
+{"name": "Molls", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/molls.png", "site": "https://bsky.app/profile/cultofhoodies.bsky.social"}
 {"name": "cass", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/cass.jpg", "site": "https://owly.fans/"}
-{"name": "lunanesence", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/luna.jpg", "site": "https://lunanescence.uwu.ai/"}
+
 {"name": "sapero", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/julia.png", "site": "https://icosahedr.online/"}
 {"name": "mickyplush", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/softteddy.jpg", "site": "https://softteddypaws.neocities.org/"}
-
 {"name": "reselim", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/reselim.png", "site": "https://twitter.com/reselim_"}
-{"name": "moonie", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/moonie.png", "site": "https://mooniestarrcat.carrd.co/"}
+{"name": "moonie", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/mooniev2.png", "site": "https://mooniestarrcat.carrd.co/"}
 {"name": "blake", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/blaked.jpg", "site": "https://www.youtube.com/channel/UCxKXNSUoTLpLlvggs4jYyig"}
+
 {"name": "kosune", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/ko2ne.png", "site": "https://www.twitch.tv/kosunetv"}
 {"name": "cootie", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/cootie.png", "site": "https://cootiegirl.newgrounds.com/"}
 {"name": "dimden", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/dimdennnn.png", "site": "https://dimden.dev/"}
-
 {"name": "gd colon", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/cowon.jpg", "site": "https://gdcolon.com/ "}
 {"name": "rooot", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/rooot.png", "site": "https://rooot.gay/"}
+
 {"name": "kokoscript", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/koko.png", "site": "https://yiff.life/@koko"}
 {"name": "can of soda", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/sodaimage.png", "site": "https://www.youtube.com/channel/UC5N1vLR9ISkIUA-EhCXc-SQ"}
 {"name": "cinnamoroll", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/cinnamoroll.jpg", "site": "https://twitter.com/cinnamon_sanrio"}
-
 {"name": "elle", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/elle.jpg", "site": "https://ellestuff.neocities.org/"}
 {"name": "mozzi", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/mozzi.jpg", "site": "https://twitter.com/Specterart"}
-{"name": "leliel", "image": "https://lel.nekoweb.org/images/upside_down_lel.avif", "site": "https://lel.nekoweb.org/"}
+
+{"name": "leliel", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/upside_down_lel.avif", "site": "https://lel.nekoweb.org/"}
 {"name": "tepiloxtl", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/bundle.png", "site": "https://tepiloxtl.net/"}
-{"name": "WVRMOE", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/wvr.jpg", "site": "https://wvr.moe"}
+{"name": "WVRMOE", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/caminvis.png", "site": "https://wvr.moe"}
+{"name": "Kobayashi", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/profile2.jpg", "site": "https://ryuko.space/"}
+{"name": "plushiecore", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/plushiecore.jpg", "site": "https://twitter.com/plushiecore"}

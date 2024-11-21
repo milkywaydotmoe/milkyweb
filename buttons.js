@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
   let currentPage = 1;
-  let totalPages = 1;
+  let totalPages = 2;
 
   // Function to load content from external HTML file
   function loadPage(pageNumber) {
@@ -38,10 +38,10 @@ document.addEventListener("DOMContentLoaded", function() {
   // Preload adjacent pages
   function preloadAdjacentPages(pageNumber) {
     if (pageNumber > 1) {
-      fetch(`buttons/season${pageNumber - 1}.html`).catch(() => {});
+      fetch(`buttons/season${currentPage - 1}.html`).catch(() => {});
     }
     if (pageNumber < totalPages) {
-      fetch(`buttons/season${pageNumber + 1}.html`).catch(() => {});
+      fetch(`buttons/season${currentPage + 1}.html`).catch(() => {});
     }
   }
 
