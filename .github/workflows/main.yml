@@ -18,7 +18,6 @@ jobs:
       with:
         host: 45.86.153.175:22
         username: github
-        password: ${{ secrets.SERVERPASSWD }}
         key: ${{ secrets.DEPLOY_KEY }}
         port: 22  # Default SSH port
         script: |
