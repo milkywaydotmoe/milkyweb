@@ -7,18 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Run Commands via SSH
-        uses: Flaavius/ssh-commands@1.0
+      - name: executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@v1.2.0
         with:
-          # Command to run on the remote server
-          command: "cd /var/www/milkyway.moe/main && git reset --hard && git pull origin main"
-          # Hostname or IP address of the server
           host: 45.86.153.175
-          # Username for authentication
           username: github
-          # Port number of the server (optional, default is 22)
+          key: ${{ secrets.DEPLOY_KEY }}
           port: 22
-          # File location or string that contains a private key for SSH authentication (OpenSSH format)
-          privateKey: ${{ secrets.DEPLOY_KEY }}
-          # Password for password-based user authentication (if necessary)
-          password: ${{ secrets.SERVERPASSWD }}
+          script: "cd /var/www/milkyway.moe/main && git reset --hard && git pull origin main"
