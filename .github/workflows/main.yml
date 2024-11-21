@@ -1,26 +1,18 @@
-name: Deploy to Server
-
-on:
-  push:
-    branches:
-      - main  # Replace 'main' with your default branch if different.
+name: deploy
+on: push
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-
+    
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v3
-
-    - name: Deploy via SSH
-      uses: appleboy/ssh-action@v0.1.7
-      with:
-        host: 45.86.153.175:22
-        username: github
-        password: ${{ secrets.SERVERPASSWD }}
-        port: 22  # Default SSH port
-        script: |
-          cd /var/www/milkyway.moe/main
-          git reset --hard
-          git pull origin main
+      - name: deploy web page on webserver
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: cd /var/www/milkyway.moe/main && git reset --hard && git pull origin main
+          host: '45.86.153.175'
+          username: github
+          password: ${{ secrets.SERVERPASSWD }}
+          privateKey: ${{ secrets.DEPLOY_KEY }}
+        env:
+          CI: true
