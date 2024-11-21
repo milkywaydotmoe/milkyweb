@@ -6,13 +6,27 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: deploy web page on webserver
-        uses: garygrossgarten/github-action-ssh@release
-        with:
-          command: cd /var/www/milkyway.moe/main && git reset --hard && git pull origin main
-          host: '45.86.153.175'
-          username: 'github'
-          password: ${{ secrets.SERVERPASSWD }}
+      - name: Run Commands via SSH
+      # You may pin to the exact commit or the version.
+      # uses: Flaavius/ssh-commands@79ae027ae651731b483988ee69b2f628c75422f1
+          uses: Flaavius/ssh-commands@1.0
+          with:
+    # Command to run on the remote server
+            command: cd /var/www/milkyway.moe/main && git reset --hard && git pull origin main
+    # Hostname or IP address of the server.
+          host: 45.86.153.175
+    # Username for authentication.
+          username: github
+    # Port number of the server.
+          port: # optional, default is 22
+    # File Location or string that contains a private key for either key-based or hostbased user authentication (OpenSSH format)
           privateKey: ${{ secrets.DEPLOY_KEY }}
-        env:
-          CI: true
+    # Password for password-based user authentication.
+          password: ${{ secrets.SERVERPASSWD }}
+    # For an encrypted private key, this is the passphrase used to decrypt it.
+          passphrase: # optional
+    # Try keyboard-interactive user authentication if primary user authentication method fails.
+          tryKeyboard: # optional
+
+
+          
