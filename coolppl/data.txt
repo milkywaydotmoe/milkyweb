@@ -27,3 +27,9 @@
 {"name": "WVRMOE", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/caminvis.png", "site": "https://wvr.moe"}
 {"name": "Kobayashi", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/profile2.jpg", "site": "https://ryuko.space/"}
 {"name": "plushiecore", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/plushiecore.jpg", "site": "https://twitter.com/plushiecore"}
+
+{"name": "yell0w", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/yellow.jpg", "site": "https://bsky.app/profile/realyell0w.bsky.social"}
+{"name": "kkclue", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/kaykay.png", "site": "https://planetclue.com/"}
+{"name": "kittydog", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/kittydog.gif", "site": "https://kittydog.carrd.co/"}
+{"name": "learke", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/learke.jpg", "site": "https://learke.xyz/"}
+{"name": "cTrix", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/239582089_199573002153296_667590805387032452_n.jpg", "site": "https://ctrix.net"}
