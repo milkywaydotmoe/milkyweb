@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Function to load content from external HTML file
   function loadPage(pageNumber) {
-    fetch(`buttons/season${pageNumber}.html`)
+    fetch(`https://milkyway.moe/buttons/season${pageNumber}.html`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Page not found');
@@ -38,10 +38,10 @@ document.addEventListener("DOMContentLoaded", function() {
   // Preload adjacent pages
   function preloadAdjacentPages(pageNumber) {
     if (pageNumber > 1) {
-      fetch(`buttons/season${currentPage - 1}.html`).catch(() => {});
+      fetch(`https://milkyway.moe/buttons/season${currentPage - 1}.html`).catch(() => {});
     }
     if (pageNumber < totalPages) {
-      fetch(`buttons/season${currentPage + 1}.html`).catch(() => {});
+      fetch(`https://milkyway.moe/buttons/season${currentPage + 1}.html`).catch(() => {});
     }
   }
 
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function() {
         let pageChecks = [];
         let page = 1;
         while (true) {
-          const response = await fetch(`buttons/season${page}.html`);
+          const response = await fetch(`https://milkyway.moe/buttons/season${page}.html`);
           if (!response.ok) break;
           pageChecks.push(Promise.resolve(page));
           page++;
