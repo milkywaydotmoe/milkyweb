@@ -1,35 +1,37 @@
-{"name": "velcrow", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/velcrow101", "site": "https://www.tumblr.com/velcrow101"}
-{"name": "bits", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/bitsy.jpg", "site": "https://twitter.com/TH3M1SF1TSP4CK"}
-{"name": "VMan", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/veevee.jpg", "site": "https://bsky.app/profile/vman-2002.bsky.social"}
-{"name": "Molls", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/molls.png", "site": "https://bsky.app/profile/cultofhoodies.bsky.social"}
-{"name": "cass", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/cass.jpg", "site": "https://owly.fans/"}
+{"name": "velcrow", "image": "https://disk.milkyway.moe/web/pfps/velcrow101", "site": "https://www.tumblr.com/velcrow101"}
+{"name": "bits", "image": "https://disk.milkyway.moe/web/pfps/bitsy.jpg", "site": "https://twitter.com/TH3M1SF1TSP4CK"}
+{"name": "VMan", "image": "https://disk.milkyway.moe/web/pfps/veevee.jpg", "site": "https://bsky.app/profile/vman-2002.bsky.social"}
+{"name": "Molls", "image": "https://disk.milkyway.moe/web/pfps/molls.png", "site": "https://bsky.app/profile/cultofhoodies.bsky.social"}
+{"name": "cass", "image": "https://disk.milkyway.moe/web/pfps/cass.jpg", "site": "https://owly.fans/"}
 
-{"name": "sapero", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/julia.png", "site": "https://icosahedr.online/"}
-{"name": "mickyplush", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/softteddy.jpg", "site": "https://softteddypaws.neocities.org/"}
-{"name": "reselim", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/reselim.png", "site": "https://twitter.com/reselim_"}
-{"name": "moonie", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/mooniev2.png", "site": "https://mooniestarrcat.carrd.co/"}
-{"name": "blake", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/blaked.jpg", "site": "https://www.youtube.com/channel/UCxKXNSUoTLpLlvggs4jYyig"}
+{"name": "sapero", "image": "https://disk.milkyway.moe/web/pfps/julia.png", "site": "https://icosahedr.online/"}
+{"name": "mickyplush", "image": "https://disk.milkyway.moe/web/pfps/softteddy.jpg", "site": "https://softteddypaws.neocities.org/"}
+{"name": "reselim", "image": "https://disk.milkyway.moe/web/pfps/reselim.png", "site": "https://twitter.com/reselim_"}
+{"name": "moonie", "image": "https://disk.milkyway.moe/web/pfps/mooniev2.png", "site": "https://mooniestarrcat.carrd.co/"}
+{"name": "blake", "image": "https://disk.milkyway.moe/web/pfps/blaked.jpg", "site": "https://www.youtube.com/channel/UCxKXNSUoTLpLlvggs4jYyig"}
 
-{"name": "kosune", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/ko2ne.png", "site": "https://www.twitch.tv/kosunetv"}
-{"name": "cootie", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/cootie.png", "site": "https://cootiegirl.newgrounds.com/"}
-{"name": "dimden", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/dimdennnn.png", "site": "https://dimden.dev/"}
-{"name": "gd colon", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/cowon.jpg", "site": "https://gdcolon.com/ "}
-{"name": "rooot", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/rooot.png", "site": "https://rooot.gay/"}
+{"name": "kosune", "image": "https://disk.milkyway.moe/web/pfps/ko2ne.png", "site": "https://www.twitch.tv/kosunetv"}
+{"name": "cootie", "image": "https://disk.milkyway.moe/web/pfps/cootie.png", "site": "https://cootiegirl.newgrounds.com/"}
+{"name": "dimden", "image": "https://disk.milkyway.moe/web/pfps/dimdennnn.png", "site": "https://dimden.dev/"}
+{"name": "gd colon", "image": "https://disk.milkyway.moe/web/pfps/cowon.jpg", "site": "https://gdcolon.com/ "}
+{"name": "rooot", "image": "https://disk.milkyway.moe/web/pfps/rooot.png", "site": "https://rooot.gay/"}
 
-{"name": "kokoscript", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/koko.png", "site": "https://yiff.life/@koko"}
-{"name": "can of soda", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/sodaimage.png", "site": "https://www.youtube.com/channel/UC5N1vLR9ISkIUA-EhCXc-SQ"}
-{"name": "cinnamoroll", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/cinnamoroll.jpg", "site": "https://twitter.com/cinnamon_sanrio"}
-{"name": "elle", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/elle.jpg", "site": "https://ellestuff.neocities.org/"}
-{"name": "mozzi", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/mozzi.jpg", "site": "https://twitter.com/Specterart"}
+{"name": "kokoscript", "image": "https://disk.milkyway.moe/web/pfps/koko.png", "site": "https://yiff.life/@koko"}
+{"name": "can of soda", "image": "https://disk.milkyway.moe/web/pfps/sodaimage.png", "site": "https://www.youtube.com/channel/UC5N1vLR9ISkIUA-EhCXc-SQ"}
+{"name": "cinnamoroll", "image": "https://disk.milkyway.moe/web/pfps/cinnamoroll.jpg", "site": "https://twitter.com/cinnamon_sanrio"}
+{"name": "elle", "image": "https://disk.milkyway.moe/web/pfps/elle.jpg", "site": "https://ellestuff.neocities.org/"}
+{"name": "mozzi", "image": "https://disk.milkyway.moe/web/pfps/mozzi.jpg", "site": "https://twitter.com/Specterart"}
 
-{"name": "leliel", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/upside_down_lel.avif", "site": "https://lel.nekoweb.org/"}
-{"name": "tepiloxtl", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/bundle.png", "site": "https://tepiloxtl.net/"}
-{"name": "WVRMOE", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/caminvis.png", "site": "https://wvr.moe"}
-{"name": "Kobayashi", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/profile2.jpg", "site": "https://ryuko.space/"}
-{"name": "plushiecore", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/plushiecore.jpg", "site": "https://twitter.com/plushiecore"}
+{"name": "leliel", "image": "https://disk.milkyway.moe/web/pfps/upside_down_lel.avif", "site": "https://lel.nekoweb.org/"}
+{"name": "tepiloxtl", "image": "https://disk.milkyway.moe/web/pfps/bundle.png", "site": "https://tepiloxtl.net/"}
+{"name": "WVRMOE", "image": "https://disk.milkyway.moe/web/pfps/caminvis.png", "site": "https://wvr.moe"}
+{"name": "Kobayashi", "image": "https://disk.milkyway.moe/web/pfps/profile2.jpg", "site": "https://ryuko.space/"}
+{"name": "plushiecore", "image": "https://disk.milkyway.moe/web/pfps/plushiecore.jpg", "site": "https://twitter.com/plushiecore"}
 
-{"name": "yell0w", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/yellow.jpg", "site": "https://bsky.app/profile/yell0w.net"}
-{"name": "kkclue", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/kaykay.png", "site": "https://planetclue.com/"}
-{"name": "kittydog", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/kittydog.gif", "site": "https://kittydog.carrd.co/"}
-{"name": "learke", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/learke.jpg", "site": "https://learke.xyz/"}
-{"name": "cTrix", "image": "https://file.garden/ZgvLyuxekygVJeux/pfps/239582089_199573002153296_667590805387032452_n.jpg", "site": "https://ctrix.net"}
+{"name": "yell0w", "image": "https://disk.milkyway.moe/web/pfps/yellow.jpg", "site": "https://bsky.app/profile/yell0w.net"}
+{"name": "kkclue", "image": "https://disk.milkyway.moe/web/pfps/kaykay.png", "site": "https://planetclue.com/"}
+{"name": "kittydog", "image": "https://disk.milkyway.moe/web/pfps/kittydog.gif", "site": "https://kittydog.carrd.co/"}
+{"name": "learke", "image": "https://disk.milkyway.moe/web/pfps/learke.jpg", "site": "https://learke.xyz/"}
+{"name": "cTrix", "image": "https://disk.milkyway.moe/web/pfps/239582089_199573002153296_667590805387032452_n.jpg", "site": "https://ctrix.net"}
+
+{"name": "Michi", "image": "https://disk.milkyway.moe/web/pfps/michi.gif", "site": "https://youtube.com/nekomichi"}
