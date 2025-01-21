@@ -1,4 +1,4 @@
-const serverEndpoint = 'wss://scrobbled.tepiloxtl.net/ws/get_recent_tracks/milkywaydotmoe'; // WebSocket endpoint
+const serverEndpoint = 'wss://milkyway.moe/ws/get_recent_tracks/milkywaydotmoe'; // WebSocket endpoint
 const fallbackAlbumArt = [
     'https://example.com/fallback1.png',
     'https://example.com/fallback2.png',
