@@ -14,7 +14,7 @@
 .album-art img {
     max-width: 100%; /* Allow image to scale within its container */
     max-height: 100%; /* Use vh to maintain a responsive height */
-    border-radius: 1.15rem; /* Add rounded corners */
+    border-radius: 0.6rem; /* Add rounded corners */
     outline: none; /* Remove the outline */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Drop shadow directly below */
 }
