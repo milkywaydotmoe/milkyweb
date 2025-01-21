@@ -1,142 +1,99 @@
-const serverEndpoint = 'wss://milkyway.moe/ws/get_recent_tracks/milkywaydotmoe'; // WebSocket endpoint
-const fallbackAlbumArt = [
-    'https://example.com/fallback1.png',
-    'https://example.com/fallback2.png',
-    'https://example.com/fallback3.png',
-    'https://example.com/fallback4.png',
-    'https://example.com/fallback5.png',
-    'https://example.com/fallback6.png'
-];
+var _0x7a6a=["\x37\x65\x61\x31\x62\x34\x65\x37\x38\x63\x66\x65\x66\x35\x36\x62\x37\x30\x37\x64\x64\x39\x65\x32\x38\x34\x35\x34\x31\x37\x39\x36","\x6D\x69\x6C\x6B\x79\x77\x61\x79\x64\x6F\x74\x6D\x6F\x65"];const API_KEY=_0x7a6a[0];const USERNAME=_0x7a6a[1];const POLLING_INTERVAL=5000
 
-function getRandomFallbackAlbumArt() {
-    const randomIndex = Math.floor(Math.random() * fallbackAlbumArt.length);
-    return fallbackAlbumArt[randomIndex];
-}
+// Construct the URL to fetch recent tracks from Last.fm API
+const recentScrobblesUrl = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${USERNAME}&api_key=${API_KEY}&format=json`; // Semicolon added
 
-function truncateText(text, maxLength) {
-    if (text.length > maxLength) {
-        return text.substring(0, maxLength - 3) + '...';
+// Function to fetch recent scrobbles from Last.fm
+async function fetchRecentScrobbles() {
+  try {
+    console.log("Fetching recent scrobbles...");
+    const response = await fetch(recentScrobblesUrl); // Send request to Last.fm API
+    if (!response.ok) { // Check if response is successful
+      throw new Error("Failed to fetch scrobbles"); // Throw error if not successful
     }
-    return text;
+    const data = await response.json(); // Parse the response as JSON
+    console.log("Fetched data:", data); // Log the fetched data for debugging
+    updateTrackInfo(data); // Pass the data to the update function
+  } catch (error) {
+    console.error("Error fetching scrobbles:", error); // Log any error that occurs
+  }
 }
 
-function getAlbumArtFromWebSocket(lastTrack) {
-    const priority = ['extralarge', 'large', 'medium', 'small'];
-    for (const size of priority) {
-        const img = lastTrack.image.find((img) => img.size === size);
-        if (img && img['#text']) {
-            return img['#text'];
-        }
-    }
-    return null; // If no image is found
-}
-
-let ws;
-let reconnectInterval;
-let isConnected = false;
-let lastDataHash = '';
-
-function connectWebSocket() {
-    ws = new WebSocket(serverEndpoint);
-
-    ws.onopen = () => {
-        console.log('Connected to WebSocket server');
-        isConnected = true;
-
-        if (reconnectInterval) {
-            clearInterval(reconnectInterval);
-            reconnectInterval = null;
-        }
-
-        requestUpdate();
-        setInterval(requestUpdate, 10000);
-    };
-
-    ws.onmessage = (event) => {
-        console.log('Data received from WebSocket:', event.data);
-        processWebSocketMessage(event.data);
-    };
-
-    ws.onerror = (error) => {
-        console.error('WebSocket error:', error);
-    };
-
-    ws.onclose = () => {
-        console.warn('WebSocket connection closed');
-        isConnected = false;
-
-        if (!reconnectInterval) {
-            reconnectInterval = setInterval(connectWebSocket, 10000);
-        }
-    };
-}
-
-function requestUpdate() {
-    if (isConnected) {
-        console.log("Requesting update from WebSocket");
-        ws.send('REQUEST_UPDATE');
-    }
-}
-
-function processWebSocketMessage(data) {
-    try {
-        const parsedData = JSON.parse(data);
-        const dataHash = JSON.stringify(parsedData);
-
-        if (dataHash !== lastDataHash) {
-            updateTrackInfo(parsedData);
-            lastDataHash = dataHash;
-        }
-    } catch (error) {
-        console.error("Error parsing WebSocket data:", error);
-    }
-}
-
+// Function to update the track info on the page based on fetched data
 function updateTrackInfo(data) {
-    const trackInfoContainer = document.getElementById('track-info-container');
+  const trackInfoContainer = document.getElementById('track-info-container');
 
-    if (!trackInfoContainer) {
-        console.error("Element with ID 'track-info-container' not found");
-        return;
-    }
+  // Check if the container exists in the DOM
+  if (!trackInfoContainer) {
+    console.error("Element with ID 'track-info-container' not found");
+    return; // Exit if the container is not found
+  }
 
-    if (data.recenttracks && data.recenttracks.track.length > 0) {
-        const lastTrack = data.recenttracks.track[0];
-        const trackName = lastTrack.name || 'Unknown Track';
-        const artistName = lastTrack.artist['name'] || 'Unknown Artist';
-        const albumName = lastTrack.album['#text'] || 'Unknown Album';
+  // Check if the API returned valid recent tracks
+  if (data.recenttracks && data.recenttracks.track && data.recenttracks.track.length > 0) {
+    const lastTrack = data.recenttracks.track[0]; // Get the latest track
 
-        const lovedSymbol = lastTrack.loved === '1' ? '❤️' : '';
+    // Extract the track, artist, and album names, handling missing values
+    const trackName = lastTrack.name || 'Unknown Track';
+    const artistName = lastTrack.artist['#text'] || 'Unknown Artist';
+    const albumName = lastTrack.album['#text'] || 'Unknown Album';
 
-        const albumArtUrl = getAlbumArtFromWebSocket(lastTrack) || getRandomFallbackAlbumArt();
+    // Check if the track is loved and add the heart symbol if true
+    const lovedSymbol = lastTrack["@attr"] && lastTrack["@attr"].liked === "1" ? '❤️' : '';
 
-        const recentTracksList = data.recenttracks.track.slice(1, 6);
-        const tracksHTML = recentTracksList.map((track) => {
-            const name = truncateText(track.name || 'Unknown Track', 20);
-            const artist = truncateText(track.artist['name'] || 'Unknown Artist', 20);
-            const loved = track.loved === '1' ? '❤️' : '';
-            return `<li>${name} - ${artist} ${loved}</li>`;
-        }).join('');
+    // Get the album art for the current track (fall back to default if not found)
+    const albumArtUrl = lastTrack.image ? lastTrack.image[3]["#text"] : 'default-album-art.jpg'; // Large size image
 
-        trackInfoContainer.innerHTML = `
-            <div class="track-container">
-                <div class="album-art">
-                    <img src="${albumArtUrl}" alt="${trackName} album art" onerror="this.src='${getRandomFallbackAlbumArt()}'" />
-                </div>
-                <div class="track-details">
-                    <strong>Now Playing:</strong> <br>
-                    <strong class="track-title rain" style="padding: 1px;">${trackName} ${lovedSymbol}</strong> <br>
-                    <span class="track-subtext">${artistName} - ${albumName}</span> <br><br>
-                    <strong>Recently Played:</strong>
-                    <ul>${tracksHTML}</ul>
-                </div>
-            </div>
-        `;
-    } else {
-        trackInfoContainer.innerText = 'No recent tracks found';
-    }
+    // Get the next 5 recent tracks and create a list to display
+    const recentTracksList = data.recenttracks.track.slice(1, 6);
+    const tracksHTML = recentTracksList.map((track) => {
+      const name = truncateText(track.name || 'Unknown Track', 20); // Truncate track name to 20 characters
+      const artist = truncateText(track.artist['#text'] || 'Unknown Artist', 20); // Truncate artist name to 20 characters
+      const loved = track["@attr"]?.liked === '1' ? '❤️' : ''; // Add heart symbol if loved
+      return `<li>${name} - ${artist} ${loved}</li>`; // Return track details in list item format
+    }).join(''); // Join the list items into a single string
+
+    // Update the inner HTML of the container with the track and album information
+    trackInfoContainer.innerHTML = `
+      <div class="track-container">
+        <div class="album-art">
+          <img src="${albumArtUrl}" alt="${trackName} album art" onerror="this.onerror=null; this.src='${getRandomFallbackAlbumArt()}'" />
+        </div>
+        <div class="track-details">
+          <strong>Now Playing:</strong> <br>
+          <strong class="track-title rain" style="padding: 1px;">${trackName} ${lovedSymbol}</strong> <br>
+          <span class="track-subtext">${artistName} - ${albumName}</span> <br><br>
+          <strong>Recently Played:</strong>
+          <ul>${tracksHTML}</ul>
+        </div>
+      </div>
+    `;
+  } else {
+    // If no tracks are found, show a message in the container
+    trackInfoContainer.innerText = 'No recent tracks found';
+    console.log("No recent tracks found"); // Log the empty result for debugging
+  }
 }
 
+// Function to handle text truncation (used for track and artist names)
+function truncateText(text, length) {
+  return text.length > length ? text.substring(0, length) + '...' : text; // Truncate text if it exceeds the specified length
+}
+
+// Function to handle fallback album art when the original is missing or fails to load
+function getRandomFallbackAlbumArt() {
+  return 'default-album-art.jpg'; // Return a default fallback image
+}
+
+// Start polling for updates by calling the fetch function initially and periodically
+function startPolling() {
+  console.log("Starting polling for updates...");
+  fetchRecentScrobbles(); // Fetch the first batch of scrobbles
+  setInterval(fetchRecentScrobbles, POLLING_INTERVAL); // Set interval to fetch new scrobbles periodically
+}
+
+// Call the polling function on page load
 document.addEventListener('DOMContentLoaded', () => {
-    connectWebSocket();
+  console.log("Document loaded, starting polling...");
+  startPolling(); // Start polling once the document is loaded
 });
