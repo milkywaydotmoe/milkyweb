@@ -14,4 +14,4 @@ jobs:
           username: github
           key: ${{ secrets.DEPLOY_KEY }}
           port: 22
-          script: "cd /var/www/milkyway.moe/main && git reset --hard && git pull origin main"
+          script: "cd /var/www/milkyway.moe/main && git reset --hard && git pull origin main --ff-only"
