@@ -269,17 +269,17 @@
         {
             containerId: 'Pixels',
             totalImages: 106,
-            baseUrl: 'https://file.garden/ZgvLyuxekygVJeux/res/pixels/pixels-'
+            baseUrl: 'https://disk.milkyway.moe/res/pixels/pixels-'
         },
         {
             containerId: 'Blinkies',
             totalImages: 22,
-            baseUrl: 'https://file.garden/ZgvLyuxekygVJeux/res/blinkie/blink-'
+            baseUrl: 'https://disk.milkyway.moe/res/blinkie/blink-'
         },
         {
             containerId: 'GIFs',
             totalImages: 100,
-            baseUrl: 'https://file.garden/ZgvLyuxekygVJeux/res/gif/gif-'
+            baseUrl: 'https://disk.milkyway.moe/res/gif/gif-'
         }
     ];
 
@@ -316,8 +316,13 @@
                 const img = document.createElement('img');
                 img.src = validUrl;
                 container.appendChild(img);
+            } else {
+                // Stop appending images when a not-found is encountered
+                console.log(`Stopping at ${config.containerId} - Image ${i} not found.`);
+                break;
             }
         }
     });
 </script>
+
 
