@@ -1,341 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 PANIC</title>
-    <style>
-        @font-face {
-            font-family: 'Web437_ToshibaSat_8x14';
-            src: url('Web437_ToshibaSat_8x14.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Not Found</title>
+  <style>
+    html, body {
+      height: 100%; /* Full height for centering */
+      margin: 0; /* Remove default margins */
+      display: flex; /* Flexbox for centering */
+      justify-content: center; /* Center horizontally */
+      align-items: center; /* Center vertically */
+      overflow: hidden; /* Prevent scrolling */
+    }
 
-        body {
-            background-color: #999;
-            color: white;
-            font-family: 'Web437_ToshibaSat_8x14', Menlo, Monaco, Consolas, "Courier New", monospace;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            position: relative;
-            height: 100vh;
-            width: 100vw;
-        }
-        .text-container {
-            position: absolute;
-            text-background-color: #fff;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            padding: 0;
-            margin: 0;
-            overflow: hidden;
-            font-size: 14px;
-            z-index: 2; /* Ensure it's above other layers */
-        }
-        .text-layer {
-            padding: 0px; /* Added padding */
-            box-sizing: border-box; /* Ensure padding is included in width calculation */
-        }
-        .center-layer {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-        }
-        .apple-logo {
-            display: block;
-            width: 100px;
-            margin: 0 auto;
-        }
-        .loading-bar {
-            display: block;
-            width: 300px;
-            height: 6px;
-            background-color: #666;
-            margin: 20px auto;
-            position: relative;
-            border-radius: 6px;
-        }
-        .loading-bar:before {
-            content: '';
-            display: block;
-            width: 40%;
-            height: 100%;
-            background-color: #fff;
-            border-radius: 6px;
-        }
-        span {
-            background-color: black;
-            line-height: 1
-        }
-    </style>
+    .center-container {
+      text-align: center; /* Center contents inside the container */
+    }
+
+    .center-container img {
+      height: auto; /* Maintain aspect ratio */
+      width: auto; /* Maintain aspect ratio */
+      image-rendering: pixelated;
+    }
+
+    .center-container h1 {
+      font-size: 36px;
+      margin-top: 20px; /* Add spacing between the image and text */
+    }
+  </style>
 </head>
 <body>
-<div class="text-container">
-<pre class="text-layer" id="panic-text" style="font-family: 'Web437_ToshibaSat_8x14';"><span>panic(cpu 1 caller [HEX]): initproc exited -- exit reason namespace 2 subcode 404 description: file not found
-Debugger called:
-uuid info:
- 0x11b0a0b0 uuid = [random uuid string]
- 0x10ea94000 uuid = [random uuid string]
-
-LAST PAGE ([file]) NOT FOUND
-
-RAX: [HEX], RBX: [HEX], RCX: [HEX]
-RBX: [HEX], RBP: [HEX], RSI: [HEX], RDI: [HEX]
-RSP: [HEX], RBP: [HEX], RSI: [HEX], RDI: [HEX]
-R10: [HEX], R11: [HEX]
-R12: [HEX], R13: [HEX], R14: [HEX], R15: [HEX]
-RFL: [HEX], RIP: [HEX], CS: [HEX], SS: [HEX]
-
-Thread 0: [HEX]
-[HEX]
-[HEX]
-[HEX]
-[HEX]
-[HEX]
-[HEX]
-[HEX]
-[HEX]
-[HEX]
-
-BRID1a: [HEX], SSID1a: [HEX], HTID1a: [HEX]
-BRID2a: [HEX], SSID2a: [HEX], HTID2a: [HEX]
-
-BRID1b: [HEX], SSID1b: [HEX], HTID1b: [HEX]
-BRID2b: [HEX], SSID2b: [HEX], HTID2b: [HEX]
-
-UUIDA: [random uuid string]
-UUIDB: [random uuid string]
-
-MiLKOS version: [randomver]
-Kernel version: Celestial Kernel Version [randomver]: <span id="current-datetime"></span>; root:xnu-[nnnn.n.nn]~3/[OS_ARCHITECTURE]
-Kernel UUID: [random uuid string]
-Browser UserAgent: [browser name][browser version] 
-IP Address: [IPADDRESS]
-            </span>
-            </pre>
-    </div>
-</div>
-<div class="center-layer">
-    <img class="apple-logo" src="/assets/HIMALOGO.PNG" alt="Apple Logo">
-    <div class="loading-bar"></div>
-</div>
-<script>
-    function formatDate(date) {
-        const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-        const day = days[date.getUTCDay()];
-        const month = months[date.getUTCMonth()];
-        const dayOfMonth = date.getUTCDate().toString().padStart(2, '0');
-        const year = date.getUTCFullYear();
-        const hours = date.getUTCHours().toString().padStart(2, '0');
-        const minutes = date.getUTCMinutes().toString().padStart(2, '0');
-        const seconds = date.getUTCSeconds().toString().padStart(2, '0');
-        return `${day} ${month} ${dayOfMonth} ${hours}:${minutes}:${seconds} UTC ${year}`;
-    }
-
-    // Function to detect the user's browser type
-    function detectUserAgent() {
-        return navigator.userAgent;
-    }
-
-    // Update the system model name with the detected browser
-    document.getElementById('system-model').textContent = detectUserAgent();
-    // Update the current date and time
-    document.getElementById('current-datetime').textContent = formatDate(new Date());
-</script>
-
-<script type="text/javascript">
-    // Custom function to generate a UUID
-function generateUUID() {
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-    var r = Math.random() * 16 | 0,
-        v = c == 'x' ? r : (r & 0x3 | 0x8);
-    return v.toString(16);
-  });
-}
-
-// Get the <pre> element by its id
-var panicText = document.getElementById('panic-text');
-
-// Define regular expressions to match patterns within []
-var uuidRegex = /\[random uuid string\]/g; // Matches [random uuid string]
-
-// Replace patterns within []
-panicText.innerHTML = panicText.innerHTML.replace(uuidRegex, function(match) {
-  // Create a <span> element
-  var span = document.createElement('span');
-  // Set the text content of the <span> element to the generated UUID
-  span.textContent = generateUUID();
-  // Return the HTML content of the <span> element
-  return span.outerHTML;
-});
-</script>
-
-<script>
-    // Get the user's browser name and version
-var browserName = navigator.appName;
-var browserVersion = navigator.appVersion;
-
-// Get the user's IP address
-var ipAddress = window.location.host;
-
-// Get the <pre> element by its id
-var panicText = document.getElementById('panic-text');
-
-// Define regular expressions to match patterns within []
-var browserNameRegex = /\[browser name\]/g; // Matches [browser name]
-var browserVersionRegex = /\[browser version\]/g; // Matches [browser version]
-var ipAddressRegex = /\[IPADDRESS\]/g; // Matches [IPADDRESS]
-
-// Replace patterns within []
-panicText.innerHTML = panicText.innerHTML
-    .replace(browserNameRegex, browserName)
-    .replace(browserVersionRegex, browserVersion)
-    .replace(ipAddressRegex, ipAddress);
-
-</script>
-
-<script>
-    // Function to generate a random number between 0 and 9
-function getRandomNumber() {
-  return Math.floor(Math.random() * 10);
-}
-
-// Generate the random numbers
-var randomNumbers = '';
-for (var i = 0; i < 8; i++) {
-  if (i % 2 === 0) {
-    randomNumbers += getRandomNumber(); // If index is even, append a random number
-  } else {
-    randomNumbers += '.'; // If index is odd, append a dot
-  }
-}
-
-// Get the <pre> element by its id
-var panicText = document.getElementById('panic-text');
-
-// Define regular expressions to match patterns within []
-var versionRegex = /\[nnnn.n.nn\]/g; // Matches [nnnn.n.nn]
-
-// Replace patterns within []
-panicText.innerHTML = panicText.innerHTML.replace(versionRegex, randomNumbers);
-
-</script>
-
-<script type="text/javascript">
-    // Custom function to generate the random string
-function generateVersionString() {
-  // Define possible values for each part of the version string
-  var numbers = Math.floor(Math.random() * 10) + '.' + Math.floor(Math.random() * 10) + '.' + Math.floor(Math.random() * 10);
-  var variants = ['a', 'b', 'release'];
-  var variant = variants[Math.floor(Math.random() * variants.length)];
-
-  // Return the formatted string
-  return numbers + '_' + variant;
-}
-
-// Get the <pre> element by its id
-var panicText = document.getElementById('panic-text');
-
-// Define regular expressions to match patterns within []
-var versionRegex = /\[randomver]/g; // Matches [random string in format n.n.n_(a/b/release)]
-
-// Replace patterns within []
-panicText.innerHTML = panicText.innerHTML.replace(versionRegex, generateVersionString());
-</script>
-
-<script>
-// Function to generate a random hexadecimal value
-function getRandomHex() {
-  return '0x' + Math.floor(Math.random() * 0xFFFFFFFFFFFFFFFF).toString(16).padStart(16, '0');
-}
-
-// Get the <pre> element by its id
-var panicText = document.getElementById('panic-text');
-
-// Define regular expressions to match patterns within []
-var hexRegex = /\[HEX\]/g; // Matches [HEX]
-
-// Replace patterns within []
-panicText.innerHTML = panicText.innerHTML.replace(hexRegex, function(match) {
-  return getRandomHex(); // Replace each [HEX] with a unique random hexadecimal value
-});
-
-</script>
-
-<script>
-    // Get the current page's URL
-var currentPageURL = window.location.href;
-
-// Get the <pre> element by its id
-var panicText = document.getElementById('panic-text');
-
-// Define regular expressions to match patterns within []
-var fileRegex = /\[file\]/g; // Matches [file attempted to be accessed]
-
-// Replace patterns within []
-panicText.innerHTML = panicText.innerHTML.replace(fileRegex, currentPageURL);
-</script>
-
-<script>
-    // Get the user's system architecture
-var userAgent = navigator.userAgent.toLowerCase();
-var osArchitecture = "";
-
-if (userAgent.includes("x86_64") || userAgent.includes("win64") || userAgent.includes("wow64")) {
-    osArchitecture = "x86_64"; // 64-bit
-} else if (userAgent.includes("x86")) {
-    osArchitecture = "x86"; // 32-bit
-} else if (userAgent.includes("arm64")) {
-    osArchitecture = "arm64"; // ARM 64-bit
-} else if (userAgent.includes("arm")) {
-    osArchitecture = "arm32"; // ARM 32-bit
-} else {
-    osArchitecture = "unknown"; // Unknown architecture
-}
-
-// Get the <pre> element by its id
-var panicText = document.getElementById('panic-text');
-
-// Define regular expressions to match patterns within []
-var architectureRegex = /\[OS_ARCHITECTURE\]/g; // Matches [OS_ARCHITECTURE]
-
-// Replace patterns within []
-panicText.innerHTML = panicText.innerHTML.replace(architectureRegex, osArchitecture);
-</script>
-
-<script type="text/javascript">
-    // Function to generate a random number between 0 and 9
-function getRandomNumber() {
-  return Math.floor(Math.random() * 10);
-}
-
-// Generate the random numbers for [nnnn.n.nn]
-var randomNumbers = '';
-for (var i = 0; i < 8; i++) {
-  if (i % 2 === 0) {
-    randomNumbers += getRandomNumber(); // If index is even, append a random number
-  } else {
-    randomNumbers += '.'; // If index is odd, append a dot
-  }
-}
-
-// Get the <pre> element by its id
-var panicText = document.getElementById('panic-text');
-
-// Define regular expressions to match patterns within []
-var nnnnRegex = /\[nnnn.n.nn\]/g; // Matches [nnnn.n.nn]
-
-// Replace patterns within []
-panicText.innerHTML = panicText.innerHTML.replace(nnnnRegex, randomNumbers);
-
-</script>
-
+  <div class="center-container">
+    <img src="assets/zunda_tired.png" alt="zundamon is fucking tired">
+    <h1>404 Not Found</h1>
+  </div>
 </body>
 </html>

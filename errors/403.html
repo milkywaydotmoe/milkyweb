@@ -1,15 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>403 Forbidden</title>
+  <style>
+    html, body {
+      height: 100%; /* Full height for centering */
+      margin: 0; /* Remove default margins */
+      display: flex; /* Flexbox for centering */
+      justify-content: center; /* Center horizontally */
+      align-items: center; /* Center vertically */
+      overflow: hidden; /* Prevent scrolling */
+    }
+
+    .center-container {
+      text-align: center; /* Center contents inside the container */
+    }
+
+    .center-container img {
+      height: auto; /* Maintain aspect ratio */
+      width: auto; /* Maintain aspect ratio */
+      image-rendering: pixelated;
+    }
+
+    .center-container h1 {
+      font-size: 36px;
+      margin-top: 20px; /* Add spacing between the image and text */
+    }
+  </style>
 </head>
-
 <body>
-<h1>403 Forbidden</h1>
-<p>You don't have permission to access this resource. GET THE FUCK OUT!</p>
+  <div class="center-container">
+    <img src="assets/zunda_tired.png" alt="zundamon is fucking tired">
+    <h1>403 Forbidden</h1>
+  </div>
 </body>
-
 </html>
