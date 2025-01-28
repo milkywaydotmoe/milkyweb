@@ -30,7 +30,7 @@ if (thisIndex == null) {
   tag.insertAdjacentHTML('afterbegin', `
 <table>
   <tr>
-    <td>This site isn't part of the ${ringName} webring yet. You should talk to the manager to have your site added to the list!</td>
+    <td>This site isn't part of the ${ringName} webring yet. Please email the webring manager!</td>
   </tr>
 </table>
   `);
@@ -56,17 +56,28 @@ else {
 
   //this is the code that displays the widget - EDIT THIS if you want to change the structure
   tag.insertAdjacentHTML('afterbegin', `
-  <table>
-    <tr>
-      <td class='webring-prev'><a href='${sites[previousIndex]}'>← previous</a></td>
-      <td class='webring-info'>This site is part of the ${ringName} webring</br>
-      <span class='webring-links'>
-        ${randomText}
-        ${indexText}
-        <a href='https://garlic.garden/onionring/'>what is this?</a></span></td>
-      <td class='webring-next'><a href='${sites[nextIndex]}'>next →</a></td>
-    </tr>
-  </table>
+      <div class="webring-content">
+          <!-- Previous button -->
+          <a class="webring-prev" href="${sites[previousIndex]}">
+              <img src="previous.gif" alt="Previous">
+          </a>
+          
+          <!-- Central logo -->
+          <a class="webring-info" href="${indexPage}"><img src="lime_logo.png" alt="Center Logo">
+          
+          <!-- Next button -->
+          <a class="webring-next" href="${sites[nextIndex]}">
+              <img src="next.gif" alt="Next">
+          </a>
+      </div>
+
+          <!-- Links and description -->
+          <div class="webring-links">
+            This site is part of the ${ringName} webring
+              <br>
+              ${randomText}
+          <a href="https://garlic.garden/onionring/">what is this?</a>
+      </div>
   `);
 
 }

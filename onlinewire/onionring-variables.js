@@ -8,9 +8,7 @@
 //the full URLs of all the sites in the ring
 var sites = [
 'https://milkyway.moe/',
-'https://harlequi.nz/',
-'https://example.com/',
-'https://example.com/'
+'https://harlequi.nz/'
 ];
 
 //the name of the ring

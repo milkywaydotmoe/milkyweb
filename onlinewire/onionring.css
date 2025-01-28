@@ -3,34 +3,43 @@
 // it was originally made by joey + mord of allium (蒜) house, last updated 2020-10-24 */
 
 /* === ONIONRING.CSS === */
-/* this file affects the style of the widget. remember to replace all instances of #webringid with whatever value you have for ringID in the onionring-widget.js file. make sure it still has the # at the front, though! probably easiest to use find+replace to do it */
+/* this file affects the style of the widget. remember to replace all instances of #onlinewire-webring with whatever value you have for ringID in the onionring-widget.js file. make sure it still has the # at the front, though! probably easiest to use find+replace to do it */
 
-#webringid {
+#onlinewire-webring {
   margin: 0 auto;
-  padding: 15px; /* creates some space around the widget */
+  padding: 15px; /* Creates some space around the widget */
+  text-align: center;
 }
 
-#webringid table {
-  background-color: #ffffff; /* makes the background pure white */
-  margin: 0 auto; /* centers the widget */
+#onlinewire-webring .webring-content {
+  display: flex;
+  align-items: center; /* Vertically center the elements */
+  justify-content: center;
+  gap: 10px; /* Add space between the prev, center, and next elements */
 }
 
-#webringid table tr td {
-  padding: 15px; /* creates some space between the links and text inside the widget */
+#onlinewire-webring .webring-prev img,
+#onlinewire-webring .webring-next img {
+  object-fit: contain;
+  image-rendering: pixelated;
 }
 
-#webringid .webring-prev {
-  text-align:right;
+#onlinewire-webring .webring-info img {
+  object-fit: contain;
+  image-rendering: pixelated;
 }
 
-#webringid .webring-info {
-   text-align:center;
+#onlinewire-webring .webring-links {
+  font-size: small;
+  text-align: center;
 }
 
-#webringid .webring-next {
-  text-align:left;
+#onlinewire-webring a {
+  text-decoration: none;
+  color: #a7f029;
 }
 
-#webringid .webring-links {
-  font-size:small;
+#onlinewire-webring a:hover {
+  text-decoration: underline;
 }
+
