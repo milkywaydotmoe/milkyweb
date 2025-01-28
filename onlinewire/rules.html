@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OnlineWire Webring</title>
+  <link rel="stylesheet" type="text/css" href="/onlinewire/main.css">
+  <audio id="hover" preload="auto" src="/onlinewire/owhover.ogg"></audio>
+  <audio id="click" preload="auto" src="/onlinewire/owclick.ogg"></audio>
+
+</head>
+<body>
+  <a href="/onlinewire/index.html" onmouseover="document.getElementById('hover').play()" onclick="delayLink(event, '/onlinewire/index.html')"><img id="logo" src="/onlinewire/ow_logo_yuru.png"></a>
+
+  <div id="header">
+    <div id="buttons">
+        <a href="/onlinewire/about.html" onmouseover="document.getElementById('hover').play()" onclick="delayLink(event, '/onlinewire/about.html')">
+            <h4 class="button">About</h4>
+        </a>
+        <a href="/onlinewire/rules.html" onmouseover="document.getElementById('hover').play()" onclick="delayLink(event, '/onlinewire/rules.html')">
+            <h4 class="button">Rules</h4>
+        </a>
+        <a href="/onlinewire/join.html" onmouseover="document.getElementById('hover').play()" onclick="delayLink(event, 'onlinewire/join.html')">
+            <h4 class="button">Join</h4>
+        </a>
+    </div>
+  </div>
+
+
+  <div id="container">
+    <div id="text">
+      <p style="font-size: 32px;">- <span style="color:#99EA0B">OnlineWire</span> Rules -</p>
+      <p style="font-size: 24px;">This webring is for everyone who advocates for and supports the spread of all media! Whether you're just a simple YTMP3 user, or a savvy Soulseek user or forum parouser, all warez enthusiasts are welcome here!</p><br>
+    </div>
+  </div>
+
+</body>
+</html>
+
+<script>
+  function delayLink(event, url) {
+      event.preventDefault(); // Prevents the default link behavior
+      // Play the sound
+      document.getElementById('click').play();
+      // After 3 seconds, navigate to the URL
+      setTimeout(function() {
+          window.location.href = url; // Redirects to the link after the delay
+      }, 900); // 3000ms = 3 seconds
+  }
+</script>
