@@ -6,24 +6,12 @@
 //this file contains the stuff you edit to set up your specific webring
 
 //the full URLs of all the sites in the ring
-// Define an empty array for the sites
-var sites = [];
-
-// Load the sites from a text file (sites.txt)
-fetch('sites.txt')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    return response.text();
-  })
-  .then(data => {
-    // Split the text file content by newlines and populate the sites array
-    sites = data.split('\n').map(site => site.trim()).filter(site => site.length > 0);
-  })
-  .catch(error => {
-    console.error('Error loading sites:', error);
-  });
+var sites = [
+'https://milkyway.moe/',
+'https://harlequi.nz/',
+'https://example.com/',
+'https://example.com/'
+];
 
 //the name of the ring
 var ringName = 'OnlineWire';
@@ -36,7 +24,7 @@ var ringID = 'onlinewire-webring';
 //should the widget include a link to an index page?
 var useIndex = false;
 //the full URL of the index page. if you're not using one, you don't have to specify anything here
-var indexPage = 'https://milkyway.moe/onlinewire.html';
+var indexPage = 'https://milkyway.moe/onlinewire/index.html';
 
 //should the widget include a random button?
 var useRandom = true;
