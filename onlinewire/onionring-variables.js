@@ -8,6 +8,7 @@
 //the full URLs of all the sites in the ring
 var sites = [
 'https://milkyway.moe/',
+'https://ddnikki.nekoweb.org/',
 'https://harlequi.nz/'
 ];
 
