@@ -9,7 +9,7 @@
 var sites = [
 'https://milkyway.moe/',
 'https://ddnikki.nekoweb.org/',
-'https://blahaj.nekoweb.org/',
+'https://sonnenboy.eu/',
 'https://astracelestine.nekoweb.org/',
 'https://harlequi.nz/'
 ];
