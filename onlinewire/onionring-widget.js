@@ -59,15 +59,15 @@ else {
       <div class="webring-content">
           <!-- Previous button -->
           <a class="webring-prev" href="${sites[previousIndex]}">
-              <img src="previous.gif" alt="Previous">
+              <img src="https://milkyway.moe/onlinewire/previous.gif" alt="Previous">
           </a>
           
           <!-- Central logo -->
-          <a class="webring-info" href="${indexPage}"><img src="lime_logo.png" alt="Center Logo">
+          <a class="webring-info" href="${indexPage}"><img src="https://milkyway.moe/onlinewire/lime_logo.png" alt="Center Logo">
           
           <!-- Next button -->
           <a class="webring-next" href="${sites[nextIndex]}">
-              <img src="next.gif" alt="Next">
+              <img src="https://milkyway.moe/onlinewire/next.gif" alt="Next">
           </a>
       </div>
 
