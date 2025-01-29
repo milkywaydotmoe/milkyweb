@@ -5,7 +5,7 @@
 
 ::selection {
   color: white;
-  background: var(--deeppink);
+  background: #99EA0B;
 }
 
 html {
@@ -103,4 +103,27 @@ body {
     font-family: toshiba;
     color: #fff;
     font-weight: normal;
+}
+
+#textDiv {
+    text-align: left !important;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    background-color: #fff;
+    color: #000;
+    font-family: monospace;
+    margin: auto;
+}
+
+#textDiv p {
+    font-family: monospace;
+    color: #000;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+::selection {
+  color: white;
+  background: blue;
 }
