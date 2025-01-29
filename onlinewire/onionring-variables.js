@@ -11,6 +11,7 @@ var sites = [
 'https://ddnikki.nekoweb.org/',
 'https://rhzartist.neocities.org/',
 'https://sonnenboy.eu/',
+'https://pastel-skies.nekoweb.org',
 'https://astracelestine.nekoweb.org/',
 'https://harlequi.nz/'
 ];
