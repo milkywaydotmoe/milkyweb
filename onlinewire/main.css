@@ -123,7 +123,66 @@ body {
     font-size: 12px;
 }
 
-::selection {
+#textDiv ::selection {
   color: white;
   background: blue;
+}
+
+label {
+    font-size: 24px;
+    font-family: toshiba;
+    color: #99EA0B;
+}
+
+input {
+    height: 20px;
+    width: 300px;
+    border: 2px solid #56bd0d;
+    outline: none;
+    padding: 0;
+    font-family: toshiba;
+    text-rendering: optimizeSpeed !important; 
+    font-size: 16px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+}
+
+input:focus {
+    border: 2px solid #99EA0B;
+    outline: none;
+    font-weight: 700;
+    box-shadow: 0 0 10px rgba(153, 234, 11, 0.7); /* Outer glow effect */
+}
+
+button {
+    background: var(--mediumpink);
+    color: white;
+    border-radius: 50px;
+    border: 3px solid var(--mediumpink);
+    font-family: "Nunito", Sans-Serif;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+button:hover {
+    font-weight: 900;
+}
+
+.textblank {
+    width: 200px;
+}
+
+button {
+    font-size: 24px;
+    font-family: toshiba;
+    color: #99EA0B;
+    font-weight: normal;
+}
+
+button:hover {
+    font-size: 24px;
+    font-family: toshiba;
+    color: #fff;
+    font-weight: normal;
 }
