@@ -3,18 +3,25 @@
 // it was originally made by joey + mord of allium (蒜) house, last updated 2020-11-24
 
 // === ONIONRING-INDEX ===
-//this file builds the list of sites in the ring for displaying on your index page
+// this file builds the list of sites in the ring for displaying on your index page
 
 var tag = document.getElementById('index');
-regex = /^https:\/\/|\/$/g; //strips the https:// and trailing slash off the urls for aesthetic purposes
+var regex = /^https:\/\/|\/$/g; // strips the https:// and trailing slash off the URLs for aesthetic purposes
 
-list = "";
-for (i = 0; i < sites.length; i++) {
-  list += `<li><a href='${sites[i]}' onmouseover="document.getElementById('hover').play()" onclick="delayLink(event, '${sites[i]}')">${sites[i].replace(regex,"")}</a></li>`;
-}
+fetch('sites.txt')
+  .then(response => response.text())
+  .then(text => {
+    var sites = text.split('\n').map(line => line.trim()).filter(line => line);
+    
+    var list = "";
+    for (var i = 0; i < sites.length; i++) {
+      list += `<li><a href='${sites[i]}' onmouseover="document.getElementById('hover').play()" onclick="delayLink(event, '${sites[i]}')">${sites[i].replace(regex, "")}</a></li>`;
+    }
 
-tag.insertAdjacentHTML('afterbegin', `
-<ul>
-${list}
-</ul>
-`);
+    tag.insertAdjacentHTML('afterbegin', `
+      <ul>
+      ${list}
+      </ul>
+    `);
+  })
+  .catch(error => console.error('Error loading sites:', error));
