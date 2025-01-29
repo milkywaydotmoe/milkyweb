@@ -14,6 +14,8 @@ var sites = [
 'https://pastel-skies.nekoweb.org',
 'https://astracelestine.nekoweb.org/',
 'https://bang1338.nekoweb.org',
+'https://lel.nekoweb.org',
+'https://mechagic.party',
 'https://harlequi.nz/'
 ];
 
