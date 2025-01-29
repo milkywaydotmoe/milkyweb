@@ -3,7 +3,7 @@
             display: none; /* Initially hidden */
             position: fixed;
             max-width: 170px;
-            bottom: -19%;
+            bottom: -5%;
             right: 20px;
             z-index: 9999; /* Ensure it's above other elements */
             max-width: 350px; /* Set max width */
