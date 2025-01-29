@@ -13,6 +13,7 @@ var sites = [
 'https://sonnenboy.eu/',
 'https://pastel-skies.nekoweb.org',
 'https://astracelestine.nekoweb.org/',
+'https://bang1338.nekoweb.org',
 'https://harlequi.nz/'
 ];
 
