@@ -6,14 +6,15 @@
 //this file contains the stuff you edit to set up your specific webring
 
 //the full URLs of all the sites in the ring
-var sites = [];
-
-fetch('sites.txt')
-  .then(response => response.text())
-  .then(text => {
-    sites = text.split('\n').map(line => line.trim()).filter(line => line);
-  })
-  .catch(error => console.error('Error loading sites:', error));
+var sites = [
+'https://milkyway.moe/',
+'https://ddnikki.nekoweb.org/',
+'https://rhzartist.neocities.org/',
+'https://sonnenboy.eu/',
+'https://pastel-skies.nekoweb.org',
+'https://astracelestine.nekoweb.org/',
+'https://harlequi.nz/'
+];
 
 //the name of the ring
 var ringName = 'OnlineWire';
