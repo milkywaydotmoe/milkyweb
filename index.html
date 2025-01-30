@@ -38,7 +38,16 @@
         #buttons a img {
             max-height: 31px !important;
         }
+
+        img.emoji {
+            height: 1.1em;
+            width: 1.1em;
+            margin: 0 .05em 0 .1em;
+            vertical-align: -0.1em;
+        }
     </style>
+
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -47,7 +56,7 @@
         <div id="bg1"></div>
     </div>
     <div id="image-wrapper">
-        <img class="title" src="/assets/MiLKYVT.svg">
+        <img class="title" style="padding:1em !important" src="/assets/MiLKYVT.svg">
     </div>
     <div class="container">
 
@@ -94,16 +103,16 @@
                             <p class="rain" style="font-size:32px;"><b>Welcome to my site!</b></p>
 
                             <div style="text-align: justify;">
-                                <p class="main">Hi, i'm Lumi! an 18 y/o Filipino designer, programmer, musician, artist, student, and Mamehinata, and this is my personal site :3! I am currently feeling...
+                                <p class="main">Hi, i'm Lumi! an 18 (or 19, depending on if you're viewing this past 06.30.2025,,,) y/o Filipino designer, programmer, musician, artist, student, and Mamehinata, and this is my personal site :3! I am currently feeling...
                                     <a href="https://www.imood.com/users/milkywaydotmoe"><img src="https://moods.imood.com/display/uname-milkywaydotmoe/bg-ffffff/imood.gif" alt="The current mood of milkywaydotmoe at www.imood.com"></a>
                                 </p>
 
                                 <p class="main">For more info about me, click the "ABOUT ME" area of my site!</p>
 
-                                <p class="main">This site was just recently optimized for mobile so feel free to browse it on whatever device you please. The device must have support for HTTPS, modern HTML, CSS, and JS. Chrome at 1080p is recommended though. This site
+                                <p class="main">This site was just recently optimized for mobile so feel free to browse it on whatever device you please. The device must have support for HTTPS, modern HTML, CSS, and JS. Chrome on Windows at 1080p is recommended though. This site
                                     was built with Sublime Text/VSCodium/Notepad/IntelliJ and pain. This site may not run well on weaker devices so please keep that in mind!</p>
 
-                                <p class="main">You probably ended up here through one of my videos, my bio, or maybe through scrolling the depths of Nekoweb. If so, welcome to my site! I got archives of my music up here; I also have some shrines i wrote, including the
+                                <p class="main">You probably ended up here through one of my videos, my bio, or maybe through scrolling the depths of the internet. If so, welcome to my site! I got archives of my music up here; I also have some shrines i wrote, including the
                                     DEFINITIVE starrcat information repository! I'll also post art and miscellaneous things i find on the internet like a raccoon taking trash to put in their horde.</p>
 
                                 <p class="main">If you are the rightsholder of any pieces of media on this site and would like to have any of the code removed, please email me at webmaster@milkyway.moe and i shall swiftly delete it ^^</p>
@@ -119,7 +128,7 @@
             <hr>
             <div><span class="welcome" style="font-size: 2.5vh; letter-spacing: 3px;">buttons, blinkies, and other things!</span></div>
             <hr>
-            <p style="text-align:center;">Feel free to use this button on your site however you want! Hotlink or save it, just feel free to share my lil' pixelly bits of goodness!</p>
+            <p style="text-align:center;">Feel free to use these buttons on your site however you want! Hotlink or save it, just feel free to share my lil' pixelly bits of goodness!</p>
             <p style="text-align:center;">To do that, simply right click on your desired image and copy the image address or save the image! Then you can use that as the URL in your a tags or img tag or whatever it may be!</p>
             <div style="text-align:center;image-rendering:pixelated;">
                 <img src="/milkybuttons/milkybtn.gif">
@@ -133,7 +142,7 @@
             <hr>
             <div style="text-align:center;">
                 <a href="https://lyratris.com/"><img src="/assets/nt2.gif"></a>
-            </div>
+            </div><br>
             <div style="text-align: center; align-content: center;image-rendering:pixelated;">
                 <img src="blinkie/graphicartists.gif">
                 <img src="blinkie/insanelyhonest.gif">
@@ -150,7 +159,7 @@
                 <img src="blinkie/lskagami.gif">
                 <img src="blinkie/lsmiyuki.gif">
                 <img src="blinkie/lskonata.gif">
-            </div>
+            </div><br>
         </div>
 
         <div class="musicbox" style="text-align: center;">
@@ -176,10 +185,8 @@
                 <a href="/about/index.html" class="styled-button"><i class="nf nf-oct-question"></i> about me</a>
                 <a href="/faq.html" class="styled-button"><i class="nf nf-md-chat_processing"></i> frequently asked</a>
                 <a href="/contact/index.html" class="styled-button"><i class="nf nf-md-email"></i> milky.nfo</a>
-                <a href="/collection/index.html" class="styled-button"><i class="nf nf-fa-book"></i> pixel clique collection!</a>
+                <a href="https://blog.milkyway.moe" class="styled-button"><i class="nf nf-fa-blog"></i> milky's blog</a>
                 <a href="/onlinewire/index.html" class="styled-button"><i class="nf nf-md-fruit_citrus"></i> onlinewire webring</a>
-                <a href="/mdclique/index.html" class="styled-button"><i class="nf nf-md-minidisc"></i> mdclique</a>
-                <a href="/gfx/index.html" class="styled-button"><i class="nf nf-md-image_filter_hdr"></i> milkysources</a>
                 <a href="/art/index.html" class="styled-button"><i class="nf nf-oct-paintbrush"></i> art gallery</a>
                 <a href="/coolppl/index.html" class="styled-button"><i class="nf nf-oct-people"></i> cool internet people</a>
                 <a href="https://milkyway.atabook.org/" class="styled-button"><i class="nf nf-fa-address_book"></i> guestbook</a>
@@ -193,10 +200,13 @@
             <div class="button-container">
                 <a href="/nft.html" class="styled-button"><i class="nf nf-fae-coins"></i> nft?</a>
                 <a href="/exoticbutters/index.html" class="styled-button"><i class="nf nf-md-fridge_outline"></i> exotic butters</a>
+                <a href="/collection/index.html" class="styled-button"><i class="nf nf-fa-book"></i> pixel clique collection!</a>
                 <a href="/links/index.html" class="styled-button"><i class="nf nf-fa-link"></i> milkylinks</a></li>
                 <a href="/shrines/index.html" class="styled-button"><i class="nf nf-fa-torii_gate"></i> shrines</a>
                 <a href="/trophyshelf/index.html" class="styled-button"><i class="nf nf-md-trophy"></i> awards</a>
                 <a href="/music/index.html" class="styled-button"><i class="nf nf-md-archive_music"></i> music i like :3</a>
+                <a href="/mdclique/index.html" class="styled-button"><i class="nf nf-md-minidisc"></i> mdclique</a>
+                <a href="/gfx/index.html" class="styled-button"><i class="nf nf-md-image_filter_hdr"></i> milkysources</a>
                 <a href="/license/index.html" class="styled-button"><i class="nf nf-md-license"></i> milkyway public license</a>
                 <a href="/milkyfonts/index.html" class="styled-button"><i class="nf nf-md-format_font"></i> milky fonts</a>
                 <a href="/brainfuck/index.html" class="styled-button"><i class="nf nf-md-brain"></i> brainfuck interpreter</a>
@@ -502,6 +512,10 @@
         console.error("Error fetching data:", error);
       }
     };
+    </script>
+
+    <script type="text/javascript">
+        document.getElementsByTagName("body")[0].innerHTML=twemoji.parse(document.getElementsByTagName("body")[0].innerHTML)
     </script>
 
 </body>

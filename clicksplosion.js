@@ -1,6 +1,6 @@
-var sparks = 75; // How many sparks per clicksplosion
+var sparks = 25; // How many sparks per clicksplosion
 var speed = 20; // How fast - smaller is faster
-var bangs = 7; // How many can be launched simultaneously (note that using too many can slow the script down)
+var bangs = 4; // How many can be launched simultaneously (note that using too many can slow the script down)
 var colours = ['#22ff00', '#00ff42', '#00ff61', '#00ff7a', '#00ff8f', '#00ffa2', '#00ffb3'];
 
 var intensity = [];
