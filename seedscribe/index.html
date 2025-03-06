@@ -5,8 +5,37 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="icon" type="image/x-icon" href="images/icon_squr.png">
+	<link rel="icon" type="image/x-icon" href="https://disk.milkyway.moe/seedscribe/siteassets/images/icon_squr.png">
 </head>
+
+<style type="text/css">
+.content-container {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 20px; /* Adjust space between image and text */
+}
+
+.image-wrapper {
+    flex: 1;
+    max-width: 50%;
+
+}
+
+.text-wrapper {
+    flex: 1;
+    max-width: 50%;
+
+}
+
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    object-fit: cover;
+}
+</style>
 
 <body class="homepage is-preload">
 	<div id="page-wrapper">
@@ -15,7 +44,7 @@
 	<header id="header">
 		<div class="logo container">
 			<div>
-				<h1><a id="ssicon" class="desktop" href="index.html"><img src="images/icon_squr.png" alt="Seedscribe Icon"></a></h1>
+				<h1><a id="ssicon" class="desktop" href="index.html"><img src="https://disk.milkyway.moe/seedscribe/siteassets/images/icon_squr.png" alt="Seedscribe Icon"></a></h1>
 			</div>
 		</div>
 	</header>
@@ -73,8 +102,28 @@
 	</section>
 	<div class="row gtr-200">
 	<div class="col-12">
+			<!-- Content -->
+
+	<article class="box page-content">
+	    <header>
+	        <h2 class="major"><span>What is Seedscribe?</span></h2>
+	    </header>
+	    <section class="content-container">
+	        <div class="image-wrapper image featured">
+	            <img src="https://disk.milkyway.moe/seedscribe/siteassets/images/replacethis.png" alt="probably the worst choice i couldve went with for a placeholder"/>
+	        </div>
+	        <div class="text-wrapper">
+	            <p>
+	                i cant fill this out unless they give the go ahead so im just pulling stuff out of the GC and using it as placeholder images. please i need product photos, literally anything
+	            </p>
+	        </div>
+	    </section>
+	</article>
+		</div>
+	</div>
+
 		<!-- Features -->
-	<section class="box features">
+	<section class="box features" style="margin-top: 30pt;">
 		<h2 class="major"><span>Why Seedscribe?</span></h2>
 		<div>
 			<div class="row">
@@ -101,7 +150,7 @@
 				<div class="col-3 col-6-medium col-12-small">
 					<!-- Feature -->
 					<section class="box feature">
-						<div class="image front featured"><img src="images/pic03.jpg" alt="" /></div>
+						<div class="image front featured"><img src="https://disk.milkyway.moe/seedscribe/siteassets/images/pic03.jpg" alt="" /></div>
 						<h3><a href="#">And Another</a></h3>
 						<p>
 							Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
@@ -112,7 +161,7 @@
 				<div class="col-3 col-6-medium col-12-small">
 					<!-- Feature -->
 					<section class="box feature">
-						<div class="image front featured"><img src="images/pic04.jpg" alt="" /></div>
+						<div class="image front featured"><img src="https://disk.milkyway.moe/seedscribe/siteassets/images/pic04.jpg" alt="" /></div>
 						<h3><a href="#">And One More</a></h3>
 						<p>
 							Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
@@ -162,7 +211,8 @@
 
 										<!-- Archives -->
 										<ul class="divided">
-											<li id="p1">
+
+											<li class="side-posts" id="p1">
 											    <article class="box post-summary">
 											        <h3><a href="#" class="dynalink" data-placeholder="sidebar-header">...</a></h3>
 											        <ul class="meta">
@@ -171,7 +221,7 @@
 											    </article>
 											</li>
 
-											<li id="p2">
+											<li class="side-posts" id="p2">
 											    <article class="box post-summary">
 											        <h3><a href="#" class="dynalink" data-placeholder="sidebar-header">...</a></h3>
 											        <ul class="meta">
@@ -180,7 +230,7 @@
 											    </article>
 											</li>
 
-											<li id="p3">
+											<li class="side-posts" id="p3">
 											    <article class="box post-summary">
 											        <h3><a href="#" class="dynalink" data-placeholder="sidebar-header">...</a></h3>
 											        <ul class="meta">
@@ -189,7 +239,7 @@
 											    </article>
 											</li>
 
-											<li id="p4">
+											<li class="side-posts" id="p4">
 											    <article class="box post-summary">
 											        <h3><a href="#" class="dynalink" data-placeholder="sidebar-header">...</a></h3>
 											        <ul class="meta">
@@ -198,7 +248,7 @@
 											    </article>
 											</li>
 
-											<li id="p5">
+											<li class="side-posts" id="p5">
 											    <article class="box post-summary">
 											        <h3><a href="#" class="dynalink" data-placeholder="sidebar-header">...</a></h3>
 											        <ul class="meta">
@@ -206,6 +256,9 @@
 											        </ul>
 											    </article>
 											</li>
+
+
+
 										</ul>
 
 										<a href="#" class="button alt">Archives</a>

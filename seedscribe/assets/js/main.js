@@ -46,7 +46,7 @@
 			$(
 				'<div id="titleBar">' +
 					'<a href="#navPanel" class="toggle"></a>' +
-					'<span class="title"><p><img src="images/icon_squr.png" alt="Seedscribe Icon" style="width: 2.5em;"></p></span>' +
+					'<span class="title"><p><img src="https://disk.milkyway.moe/seedscribe/siteassets/images/icon_squr.png" alt="Seedscribe Icon" style="width: 2.5em;"></p></span>' +
 				'</div>'
 			)
 				.appendTo($body);

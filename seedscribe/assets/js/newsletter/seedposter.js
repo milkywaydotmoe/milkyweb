@@ -54,7 +54,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const validPosts = Array.isArray(posts) ? posts : [];
             populateFeaturedPost(validPosts.find(post => post.index === 0)); // Post 0 is featured
             populateSidebar(validPosts);
-            updateDynamicLinks(validPosts.find(post => post.index === 0)); // Post 0 for dynamic links
             updatePostImages(validPosts); // Update post images
         } catch (error) {
             retryCount++;
@@ -104,7 +103,7 @@ function cleanPlaceholderBrackets() {
 
 async function fetchPosts() {
     try {
-        const response = await fetch('assets/js/newsletter/posts.json');
+        const response = await fetch('/assets/js/newsletter/posts.json');
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         return await response.json();
     } catch (error) {
@@ -222,33 +221,58 @@ function populateSidebar(posts = []) {
         link: "#"
     };
 
-    const sidebar = document.querySelector('.sidebar');
-    if (!sidebar) return;
+    // Find all <li> elements with the class "side-posts" and IDs like p1, p2, etc.
+    document.querySelectorAll('li.side-posts[id^="p"]').forEach((li) => {
+        // Extract the index from the ID (e.g., "p1" -> 1)
+        const index = parseInt(li.id.replace('p', ''), 10); // Convert to integer
 
-    // Find all <li> elements with IDs p1, p2, p3, etc.
-    sidebar.querySelectorAll('li[id^="p"]').forEach(li => {
-        const postId = li.id.replace('p', ''); // Extract the number from the ID
-        const postIndex = parseInt(postId, 10); // Convert to integer
-        const postData = posts.find(post => post.index === postIndex) || sidebarPlaceholder;
+        // Skip p0 (reserved for the featured article)
+        if (index === 0) return;
 
-        // Update the sidebar item
-        setElementContent('[data-placeholder="sidebar-header"]', postData.header, li);
-        setElementContent('[data-placeholder="sidebar-date"]', postData.postDate, li);
-        
-        const link = li.querySelector('[data-placeholder="sidebar-link"]');
-        if (link) {
-            link.href = postData.link;
+        // Adjust the index to match the posts array (p1 -> posts[1], p2 -> posts[2], etc.)
+        const postData = posts[index] || sidebarPlaceholder;
 
-            // Disable the link if it's a placeholder
-            if (postData === sidebarPlaceholder) {
-                link.setAttribute('aria-disabled', 'true');
-                link.classList.add('disabled-link');
-                link.href = "#"; // Ensure the link doesn't go anywhere
-            } else {
-                link.removeAttribute('aria-disabled');
-                link.classList.remove('disabled-link');
-            }
-        }
+        // Clear any existing content in the <li>
+        li.innerHTML = '';
+
+        // Create the <article> element
+        const article = document.createElement('article');
+        article.classList.add('box', 'post-summary');
+
+        // Create the <h3> element
+        const h3 = document.createElement('h3');
+
+        // Create the <a> element for the header link
+        const headerLink = document.createElement('a');
+        headerLink.href = postData.link;
+        headerLink.textContent = postData.header;
+        headerLink.classList.add('dynalink');
+
+        // Append the <a> to the <h3>
+        h3.appendChild(headerLink);
+
+        // Create the <ul> for the meta information
+        const ul = document.createElement('ul');
+        ul.classList.add('meta');
+
+        // Create the <i> element for the calendar icon
+        const icon = document.createElement('i');
+        icon.classList.add('nf', 'nf-md-calendar_edit');
+
+        // Create the <li> element for the date
+        const dateLi = document.createElement('li');
+        dateLi.textContent = postData.postDate;
+
+        // Append the icon and date to the <ul>
+        ul.appendChild(icon);
+        ul.appendChild(dateLi);
+
+        // Append the <h3> and <ul> to the <article>
+        article.appendChild(h3);
+        article.appendChild(ul);
+
+        // Append the <article> to the <li>
+        li.appendChild(article);
     });
 }
 
