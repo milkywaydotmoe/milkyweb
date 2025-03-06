@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         subheader: "Please check back later...",
                         postDate: "N/A",
                         tags: "none",
-                        thumbnail: "../images/placeholders/error_tbn.png",
+                        thumbnail: "images/placeholders/error_tbn.png",
                         alttext: "Error loading content",
                         summary: errorMessage,
                         link: "#"
@@ -104,7 +104,7 @@ function cleanPlaceholderBrackets() {
 
 async function fetchPosts() {
     try {
-        const response = await fetch('../assets/js/newsletter/posts.json');
+        const response = await fetch('assets/js/newsletter/posts.json');
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         return await response.json();
     } catch (error) {
