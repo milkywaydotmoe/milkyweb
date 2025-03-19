@@ -15,7 +15,9 @@ var sites = [
 'https://astracelestine.nekoweb.org/',
 'https://bang1338.nekoweb.org',
 'https://lel.nekoweb.org',
-'https://mechagic.party'
+'https://mechagic.party',
+'https://xan.lol',
+'https://beaus-silly-folder.nekoweb.org'
 ];
 
 //the name of the ring
