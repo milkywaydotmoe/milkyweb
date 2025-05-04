@@ -36,7 +36,7 @@ const gc_domain_name = "milkywaymoe.goatcounter.com";
 // If left blank, the script will default to the
 // current page.
 
-const gc_count_path = "/";
+const gc_count_path = "index.html";
 
 // Where you want the visitor number to be inserted.
 // This uses a CSS selector and adds the number to the
@@ -69,7 +69,7 @@ if ( visitor_count_source.toLowerCase() === "neocities" ) {
 }
 
 if ( visitor_count_source.toLowerCase() === "goatcounter" ) {
-  stats_url = `https://${gc_domain_name}/counter/${gc_count_path || window.location.pathname}.json`;
+  stats_url = `https://milkywaymoe.goatcounter.com/counter/${gc_count_path || window.location.pathname}.json`;
   info_parser = (data) => parseInt(data.count_unique.replace(/\D/g, ""), 10);
 }
 
