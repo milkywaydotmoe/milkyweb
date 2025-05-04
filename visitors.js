@@ -36,7 +36,7 @@ const gc_domain_name = "milkywaymoe.goatcounter.com";
 // If left blank, the script will default to the
 // current page.
 
-const gc_count_path = "";
+const gc_count_path = "/";
 
 // Where you want the visitor number to be inserted.
 // This uses a CSS selector and adds the number to the
