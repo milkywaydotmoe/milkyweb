@@ -92,12 +92,12 @@ const digit_image_path = "/counternum/"; // ensure this path contains 0.gif, 1.g
       elements.forEach(item => {
         item.style.display = "flex";
         item.style.justifyContent = "center";
-        item.style.gap = "0.25em";
+        item.style.gap = "2px";
         item.innerHTML = "";
         String(count).split("").forEach(d => {
           const img = document.createElement("img");
           img.className = "visitor-digit";
-          img.src = `${digit_image_path}${d}.gif`;
+          img.src = `${digit_image_path}${d}.png`;
           img.alt = d;
           item.appendChild(img);
         });
