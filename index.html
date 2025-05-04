@@ -17,15 +17,18 @@
     <script type="text/javascript" src="buttons.js"></script>
     <script type="text/javascript" src="lastfm.js"></script>
 
+    <script data-goatcounter="https://milkywaymoe.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
     <script type="text/javascript" src="clicksplosion.js"></script>
-    <script type="text/javascript" src="marquee.js"></script>
+    <!-- <script type="text/javascript" src="marquee.js" async></script> -->
 
     <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css">
     <link rel="stylesheet" type="text/css" href="cursor.css">
     <link rel="stylesheet" type="text/css" href="plushpop.css" id="stylesheet">
 
-    <script src="darkmode.js"></script>
-    <script src="plushpop.js" async></script>
+    <script src="darkmode.js" defer></script>
+    <script src="plushpop.js" defer></script>
 
     <meta name="description" content="MiLKY-P's website, powered by autism!">
     <meta property="og:type" content="website">
@@ -46,9 +49,6 @@
             vertical-align: -0.1em;
         }
     </style>
-
-    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
@@ -60,13 +60,13 @@
     </div>
     <div class="container">
 
-        <div class="head">
+        <!-- <div class="head">
             <div class="header_img"></div>
             <div class="marquee-container">
                 <div class="marquee-background"></div>
-                <div class="marquee-content" id="marquee"></div>
+                <div class="marquee-content" id="marquee"></div> 
             </div>
-        </div>
+        </div> -->
 
         <style>
             .switchstyle {
@@ -85,6 +85,18 @@
                 background-size: cover;
                 z-index: 9999; /* Ensure it covers everything */
             }
+            .visitor-count {
+                display: flex;
+                gap: 4px;
+                align-items: center;
+            }
+
+            .visitor-count img.visitor-count-digit {
+                width: 40px;   /* match your digit image size */
+                height: 60px;  /* match your digit image size */
+                display: inline-block;
+            }
+
         </style>
         <img class="sticky-element" src="/assets/hy2wm.png">
         <img id="popupImage" src="https://disk.milkyway.moe/web/other%20assets/stelle_scrunk.png">
@@ -113,6 +125,10 @@
                                     was built with Sublime Text/VSCodium/Notepad/IntelliJ and pain. This site may not run well on weaker devices so please keep that in mind!</p>
 
                                 <p class="main">You probably ended up here through one of my videos, my bio, or maybe through scrolling the depths of the internet. If so, welcome to my site! I got archives of my music up here.</p>
+
+                                <p class="main">I've been running this site for years now and honestly, i have NO idea what i'm doing. This site is held together by prayers and duct tape.</p>
+
+                                <p class="main">You might be asking why i'm yapping... well.. I needed flavor text to pad the space of my site. Seriously, remove this text and my site will DEADASS look bald. No amount of under constructions will help me.</p>
 
                                 <p class="main">If you are the rightsholder of any pieces of media on this site and would like to have any of the code removed, please email me at webmaster@milkyway.moe and i shall swiftly delete it. ^^</p>
                             </div>
@@ -169,7 +185,9 @@
 
             <div style="text-align:center;">
                 <p class="main"><a class="main" href="https://lyratris.com/"><img style="width: 468px; height: 55px; image-rendering: smooth; shape-rendering: geometricPrecision;" src="/assets/lyr_banner.svg"></a></p>
-            </div>
+            </div><hr>
+
+            <p style="text-align:center;">Visitor count: <span class="visitor-count"></span></p>
         </div>
 
         <div class="musicbox" style="text-align: center; ">
@@ -271,7 +289,7 @@
             </div>
             <div class="uwu-container">
                 <span id="hiddenElement" style="display: none;"> navlink </span>
-                <iframe width="180" height="180" style="align-content: center; text-align: center; image-rendering: pixelated;" src="https://dimden.neocities.org/navlink/" name="neolink"></iframe>
+                <iframe width="230" height="230" style="align-content: center; text-align: center; image-rendering: pixelated;" src="https://dimden.neocities.org/navlink/" name="neolink"></iframe>
                 <br>
                 <img src="night.png" id="toggleButton" onclick="toggleStylesheet()" class="switchstyle" alt="Toggle Style">
             </div>
@@ -443,35 +461,11 @@
         function getCurrentUnixTimeHex(){return Math.floor(Date.now()/1e3).toString(16).toUpperCase()}function updateUnixTime(){var e=document.getElementById("unix-time-placeholder"),t=getCurrentUnixTimeHex();e.textContent=t}updateUnixTime(),setInterval(updateUnixTime,1e3);
     </script>
 
-    <script type="text/javascript" async>
-        const fetchDataAndUpdateMessage = async () => {
-      const placeholderMessage = "Now fetching Nekoweb data... Please wait patiently, catgirls are resting.";
-      updateMarquee(placeholderMessage); // Display placeholder message
-      
-      try {
-        const response = await fetch("https://nekoweb.org/api/site/info/milkyway");
-        
-        if(response.status === 429) {
-          // If status is 429, wait for a certain amount of time and retry
-          await new Promise(resolve => setTimeout(resolve, 5000)); // Wait for 5 seconds (adjust this value as needed)
-          return fetchDataAndUpdateMessage(); // Retry the request
-        }
-        
-        const data = await response.json();
-        const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-        const updatedAt = new Date(data.updated_at).toLocaleString("en-US", { timeZone });
-        const message = `MiLKYWay Systems, powered by autism!! now at ${data.views} views and counting last updated ${updatedAt}`;
-        updateMarquee(message); // Update marquee with fetched data
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-    </script>
-
     <script type="text/javascript">
         document.getElementsByTagName("body")[0].innerHTML=twemoji.parse(document.getElementsByTagName("body")[0].innerHTML)
     </script>
 
+    <script type="text/javascript" src="visitors.js"></script>
 </body>
 
 </html>
