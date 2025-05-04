@@ -112,8 +112,7 @@
                                 <p class="main">This site was just recently optimized for mobile so feel free to browse it on whatever device you please. The device must have support for HTTPS, modern HTML, CSS, and JS. Chrome on Windows at 1080p is recommended though. This site
                                     was built with Sublime Text/VSCodium/Notepad/IntelliJ and pain. This site may not run well on weaker devices so please keep that in mind!</p>
 
-                                <p class="main">You probably ended up here through one of my videos, my bio, or maybe through scrolling the depths of the internet. If so, welcome to my site! I got archives of my music up here; I also have some shrines i wrote, including the
-                                    DEFINITIVE starrcat information repository! I'll also post art and miscellaneous things i find on the internet like a raccoon taking trash to put in their horde.</p>
+                                <p class="main">You probably ended up here through one of my videos, my bio, or maybe through scrolling the depths of the internet. If so, welcome to my site! I got archives of my music up here.</p>
 
                                 <p class="main">If you are the rightsholder of any pieces of media on this site and would like to have any of the code removed, please email me at webmaster@milkyway.moe and i shall swiftly delete it. ^^</p>
                             </div>
@@ -126,9 +125,10 @@
                 </tbody>
             </table>
             <hr>
+
             <div><span class="welcome" style="font-size: 2.5vh; letter-spacing: 3px;">buttons, blinkies, and other things!</span></div>
             <hr>
-            <p style="text-align:center;">Feel free to use these buttons on your site however you want! Hotlink or save it, just feel free to share my lil' pixelly bits of goodness!</p>
+            <p style="text-align:center;">Here are some pixel stuffs i've collected, as well as some of my buttons and stamps.</p>
             <p style="text-align:center;">To do that, simply right click on your desired image and copy the image address or save the image! Then you can use that as the URL in your a tags or img tag or whatever it may be!</p>
             <div style="text-align:center;image-rendering:pixelated;">
                 <img src="/milkybuttons/milkybtn.gif">
@@ -157,19 +157,28 @@
                 <img src="blinkie/lsmiyuki.gif">
                 <img src="blinkie/lskonata.gif">
             </div><hr>
+
+            <div><span class="welcome" style="font-size: 2.5vh; letter-spacing: 3px;">pixel clique stuff</span></div>
+            <hr>
+            <p style="text-align:center;">Here are some of the pixel clique stuff i got.</p>
+            <p style="text-align:center;">If you want to trade, please contact me on my email (webmaster@milkyway.moe) or use my guestbook!</p>
+            <div style="text-align:center;image-rendering:pixelated;">
+                <a href="https://pantson.xandra.cc" title="PANTSON 0123"><img src="https://pantson.xandra.cc/join.gif"></a>
+                <a href="https://pantson.xandra.cc" title="PANTSON 13-3333U"><img src="https://disk.milkyway.moe/web/pxclique/pantson_shadowmilk.png"></a>
+            </div><hr>
+
             <div style="text-align:center;">
-                
-                <p class="main"><a class="main" href="https://lyratris.com/"><img style="width: 468px; height: 55px; image-rendering: smooth; shape-rendering: geometricPrecision;" src="/assets/lyr_banner.svg"></a><br>This website is an official partner of Lyratris Ltd. We are working towards a more private, secure, and open web.</p>
+                <p class="main"><a class="main" href="https://lyratris.com/"><img style="width: 468px; height: 55px; image-rendering: smooth; shape-rendering: geometricPrecision;" src="/assets/lyr_banner.svg"></a></p>
             </div>
         </div>
 
-        <div class="musicbox" style="text-align: center;">
+        <div class="musicbox" style="text-align: center; ">
             <br>
-            <span style="font-size: 2.5vh; letter-spacing: 2px; text-align:center; font-family: dosfont;">changelog corner</span>
+            <span style="font-size: 2.5vh; letter-spacing: 2px; text-align:center; font-family: dosfont;">web radio!</span>
             <hr>
-            <p style="font-size: medium; text-align: justify; margin: 3%;">
-                <span>[02.03.25] milkyway.moe is now an Official Partner of Lyratris, working towards a better web.</span>
-            </p>
+            <div style="display: block;">
+                <p align="center"><iframe src="https://kingposs.com/kpradio.html" style="overflow:hidden; display: block;" width="227" height="224" frameborder="0" scrolling="no"></iframe></p>
+            </div>
         </div>
 
         <div class="nav">
@@ -201,7 +210,6 @@
             <div class="button-container">
                 <a href="/nft.html" class="styled-button"><i class="nf nf-fae-coins"></i> nft?</a>
                 <a href="/exoticbutters/index.html" class="styled-button"><i class="nf nf-md-fridge_outline"></i> exotic butters</a>
-                <a href="/collection/index.html" class="styled-button"><i class="nf nf-fa-book"></i> pixel clique collection!</a>
                 <a href="/links/index.html" class="styled-button"><i class="nf nf-fa-link"></i> milkylinks</a></li>
                 <a href="/shrines/index.html" class="styled-button"><i class="nf nf-fa-torii_gate"></i> shrines</a>
                 <a href="/trophyshelf/index.html" class="styled-button"><i class="nf nf-md-trophy"></i> awards</a>
@@ -430,61 +438,6 @@
         });
     });
     </script>
-
-    <script type="text/javascript" async>
-        window['libopenmpt'] = {};
-        libopenmpt.locateFile = function (filename) {
-          return "/chiptune2js/" + filename;
-        };
-        
-        libopenmpt.onRuntimeInitialized = function () {
-          var player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1, 50, 1)); // Adjust stereoSeparation and interpolationFilter here
-        
-          function playModTrack(modUrl) {
-            player.load(modUrl, function(buffer) {
-              player.play(buffer);
-        
-              // Loop the track when it ends
-              player.onEnded(function() {
-                player.play(buffer);
-              });
-            });
-          }
-        
-          function resumeAudioContext() {
-            if (player.context.state === 'suspended') {
-              return player.context.resume();
-            }
-            return Promise.resolve();
-          }
-        
-          // Function to handle the first user interaction
-          function onFirstInteraction() {
-            resumeAudioContext().then(() => {
-              playModTrack('/modfiles/rollingdownthestreet.xm');
-            });
-        
-            // Remove the event listeners after the first interaction
-            window.removeEventListener('click', onFirstInteraction);
-            window.removeEventListener('touchstart', onFirstInteraction);
-          }
-        
-          // Detect if the browser is Chrome
-          var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-        
-          if (isChrome) {
-            // Attach event listeners for mouse movement and touch input
-            window.addEventListener('mousemove', onFirstInteraction, { once: true });
-            window.addEventListener('touchstart', onFirstInteraction, { once: true });
-          } else {
-            // For non-Chrome browsers, use click or touchstart
-            window.addEventListener('click', onFirstInteraction, { once: true });
-            window.addEventListener('touchstart', onFirstInteraction, { once: true });
-          }
-        };
-    </script>
-    <script type="text/javascript" src="/chiptune2js/libopenmpt.js" async></script>
-    <script type="text/javascript" src="/chiptune2js/chiptune2.js" async></script>
 
     <script type="text/javascript">
         function getCurrentUnixTimeHex(){return Math.floor(Date.now()/1e3).toString(16).toUpperCase()}function updateUnixTime(){var e=document.getElementById("unix-time-placeholder"),t=getCurrentUnixTimeHex();e.textContent=t}updateUnixTime(),setInterval(updateUnixTime,1e3);
