@@ -46,6 +46,9 @@ const gc_count_path = "";
 
 const visitor_count_selector = ".visitor-count";
 
+// Path to your digit images folder, adjust if needed
+const digit_image_path = "/counternum/"; // ensure this path contains 0.gif, 1.gif, ..., 9.gif
+
 ///
 // CODE
 ///
@@ -54,41 +57,51 @@ const visitor_count_selector = ".visitor-count";
 
 (function () {
 
-let stats_url;
-let info_parser;
+  let stats_url;
+  let info_parser;
 
-if ( visitor_count_source.toLowerCase() === "neocities" ) {
-  stats_url = `https://weirdscifi.ratiosemper.com/neocities.php?sitename=${neocities_site_name}`;
-  info_parser = function (data) {
-    if ( data.result === "error" ) {
-      throw new Error(`${visitor_count_source.toLowerCase()} visitor counter reported an error: ${data.message}`);
-    } else {
-      return parseInt(data.info.views, 10);
+  if (visitor_count_source.toLowerCase() === "neocities") {
+    stats_url = `https://weirdscifi.ratiosemper.com/neocities.php?sitename=${neocities_site_name}`;
+    info_parser = function (data) {
+      if (data.result === "error") {
+        throw new Error(`${visitor_count_source.toLowerCase()} visitor counter reported an error: ${data.message}`);
+      } else {
+        return parseInt(data.info.views, 10);
+      }
     }
   }
-}
 
-if ( visitor_count_source.toLowerCase() === "goatcounter" ) {
-  stats_url = `https://milkywaymoe.goatcounter.com/counter/${gc_count_path || window.location.pathname}.json`;
-  info_parser = (data) => parseInt(data.count_unique.replace(/\D/g, ""), 10);
-}
+  if (visitor_count_source.toLowerCase() === "goatcounter") {
+    stats_url = `https://${gc_domain_name}/counter/${gc_count_path || window.location.pathname}.json`;
+    info_parser = (data) => Number(data.count_unique);
+  }
 
-fetch(stats_url)
-  .then(function (response) {
-    console.log(response.status);
-    if ( response.ok ) {
-      return response.json();
-    } else if ( response.status === 404 ) {
-      throw new Error(`${visitor_count_source.toLowerCase()} visitor counter reported a 404 Not Found error. Please check the settings.`);
-    }
-  })
-  .then(info_parser)
-  .catch((error) => {
-    console.error("%c Visitor Count ", "background: #000; color: #fff; font-weight: bold", `${error}`);
-    throw new Error("Failed to get visitor count. See previous errors.")
-  })
-  .then(function (count) {
-    const visitor_count_elements = document.querySelectorAll(visitor_count_selector || ".visitor-count");
-    visitor_count_elements.forEach((item) => item.appendChild(document.createTextNode(count)));
-  });
+  fetch(stats_url)
+    .then(response => {
+      if (response.ok) return response.json();
+      if (response.status === 404) throw new Error(`${visitor_count_source.toLowerCase()} 404 Not Found.`);
+      throw new Error(`HTTP error ${response.status}`);
+    })
+    .then(info_parser)
+    .catch(error => {
+      console.error("%c Visitor Count ", "background:#000;color:#fff;font-weight:bold", error);
+      throw new Error("Failed to get visitor count.");
+    })
+    .then(count => {
+      const elements = document.querySelectorAll(visitor_count_selector);
+      elements.forEach(item => {
+        item.style.display = "flex";
+        item.style.justifyContent = "center";
+        item.style.gap = "0.25em";
+        item.innerHTML = "";
+        String(count).split("").forEach(d => {
+          const img = document.createElement("img");
+          img.className = "visitor-digit";
+          img.src = `${digit_image_path}${d}.gif`;
+          img.alt = d;
+          item.appendChild(img);
+        });
+      });
+    });
+
 }());
