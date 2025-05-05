@@ -341,10 +341,11 @@ img{
     grid-area: navl;
     background-color: #121212;
     width: 100%;
-    height: 18em;
+    height: 100%;
     border: outset 2px #050505;
     overflow: auto;
     border-radius: 1.2vh;
+    max-height: 20em;
 }
 
 .cbox {
@@ -480,6 +481,7 @@ img{
          order: 6;
         height: auto;
         min-height: 25vh;
+        max-height: 20em;
     }
     .panel1, .panel2 {
       order: 7;

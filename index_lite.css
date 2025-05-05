@@ -308,6 +308,7 @@ img{
     background-color: #fff;
     width: 100%;
     height: 100%;
+    max-height: 20em;
     border: outset 2px #fff;
     overflow: auto;
     border-radius: 1.2vh;
@@ -446,6 +447,7 @@ img{
          order: 6;
         height: auto;
         min-height: 25vh;
+        max-height: 20em;
     }
     .panel1, .panel2 {
       order: 7;
