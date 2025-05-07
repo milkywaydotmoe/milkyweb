@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+    <!-- Mirrored from classic.systemspace.network/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 May 2025 15:21:45 GMT -->
+    <!-- Added by HTTrack -->
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <!-- /Added by HTTrack -->
+    <head>
+        <title>FUCK ADOBE.</title>
+        <link rel="mask-icon" href="/antiadobe/res/img/icons/safari-pinned-tab.svg" color="#000000" />
+        <link rel="shortcut icon" href="/antiadobe/res/img/icons/favicon.ico" />
+        <meta name="msapplication-config" content="/antiadobe/res/browserconfig.html" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#000000" />
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="/antiadobe/res/css/reset.css" />
+        <link rel="stylesheet" href="/antiadobe/res/css/common.css" />
+        <link rel="stylesheet" href="/antiadobe/res/css/scanlines.css" />
+        <script src="/antiadobe/res/js/jquery.js"></script>
+        <script src="/antiadobe/res/js/howler.js"></script>
+        <script src="/antiadobe/res/js/cookies.js"></script>
+
+        <style>
+            @font-face {
+                font-family: CNT;
+                src: url(/antiadobe/res/font/countdown.ttf);
+            }
+
+            #intro-error {
+                text-align: center;
+                z-index: 10000000000;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                color: #fff;
+                transform: translate(-50%, -50%);
+            }
+            #intro-error > button {
+                padding: 10px 20px;
+                background: transparent;
+                color: white;
+                font-family: "Paragraph", sans-serif;
+                border: 1px solid white;
+            }
+            #intro-error > button:hover {
+                cursor: pointer;
+                border: 1px solid lime;
+            }
+            #intro-error > h1 {
+                color: red;
+            }
+
+            #countdown {
+                font-family: CNT;
+                font-size: 3em;
+                margin: 0;
+                text-shadow: 0px 0px 16px #ff0;
+            }
+
+            #count h3 {
+                font-size: 16px;
+                margin: 0;
+                color: #888;
+            }
+
+            #slots h4 {
+                font-size: 24px;
+                margin: 0;
+                margin-top: 0.5em;
+            }
+
+            #slots h3 {
+                font-size: 16px;
+                margin: 0;
+                color: #888;
+                margin-bottom: 1em;
+            }
+
+            #belief h4 {
+                font-size: 24px;
+                margin: 0;
+                margin-top: 0.5em;
+            }
+
+            #belief h3 {
+                font-size: 16px;
+                margin: 0;
+                color: #888;
+                margin-bottom: 1em;
+            }
+
+            #flyer {
+                width: 100%;
+                height: 0px;
+                background-color: #000;
+                background-image: url(/antiadobe/res/img/bg/home.png);
+                background-attachment: fixed;
+                background-position: center;
+                transition: height 5s, opacity 5s;
+            }
+
+            #wallpaper {
+                width: 100%;
+                height: 70vh;
+                background-color: #000;
+                background-image: url(/antiadobe/res/img/bg/home.png);
+                background-attachment: fixed;
+                background-position: center;
+            }
+
+            #wallpaper #lain {
+                position: absolute;
+                top: calc(70vh - 456px);
+                left: 10vw;
+                transition: top 0s;
+            }
+
+            #wallpaper h1 {
+                position: absolute;
+                left: calc(10vw + 450px);
+                top: calc(70vh - 380px);
+                font-family: Heading;
+                font-size: 3vw;
+                text-shadow: 3px 6px #000, 0px -1px #000, 0px 1px #000, -1px 0px #000, 1px 0px #000, -1px -1px #000, 1px 1px #000, -1px 1px #000, 1px -1px #000;
+                transition: top 0s;
+            }
+
+            #register-button {
+                color: #ffff00;
+            }
+
+            #register-button:hover {
+                color: #ff0000;
+                text-shadow: 0px 0px 10px #ff0000;
+            }
+
+            #intro {
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1000000;
+                background-color: #000;
+            }
+
+            #intro.ready {
+                animation: 1.7s introHeat cubic-bezier(0.82, 0.28, 0.93, 0.3) forwards;
+            }
+
+            #intro h1 {
+                position: fixed;
+                left: calc(10vw + 450px);
+                top: calc(70vh - 380px);
+                font-family: Heading;
+                font-size: 3vw;
+                text-shadow: 3px 6px #000, 0px -1px #000, 0px 1px #000, -1px 0px #000, 1px 0px #000, -1px -1px #000, 1px 1px #000, -1px 1px #000, 1px -1px #000;
+            }
+
+            #intro.ready h1 {
+                animation: 1.7s typeHeat cubic-bezier(0.82, 0.28, 0.93, 0.3) forwards;
+            }
+
+            #intro h6 {
+                position: relative;
+                top: 90vh;
+                cursor: pointer;
+                margin: 0;
+                color: #fff;
+                opacity: 0.2;
+            }
+
+            #intro.destroyed {
+                transition: 2s;
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            @keyframes introHeat {
+                0% {
+                    background-color: #000;
+                }
+                100% {
+                    background-color: #888;
+                }
+            }
+
+            @keyframes typeHeat {
+                0% {
+                    text-shadow: 0px 0px 0px #fff;
+                    color: #fff;
+                }
+                100% {
+                    text-shadow: 0px 0px 100px #fff, 0px 0px 20px #fff, 0px 0px 10px #fff;
+                    color: #aaa;
+                }
+            }
+
+            #back {
+                background-color: rgba(0, 0, 0, 1);
+                border: 1px solid #fff;
+                box-shadow: 0px 6px #7859cc, 0px 0px 16px #7859cc;
+                width: 10em;
+                font-family: Heading;
+                font-size: 2em;
+                cursor: pointer;
+                position: absolute;
+                left: calc(19vw + 450px);
+                top: calc(90vh - 380px);
+                transition: 0.5s;
+                text-align: left;
+            }
+
+            #back:hover {
+                box-shadow: 0px 2px #7859cc, 0px 0px 64px #7859cc;
+                top: calc(90vh - 375px);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="contentloader">
+            <img id="loadtsuki" src="/antiadobe/res/img/loader/loadadobe.png" />
+            <img id="loadspin" src="/antiadobe/res/img/loader/loadspin.png" />
+        </div>
+        <style>
+            #contentloader {
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #000;
+                z-index: 10000;
+                transition: 0.2s;
+            }
+
+            #loadtsuki {
+                position: absolute;
+                left: calc(50% - 48px);
+                top: calc(50% - 48px);
+            }
+
+            #loadspin {
+                position: absolute;
+                left: calc(50% - 46px);
+                top: calc(50% - 47px);
+                animation: LoaderSpin 2s infinite linear;
+            }
+
+            @keyframes LoaderSpin {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+            .destroyedloader {
+                opacity: 0;
+                pointer-events: none;
+                transition: 0.5s !important;
+            }
+
+            .destroyedloader #loadtsuki {
+                top: calc(50% - 100px);
+                transition: 0.5s ease-in !important;
+            }
+
+            .destroyedloader #loadspin {
+                top: calc(50% - 100px);
+                transition: 0.5s ease-in !important;
+            }
+        </style>
+        <script>
+            window.addEventListener("load", function (event) {
+                document.getElementById("contentloader").className = "destroyedloader";
+                document.getElementById("loadspin").src = "/antiadobe/res/img/loader/loadfinish.png";
+            });
+
+            window.onbeforeunload = function () {
+                document.getElementById("contentloader").classList.remove("destroyedloader");
+                document.getElementById("loadspin").src = "/antiadobe/res/img/loader/loadspin.png";
+            };
+        </script>
+        <div id="header">
+            <div id="headerbar">
+                <img id="headerstatus" src="/antiadobe/res/img/headerbar/status-dev.png"/><img id="headerfade_left" src="/antiadobe/res/img/headerbar/fade-left.png">
+                <marquee truespeed scrolldelay="30" scrollamount="3" id="headernews">
+                    <img class="newssep" src="/antiadobe/res/img/headerbar/sep.png" />
+                    <p>Welcome to MiLKY's anti-Adobe page.</p>
+                    <img class="newssep" src="/antiadobe/res/img/headerbar/sep.png" />
+                    <p style="color: red;">Adobe: Still a bunch of asshats.</p>
+                    <img class="newssep" src="/antiadobe/res/img/headerbar/sep.png" />
+                    <p style="color: lime;">FOSS: Still open and free.</p>
+                    <img class="newssep" src="/antiadobe/res/img/headerbar/sep.png" />
+                    <p>Adobe sucks ass. Fuck the church. Here's 95 reasons why.</p>
+                    <img class="newssep" src="/antiadobe/res/img/headerbar/sep.png" />
+                    <p>Latest news: &quot;FTC Takes Action Against Adobe and Executives for Hiding Fees, Preventing Consumers from Easily Cancelling Software Subscriptions.&quot;</p>
+                    <img class="newssep" src="/antiadobe/res/img/headerbar/sep.png" />
+                    <p>Never pay for Adobe.</p>
+                    <img class="newssep" src="/antiadobe/res/img/headerbar/sep.png" />
+                </marquee>
+            </div>
+            <a href="index.html"><img id="knob" src="/antiadobe/res/img/headerbar/knobs/adobe_knob.png" /></a>
+        </div>
+        <style>
+            #header {
+                position: relative;
+                z-index: 1;
+            }
+
+            #headerbar {
+                position: fixed;
+                width: 100%;
+                left: 0;
+                top: 0;
+                height: 20px;
+                background-color: #000;
+                box-shadow: 0px 1px #fff, 0px 2px #000;
+            }
+
+            #headerstatus {
+                position: fixed;
+                left: 0;
+                top: 0;
+                z-index: 1;
+            }
+
+            #headerfade_left {
+                position: fixed;
+                left: 150px;
+                top: 0px;
+                z-index: 1;
+            }
+
+            #headernews {
+                width: 100%;
+                font-family: Heading;
+                font-size: 16px;
+                letter-spacing: -4px;
+            }
+
+            #headernews p {
+                display: inline;
+                position: relative;
+                top: -2px;
+            }
+
+            #knob {
+                position: fixed;
+                left: 0;
+                top: 20px;
+            }
+
+            #knob2 {
+                position: fixed;
+                right: 0;
+                top: 20px;
+            }
+
+            #knob3 {
+                position: fixed;
+                right: 100px;
+                top: 20px;
+            }
+
+            #knob4 {
+                position: fixed;
+                left: 200px;
+                top: 20px;
+            }
+
+            #knob5 {
+                position: fixed;
+                left: 350px;
+                top: 20px;
+            }
+
+            #knob6 {
+                position: fixed;
+                left: 460px;
+                top: 20px;
+            }
+
+            #knob7 {
+                position: fixed;
+                left: 492px;
+                top: 20px;
+            }
+        </style>
+
+        <div id="flyer"></div>
+        <div id="wallpaper">
+            <img id="lain" src="/antiadobe/res/img/others/milky.png" />
+            <h1>
+                Adobe sucks ass. <br>
+                It's time to make the switch.<br> 
+            </h1>
+        </div>
+        <div class="seperator"></div>
+        <div class="padded">
+            <h1>Welcome to MiLKY's Anti-adobe Page.</h1>
+            <p>This webpage has been made to spread some Adobe alternatives for everyone to use. Because we all hate Adobe.</p>
+        </div>
+        <div class="seperate"></div>
+        <div class="padded">
+            <h1>Why should you not use Adobe?</h1>
+            <p>
+                Their <span style="color: red;">overpriced</span> and <span style="color: red;">unreliable</span> software has gone unchecked for <span style="color: red;">far too long</span>. Adobe has been exploiting
+                <span style="color: red;">anti-consumer practices</span>. Popups all over in every app, the licensing model is <span style="color: red;">horrible</span>, even for LEGITIMATE USERS, and then they push apps prone to
+                <span style="color: red;">crashing</span> and <span style="color: red;">reliability issues</span>.
+            </p>
+            <h1>How did we get here?</h1>
+            <p>
+                I used to use Adobe products since the beginning of my creative escapades. From Photoshop Mobile on my old tablet to After Effects on my beefy PC. But, eventually, i saw myself jumping hurdle after hurdle, checking sketchy
+                sites and repairing a failing GenP install just for a familiar UI. And that UI kept losing features that i used regularly. The final straw was when Adobe announced everything made in their software was their free game to use
+                for AI. I hell-to-the-NOPED out of there.<br>
+                <br>
+                Adobe just kept getting slower and slower, and their programs kept crashing my devices. I decided i'd had enough and i'd looked for alternatives. Especially now, in the age of the Linux Desktop. This is why i made this page.
+            </p>
+            <h1>So... what now?</h1>
+            <p>I have linked my programs of choice below. Just browse them. Some are FOSS, some are proprietary...</p>
+        </div>
+        <div class="seperate"></div>
+        <div id="index">
+            <div class="overload">
+                <img src="/antiadobe/res/img/pageindex/logos/photos.png"><img src="/antiadobe/res/img/pageindex/right.png"/><div class="indexlist">
+	                <span>
+	                	<a href="https://krita.org/en/">KRITA</a> | 
+	                	<a href="https://www.gimp.org/">GIMP</a> | 
+	                	<a href="https://affinity.serif.com/en-us/photo/">AFFINITY PHOTO</a> | 
+	                	<a href="https://www.getpaint.net/">PAINT.NET</a> | 
+	                	<a href="https://www.photopea.com/">PHOTOPEA</a> | 
+	                	<a href="https://firealpaca.com/">FIREALPACA</a> | 
+	                	<a href="https://www.clipstudio.net/en/">CSP</a> | 
+	                	<a href="https://www.systemax.jp/en/sai/">PAINT TOOL SAI</a> | 
+	                	<a href="https://procreate.com/">PROCREATE</a> | 
+	                </span>
+	                <br>
+	              </div><br><br>
+
+	              <img src="/antiadobe/res/img/pageindex/logos/illust.png"><img src="/antiadobe/res/img/pageindex/right.png"/><div class="indexlist">
+	                <span>
+	                	<a href="https://inkscape.org/">INKSCAPE</a> | 
+	                	<a href="https://boxy-svg.com/">BOXY SVG</a> | 
+	                	<a href="https://www.linearity.io/curve/">LINEARITY CURVE</a> | 
+	                	<a href="https://www.coreldraw.com/en/">CORELDRAW</a> | 
+	                	<a href="https://affinity.serif.com/en-us/designer/">AFFINITY DESIGNER</a> | 
+	                	<a href="https://app.corelvector.com/">COREL VECTOR</a> | 
+	                </span>
+	                <br>
+	              </div><br><br>
+
+	              <img src="/antiadobe/res/img/pageindex/logos/prem.png"><img src="/antiadobe/res/img/pageindex/right.png"/><div class="indexlist">
+	                <span>
+	                	<a href="https://www.blackmagicdesign.com/products/davinciresolve">DAVINCI RESOLVE</a> | 
+	                	<a href="https://www.shotcut.org/">SHOTCUT</a> | 
+	                	<a href="https://kdenlive.org/">KDENLIVE</a> | 
+	                	<a href="https://www.openshot.org/">OPENSHOT</a> | 
+	                	<a href="https://www.vegascreativesoftware.com/us/vegas-pro/">VEGAS PRO</a> | 
+	                </span>
+	                <br>
+	              </div><br><br>
+
+	              <img src="/antiadobe/res/img/pageindex/logos/ae.png"><img src="/antiadobe/res/img/pageindex/right.png"/><div class="indexlist">
+	                <span>
+	                	<a href="https://natrongithub.github.io/">NATRON</a> | 
+	                	<a href="https://www.blender.org/">BLENDER</a> | 
+                        <a href="https://friction.graphics/">FRICTION</a> | 
+	                	<a href="https://astrofox.io/">ASTROFOX</a> | 
+                        <a href="https://aviutl-installer.github.io/en/What-is-AviUtl/">AVIUTL</a> | 
+	                </span>
+	                <br>
+	              </div><br><br>
+
+	              <img src="/antiadobe/res/img/pageindex/logos/inds.png"><img src="/antiadobe/res/img/pageindex/right.png"/><div class="indexlist">
+	                <span>
+	                	<a href="https://affinity.serif.com/en-us/publisher/">AFFINITY PUBLISHER</a> | 
+	                	<a href="https://www.scribus.net/">SCRIBUS</a> | 
+	                	<a href="https://laidout.org/">LAIDOUT</a> | 
+	                </span>
+	                <br>
+	              </div><br><br>
+
+	              <img src="/antiadobe/res/img/pageindex/logos/flash.png"><img src="/antiadobe/res/img/pageindex/right.png"/><div class="indexlist">
+	                <span>
+	                	<a href="https://tahoma2d.org/">TAHOMA2D</a> | 
+	                	<a href="https://opentoonz.github.io/e/">OPENTOONZ</a> | 
+	                	<a href="https://www.synfig.org/">SYNFIG</a> | 
+	                	<a href="hhttps://glaxnimate.mattbas.org/">GLAXNIMATE</a> | 
+	                	<a href="https://tvpaint.com">TVPAINT</a> | 
+	                </span>
+	                <br>
+	              </div><br><br>
+
+	              <img src="/antiadobe/res/img/pageindex/logos/drweave.png"><img src="/antiadobe/res/img/pageindex/right.png"/><div class="indexlist">
+	                <span>
+	                	<a href="https://www.sublimetext.com/">SUBLIME TEXT</a> | 
+	                	<a href="https://vscodium.com/">VSCODIUM</a> | 
+	                	<a href="https://www.jetbrains.com/webstorm/">WEBSTORM</a> | 
+	                	<a href="https://netbeans.apache.org/front/main/index.html">NETBEANS</a> | 
+	                </span>
+	                <br>
+	              </div><br><br>
+
+                  <img src="/antiadobe/res/img/pageindex/logos/acro.png"><img src="/antiadobe/res/img/pageindex/right.png"/><div class="indexlist">
+                    <span>
+                        <a href="https://sioyek.info/">SIOYEK</a> | 
+                        <a href="https://www.pdf24.org/en/">PDF24</a> | 
+                        <a href="https://www.libreoffice.org/">LIBREOFFICE DRAW</a> | 
+                    </span>
+                    <br>
+                  </div><br><br>
+
+                  <div style="text-align: center;"><a href="/">| HOME |</a></div>
+                    <br>
+                  </div><br><br>
+
+            </div>
+                <br>
+           
+            </div>
+        </div>
+    </body>
+
+    <!-- Mirrored from classic.systemspace.network/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 May 2025 15:22:55 GMT -->
+</html>
