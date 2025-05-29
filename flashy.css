@@ -1,0 +1,52 @@
+
+.hidden { 
+	display: none !important;
+}
+.content-warning {
+	z-index: 99;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	/* 
+	if your `body` element has padding, adjust this!	
+	make sure there's none of the page behind visible
+	*/
+	margin-top: 0px;
+	margin-left: 0px;
+	
+/* 
+Begin style properties 
+*/
+	background-color: #222;
+}
+
+.warning-inner {
+	color: #ddd;
+	font-size: 20px;
+	min-width: 50vw;
+	max-width: calc(100vw - 100px);
+}
+.warning-inner button {
+	background-color: #444;
+	border: none;
+	font-size: 20px;
+	padding: 5px;
+	color: #eee;
+	box-shadow: #111 10px 10px;
+	margin: 10px;
+}
+.warning-inner button:hover {
+	background-color: #343434;
+	color: #fff;
+	cursor: pointer;
+}
+/* 
+End style properties 
+*/
