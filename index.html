@@ -1,455 +1,480 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>welcome. to autism!</title>
-
-  <!-- Meta Tags -->
-  <meta name="description" content="MiLKY-P's website, powered by autism!">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="MiLKYWAYdotMOE">
-  <meta property="og:url" content="https://milkyway.moe/index.html">
-  <meta property="og:image" content="/favicons/normal.png">
-  <meta property="og:description" content="MiLKY-P's website, powered by autism!">
-
-  <!-- Favicons -->
-  <link rel="icon" type="image/x-icon" href="/favicons/normal.png">
-
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="index_lite.css">
-  <link rel="stylesheet" href="fonts.css">
-  <link rel="stylesheet" href="lastfm.css">
-  <link rel="stylesheet" href="/assets/siwwidget.css">
-  <link rel="stylesheet" href="https://housepen.nekoweb.org/ring/onionring.css">
-  <link rel="stylesheet" href="https://milkyway.moe/onlinewire/onionring.css">
-  <link rel="stylesheet" href="https://www.nerdfonts.com/assets/css/webfont.css">
-  <link rel="stylesheet" href="cursor.css">
-  <link rel="stylesheet" href="plushpop.css">
-
-  <!-- Scripts -->
-  <script src="buttons.js"></script>
-  <script src="lastfm.js"></script>
-  <script async data-goatcounter="https://milkywaymoe.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
-  <script src="clicksplosion.js"></script>
-  <script src="darkmode.js" defer></script>
-  <script src="plushpop.js" defer></script>
-
-  <!-- Inline Styles -->
-  <style>
-    #buttons a img { max-height: 31px !important; }
-    img.emoji { height: 1.1em; width: 1.1em; margin: 0 .05em 0 .1em; vertical-align: -0.1em; }
-    .switchstyle { margin: 5px; }
-    .marquee-content { white-space: nowrap; }
-    .no-js-image {
-      position: fixed; top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: url('https://disk.milkyway.moe/web/enablejs.jpg') no-repeat center center;
-      background-size: cover;
-      z-index: 9999;
-    }
-    .visitor-count { display: flex; gap: 4px; align-items: center; }
-    .visitor-count img.visitor-count-digit { width: 40px; height: 60px; display: inline-block; }
-  </style>
-</head>
-
-<body>
-  <div id="bgcontainer">
-    <div id="bg1"></div>
-  </div>
-  <div id="image-wrapper">
-    <img id="title" class="title" style="padding:1em !important">
-  </div>
-  <div class="container">
+  <head>
+    <meta charset="UTF-8">
+    <title>welcome. to autism!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="index_lite.css" id="stylesheet">
+    <link rel="stylesheet" type="text/css" href="fonts.css" id="stylesheet">
+    <link rel="stylesheet" type="text/css" href="lastfm.css" id="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/siwwidget.css" id="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/favicons/normal.png">
+    <link rel="stylesheet" href="https://housepen.nekoweb.org/ring/onionring.css">
+    <link rel="stylesheet" href="https://milkyway.moe/onlinewire/onionring.css">
+    <script type="text/javascript" src="buttons.js"></script>
+    <script type="text/javascript" src="lastfm.js"></script>
+    <script data-goatcounter="https://milkywaymoe.goatcounter.com/count"
+      async src="//gc.zgo.at/count.js"></script>
+    <script type="text/javascript" src="clicksplosion.js"></script>
+    <!-- <script type="text/javascript" src="marquee.js" async></script> -->
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css">
+    <link rel="stylesheet" type="text/css" href="cursor.css">
+    <link rel="stylesheet" type="text/css" href="plushpop.css" id="stylesheet">
+    <script src="darkmode.js" defer></script>
+    <script src="plushpop.js" defer></script>
+    <meta name="description" content="MiLKY-P's website, powered by autism!">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MiLKYWAYdotMOE">
+    <meta property="og:url" content="https://milkyway.moe/index.html">
+    <meta property="og:image" content="/favicons/normal.png">
+    <meta property="og:description" content="MiLKY-P's website, powered by autism!">
     <style>
-      .switchstyle {
-      margin: 5px;
+      #buttons a img {
+      max-height: 31px !important;
       }
-      .marquee-content {
-      white-space: nowrap;
-      }
-      .no-js-image {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('https://disk.milkyway.moe/web/enablejs.jpg') no-repeat center center;
-      background-size: cover;
-      z-index: 9999; /* Ensure it covers everything */
-      }
-      .visitor-count {
-      display: flex;
-      gap: 4px;
-      align-items: center;
-      }
-      .visitor-count img.visitor-count-digit {
-      width: 40px;   /* match your digit image size */
-      height: 60px;  /* match your digit image size */
-      display: inline-block;
+      img.emoji {
+      height: 1.1em;
+      width: 1.1em;
+      margin: 0 .05em 0 .1em;
+      vertical-align: -0.1em;
       }
     </style>
-    <img class="sticky-element" src="/assets/hy2wm.png">
-    <img id="popupImage" src="https://disk.milkyway.moe/web/other%20assets/stelle_scrunk.png">
-    <noscript>
-      <div class="no-js-image"></div>
-    </noscript>
-    <div class="content">
-      <div id="pop"><span class="welcome" style="font-size: 60pt; letter-spacing: 3px;"><img src="assets/minidisc.webp"> hewwo :3c <img src="assets/minidisc.webp"></span></div>
-      <hr>
-      <table style="margin:1%">
-        <tbody>
-          <tr>
-            <td>
-              <p class="rain" style="font-size:32px;"><b>Welcome to my site!</b></p>
-              <div style="text-align: justify;">
-                <p class="main">Hi, i'm Lumi! an 18 (or 19, depending on if you're viewing this past 06.30.2025,,,) y/o Filipino designer, programmer, musician, artist, student, and Mamehinata, and this is my personal site :3! I am currently feeling...
-                  <a href="https://www.imood.com/users/milkywaydotmoe"><img src="https://moods.imood.com/display/uname-milkywaydotmoe/bg-ffffff/imood.gif" alt="The current mood of milkywaydotmoe at www.imood.com"></a>
-                </p>
-                <p class="main">For more info about me, click the "ABOUT ME" area of my site!</p>
-                <p class="main">This site was just recently optimized for mobile so feel free to browse it on whatever device you please. The device must have support for HTTPS, modern HTML, CSS, and JS. Chrome on Windows at 1080p is recommended though. This site
-                  was built with Sublime Text/VSCodium/Notepad/IntelliJ and pain. This site may not run well on weaker devices so please keep that in mind!
-                </p>
-                <p class="main">You probably ended up here through one of my videos, my bio, or maybe through scrolling the depths of the internet. If so, welcome to my site! I got archives of my music up here.</p>
-                <p class="main">I've been running this site for years now and honestly, i have NO idea what i'm doing. This site is held together by prayers and duct tape.</p>
-                <p class="main">If you are the rightsholder of any pieces of media on this site and would like to have any of the code removed, please email me at webmaster@milkyway.moe and i shall swiftly delete it. ^^</p>
-              </div>
-              <div style="text-align:center">
-                <a href="https://cd5k.net/tau/">&tau;</a>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <hr>
-      <div><span class="welcome" style="font-size: 2.5vh; letter-spacing: 3px;">buttons, blinkies, and other things!</span></div>
-      <hr>
-      <p style="text-align:center;">Here are some pixel stuffs i've collected, as well as some of my buttons and stamps.</p>
-      <p style="text-align:center;">To do that, simply right click on your desired image and copy the image address or save the image! Then you can use that as the URL in your a tags or img tag or whatever it may be!</p>
-      <div style="text-align:center;image-rendering:pixelated;">
-        <img src="/milkybuttons/milkybtn.gif">
-        <img src="/milkybuttons/MiLKOS.gif">
-        <img src="/milkybuttons/MiLKY95.gif">
-        <img src="/milkybuttons/MiLKYX16.gif">
-        <img src="/milkybuttons/MiLKYStelle.gif">
+  </head>
+  <body>
+    <div id="bgcontainer">
+      <div id="bg1"></div>
+    </div>
+    <div id="image-wrapper">
+      <img id="title" class="title" style="padding:1em !important">
+    </div>
+    <div class="container">
+      <!-- <div class="head">
+        <div class="header_img"></div>
+        <div class="marquee-container">
+            <div class="marquee-background"></div>
+            <div class="marquee-content" id="marquee"></div> 
+        </div>
+        </div> -->
+      <style>
+        .switchstyle {
+        margin: 5px;
+        }
+        .marquee-content {
+        white-space: nowrap;
+        }
+        .no-js-image {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('https://disk.milkyway.moe/web/enablejs.jpg') no-repeat center center;
+        background-size: cover;
+        z-index: 9999; /* Ensure it covers everything */
+        }
+        .visitor-count {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        }
+        .visitor-count img.visitor-count-digit {
+        width: 40px;   /* match your digit image size */
+        height: 60px;  /* match your digit image size */
+        display: inline-block;
+        }
+      </style>
+      <img class="sticky-element" src="/assets/hy2wm.png">
+      <img id="popupImage" src="https://disk.milkyway.moe/web/other%20assets/stelle_scrunk.png">
+      <noscript>
+        <div class="no-js-image"></div>
+      </noscript>
+      <div class="content">
+        <div id="pop"><span class="welcome" style="font-size: 60pt; letter-spacing: 3px;"><img src="assets/minidisc.webp"> hewwo :3c <img src="assets/minidisc.webp"></span></div>
+        <hr>
+        <table style="margin:1%">
+          <tbody>
+            <tr>
+              <td>
+                <p class="rain" style="font-size:32px;"><b>Welcome to my site!</b></p>
+                <div style="text-align: justify;">
+                  <p class="main">Hi, i'm Lumi! an 18 (or 19, depending on if you're viewing this past 06.30.2025,,,) y/o Filipino designer, programmer, musician, artist, student, and Mamehinata, and this is my personal site :3! I am currently feeling...
+                    <a href="https://www.imood.com/users/milkywaydotmoe"><img src="https://moods.imood.com/display/uname-milkywaydotmoe/bg-ffffff/imood.gif" alt="The current mood of milkywaydotmoe at www.imood.com"></a>
+                  </p>
+                  <p class="main">For more info about me, click the "ABOUT ME" area of my site!</p>
+                  <p class="main">This site was just recently optimized for mobile so feel free to browse it on whatever device you please. The device must have support for HTTPS, modern HTML, CSS, and JS. Chrome on Windows at 1080p is recommended though. This site
+                    was built with Sublime Text/VSCodium/Notepad/IntelliJ and pain. This site may not run well on weaker devices so please keep that in mind!
+                  </p>
+                  <p class="main">You probably ended up here through one of my videos, my bio, or maybe through scrolling the depths of the internet. If so, welcome to my site! I got archives of my music up here.</p>
+                  <p class="main">I've been running this site for years now and honestly, i have NO idea what i'm doing. This site is held together by prayers and duct tape.</p>
+                  <p class="main">If you are the rightsholder of any pieces of media on this site and would like to have any of the code removed, please email me at webmaster@milkyway.moe and i shall swiftly delete it. ^^</p>
+                </div>
+                <div style="text-align:center">
+                  <a href="https://cd5k.net/tau/">&tau;</a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <hr>
+        <div><span class="welcome" style="font-size: 2.5vh; letter-spacing: 3px;">buttons, blinkies, and other things!</span></div>
+        <hr>
+        <p style="text-align:center;">Here are some pixel stuffs i've collected, as well as some of my buttons and stamps.</p>
+        <p style="text-align:center;">To do that, simply right click on your desired image and copy the image address or save the image! Then you can use that as the URL in your a tags or img tag or whatever it may be!</p>
+        <div style="text-align:center;image-rendering:pixelated;">
+          <img src="/milkybuttons/milkybtn.gif">
+          <img src="/milkybuttons/MiLKOS.gif">
+          <img src="/milkybuttons/MiLKY95.gif">
+          <img src="/milkybuttons/MiLKYX16.gif">
+          <img src="/milkybuttons/MiLKYStelle.gif">
+          <br>
+          <img src="/stamps/mktstamp.gif">
+        </div>
         <br>
-        <img src="/stamps/mktstamp.gif">
+        <div style="text-align: center; align-content: center;image-rendering:pixelated;">
+          <img src="blinkie/graphicartists.gif">
+          <img src="blinkie/insanelyhonest.gif">
+          <img src="blinkie/pyjamas.gif">
+          <img src="blinkie/scene.gif">
+          <img src="blinkie/universe.gif">
+          <img src="blinkie/sing.gif">
+          <img src="blinkie/mikuplsblink.gif">
+          <img src="blinkie/cinnamoroll.gif">
+          <img src="blinkie/dreams.gif">
+          <img src="blinkie/glow.gif">
+          <img src="blinkie/dsb.gif">
+          <img src="blinkie/lstsukasa.gif">
+          <img src="blinkie/lskagami.gif">
+          <img src="blinkie/lsmiyuki.gif">
+          <img src="blinkie/lskonata.gif">
+        </div>
+        <hr>
+        <div><span class="welcome" style="font-size: 2.5vh; letter-spacing: 3px;">pixel clique stuff</span></div>
+        <hr>
+        <p style="text-align:center;">Here are some of the pixel clique stuff i got.</p>
+        <p style="text-align:center;">If you want to trade, please contact me on my email (webmaster@milkyway.moe) or use my guestbook!</p>
+        <div style="text-align:center;image-rendering:pixelated;">
+          <a href="https://pantson.xandra.cc" title="PANTSON 0123"><img src="https://pantson.xandra.cc/join.gif"></a>
+          <a href="https://pantson.xandra.cc" title="PANTSON 13-3333U"><img src="https://disk.milkyway.moe/web/pxclique/pantson_shadowmilk.png"></a>
+        </div>
+        <hr>
+        <div style="text-align:center;">
+          <p class="main"><a class="main" href="https://lyratris.com/"><img style="width: 468px; height: 55px; image-rendering: smooth; shape-rendering: geometricPrecision;" src="/assets/lyr_banner.svg"></a></p>
+        </div>
+        <p style="text-align:center;"><span class="visitor-count"></span></p>
+        <p align="center"><img src="/assets/barraconstruction.gif"></p>
       </div>
-      <br>
-      <div style="text-align: center; align-content: center;image-rendering:pixelated;">
-        <img src="blinkie/graphicartists.gif">
-        <img src="blinkie/insanelyhonest.gif">
-        <img src="blinkie/pyjamas.gif">
-        <img src="blinkie/scene.gif">
-        <img src="blinkie/universe.gif">
-        <img src="blinkie/sing.gif">
-        <img src="blinkie/mikuplsblink.gif">
-        <img src="blinkie/cinnamoroll.gif">
-        <img src="blinkie/dreams.gif">
-        <img src="blinkie/glow.gif">
-        <img src="blinkie/dsb.gif">
-        <img src="blinkie/lstsukasa.gif">
-        <img src="blinkie/lskagami.gif">
-        <img src="blinkie/lsmiyuki.gif">
-        <img src="blinkie/lskonata.gif">
-      </div>
-      <hr>
-      <div><span class="welcome" style="font-size: 2.5vh; letter-spacing: 3px;">pixel clique stuff</span></div>
-      <hr>
-      <p style="text-align:center;">Here are some of the pixel clique stuff i got.</p>
-      <p style="text-align:center;">If you want to trade, please contact me on my email (webmaster@milkyway.moe) or use my guestbook!</p>
-      <div style="text-align:center;image-rendering:pixelated;">
-        <a href="https://pantson.xandra.cc" title="PANTSON 0123"><img src="https://pantson.xandra.cc/join.gif"></a>
-        <a href="https://pantson.xandra.cc" title="PANTSON 13-3333U"><img src="https://disk.milkyway.moe/web/pxclique/pantson_shadowmilk.png"></a>
-      </div>
-      <hr>
-      <div style="text-align:center;">
-        <p class="main"><a class="main" href="https://lyratris.com/"><img style="width: 468px; height: 55px; image-rendering: smooth; shape-rendering: geometricPrecision;" src="/assets/lyr_banner.svg"></a></p>
-      </div>
-      <p style="text-align:center;"><span class="visitor-count"></span></p>
-      <p align="center"><img src="/assets/barraconstruction.gif"></p>
-    </div>
-    <div class="musicbox" style="text-align: center; ">
-      <br>
-      <span style="font-size: 2.5vh; letter-spacing: 2px; text-align:center; font-family: dosfont;">web radio!</span>
-      <hr>
-      <div style="display: block;">
-        <p align="center"><iframe src="https://kingposs.com/kpradio.html" style="overflow:hidden; display: block;" width="227" height="224" frameborder="0" scrolling="no"></iframe></p>
-      </div>
-    </div>
-    <div class="nav">
-      <div style="text-align: center;">
+      <div class="musicbox" style="text-align: center; ">
         <br>
-        <span style="font-size: 2.5vh; letter-spacing: 2px; font-family: dosfont;"> NAVIGATION</span>
+        <span style="font-size: 2.5vh; letter-spacing: 2px; text-align:center; font-family: dosfont;">web radio!</span>
+        <hr>
+        <div style="display: block;">
+          <p align="center"><iframe src="https://kingposs.com/kpradio.html" style="overflow:hidden; display: block;" width="227" height="224" frameborder="0" scrolling="no"></iframe></p>
+        </div>
       </div>
-      <hr>
-      <b>
-        <p style="text-align:left; padding-left: 5px; font-size: medium; font-family: dosfont;">MAIN
-      </b>
-      ...→
-      </p>
-      <div class="button-container">
-        <a href="/about/index.html" class="styled-button">
-          <i class="nf nf-oct-question"></i> about me</a>
+      <div class="nav">
+        <div style="text-align: center;">
+          <br>
+          <span style="font-size: 2.5vh; letter-spacing: 2px; font-family: dosfont;"> NAVIGATION</span>
+        </div>
+        <hr>
+        <b>
+          <p style="text-align:left; padding-left: 5px; font-size: medium; font-family: dosfont;">MAIN
+        </b>
+        ...→
+        </p>
+        <div class="button-container">
+          <a href="/about/index.html" class="styled-button">
+            <i class="nf nf-oct-question"></i> about me</a>
 
-        <a href="/faq.html" class="styled-button">
-          <i class="nf nf-md-chat_processing"></i> frequently asked</a>
+          <a href="/faq.html" class="styled-button">
+            <i class="nf nf-md-chat_processing"></i> frequently asked</a>
 
-        <a href="/contact/index.html" class="styled-button">
-          <i class="nf nf-md-email"></i> milky.nfo</a>
+          <a href="/contact/index.html" class="styled-button">
+            <i class="nf nf-md-email"></i> milky.nfo</a>
 
-        <a href="/onlinewire/index.html" class="styled-button">
-          <i class="nf nf-md-fruit_citrus"></i> onlinewire webring</a>
+          <a href="/onlinewire/index.html" class="styled-button">
+            <i class="nf nf-md-fruit_citrus"></i> onlinewire webring</a>
 
-        <a href="/art/index.html" class="styled-button">
-          <i class="nf nf-oct-paintbrush"></i> art gallery</a>
+          <a href="/art/index.html" class="styled-button">
+            <i class="nf nf-oct-paintbrush"></i> art gallery</a>
 
-        <a href="/coolppl/index.html" class="styled-button">
-          <i class="nf nf-oct-people"></i> cool internet people</a>
+          <a href="/coolppl/index.html" class="styled-button">
+            <i class="nf nf-oct-people"></i> cool internet people</a>
 
-        <a href="https://milkyway.atabook.org/" class="styled-button">
-          <i class="nf nf-fa-address_book"></i> guestbook</a>
+          <a href="https://milkyway.atabook.org/" class="styled-button">
+            <i class="nf nf-fa-address_book"></i> guestbook</a>
 
-        <a href="/credits.html" class="styled-button">
-          <i class="nf nf-md-text_long"></i> credits</a>
+          <a href="/credits.html" class="styled-button">
+            <i class="nf nf-md-text_long"></i> credits</a>
+            
+          <a href="https://my.lyratris.com/donate/ced69f3c-bcf3-449d-83da-490838da1a09" class="styled-button">
+            <i class="nf nf-md-hand_coin"></i> donate</a>
+        </div>
+        <b>
+          <p style="text-align:left; padding-left: 5px; font-size: medium; font-family: dosfont;">ASSORTED LINKS
+        </b>
+        ...→
+        </p>
+        <div class="button-container">
+          <a href="/nft.html" class="styled-button">
+            <i class="nf nf-fae-coins"></i> nft?</a>
 
-        <a href="https://my.lyratris.com/donate/ced69f3c-bcf3-449d-83da-490838da1a09" class="styled-button">
-          <i class="nf nf-md-hand_coin"></i> donate</a>
-      </div>
-      <b>
-        <p style="text-align:left; padding-left: 5px; font-size: medium; font-family: dosfont;">ASSORTED LINKS
-      </b>
-      ...→
-      </p>
-      <div class="button-container">
-        <a href="/nft.html" class="styled-button">
-          <i class="nf nf-fae-coins"></i> nft?</a>
+          <a href="/antiadobe/index.html" class="styled-button">
+            <i class="nf nf-dev-photoshop"></i> fuck adobe!</a>
 
-        <a href="/antiadobe/index.html" class="styled-button">
-          <i class="nf nf-dev-photoshop"></i> fuck adobe!</a>
+          <a href="/exoticbutters/index.html" class="styled-button">
+            <i class="nf nf-md-fridge_outline"></i> exotic butters</a>
 
-        <a href="/exoticbutters/index.html" class="styled-button">
-          <i class="nf nf-md-fridge_outline"></i> exotic butters</a>
+          <a href="/links/index.html" class="styled-button">
+            <i class="nf nf-fa-link"></i> milkylinks</a>
 
-        <a href="/links/index.html" class="styled-button">
-          <i class="nf nf-fa-link"></i> milkylinks</a>
+          <a href="/shrines/index.html" class="styled-button">
+            <i class="nf nf-fa-torii_gate"></i> shrines</a>
 
-        <a href="/shrines/index.html" class="styled-button">
-          <i class="nf nf-fa-torii_gate"></i> shrines</a>
+          <a href="/trophyshelf/index.html" class="styled-button">
+            <i class="nf nf-md-trophy"></i> awards</a>
 
-        <a href="/trophyshelf/index.html" class="styled-button">
-          <i class="nf nf-md-trophy"></i> awards</a>
+          <a href="/music/index.html" class="styled-button">
+            <i class="nf nf-md-archive_music"></i> music i like :3</a>
 
-        <a href="/music/index.html" class="styled-button">
-          <i class="nf nf-md-archive_music"></i> music i like :3</a>
+          <a href="/mdclique/index.html" class="styled-button">
+            <i class="nf nf-md-minidisc"></i> mdclique</a>
 
-        <a href="/mdclique/index.html" class="styled-button">
-          <i class="nf nf-md-minidisc"></i> mdclique</a>
+          <a href="/gfx/index.html" class="styled-button">
+            <i class="nf nf-md-image_filter_hdr"></i> milkysources</a>
 
-        <a href="/gfx/index.html" class="styled-button">
-          <i class="nf nf-md-image_filter_hdr"></i> milkysources</a>
+          <a href="/license/index.html" class="styled-button">
+            <i class="nf nf-md-license"></i> milkyway public license</a>
 
-        <a href="/license/index.html" class="styled-button">
-          <i class="nf nf-md-license"></i> milkyway public license</a>
+          <a href="/milkyfonts/index.html" class="styled-button">
+            <i class="nf nf-md-format_font"></i> milky fonts</a>
 
-        <a href="/milkyfonts/index.html" class="styled-button">
-          <i class="nf nf-md-format_font"></i> milky fonts</a>
+          <a href="/brainfuck/index.html" class="styled-button">
+            <i class="nf nf-md-brain"></i> brainfuck interpreter</a>
 
-        <a href="/brainfuck/index.html" class="styled-button">
-          <i class="nf nf-md-brain"></i> brainfuck interpreter</a>
+          <a href="/codejam/commcodejam5/index.html" class="styled-button">
+            <i class="nf nf-fa-laptop_code"></i> latest codejam entry!</a>
 
-        <a href="/codejam/commcodejam5/index.html" class="styled-button">
-          <i class="nf nf-fa-laptop_code"></i> latest codejam entry!</a>
-
-        <a href="/" class="styled-button">
-          <i class="nf nf-fa-paint_brush"></i> to be done</a>
-      </div>
-      <hr>
-    </div>
-    <div class="cbox">
-      <br>
-      <span style="letter-spacing: 2px; font-family: dosfont;">lookie here :3</span>
-      <hr>
-      <a href="https://www.mabsland.com/Adoption.html"><img src="/assets/Censor_Ma.gif"></a>
-      <p style="font-size: small; margin-right: 1rem; margin-left: 1rem; line-height: 0.9rem;">For mature audiences. Contains high risk of violence, nudity, and adult situations. Viewer should be at least 17 or with parental guidance... Or not. I'm not a fuckin cop.</p>
-      <hr>
-      <p>The current swatch time! Click the time for more info about it!</p>
-      <span id="swatchClock">@000</span>
-      <script defer src="https://melonking.net/scripts/swatchTime.js"></script>
-      <hr>
-      <p>Here's some buttons from sites i found neat or friends i've met.</p>
-      <div style="text-align: center;">
-        <a id="prevPage" href="#">&lt;</a>
-        <span id="currentPage"></span>
-        <a id="nextPage" href="#">&gt;</a>
-      </div>
-      <br>
-      <div id="buttons" style="image-rendering:optimizeSpeed;">
-      </div>
-      <p style="font-size: small; margin-right: 1rem; margin-left: 1rem; line-height: 0.9rem;">Since the button list is getting WAY bigger than i expected, i seperated them into pages. Each time i fill up a page, those buttons get sent to my storage.</p>
-      <div class="center">
-        <a href="https://www.pokemon-adoption.de">
-        <img src="https://www.yatta-tempel.de/animierte/jirachi-bunt.gif" style="width: 64px; height: 46px;" alt="Chromatique" /></a>
-        <br />
-        <b>Name:</b> Chromatique
-        <br /> Adopt one yourself! @<a href="https://www.pokemon-adoption.de">Pok&eacute;mon Orphanage</a>
-      </div>
-      <hr>
-      <br>
-      <a style="font-size: medium;" href="https://decolonizepalestine.com/">"From the river to the sea, <br>Palestine will be free."</a>
-      <br>
-      <br>
-      <img src="/assets/riversea1.gif">
-      <br>
-      <br>
-    </div>
-    <div class="miniblog" style="align-content: top; text-align: center;">
-      <br>
-      <div>
-        <span id="navText" style="font-size: 2.5vh; letter-spacing: 2px; font-family: dosfont;"> uwu area </span>
+          <a href="/" class="styled-button">
+            <i class="nf nf-fa-paint_brush"></i> to be done</a>
+        </div>
         <hr>
       </div>
-      <div class="uwu-container">
-        <span id="hiddenElement" style="display: none;"> navlink </span>
-        <iframe width="200" height="200" style="align-content: center; text-align: center; image-rendering: pixelated;" src="https://dimden.neocities.org/navlink/" name="neolink"></iframe>
+      <div class="cbox">
         <br>
-        <img src="night.png" id="toggleButton" onclick="toggleStylesheet()" class="switchstyle" alt="Toggle Style">
-      </div>
-    </div>
-    <div class="panel1">
-      <hr>
-      <div><span class="welcome" style="font-size: 2.5vh; letter-spacing: 3px; align-self: center; overflow-wrap: normal;">webrings</span></div>
-      <hr>
-      <div style="display: flex; center; justify-content: center; height: auto; width: auto;">
+        <span style="letter-spacing: 2px; font-family: dosfont;">lookie here :3</span>
+        <hr>
+        <a href="https://www.mabsland.com/Adoption.html"><img src="/assets/Censor_Ma.gif"></a>
+        <p style="font-size: small; margin-right: 1rem; margin-left: 1rem; line-height: 0.9rem;">For mature audiences. Contains high risk of violence, nudity, and adult situations. Viewer should be at least 17 or with parental guidance... Or not. I'm not a fuckin cop.</p>
+        <hr>
+        <p>The current swatch time! Click the time for more info about it!</p>
+        <span id="swatchClock">@000</span>
+        <script defer src="https://melonking.net/scripts/swatchTime.js"></script>
+        <hr>
+        <p>Here's some buttons from sites i found neat or friends i've met.</p>
         <div style="text-align: center;">
-          <div style="text-align: center;"></div>
-          <p style="margin: 0px;">Click on any of these webrings! They're pretty neat and full of neat people!!!!11!</p>
+          <a id="prevPage" href="#">&lt;</a>
+          <span id="currentPage"></span>
+          <a id="nextPage" href="#">&gt;</a>
+        </div>
+        <br>
+        <div id="buttons" style="image-rendering:optimizeSpeed;">
+        </div>
+        <p style="font-size: small; margin-right: 1rem; margin-left: 1rem; line-height: 0.9rem;">Since the button list is getting WAY bigger than i expected, i seperated them into pages. Each time i fill up a page, those buttons get sent to my storage.</p>
+        <div class="center">
+          <a href="https://www.pokemon-adoption.de">
+          <img src="https://www.yatta-tempel.de/animierte/jirachi-bunt.gif" style="width: 64px; height: 46px;" alt="Chromatique" /></a>
+          <br />
+          <b>Name:</b> Chromatique
+          <br /> Adopt one yourself! @<a href="https://www.pokemon-adoption.de">Pok&eacute;mon Orphanage</a>
+        </div>
+        <hr>
+        <br>
+        <a style="font-size: medium;" href="https://decolonizepalestine.com/">"From the river to the sea, <br>Palestine will be free."</a>
+        <br>
+        <br>
+        <img src="/assets/riversea1.gif">
+        <br>
+        <br>
+      </div>
+      <div class="miniblog" style="align-content: top; text-align: center;">
+        <br>
+        <div>
+          <span id="navText" style="font-size: 2.5vh; letter-spacing: 2px; font-family: dosfont;"> uwu area </span>
+          <hr>
+        </div>
+        <div class="uwu-container">
+          <span id="hiddenElement" style="display: none;"> navlink </span>
+          <iframe width="200" height="200" style="align-content: center; text-align: center; image-rendering: pixelated;" src="https://dimden.neocities.org/navlink/" name="neolink"></iframe>
           <br>
-          <div id="bonki-ring">
-            <script type="text/javascript" src="https://bonkiscoolsite.neocities.org/bonkiring/bonkiring-widget.js"></script>
-          </div>
-          <br>
-          <script src="https://nuthead.neocities.org/ring/ring.js" style="margin-top: 75px; margin-bottom: 75px; margin-right: 75px; margin-left: 75px;"></script>
-          <a href="https://wiredcollective.neocities.org/"><img src="https://wiredcollective.neocities.org/webringimages/wiredcollectivebutton.png" alt="WIRED COLLECTIVE WEBRING"></a>
-          <br>
-          <div id="autiring" style="display: inline-flex; align-self: center;">
-            <script type="text/javascript" src="https://macaque.moe/autiring/onionring-variables.js"></script>
-            <script type="text/javascript" src="https://macaque.moe/autiring/onionring-widget.js" style="align-items: center; text-align: center;"></script>
-          </div>
-          <br>
-          <div id=neorings-neoring-container>
-            <a href="https://neorings.org/api/webring/1/previous?via=https%3A%2F%2Fmilkyway.moe%2F">← Back</a>
-            <a href="https://neorings.org/api/webring/1/random">↑ Random</a>
-            <a href="https://neorings.org/webring/1/">↓ Neoring</a>
-            <a href="https://neorings.org/api/webring/1/next?via=https%3A%2F%2Fmilkyway.moe%2F">→ Next</a>
-          </div>
-          <br>
-          <div id="transring" style="text-align: center; margin: 0 auto; width: fit-content;">
-            <script src="https://transring.neocities.org/ring.js"></script>
-          </div>
-          <br>
-          <div style="display: flex; justify-content: center; margin: 0;">
-            <div id='onlinewire-webring'>
-              <script type="text/javascript" src="https://milkyway.moe/onlinewire/onionring-variables.js"></script>
-              <script type="text/javascript" src="https://milkyway.moe/onlinewire/onionring-widget.js"></script>
-            </div>
-          </div>
-          <br>
-          <div style="max-width: 100%; align-self: center; text-align: center;">
-            <iframe id="bucket-webring" style="width: 80%; height: 3rem; border: none; margin; 10px;" src="https://webring.bucketfish.me/embed.html?name=MiLKYWaY"></iframe>
-          </div>
-          <br>
-          <div style="display: flex; justify-content: center; margin: 0;">
-            <div id="ckwr">
-              <script type="text/javascript" src="https://evehibi.nekoweb.org/ckwr/var.js"></script>
-              <script type="text/javascript" src="https://evehibi.nekoweb.org/ckwr/widget.js"></script>
-              <link rel="stylesheet" href="https://evehibi.nekoweb.org/ckwr/widget.css">
-            </div>
-            <div id='siwebring'>
-              <script src="/assets/siwebringuservars.js"></script>
-              <script src="https://dears.nekoweb.org/siwebring/onionring-variables.js"></script>
-              <script src="https://dears.nekoweb.org/siwebring/onionring-widget.js"></script>
-            </div>
-          </div>
-          <br>
-          <div id="bisexualism">
-            <script type="text/javascript" src="https://emeowly.github.io/bi/onionring-variables.js" defer></script>
-            <script type="text/javascript" src="https://emeowly.github.io/bi/onionring-img-widget.js" defer></script>
-          </div>
-          <br>
-          <div style="display: flex; justify-content: center; margin: 0;">
-            <div style="margin: 0;">
-              <webring-banner theme="trans" scheme="dark">
-                <p>Member of the <a href="https://webring.antaresph.dev">Pinoy Websites</a> webring</p>
-                <a href="https://webring.antaresph.dev/previous">Previous</a>
-                <a href="https://webring.antaresph.dev/random">Random</a>
-                <a href="https://webring.antaresph.dev/next">Next</a>
-              </webring-banner>
-              <script async src="https://webring.antaresph.dev/embed.js"></script>
-            </div>
-          </div>
-          <br>
+          <img src="night.png" id="toggleButton" onclick="toggleStylesheet()" class="switchstyle" alt="Toggle Style">
         </div>
       </div>
-    </div>
-    <div class="panel2">
-      <div style="margin:10px;">
-        <div id="track-info-container">
-          <p style="font-size: medium; text-align: justify;">Loading last.fm data... If it doesn't work within 10-30 seconds, please send all complaints to webmaster@milkyway.moe // Scrobbler written by Texpiloxtl @ texpilotl.net</p>
+      <div class="panel1">
+        <hr>
+        <div><span class="welcome" style="font-size: 2.5vh; letter-spacing: 3px; align-self: center; overflow-wrap: normal;">webrings</span></div>
+        <hr>
+        <div style="display: flex; center; justify-content: center; height: auto; width: auto;">
+          <div style="text-align: center;">
+            <div style="text-align: center;"></div>
+            <p style="margin: 0px;">Click on any of these webrings! They're pretty neat and full of neat people!!!!11!</p>
+            <br>
+            <div id="bonki-ring">
+              <script type="text/javascript" src="https://bonkiscoolsite.neocities.org/bonkiring/bonkiring-widget.js"></script>
+            </div>
+            <br>
+            <script src="https://nuthead.neocities.org/ring/ring.js" style="margin-top: 75px; margin-bottom: 75px; margin-right: 75px; margin-left: 75px;"></script>
+            <a href="https://wiredcollective.neocities.org/"><img src="https://wiredcollective.neocities.org/webringimages/wiredcollectivebutton.png" alt="WIRED COLLECTIVE WEBRING"></a>
+            <br>
+            <div id="autiring" style="display: inline-flex; align-self: center;">
+              <script type="text/javascript" src="https://macaque.moe/autiring/onionring-variables.js"></script>
+              <script type="text/javascript" src="https://macaque.moe/autiring/onionring-widget.js" style="align-items: center; text-align: center;"></script>
+            </div>
+            <br>
+            <div id=neorings-neoring-container>
+              <a href="https://neorings.org/api/webring/1/previous?via=https%3A%2F%2Fmilkyway.moe%2F">← Back</a>
+              <a href="https://neorings.org/api/webring/1/random">↑ Random</a>
+              <a href="https://neorings.org/webring/1/">↓ Neoring</a>
+              <a href="https://neorings.org/api/webring/1/next?via=https%3A%2F%2Fmilkyway.moe%2F">→ Next</a>
+            </div>
+            <br>
+            <div id="transring" style="text-align: center; margin: 0 auto; width: fit-content;">
+              <script src="https://transring.neocities.org/ring.js"></script>
+            </div>
+            <br>
+            <div style="display: flex; justify-content: center; margin: 0;">
+              <div id='onlinewire-webring'>
+                <script type="text/javascript" src="https://milkyway.moe/onlinewire/onionring-variables.js"></script>
+                <script type="text/javascript" src="https://milkyway.moe/onlinewire/onionring-widget.js"></script>
+              </div>
+            </div>
+            <br>
+            <div style="max-width: 100%; align-self: center; text-align: center;">
+              <iframe id="bucket-webring" style="width: 80%; height: 3rem; border: none; margin; 10px;" src="https://webring.bucketfish.me/embed.html?name=MiLKYWaY"></iframe>
+            </div>
+            <br>
+            <div style="display: flex; justify-content: center; margin: 0;">
+              <div id="ckwr">
+                <script type="text/javascript" src="https://evehibi.nekoweb.org/ckwr/var.js"></script>
+                <script type="text/javascript" src="https://evehibi.nekoweb.org/ckwr/widget.js"></script>
+                <link rel="stylesheet" href="https://evehibi.nekoweb.org/ckwr/widget.css">
+              </div>
+              <div id='siwebring'>
+                <script src="/assets/siwebringuservars.js"></script>
+                <script src="https://dears.nekoweb.org/siwebring/onionring-variables.js"></script>
+                <script src="https://dears.nekoweb.org/siwebring/onionring-widget.js"></script>
+              </div>
+            </div>
+            <br>
+            <div id="bisexualism">
+              <script type="text/javascript" src="https://emeowly.github.io/bi/onionring-variables.js" defer></script>
+              <script type="text/javascript" src="https://emeowly.github.io/bi/onionring-img-widget.js" defer></script>
+            </div>
+            <br>
+            <div style="display: flex; justify-content: center; margin: 0;">
+              <div style="margin: 0;">
+                <webring-banner theme="trans" scheme="dark">
+                  <p>Member of the <a href="https://webring.antaresph.dev">Pinoy Websites</a> webring</p>
+                  <a href="https://webring.antaresph.dev/previous">Previous</a>
+                  <a href="https://webring.antaresph.dev/random">Random</a>
+                  <a href="https://webring.antaresph.dev/next">Next</a>
+                </webring-banner>
+                <script async src="https://webring.antaresph.dev/embed.js"></script>
+              </div>
+            </div>
+            <br>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="footer">
-      <div style="margin:0.5%">
-        <img src="/assets/starryborder.gif">
-        <p style="margin:0%;">remember to fluff some tail! uwu // 5E92C3A3 — <span id="unix-time-placeholder"></span>! ♡ <a href="https://justinjackson.ca/webmaster/">IM A FUCKING WEBMISTRESS!!</a></p>
-        <img src="/assets/starryborder.gif">
+      <div class="panel2">
+        <div style="margin:10px;">
+          <div id="track-info-container">
+            <p style="font-size: medium; text-align: justify;">Loading last.fm data... If it doesn't work within 10-30 seconds, please send all complaints to webmaster@milkyway.moe // Scrobbler written by Texpiloxtl @ texpilotl.net</p>
+          </div>
+        </div>
       </div>
+      <div class="footer">
+        <div style="margin:0.5%">
+          <img src="/assets/starryborder.gif">
+          <p style="margin:0%;">remember to fluff some tail! uwu // 5E92C3A3 — <span id="unix-time-placeholder"></span>! ♡ <a href="https://justinjackson.ca/webmaster/">IM A FUCKING WEBMISTRESS!!</a></p>
+          <img src="/assets/starryborder.gif">
+        </div>
+      </div>
+      <br>
     </div>
-    <br>
-  </div>
-  <!-- JavaScript -->
-  <!--[if IE]>
-  <script src="/oneko/oneko-ie6.js"></script>
-  <![endif]-->
-  <!--[if !IE]><!-->
-<script src="/oneko/oneko.js" data-cat="/oneko/trans.png"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const noJsImage = document.querySelector('.no-js-image');
-    if (noJsImage) noJsImage.style.display = 'none';
-
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener("click", e => {
-        e.preventDefault();
-        const target = document.getElementById(link.getAttribute("href").substring(1));
-        if (target) target.scrollIntoView({ behavior: "smooth" });
+    <!-- JavaScript -->
+    <!--[if IE]>
+    <script src="/oneko/oneko-ie6.js"></script>
+    <![endif]-->
+    <!--[if !IE]><!-->
+    <script data-cat="/oneko/trans.png" src="/oneko/oneko.js"></script>
+    <!--<![endif]-->
+    <script>
+      document.getElementById("disabled").addEventListener("click", function(event) {
+                      event.preventDefault(); // Prevent the default link behavior
+       });
+    </script>
+    <script>
+      // List of image objects with src and alt text
+      const images = [
+          { src: '/assets/logos/1.png', alt: 'Logo 1' },
+          { src: '/assets/logos/2.png', alt: 'Logo 2' },
+          { src: '/assets/logos/3.png', alt: 'Logo 3' },
+          { src: '/assets/logos/4.png', alt: 'Logo 4' },
+          { src: '/assets/logos/5.png', alt: 'Logo 5' },
+          { src: '/assets/logos/6.png', alt: 'Logo 6' },
+          // Add more as needed
+      ];
+      
+      // Pick a random image
+      const randomIndex = Math.floor(Math.random() * images.length);
+      const selectedImage = images[randomIndex];
+      
+      // Apply src and alt to the <img id="title">
+      const img = document.getElementById('title');
+      img.src = selectedImage.src;
+      img.alt = selectedImage.alt;
+    </script>
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function() {
+      const noJsImage = document.querySelector('.no-js-image');
+      if (noJsImage) {
+          noJsImage.style.display = 'none';
+      }
       });
-    });
-
-    document.getElementById("unix-time-placeholder").textContent = Math.floor(Date.now() / 1000).toString(16).toUpperCase();
-    setInterval(() => {
-      document.getElementById("unix-time-placeholder").textContent = Math.floor(Date.now() / 1000).toString(16).toUpperCase();
-    }, 1000);
-
-    document.body.innerHTML = twemoji.parse(document.body.innerHTML);
-  });
-
-  const logos = [
-    { src: '/assets/logos/1.png', alt: 'Logo 1' },
-    { src: '/assets/logos/2.png', alt: 'Logo 2' },
-    { src: '/assets/logos/3.png', alt: 'Logo 3' },
-    { src: '/assets/logos/4.png', alt: 'Logo 4' },
-    { src: '/assets/logos/5.png', alt: 'Logo 5' },
-    { src: '/assets/logos/6.png', alt: 'Logo 6' },
-  ];
-  const logo = logos[Math.floor(Math.random() * logos.length)];
-  const titleImg = document.getElementById('title');
-  if (titleImg) {
-    titleImg.src = logo.src;
-    titleImg.alt = logo.alt;
-  }
-</script>
-<script src="visitors.js"></script>
-</body>
+    </script>
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function() {
+      // Select all links with href starting with '#'
+      var hashLinks = document.querySelectorAll('a[href^="#"]');
+      
+      // Add click event listener to each hash link
+      hashLinks.forEach(function(link) {
+          link.addEventListener("click", function(event) {
+              // Prevent default anchor click behavior
+              event.preventDefault();
+      
+              // Optionally, you can handle the click event here, such as smooth scrolling to the target
+              // For example, smooth scrolling to the target element with vanilla JavaScript
+              var targetId = this.getAttribute("href").substring(1); // Remove the '#' from href
+              var targetElement = document.getElementById(targetId);
+      
+              if (targetElement) {
+                  // Scroll to the target element smoothly
+                  targetElement.scrollIntoView({
+                      behavior: "smooth"
+                  });
+              }
+          });
+      });
+      });
+    </script>
+    <script type="text/javascript">
+      function getCurrentUnixTimeHex(){return Math.floor(Date.now()/1e3).toString(16).toUpperCase()}function updateUnixTime(){var e=document.getElementById("unix-time-placeholder"),t=getCurrentUnixTimeHex();e.textContent=t}updateUnixTime(),setInterval(updateUnixTime,1e3);
+    </script>
+    <script type="text/javascript">
+      document.getElementsByTagName("body")[0].innerHTML=twemoji.parse(document.getElementsByTagName("body")[0].innerHTML)
+    </script>
+    <script type="text/javascript" src="visitors.js"></script>
+  </body>
 </html>
