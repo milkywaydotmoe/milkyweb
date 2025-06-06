@@ -19,6 +19,7 @@
 {"name": "yell0w", "image": "https://disk.milkyway.moe/web/pfps/yellow.jpg", "site": "https://bsky.app/profile/yell0w.net"}
 {"name": "kittydog", "image": "https://disk.milkyway.moe/web/pfps/kittydog.gif", "site": "https://kittydog.carrd.co/"}
 {"name": "learke", "image": "https://disk.milkyway.moe/web/pfps/learke.jpg", "site": "https://learke.xyz/"}
-{"name": "cTrix", "image": "https://disk.milkyway.moe/web/pfps/239582089_199573002153296_667590805387032452_n.jpg", "site": "https://ctrix.net"}
+{"name": "cTrix", "image": "https://disk.milkyway.moe/web/pfps/ctrix.jpg", "site": "https://ctrix.net"}
 
 {"name": "Michi", "image": "https://disk.milkyway.moe/web/pfps/michi.gif", "site": "https://youtube.com/nekomichi"}
+{"name": "paw2pal", "image": "https://disk.milkyway.moe/web/pfps/paw2pal.png", "site": "https://kayceecat.neocities.org"}
