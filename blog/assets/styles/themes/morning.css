@@ -1,0 +1,132 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('../../fonts/roboto.ttf');
+}
+
+:root {
+    --main-bg-color: #FFB882;
+    --secondary-bg-color: #E16036;
+    --tertiary-bg-color: #a34222;
+    --main-fg-color: #502F26;
+    --main-highlight-color: #F5E4E0;
+}
+
+html {
+    font-family: 'Roboto', 'sans-serif';
+    scrollbar-color: var(--main-bg-color) var(--main-fg-color);
+}
+
+body {
+    background-color: var(--main-fg-color);
+}
+
+main {
+    background-color: var(--main-bg-color);
+    color: var(--main-fg-color);
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    z-index: 1;
+}
+
+nav {
+    padding: 0;
+    padding-bottom: 0.25rem;
+}
+
+nav ol {
+    gap: 0.35rem;
+    row-gap: 1.5rem;
+}
+
+nav ol li a {
+    background-color: var(--secondary-bg-color);
+    color: var(--main-highlight-color);
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    z-index: 0;
+}
+
+main {
+    border: 1px solid var(--main-bg-color);
+}
+
+nav, main {
+    border-bottom: none;
+}
+
+main a {
+    color: var(--main-fg-color);
+}
+
+a:focus,
+a:hover {
+    opacity: 50%;
+}
+
+a:active {
+    opacity: 100%;
+}
+
+blockquote {
+    margin-left: 0;
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--secondary-bg-color);
+}
+
+code {
+    background-color: var(--main-highlight-color);
+    padding: 0.1rem;
+}
+
+pre:has(code) {
+    background-color: var(--main-highlight-color);
+}
+
+#pagination {
+    background-color: var(--main-fg-color);
+    color: var(--main-highlight-color);
+    border-bottom: none;
+    padding: 1rem;
+    padding-left: 0;
+    padding-right: 0;
+    justify-content: center;
+    gap: 1rem;
+}
+
+main:has(+ #pagination) {
+    border-radius: 0.5rem;
+}
+
+.pagectrl {
+    padding: 0.5rem;
+    background-color: var(--secondary-bg-color);
+    color: var(--main-highlight-color);
+    border-radius: 0.5rem;
+    flex-grow: 1;
+}
+
+.pagenext {
+    margin-left: 0;
+    text-align: right;
+}
+
+#pagination a,
+footer a {
+    color: var(--main-highlight-color);
+}
+
+footer {
+    border-radius: 0.5rem;
+    background-color: var(--tertiary-bg-color);
+    color: var(--main-highlight-color);
+}
+
+main + footer {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.lastupdate::after {
+    content: " ♦ ";
+}
