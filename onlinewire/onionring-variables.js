@@ -17,7 +17,12 @@ var sites = [
 'https://lel.nekoweb.org',
 'https://mechagic.party',
 'https://xan.lol',
-'https://beaus-silly-folder.nekoweb.org'
+'https://beaus-silly-folder.nekoweb.org',
+'https://mytreehouse.nekoweb.org',
+'https://alexzeecomedy.com',
+'https://stupied.neocities.org',
+'https://s1nez.nekoweb.org',
+'https://backtick.nekoweb.org',
 ];
 
 //the name of the ring
