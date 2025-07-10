@@ -154,8 +154,7 @@
     text-align:left;
     font-family:Didact Gothic, monospace;
     font-smooth:never;
-    text-rendering: optimizeSpeed;
-    -webkit-font-smoothing:none;
+    text-rendering: auto;
 }
  hr{
     border:0;
@@ -531,9 +530,8 @@ img{
 }
 
  *{
-    -webkit-font-smoothing:none;
     -moz-osx-font-smoothing:grayscale;
-    text-rendering:optimizeSpeed;
+    text-rendering: auto;
 }
  .sticky-element{
     position:fixed;
