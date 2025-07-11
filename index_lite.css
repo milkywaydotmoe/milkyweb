@@ -505,3 +505,10 @@ img{
     background-color:#fff;
     padding:0
 }
+
+.buttonz:hover {
+    image-rendering: smooth;
+    z-index:9999;
+    transition: transform .2s;
+    transform: scale(1.5);
+}
