@@ -23,7 +23,10 @@ var sites = [
 'https://stupied.neocities.org',
 'https://s1nez.nekoweb.org',
 'https://backtick.nekoweb.org',
-'https://squircle.computer/'
+'https://squircle.computer/',
+'https://r3ckoning.nekoweb.org',
+'https://riri.my/',
+'https://machetebot.github.io',
 ];
 
 //the name of the ring
