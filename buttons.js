@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (currentPage < totalPages) {
       loadPage(currentPage + 1);
     }
-    if (currentPage == 5) {
+    if (currentPage == maxBtnPage) {
       loadPage(minBtnPage); // 1
     }
   }, 200));
