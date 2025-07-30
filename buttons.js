@@ -1,4 +1,4 @@
-// Bang1338's TODO: Add function that update these value
+// Bang1338's TODO: Add function that update these value 
 let minBtnPage = 1;
 let maxBtnPage = 5;
 
