@@ -8,14 +8,14 @@
 //the full URLs of all the sites in the ring
 var sites = [
 'https://milkyway.moe/',
-'https://ddnikki.nekoweb.org/',
+'https://ddnikki.moe',
 'https://rhzartist.neocities.org/',
 'https://sonnenboy.eu/',
 'https://pastel-skies.nekoweb.org',
 'https://astracelestine.nekoweb.org/',
 'https://bang1338.nekoweb.org',
 'https://lel.nekoweb.org',
-'https://mechagic.party',
+'https://mechagic.pages.gay',
 'https://xan.lol',
 'https://beaus-silly-folder.nekoweb.org',
 'https://mytreehouse.nekoweb.org',
@@ -36,6 +36,9 @@ var sites = [
 'https://cvnnbl.neocities.org',
 'https://bundleofstyx.neocities.org',
 'https://baccyflap.com',
+'https://yvas.me',
+'https://ytd.wtf',
+'https://gr13f3r.com',
 ];
 
 //the name of the ring
