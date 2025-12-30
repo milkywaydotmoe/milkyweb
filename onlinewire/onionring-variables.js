@@ -27,6 +27,15 @@ var sites = [
 'https://r3ckoning.nekoweb.org',
 'https://riri.my/',
 'https://machetebot.github.io',
+'https://willascool.neocities.org',
+'https://valycenegative.it',
+'https://samsolarsystem.neocities.org',
+'https://prigoana.com',
+'https://www.virtualgirl.net',
+'https://twentyphanday.nekoweb.org',
+'https://cvnnbl.neocities.org',
+'https://bundleofstyx.neocities.org',
+'https://baccyflap.com',
 ];
 
 //the name of the ring
