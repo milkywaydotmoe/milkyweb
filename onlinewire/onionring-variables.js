@@ -39,6 +39,8 @@ var sites = [
 'https://yvas.me',
 'https://ytd.wtf',
 'https://gr13f3r.com',
+'https://bisq.neocities.org',
+'https://nandraid.moe'
 ];
 
 //the name of the ring
