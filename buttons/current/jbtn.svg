@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="88" height="31">
+
+    <!-- 
+        jbSite4 Button 1 in SVG by jbcarreon123!
+        Feel free to hotlink, use or alter!
+
+        Made with some stuff from duducat's
+        "Enhanced by SMIL!" button
+    -->
+    
+    <title>jb's sitebutton</title>
+    <style>
+        text {
+            font-size: 1.10rem;
+            font-family: "Arial", "FreeSans", sans-serif;
+            font-weight: bold;
+        }
+    </style>
+    
+    <rect width="88" height="31" fill="#343a40" />
+    
+    <svg x="6">
+        <text x="5" y="20">
+            j
+            <animate attributeName="fill" values="#00ffea;#0084ff;#00ffea" dur="3s" repeatCount="indefinite" />
+            <animateMotion attributeName="transform" dur="3s" repeatCount="indefinite" begin="0s">
+                <mpath xlink:href="#path_j"/>
+            </animateMotion>
+        </text>
+        <path id="path_j" d="M 0 0 C 0 -1 0 -1 0 -1 C 0 1 0 1 0 1 Z M 0 1 C 0 1 0 1 0 1 C 0 -1 0 -1 0 -1 Z" fill="none"/>
+        <text x="10" y="20">
+            b
+            <animate attributeName="fill" values="#00ffea;#0084ff;#00ffea" dur="3s" repeatCount="indefinite" begin="-1.8s" />
+            <animateMotion attributeName="transform" dur="3s" repeatCount="indefinite" begin="0.3s">
+                <mpath xlink:href="#path_b"/>
+            </animateMotion>
+        </text>
+        <path id="path_b" d="M 0 0 C 0 1 0 1 0 1 C 0 -1 0 -1 0 -1 Z M 0 -1 C 0 -1 0 -1 0 -1 C 0 1 0 1 0 1 Z" fill="none"/>
+        <text x="20" y="20">
+            '
+            <animate attributeName="fill" values="#00ffea;#0084ff;#00ffea" dur="3s" repeatCount="indefinite" begin="-1.6s" />
+            <animateMotion attributeName="transform" dur="3s" repeatCount="indefinite" begin="0.4s">
+                <mpath xlink:href="#path_apostrophe"/>
+            </animateMotion>
+        </text>
+        <path id="path_apostrophe" d="M 0 0 C 0 -1 0 -1 0 -1 C 0 1 0 1 0 1 Z M 0 1 C 0 1 0 1 0 1 C 0 -1 0 -1 0 -1 Z" fill="none"/>
+        <text x="25" y="20">
+            s
+            <animate attributeName="fill" values="#00ffea;#0084ff;#00ffea" dur="3s" repeatCount="indefinite" begin="-1.4s" />
+            <animateMotion attributeName="transform" dur="3s" repeatCount="indefinite" begin="0.6s">
+                <mpath xlink:href="#path_s1"/>
+            </animateMotion>
+        </text>
+        <path id="path_s1" d="M 0 0 C 0 1 0 1 0 1 C 0 -1 0 -1 0 -1 Z M 0 -1 C 0 -1 0 -1 0 -1 C 0 1 0 1 0 1 Z" fill="none"/>
+        
+        <text x="40" y="20">
+            s
+            <animate attributeName="fill" values="#00ffea;#0084ff;#00ffea" dur="3s" repeatCount="indefinite" begin="-1.3s" />
+            <animateMotion attributeName="transform" dur="3s" repeatCount="indefinite" begin="0.8s">
+                <mpath xlink:href="#path_s2"/>
+            </animateMotion>
+        </text>
+        <path id="path_s2" d="M 0 0 C 0 -1 0 -1 0 -1 C 0 1 0 1 0 1 Z M 0 1 C 0 1 0 1 0 1 C 0 -1 0 -1 0 -1 Z" fill="none"/>
+        <text x="50" y="20">
+            i
+            <animate attributeName="fill" values="#00ffea;#0084ff;#00ffea" dur="3s" repeatCount="indefinite" begin="-1.0s" />
+            <animateMotion attributeName="transform" dur="3s" repeatCount="indefinite" begin="1.0s">
+                <mpath xlink:href="#path_i"/>
+            </animateMotion>
+        </text>
+        <path id="path_i" d="M 0 0 C 0 1 0 1 0 1 C 0 -1 0 -1 0 -1 Z M 0 -1 C 0 -1 0 -1 0 -1 C 0 1 0 1 0 1 Z" fill="none"/>
+        <text x="55" y="20">
+            t
+            <animate attributeName="fill" values="#00ffea;#0084ff;#00ffea" dur="3s" repeatCount="indefinite" begin="-0.8s" />
+            <animateMotion attributeName="transform" dur="3s" repeatCount="indefinite" begin="1.3s">
+                <mpath xlink:href="#path_t"/>
+            </animateMotion>
+        </text>
+        <path id="path_t" d="M 0 0 C 0 -1 0 -1 0 -1 C 0 1 0 1 0 1 Z M 0 1 C 0 1 0 1 0 1 C 0 -1 0 -1 0 -1 Z" fill="none"/>
+        <text x="62" y="20">
+            e
+            <animate attributeName="fill" values="#00ffea;#0084ff;#00ffea" dur="3s" repeatCount="indefinite" begin="-0.6s" />
+            <animateMotion attributeName="transform" dur="3s" repeatCount="indefinite" begin="1.4s">
+                <mpath xlink:href="#path_e"/>
+            </animateMotion>
+        </text>
+        <path id="path_e" d="M 0 0 C 0 1 0 1 0 1 C 0 -1 0 -1 0 -1 Z M 0 -1 C 0 -1 0 -1 0 -1 C 0 1 0 1 0 1 Z" fill="none"/>
+    </svg>
+    
+    <path d="M 0 0 L 88 0 L 86 2 L 2 2 L 2 29 L 0 31 Z" fill="#ced4da" />
+    <path d="M 88 31 L 0 31 L 2 29 L 86 29 L 86 2 L 88 0 Z" fill="#1d1f20" />
+</svg>
