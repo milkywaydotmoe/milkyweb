@@ -15,7 +15,7 @@ var sites = [
 'https://astracelestine.nekoweb.org/',
 'https://bang1338.nekoweb.org',
 'https://lel.nekoweb.org',
-'https://mechagic.pages.gay',
+'https://mechagic.party',
 'https://xan.lol',
 'https://beaus-silly-folder.nekoweb.org',
 'https://mytreehouse.nekoweb.org',
