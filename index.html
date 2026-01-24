@@ -377,7 +377,8 @@
         <script defer src="https://melonking.net/scripts/swatchTime.js"></script>
         <hr>
         <p>Here's some buttons from sites i found neat or friends i've met.</p>
-        <p>Now with <b>223</b> buttons and counting!<br>(count may be innacurate :3)</p>
+
+        <p>Now with <b id="buttonCount">#</b> buttons and counting!</p>
         <div style="text-align: center;">
           <a id="prevPage" href="#">&lt;</a>
           <span id="currentPage"></span>
@@ -658,7 +659,49 @@
       });
     </script>
 
+    <script>
+    // List of HTML files to scan
+    const filesToCheck = [
+      '/buttons/season1.html',
+      '/buttons/season2.html',
+      '/buttons/season3.html',
+      '/buttons/season4.html',
+      '/buttons/season5.html',
+      '/buttons/season6.html',
+    ];
 
+    // The HTML to ignore (your template button)
+    const templateHTML = '<a href="#" title="Template" target="_blank" rel="noopener noreferrer"><img class="buttonz" src="/buttons/template.png" loading="lazy"></a>';
+
+    // Function to count buttons
+    async function updateButtonCount() {
+      let totalCount = 0;
+
+      for (const file of filesToCheck) {
+        try {
+          const response = await fetch(file);
+          if (!response.ok) continue;
+          const text = await response.text();
+
+          // Create a temporary DOM to parse the HTML
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(text, 'text/html');
+
+          // Count <a> elements excluding the template
+          const buttons = Array.from(doc.querySelectorAll('a')).filter(a => a.outerHTML.trim() !== templateHTML.trim());
+          totalCount += buttons.length;
+
+        } catch (err) {
+          console.error(`Failed to load ${file}:`, err);
+        }
+      }
+
+      document.getElementById('buttonCount').textContent = totalCount;
+    }
+
+    // Run the function
+    updateButtonCount();
+    </script>
 
   </body>
 </html>
