@@ -1,0 +1,57 @@
+/* Import the Circular Std Bold font */
+@font-face {
+  font-family: "Circular Std";
+  src: url("CircularStd-Bold.woff") format("woff");
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+  padding-top: 0.5em;
+}
+
+body {
+  font-family: "Circular Std", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility
+}
+
+.wall {
+  min-height: 100vh;
+  padding: 2.5rem;
+}
+
+.wall p {
+  font-size: 3.89em;
+  font-weight: 800;
+  margin: 0;
+  word-spacing: -0.08em; /* reduce spacing between words */
+  line-height:4rem;
+  letter-spacing:-0.020em;
+}
+
+.wall a {
+  color: inherit;
+  text-decoration: none;
+  margin-right: 0.15em;
+}
+
+.wall a:hover {
+  color: #F61F75;
+}
+
+.brand {
+  font-weight: 800;
+}
+
+.highlight {
+  color: #ff2a7f; /* pink accent */
+  font-weight: 800;
+}

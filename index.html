@@ -143,39 +143,50 @@
           </tbody>
         </table>
         <br>
-        
         <hr>
         <div><span class="welcome" style="font-size: 2.5vh; letter-spacing: 3px;">buttons, blinkies, and other things!</span></div>
         <hr>
         <p style="text-align:center;">Here are some pixel stuffs i've collected, as well as some of my buttons and stamps.</p>
-        <div style="text-align:center;image-rendering:pixelated;">
-          <img src="/milkybuttons/old_MiLKY.gif">
-          <img src="/milkybuttons/milkybtn.gif">
-          <img src="/milkybuttons/MiLKOS.gif">
-          <img src="/milkybuttons/MiLKY95.gif">
-          <img src="/milkybuttons/MiLKYX16.gif">
-          <img src="/milkybuttons/MiLKYStelle.gif">
-          <br>
-          <img src="/stamps/mktstamp.gif">
+        <div style="text-align:center; image-rendering:pixelated; line-height: 0.2em;">
+          <h3>MiLKY-Buttons</h3>
+          <p>click to copy</p>
+          <a class="milky-button" href="/milkybuttons/old_MiLKY.gif"><img src="/milkybuttons/old_MiLKY.gif"></a>
+          <a class="milky-button" href="/milkybuttons/milkybtn.gif"><img src="/milkybuttons/milkybtn.gif"></a>
+          <a class="milky-button" href="/milkybuttons/MiLKOS.gif"><img src="/milkybuttons/MiLKOS.gif"></a>
+          <a class="milky-button" href="/milkybuttons/MiLKY95.gif"><img src="/milkybuttons/MiLKY95.gif"></a>
+          <a class="milky-button" href="/milkybuttons/MiLKYX16.gif"><img src="/milkybuttons/MiLKYX16.gif"></a>
+          <a class="milky-button" href="/milkybuttons/MiLKYStelle.gif"><img src="/milkybuttons/MiLKYStelle.gif"></a>
         </div>
+          <br>
+        <div style="text-align:center; image-rendering:pixelated; line-height: 0.2em;">
+          <h3>MiLKY-Stamps</h3>
+          <p>click to copy</p>
+          <a class="milky-button" href="/stamps/mktstamp.gif"><img src="/stamps/mktstamp.gif"></a>
+        </div>
+
         <br>
-        <div style="text-align: center; align-content: center;image-rendering:pixelated;">
+        <div style="text-align: center; align-content: center;image-rendering:pixelated; line-height: 0.2em;">
+          <h3>Blinkies and Cliques</h3>
+          <p>right click and save.</p>
           <img src="blinkie/graphicartists.gif">
           <img src="blinkie/insanelyhonest.gif">
           <img src="blinkie/pyjamas.gif">
           <img src="blinkie/scene.gif">
           <img src="blinkie/universe.gif">
           <img src="blinkie/sing.gif">
+          <br><br>
           <img src="blinkie/mikuplsblink.gif">
           <img src="blinkie/cinnamoroll.gif">
           <img src="blinkie/dreams.gif">
           <img src="blinkie/glow.gif">
           <img src="blinkie/dsb.gif">
           <img src="blinkie/lstsukasa.gif">
+          <br><br>
           <img src="blinkie/lskagami.gif">
           <img src="blinkie/lsmiyuki.gif">
           <img src="blinkie/lskonata.gif">
         </div>
+        <br>
         <div style="text-align:center;image-rendering:pixelated;">
           <a href="https://pantson.xandra.cc" title="PANTSON 0123"><img src="https://pantson.xandra.cc/join.gif"></a>
           <a href="https://pantson.xandra.cc" title="PANTSON 13-3333U"><img src="https://disk.milkyway.moe/web/pxclique/pantson_shadowmilk.png"></a>
@@ -217,9 +228,6 @@
 
           <a href="/contact/index.html" class="styled-button">
             <i class="nf nf-md-email"></i> milky.nfo</a>
-
-          <a href="/blog/index.html" class="styled-button">
-            <i class="nf nf-fa-blog"></i> blog</a>
 
           <a href="/onlinewire/index.html" class="styled-button">
             <i class="nf nf-md-fruit_citrus"></i> onlinewire webring</a>
@@ -553,5 +561,38 @@
       document.getElementsByTagName("body")[0].innerHTML=twemoji.parse(document.getElementsByTagName("body")[0].innerHTML)
     </script>
     <script type="text/javascript" src="visitors.js"></script>
+
+    <script>
+      document.querySelectorAll('.milky-button').forEach(img => {
+        img.style.cursor = 'pointer';
+
+        img.addEventListener('click', (e) => {
+          e.preventDefault();
+
+          const link = img.closest('a');
+          if (!link) return;
+
+          const url = new URL(link.getAttribute('href'), window.location.href).href;
+
+          // Clipboard with fallback
+          if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(url);
+          } else {
+            const input = document.createElement('input');
+            input.value = url;
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand('copy');
+            document.body.removeChild(input);
+          }
+
+          img.title = 'Copied!';
+          console.log('Copied:', url);
+        });
+      });
+    </script>
+
+
+
   </body>
 </html>
