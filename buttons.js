@@ -1,6 +1,6 @@
 // Bang1338's TODO: Add function that update these value 
 let minBtnPage = 1; 
-let maxBtnPage = 6; 
+let maxBtnPage = 7; 
 
 document.addEventListener("DOMContentLoaded", function() {
   let currentPage = 1;

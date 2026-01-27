@@ -507,8 +507,10 @@ img{
 }
 
 .buttonz:hover {
-    image-rendering: smooth;
-    z-index:9999;
-    transition: transform .2s;
-    transform: scale(1.5);
+    image-rendering:pixelated;
+    transition:.2s scale cubic-bezier(.075,.82,.165,1);
+    &:hover {
+        scale:1.2;
+        transform: translate(0px, -3px);
+    }
 }

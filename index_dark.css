@@ -541,3 +541,12 @@ img{
     background-color:#121212;
     padding:0
 }
+
+.buttonz:hover {
+    image-rendering:pixelated;
+    transition:.2s scale cubic-bezier(.075,.82,.165,1);
+    &:hover {
+        scale:1.2;
+        transform: translate(0px, -3px);
+    }
+}
