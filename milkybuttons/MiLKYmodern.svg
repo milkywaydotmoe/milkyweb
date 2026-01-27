@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 88 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <use xlink:href="#_Image1" x="0" y="0" width="88px" height="31px"/>
+    <g transform="matrix(0.030401,0,0,0.030401,-20.398053,-22.202621)">
+        <g transform="matrix(0.444218,0,0,0.444218,794.9039,714.273051)">
+            <g transform="matrix(1,0,0,1,40.882158,34.52119)">
+                <path d="M886.632,1012.138L691.1,1012.138L691.1,817.952C691.1,657.737 821.174,527.663 981.389,527.663L1561.967,527.663C1722.182,527.663 1852.257,657.737 1852.257,817.952L1852.257,1012.138L1656.724,1012.138L1656.724,736.76L886.632,736.76L886.632,1012.138Z" style="fill:rgb(52,52,52);"/>
+            </g>
+            <g transform="matrix(0,1.898862,-16.495322,0,19269.10577,-626.392849)">
+                <rect x="908.773" y="1045.178" width="102.962" height="86.811" style="fill:rgb(52,52,52);"/>
+            </g>
+            <g>
+                <path d="M1312.56,1684.6L1454.374,1347.423L1649.885,1347.423L1469.057,1777.362L1156.064,1777.362L975.235,1347.423L1170.747,1347.423L1312.56,1684.6Z" style="fill:rgb(110,228,81);"/>
+                <g transform="matrix(1,0,0,1,-0.730385,0)">
+                    <path d="M1716.237,2048.521L1830.714,1347.423L2026.226,1347.423L1948.555,1823.101L1716.237,2048.521Z" style="fill:rgb(110,228,81);"/>
+                </g>
+                <g transform="matrix(-1,0,0,1,2625.850956,-0)">
+                    <path d="M1716.237,2048.521L1830.714,1347.423L2026.226,1347.423L1948.555,1823.101L1716.237,2048.521Z" style="fill:rgb(110,228,81);"/>
+                </g>
+                <g transform="matrix(1,0,0,1,9.019323,-6.180543)">
+                    <path d="M1798.103,576.191L1903.607,325.344L2099.118,325.344L1931.375,724.172L1798.103,576.191Z" style="fill:rgb(110,228,81);"/>
+                </g>
+                <g transform="matrix(-1,0,0,1,2616.101248,-6.180543)">
+                    <path d="M1798.103,576.191L1903.607,325.344L2099.118,325.344L1931.375,724.172L1798.103,576.191Z" style="fill:rgb(110,228,81);"/>
+                </g>
+            </g>
+        </g>
+        <g transform="matrix(0.908721,0,0,0.908721,625.894996,171.613024)">
+            <g transform="matrix(831.278578,0,0,831.278578,2896.526026,1465.519202)">
+            </g>
+            <text x="1283.014px" y="1465.519px" style="font-family:'HelveticaNeue-Bold', 'Helvetica Neue';font-weight:700;font-size:831.279px;fill:rgb(52,52,52);">m<tspan x="1960.506px 2411.891px 2665.431px " y="1465.519px 1465.519px 1465.519px ">kt.</tspan></text>
+        </g>
+    </g>
+    <defs>
+        <image id="_Image1" width="88px" height="31px" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAAAfCAYAAABjyArgAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAvklEQVRoge3aOwrDQBAE0bbZ+19P2YLOoF8gtO3AyMhOvY3B1AsnGooJ57YsiyXJttCPbbXWVM6wBO7HtmxrGAaV64DI/YzjqH3fdZdE3M62bdM8z5L0DIy+rgdL4DAChxE4jMBhBA4jcBiBwwgcRuAwAocROIzAYQQOI3AYgcMIHEbgMAKHETiMwGEEDiNwWPkc8B/xnfNl6uz4ep1qrWldVwJ/yfZbx3IOaq06juPH6/2fMk2Taq2/3uNvPQAohG1b2JC5AwAAAABJRU5ErkJggg=="/>
+    </defs>
+</svg>
