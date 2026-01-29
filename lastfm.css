@@ -45,7 +45,8 @@
 }
 
 .track-title {
-    font-size: 1.5rem; /* Responsive font size for track title */
+    font-size: 1rem; /* Responsive font size for track title */
+    font-family: Daydream;
 }
 
 .track-subtext {

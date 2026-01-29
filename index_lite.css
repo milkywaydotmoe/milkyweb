@@ -28,7 +28,7 @@
     border-radius: 10px 20px;
     border: 2px solid #bcc0cc;
     padding: 5px 10px; /* Smaller padding for a smaller button */
-    font-size: 14px; /* Smaller font size */
+    font-size: 16px; /* Smaller font size */
     cursor: pointer;
     margin-bottom: 0.3vh;
 }
@@ -150,8 +150,9 @@
     margin:auto;
     width:92%;
     text-align:left;
-    font-family:Didact Gothic, monospace;
-    text-rendering: geometricPrecision;
+    letter-spacing: 0.5pt !important; 
+    font-family:Quadrunde, Cozette, monospace;
+    text-rendering: optimizeLegibility;
 }
  hr{
     border:0;
@@ -181,7 +182,10 @@ img{
     filter:drop-shadow(0 0 .1rem #00264d)
 }
  .main{
-    font-size:12pt
+    font-size:12pt;
+    font-family: Cozette;
+    text-rendering: optimizeLegibility;
+    -moz-text-rendering: optimizeLegibility;
 }
  ::-moz-selection{
     color:#fff;
