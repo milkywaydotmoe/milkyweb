@@ -1,0 +1,102 @@
+body {
+  background: url("another cairovercoat one.png") fixed;
+  font-family: "Open Sans", serif;
+  font-size: 14px;
+  color: black;
+  }
+  
+h1 {
+  }  
+
+/*The header bar that stays at the top of the screen*/
+  
+.icon {
+    max-width: 50vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main, .main-first {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  border: 1px solid black;
+  background: white;
+  padding: 10px 25px;
+  box-shadow: 7px 7px rgb(0, 0, 0, 0.8);
+}
+  
+/*Make sure the first main box has an extra top margin so it's not hidden by the header*/
+.main-first {
+  margin-top: 60px;
+  }
+
+.sidebar {
+  position: fixed;
+  width: 350px;
+  min-height: 75px;
+  border: 1px solid black;
+  background: white;
+  margin-top:0px;
+  margin-left:25px;
+  /*The 7px is vertical and horizontal offset for the shadow, if you want to change it.*/
+  box-shadow: 7px 7px rgb(0, 0, 0, 0.78);
+  }
+  
+/*Prevent image overflow*/  
+.main img, .main-first img, .sidebar img {
+  max-width: 100%;
+  height: auto;
+  }
+  
+
+.sidebar-pic { /*not in use, currently looks like SHIT*/
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background: black;
+  border-radius: 51px;
+  padding: 2px;
+  border: 0;
+  }
+
+.sidebar-pic img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  }
+  
+/*Text section in sidebar.*/  
+.sidebar-description {
+  padding: 15px;
+  }
+  
+.sidebar-links {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  background: black;
+  color: white;
+  width: 100%;
+  height: 30px;
+  }
+  
+.button {
+  padding: 5px;
+  padding-left: 10px;
+  display: inline-block
+  }
+  
+.sidebar-links a {
+  color: white;
+  text-decoration: none;
+  }
+  
+.sidebar-links a:hover {
+  color: #bbb;
+  }
+  

@@ -1,261 +1,140 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>My Art Gallery</title>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>art gallery</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="index.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="/glightbox/css/glightbox.css"/>
     <style>
-    body {
-        background-image: url(leavesbg.gif);
-        font-family: "Comic Sans MS", sans-serif;
-        color: #0000cd;
-        text-align: center;
-        animation: wave 5s infinite ease-in-out;
+        div .gallery-grid{
+            max-height: 60vh;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
 
-    }
-    h1 {
-        color: #ff4500;
-        text-shadow: 2px 2px #ffd700;
-    }
-    .art-piece {
-        border: 5px solid #ff69b4;
-        margin: 20px;
-        padding: 10px;
-        background-color: #fffacd;
-        display: inline-block;
-    }
-    .art-piece img {
-        max-height: 200px;
-        width: auto;
-        border: 2px solid #4682b4;
-    }
-    .footer {
-        margin-top: 50px;
-        font-size: small;
-    }
-    @keyframes wave {
-        0% { background-position: -50px 0; }
-        50% { background-position: 0px 250px; }
-        100% { background-position: 50px 0; }
-    }
-</style>
-</head>
-<body>
-    <h1>Welcome to My Art Gallery!</h1>
-    <p>Check out some of my latest artworks below:</p>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
 
-    <div class="art-piece">
-        <h2>Human Joseph of the Fey</h2>
-        <img src="https://disk.milkyway.moe/art/watercolor/IMG_4870.jpeg">
-        <p>medium/s: pen, colored pencils, watercolors</p>
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            aspect-ratio: 1;
+            border: 1px solid #000000;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    </style>
+
+  </head>
+  <body>
+    <div class="icon"><img src="art_gallery_icon.png" style="max-width: 50vh; margin-top: 1vh; margin-bottom: -2vh;"></div>
+    <div class=main>
+        <h1>Graphic Design</h1>
+        <p>Here's some graphic design work i've done</p>
+            <div class="gallery-grid">
+                <a href="https://disk.milkyway.moe/art/graphic%20design/Document.png" 
+                class="glightbox gallery-item" 
+                >
+                <img src="https://disk.milkyway.moe/art/graphic%20design/Document.png?cache">
+                </a>
+
+                <a href="https://disk.milkyway.moe/art/graphic%20design/li.png" 
+                class="glightbox gallery-item" 
+                >
+                <img src="https://disk.milkyway.moe/art/graphic%20design/li.png?cache">
+                </a>
+
+                <a href="https://disk.milkyway.moe/art/graphic%20design/01%20-%20nov%2016.jpg" 
+                class="glightbox gallery-item" 
+                >
+                <img src="https://disk.milkyway.moe/art/graphic%20design/01%20-%20nov%2016.jpg?cache">
+                </a>
+
+                <a href="https://disk.milkyway.moe/art/graphic%20design/02%20-%20nov%2016.jpg" 
+                class="glightbox gallery-item" 
+                >
+                <img src="https://disk.milkyway.moe/art/graphic%20design/02%20-%20nov%2016.jpg?cache">
+                </a>
+
+                <a href="https://disk.milkyway.moe/art/graphic%20design/kasaneteto.png" 
+                class="glightbox gallery-item" 
+                >
+                <img src="https://disk.milkyway.moe/art/graphic%20design/kasaneteto.png?cache">
+                </a>
+
+                <a href="https://disk.milkyway.moe/art/graphic%20design/BUTCHERVANITY.png" 
+                class="glightbox gallery-item" 
+                >
+                <img src="https://disk.milkyway.moe/art/graphic%20design/BUTCHERVANITY.png?cache">
+                </a>
+
+                <a href="https://disk.milkyway.moe/art/graphic%20design/VWW.png" 
+                class="glightbox gallery-item" 
+                >
+                <img src="https://disk.milkyway.moe/art/graphic%20design/VWW.png?cache">
+                </a>
+
+                <a href="https://disk.milkyway.moe/art/graphic%20design/DEDF1SH.png" 
+                class="glightbox gallery-item" 
+                >
+                <img src="https://disk.milkyway.moe/art/graphic%20design/DEDF1SH.png?cache">
+                </a>
+
+                <a href="https://disk.milkyway.moe/art/graphic%20design/morali3d_newaesth/multimedia.png?cache" 
+                class="glightbox gallery-item" 
+                >
+                <img src="https://disk.milkyway.moe/art/graphic%20design/morali3d_newaesth/multimedia.png?cache">
+                </a>
+
+                <a href="https://disk.milkyway.moe/art/graphic%20design/DEDF1SH%20BANNER.png?cache" 
+                class="glightbox gallery-item" 
+                >
+                <img src="https://disk.milkyway.moe/art/graphic%20design/DEDF1SH%20BANNER.png?cache">
+                </a>
+
+                <a href="https://disk.milkyway.moe/art/graphic%20design/uma%20musume%20logo.jpg?cache" 
+                class="glightbox gallery-item" 
+                >
+                <img src="https://disk.milkyway.moe/art/graphic%20design/uma%20musume%20logo.jpg?cache">
+                </a>
+
+                <a href="https://disk.milkyway.moe/art/graphic%20design/mkt_logo.png?cache" 
+                class="glightbox gallery-item" 
+                >
+                <img src="https://disk.milkyway.moe/art/graphic%20design/mkt_logo.png?cache">
+                </a>
+            </div>
     </div>
+    <br>
+    <div class="main"><a href="/">go home</a></div>
 
-    <div class="art-piece">
-        <h2>Bunnygal Juni</h2>
-        <img src="https://disk.milkyway.moe/art/watercolor/IMG_4758.jpeg">
-        <p>medium/s: pen, colored pencils, watercolors</p>
-    </div>
+    <script src="/glightbox/js/glightbox.js"></script>
+    <script src="/glightbox/glightbox-setup.js"></script>
+    <script>
+        const lightbox = GLightbox({
+            touchNavigation: true,
+            loop: true,
+            autoplayVideos: true
+        });
+    </script>
 
-    <div class="art-piece">
-        <h2>Human Cinnamoroll</h2>
-        <img src="https://disk.milkyway.moe/art/watercolor/IMG_4728.jpeg">
-        <p>medium/s: pen, colored pencils</p>
-    </div>
-
-    <div class="art-piece">
-        <h2>Miku Miku Beam!!!</h2>
-        <img src="https://disk.milkyway.moe/art/watercolor/IMG_4724.jpeg">
-        <p>medium/s: pen, colored pencils</p>
-    </div>
-
-    <div class="art-piece">
-        <h2>Milky's Starrcat!</h2>
-        <img src="https://disk.milkyway.moe/art/watercolor/IMG_2345.jpeg">
-        <p>medium/s: pen, watercolor</p>
-    </div>
-
-    <div class="art-piece">
-        <h2>FWMC!</h2>
-        <img src="https://disk.milkyway.moe/art/watercolor/IMG_2589.jpeg">
-        <p>medium/s: pen, watercolor</p>
-    </div>
-
-    <div class="art-piece">
-        <h2>Blair the Iron Bundle</h2>
-        <img src="https://disk.milkyway.moe/art/watercolor/IMG_1985.jpeg">
-        <p>medium/s: pen, watercolor</p>
-    </div>
-
-    <div class="art-piece">
-        <h2>STILL THE SAME INSIDE</h2>
-        <img src="https://disk.milkyway.moe/art/watercolor/IMG_1465.jpeg">
-        <p>medium/s: pencil</p>
-    </div>
-
-    <div class="art-piece">
-        <h2>PERRO</h2>
-        <img src="https://disk.milkyway.moe/art/watercolor/IMG_2536.jpeg">
-        <p>medium/s: pen, watercolor</p>
-    </div>
-
-    <div class="art-piece">
-        <h2>Konata And Coffee</h2>
-        <img src="https://disk.milkyway.moe/art/digital/IMG_0124.jpeg">
-        <p>medium/s: Procreate</p>
-    </div>
-
-    <div class="art-piece">
-        <h2>Minidisc 01</h2>
-        <img src="https://disk.milkyway.moe/art/digital/md2.png">
-        <p>medium/s: Blender</p>
-    </div>
-
-    <div class="art-piece">
-        <h2>PRESS START NOW ALBUM ART</h2>
-        <img src="https://disk.milkyway.moe/art/digital/IMG_2633.png">
-        <p>medium/s: Photoshop, Blockbench</p>
-    </div>
-
-    <div class="art-piece">
-        <h2>Minidisc 02</h2>
-        <img src="https://disk.milkyway.moe/art/digital/disc.png">
-        <p>medium/s: Blender</p>
-    </div>
-
-    <div class="art-piece">
-        <h2>You're Listening to SIX IMPALA</h2>
-        <img src="https://disk.milkyway.moe/art/digital/IMG_0135.jpeg">
-        <p>medium/s: Procreate</p>
-    </div>
-
-    <div class="art-piece">
-        <h2>GAME B O I</h2>
-        <img src="https://disk.milkyway.moe/art/digital/IMG_0133.jpeg">
-        <p>medium/s: Procreate</p>
-    </div>
-
-    <div class="art-piece">
-        <h2>Furry Nuphory</h2>
-        <img src="https://disk.milkyway.moe/art/digital/IMG_0067.jpeg">
-        <p>medium/s: Procreate</p>
-    </div>
-
-    <div class="art-piece">
-        <h2>Yandhixel</h2>
-        <img src="https://disk.milkyway.moe/art/pixel/IMG_4950.png">
-        <p>medium/s: Pixaki</p>
-    </div>
-
-    <div class="art-piece">
-        <h2>PET ROCK</h2>
-        <img src="https://disk.milkyway.moe/art/pixel/IMG_4951.png">
-        <p>medium/s: Pixaki</p>
-    </div>
-
-    <div class="art-piece">
-        <h2>The Favicon :D</h2>
-        <img src="https://disk.milkyway.moe/art/pixel/IMG_4949.png">
-        <p>medium/s: Pixaki</p>
-    </div>
-
-    <div class="art-piece">
-        <h2>Hold And Modify Burger</h2>
-        <img src="https://disk.milkyway.moe/art/pixel/IMG_4570.png">
-        <p>medium/s: Pixaki</p>
-    </div>
-
-    <div class="art-piece">
-        <h2>The Scrunky</h2>
-        <img src="https://disk.milkyway.moe/art/pixel/IMG_4566.png">
-        <p>medium/s: Pixaki</p>
-    </div>
-
-    <div class="art-piece">
-        <h2>4.77MB of Sashimi</h2>
-        <img src="https://disk.milkyway.moe/art/pixel/IMG_4569.png">
-        <p>medium/s: Pixaki</p>
-    </div>
-
-    <div class="art-piece">
-        <h2>Iron Bundixel</h2>
-        <img src="https://disk.milkyway.moe/art/pixel/IMG_1872.png">
-        <p>medium/s: Pixaki</p>
-    </div>
-
-    <div class="art-piece">
-        <h2>Browser Cookie</h2>
-        <img src="https://disk.milkyway.moe/art/pixel/IMG_4624.png">
-        <p>medium/s: Pixaki</p>
-    </div>
-
-    <div class="art-piece">
-        <h2>YEEZUS</h2>
-        <img src="https://disk.milkyway.moe/art/pixel/IMG_4634.png">
-        <p>medium/s: Pixaki</p>
-    </div>
-
-    <div class="art-piece">
-        <h2>scrunky 2</h2>
-        <img src="https://disk.milkyway.moe/art/pixel/IMG_1909.png">
-        <p>medium/s: Pixaki</p>
-    </div>
-
-    <div class="footer">
-        <p>Thanks for visiting my gallery! Come back soon!</p>
-        <p><a href="/">Go Home</a></p>
-    </div>
-
-</body>
-<script type="text/javascript" async>
-window['libopenmpt'] = {};
-libopenmpt.locateFile = function (filename) {
-  return "/chiptune2js/" + filename;
-};
-
-libopenmpt.onRuntimeInitialized = function () {
-  var player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1, 50, 1)); // Adjust stereoSeparation and interpolationFilter here
-
-  function playModTrack(modUrl) {
-    player.load(modUrl, function(buffer) {
-      player.play(buffer);
-
-      // Loop the track when it ends
-      player.onEnded(function() {
-        player.play(buffer);
-      });
-    });
-  }
-
-  function resumeAudioContext() {
-    if (player.context.state === 'suspended') {
-      return player.context.resume();
-    }
-    return Promise.resolve();
-  }
-
-  // Function to handle the first user interaction
-  function onFirstInteraction() {
-    resumeAudioContext().then(() => {
-      playModTrack('/modfiles/camille_in_my_heart.mod');
-    });
-
-    // Remove the event listeners after the first interaction
-    window.removeEventListener('click', onFirstInteraction);
-    window.removeEventListener('touchstart', onFirstInteraction);
-  }
-
-  // Detect if the browser is Chrome
-  var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-
-  if (isChrome) {
-    // Attach event listeners for mouse movement and touch input
-    window.addEventListener('mousemove', onFirstInteraction, { once: true });
-    window.addEventListener('touchstart', onFirstInteraction, { once: true });
-  } else {
-    // For non-Chrome browsers, use click or touchstart
-    window.addEventListener('click', onFirstInteraction, { once: true });
-    window.addEventListener('touchstart', onFirstInteraction, { once: true });
-  }
-};
-</script>
-<script type="text/javascript" src="/chiptune2js/libopenmpt.js" async></script>
-<script type="text/javascript" src="/chiptune2js/chiptune2.js" async></script>
+  </body>
 </html>
