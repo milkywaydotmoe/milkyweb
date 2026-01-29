@@ -30,6 +30,7 @@
 }
 
 .track-details li {
+    font-family: Quadrunde, Cozette;
     padding-left: 1.15rem; /* Responsive padding for list items */
     position: relative; /* Position relative for pseudo-element */
 }
@@ -46,10 +47,11 @@
 
 .track-title {
     font-size: 1rem; /* Responsive font size for track title */
-    font-family: Daydream;
+    font-family: Daydream, Cozette;
 }
 
 .track-subtext {
+    font-family: Quadrunde, Cozette;
     color: gray; /* Keep the subtext in gray */
     font-size: 0.9rem; /* Responsive font size for subtext */
 }
