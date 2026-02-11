@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- general site config -->
     <meta charset="UTF-8">
     <title>welcome. to autism!</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="index_lite.css" id="stylesheet">
-    <link rel="stylesheet" type="text/css" href="fonts.css" id="stylesheet">
-    <link rel="stylesheet" type="text/css" href="lastfm.css" id="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/assets/siwwidget.css" id="stylesheet">
     <link rel="icon" type="image/x-icon" href="/favicons/normal.png">
-    <link rel="stylesheet" href="https://housepen.nekoweb.org/ring/onionring.css">
-    <link rel="stylesheet" href="https://milkyway.moe/onlinewire/onionring.css">
-    <script type="text/javascript" src="buttons.js"></script>
-    <script type="text/javascript" src="banners.js"></script>
-    <script type="text/javascript" src="lastfm.js"></script>
-    <script src="visitors.js"></script>
-    <script data-goatcounter="https://milkywaymoe.goatcounter.com/count"
-      async src="//gc.zgo.at/count.js"></script>
-    <script type="text/javascript" src="clicksplosion.js"></script>
-    <!-- <script type="text/javascript" src="marquee.js" async></script> -->
-    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css">
-    <link rel="stylesheet" type="text/css" href="cursor.css">
-    <link rel="stylesheet" type="text/css" href="plushpop.css" id="stylesheet">
-    <link rel="stylesheet" href="https://lydels.neocities.org/musicianswebring/onionring.css">
-    <script src="darkmode.js" defer></script>
-    <script src="plushpop.js" defer></script>
+
+    <!-- meta stuff, descriptions -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="MiLKY-P's website, powered by autism!">
     <meta property="og:type" content="website">
     <meta property="og:title" content="MiLKYWAYdotMOE">
     <meta property="og:url" content="https://milkyway.moe/index.html">
     <meta property="og:image" content="/favicons/normal.png">
     <meta property="og:description" content="MiLKY-P's website, powered by autism!">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" type="text/css" href="index_lite.css" id="stylesheet">
+    <link rel="stylesheet" type="text/css" href="fonts.css" id="stylesheet">
+    <link rel="stylesheet" type="text/css" href="lastfm.css" id="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/siwwidget.css" id="stylesheet">
+    <link rel="stylesheet" href="https://housepen.nekoweb.org/ring/onionring.css">
+    <link rel="stylesheet" href="https://milkyway.moe/onlinewire/onionring.css">
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css">
+    <link rel="stylesheet" type="text/css" href="cursor.css">
+    <link rel="stylesheet" type="text/css" href="plushpop.css" id="stylesheet">
+    <link rel="stylesheet" href="https://lydels.neocities.org/musicianswebring/onionring.css">
+
+    <!-- javaschits -->
+    <script type="text/javascript" src="buttons.js"></script>
+    <script type="text/javascript" src="banners.js"></script>
+    <script type="text/javascript" src="lastfm.js"></script>
+    <script src="visitors.js"></script>
+    <script data-goatcounter="https://milkywaymoe.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <script type="text/javascript" src="clicksplosion.js"></script>
+    <script src="darkmode.js" defer></script>
+    <script src="plushpop.js" defer></script>
+
     <style>
       #buttons a img {
       max-height: 31px !important;
@@ -144,14 +150,40 @@
           transform: translate(0px, -3px);
       }
 
-    </style>
-    <style>
       .monitoring { 
         background-image: url(https://ddnikki.moe/monitoring/widget2.png); 
       }
+
+      .switchstyle {
+      margin: 5px;
+      }
+      .marquee-content {
+      white-space: nowrap;
+      }
+      .no-js-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://disk.milkyway.moe/web/enablejs.jpg') no-repeat center center;
+      background-size: cover;
+      z-index: 9999; /* Ensure it covers everything */
+      }
+      .visitor-count {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      }
+      .visitor-count img.visitor-count-digit {
+      width: 40px;   /* match your digit image size */
+      height: 60px;  /* match your digit image size */
+      display: inline-block;
+      }
     </style>
   </head>
-  <body>
+
+<body>
     <div id="bgcontainer">
       <div id="bg1"></div>
     </div>
@@ -159,42 +191,6 @@
       <img id="title" class="title" style="padding:1em !important">
     </div>
 <div class="container"><span style="font-size: 60pt"></span>
-  <!-- <div class="head">
-        <div class="header_img"></div>
-        <div class="marquee-container">
-            <div class="marquee-background"></div>
-            <div class="marquee-content" id="marquee"></div> 
-        </div>
-        </div> -->
-  <style>
-        .switchstyle {
-        margin: 5px;
-        }
-        .marquee-content {
-        white-space: nowrap;
-        }
-        .no-js-image {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url('https://disk.milkyway.moe/web/enablejs.jpg') no-repeat center center;
-        background-size: cover;
-        z-index: 9999; /* Ensure it covers everything */
-        }
-        .visitor-count {
-        display: flex;
-        gap: 4px;
-        align-items: center;
-        }
-        .visitor-count img.visitor-count-digit {
-        width: 40px;   /* match your digit image size */
-        height: 60px;  /* match your digit image size */
-        display: inline-block;
-        }
-      </style>
-      
       <img class="sticky-element" src="/assets/hy2wm.png">
       <img id="popupImage" src="https://disk.milkyway.moe/web/other%20assets/stelle_scrunk.png">
       <noscript>
@@ -289,7 +285,7 @@
           <img src="blinkie/lskonata.gif">
         </div>
         <br>
-        <div style="text-align:center;image-rendering:pixelated;">
+        <div style="text-align:center; image-rendering:pixelated;">
           <a href="https://pantson.xandra.cc" title="PANTSON 0123"><img src="https://pantson.xandra.cc/join.gif"></a>
           <a href="https://pantson.xandra.cc" title="PANTSON 13-3333U"><img src="https://disk.milkyway.moe/web/pxclique/pantson_shadowmilk.png"></a>
           <br><br>
@@ -302,7 +298,9 @@
         <p style="text-align:center;"><span class="visitor-count"></span></p>
         <p align="center"><img src="/assets/barraconstruction.gif"></p>
       </div>
-<div class="musicbox" style="text-align: center; ">
+      
+  <!-- left sidebox 1 -->
+  <div class="musicbox" style="text-align: center; ">
     <br>
         <span style="font-size: 10pt; letter-spacing: 2px; text-align:center; font-family: Daydream;">web radio!</span>
         <hr>
@@ -407,6 +405,8 @@
         </div>
 
       </div>
+
+      <!-- right sidebox 2 -->
       <div class="cbox">
         <br>
         <span style="letter-spacing: 2px; font-family: Daydream;">lookie here :3</span>
@@ -445,6 +445,8 @@
         <br>
         <iframe width="150" height="450" style="border:none; align-self: center;" src="https://dogspit.nekoweb.org/sidelink.html" name="sidelink"></iframe>
       </div>
+
+      <!-- right sidebox 1 -->
       <div class="miniblog" style="align-content: top; text-align: center;">
         <br>
         <div>

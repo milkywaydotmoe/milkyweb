@@ -1,6 +1,6 @@
-// Bang1338's TODO: Add function that update these value 
+// TODO: Add function that update these values as well 
 let minBnrPage = 1; 
-let maxBnrPage = 2; 
+let maxBnrPage = 1; 
 
 document.addEventListener("DOMContentLoaded", function() {
   let currentPage = 1;

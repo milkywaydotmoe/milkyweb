@@ -191,8 +191,8 @@
     text-shadow: 1px 1px #313131;
     border-radius: 10px 20px;
     border: 2px solid#313131;
-    padding: 5px 10px; /* Smaller padding for a smaller button */
-    font-size: 16px; /* Smaller font size */
+    padding: 3.5px 11px; /* Smaller padding for a smaller button */
+    font-size: 15px; /* Smaller font size */
     cursor: pointer;
     margin-bottom: 0.3vh;
 }
