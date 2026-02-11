@@ -1,6 +1,6 @@
 // Bang1338's TODO: Add function that update these value 
-let minBtnPage = 1; 
-let maxBtnPage = 8; 
+let minBnrPage = 1; 
+let maxBnrPage = 2; 
 
 document.addEventListener("DOMContentLoaded", function() {
   let currentPage = 1;
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Function to load content from external HTML file
   function loadPage(pageNumber) {
-    fetch(`buttons/season${pageNumber}.html`)
+    fetch(`banners/page${pageNumber}.html`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Page not found');
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
         return response.text();
       })
       .then(html => {
-        document.getElementById('buttons').innerHTML = html;
+        document.getElementById('banners').innerHTML = html;
         currentPage = pageNumber;
         updatePageNavigation();
         preloadAdjacentPages(pageNumber);
@@ -26,9 +26,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Function to update page navigation links
   function updatePageNavigation() {
-    const currentPageElement = document.getElementById('currentbPage');
-    const prevPageLink = document.getElementById('prevbPage');
-    const nextPageLink = document.getElementById('nextbPage');
+    const currentPageElement = document.getElementById('currentbnPage');
+    const prevPageLink = document.getElementById('prevbnPage');
+    const nextPageLink = document.getElementById('nextbnPage');
 
     currentPageElement.textContent = currentPage;
 
@@ -42,10 +42,10 @@ document.addEventListener("DOMContentLoaded", function() {
   // Preload adjacent pages
   function preloadAdjacentPages(pageNumber) {
     if (pageNumber > 1) {
-      fetch(`buttons/season${currentPage - 1}.html`).catch(() => {});
+      fetch(`banners/page${currentPage - 1}.html`).catch(() => {});
     }
     if (pageNumber < totalPages) {
-      fetch(`buttons/season${currentPage + 1}.html`).catch(() => {});
+      fetch(`banners/page${currentPage + 1}.html`).catch(() => {});
     }
   }
 
@@ -64,23 +64,23 @@ document.addEventListener("DOMContentLoaded", function() {
   // Event listeners for previous and next page links
   // Bang1338: If currentPage = 1 and press prevPage, 
   //           snap back to last page and vice versa
-  document.getElementById('prevbPage').addEventListener('click', debounce(function(event) {
+  document.getElementById('prevbnPage').addEventListener('click', debounce(function(event) {
     event.preventDefault();
     if (currentPage > 1) {
       loadPage(currentPage - 1);
     }
     if (currentPage == 1) {
-      loadPage(maxBtnPage); // 4 (maybe and hopefully)
+      loadPage(maxBnrPage); // 4 (maybe and hopefully)
     }
   }, 200));
 
-  document.getElementById('nextbPage').addEventListener('click', debounce(function(event) {
+  document.getElementById('nextbnPage').addEventListener('click', debounce(function(event) {
     event.preventDefault();
     if (currentPage < totalPages) {
       loadPage(currentPage + 1);
     }
-    if (currentPage == maxBtnPage) {
-      loadPage(minBtnPage); // 1
+    if (currentPage == maxBnrPage) {
+      loadPage(minBnrPage); // 1
     }
   }, 200));
 
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
         let pageChecks = [];
         let page = 1;
         while (true) {
-          const response = await fetch(`buttons/season${page}.html`);
+          const response = await fetch(`banners/page${page}.html`);
           if (!response.ok) break;
           pageChecks.push(Promise.resolve(page));
           page++;
@@ -114,20 +114,20 @@ document.addEventListener("DOMContentLoaded", function() {
   function startTNT() {
     // console.log("TNT has been planted");
     tnt = setInterval(() => {
-      const nextPageBtn = document.getElementById('nextbPage');
-      nextPageBtn.click();
+      const nextPageBnr = document.getElementById('nextbnPage');
+      nextPageBnr.click();
       // console.log("kaBOOM!!!!!!!!!!");
     }, 10000)
   };
   
   let isMouseHover = false
-  let buttonElement = document.querySelector('#buttons');
-  buttonElement.addEventListener("mouseleave", function (event) {
+  let bannerElement = document.querySelector('#banners');
+  bannerElement.addEventListener("mouseleave", function (event) {
     isMouseHover = false
     startTNT();
     // console.log("TNT started again");
   }, false);
-  buttonElement.addEventListener("mouseover", function (event) {
+  bannerElement.addEventListener("mouseover", function (event) {
     isMouseHover = true
     clearInterval(tnt);
     // console.log("TNT defused");

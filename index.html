@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://housepen.nekoweb.org/ring/onionring.css">
     <link rel="stylesheet" href="https://milkyway.moe/onlinewire/onionring.css">
     <script type="text/javascript" src="buttons.js"></script>
+    <script type="text/javascript" src="banners.js"></script>
     <script type="text/javascript" src="lastfm.js"></script>
     <script src="visitors.js"></script>
     <script data-goatcounter="https://milkywaymoe.goatcounter.com/count"
@@ -135,6 +136,12 @@
 
       .rinku {
           width: 140px;
+      }
+
+      .rinku:hover {
+      transition:.2s scale cubic-bezier(.075,.82,.165,1);
+      &:hover {
+          transform: translate(0px, -3px);
       }
 
     </style>
@@ -290,7 +297,7 @@
         </div>
         <hr>
         <div style="text-align:center;">
-          <p class="main"><a class="main" href="https://lyratris.com/"><img style="width: 468px; height: 55px; image-rendering: smooth; shape-rendering: geometricPrecision;" src="/assets/lyr_banner.svg"></a></p>
+          <p class="main"><a class="main" href="https://calibour.com"><img style="width: 468px; height: 55px; image-rendering: smooth; shape-rendering: geometricPrecision;" src="/assets/cali_banner.svg"></a></p>
         </div>
         <p style="text-align:center;"><span class="visitor-count"></span></p>
         <p align="center"><img src="/assets/barraconstruction.gif"></p>
@@ -387,27 +394,16 @@
 
           <a href="/codejam/index.html" class="styled-button">
             <i class="nf nf-fa-laptop_code"></i> codejam entries</a>
-
-          <a href="/" class="styled-button">
-            <i class="nf nf-fa-paint_brush"></i> to be done</a>
         </div>
         <hr>
         <p align="center"><iframe src="https://internetphonebook.net/badges/dial-a-site-badge.html?number=256&size=small" width="228" height="54" frameborder="0" style="border: 1px solid #000;"></iframe></p>
         <div style="text-align: center;">
-          <a target="_blank" href="https://milkyway.moe/"><img class="rinku" src="/banners/mkt_banner.gif" alt="https://milkyway.moe/"></a>
-          <a target="_blank" href="https://eyeorb.net/"><img class="rinku" src="/banners/eyeorb.gif" alt="https://eyeorb.net/"></a>
-          <br>
-          <a target="_blank" href="https://www.melonbooks.co.jp/"><img class="rinku" src="/banners/melonbooks.jpg" alt="https://www.melonbooks.co.jp/"></a>
-          <a target="_blank" href="https://demgoze.nekoweb.org/"><img class="rinku" src="/banners/demgozebanner.png" alt="https://demgoze.nekoweb.org/"></a>
-          <br>
-          <a target="_blank" href="https://100kanojo.moe/"><img class="rinku" src="/banners/100kanojo.png" alt="https://100kanojo.moe/"></a>
-          <a target="_blank" href="https://ddnikki.moe/"><img class="rinku" src="/banners/ddnikki_200x.png" alt="https://ddnikki.moe/"></a>
-          <br>
-          <a target="_blank" href="http://www.ateliermw.com/mag2/index.html"><img class="rinku" src="/banners/magpbnnr02.jpg" alt="http://www.ateliermw.com/mag2/index.html"></a>
-          <a target="_blank" href="http://www.ateliermw.com/"><img class="rinku" src="/banners/ateliermwbnr.png" alt="http://www.ateliermw.com/"></a>
-          <br>
-          <a target="_blank" href="https://xfolio.jp/en/portfolio/nonta"><img class="rinku" src="/banners/gameha.jpg" alt="https://xfolio.jp/en/portfolio/nonta"></a>
-          <a target="_blank" href="http://chixi.jp/"><img class="rinku" src="/banners/neko_banner.gif" alt="http://chixi.jp/"></a>
+          <a id="prevbnPage" href="#">&lt;</a>
+          <span id="currentbnPage"></span>
+          <a id="nextbnPage" href="#">&gt;</a>
+        </div>
+        <br>
+        <div id="banners" style="text-align: center;">
         </div>
 
       </div>
@@ -424,9 +420,9 @@
 
         <p>Now with <b id="buttonCount">#</b> buttons and counting!</p>
         <div style="text-align: center;">
-          <a id="prevPage" href="#">&lt;</a>
-          <span id="currentPage"></span>
-          <a id="nextPage" href="#">&gt;</a>
+          <a id="prevbPage" href="#">&lt;</a>
+          <span id="currentbPage"></span>
+          <a id="nextbPage" href="#">&gt;</a>
         </div>
         <br>
         <div id="buttons" style="image-rendering:optimizeSpeed;">
