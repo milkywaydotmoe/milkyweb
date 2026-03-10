@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>Minecraft - Downloads</title>
+        <meta name="description" content="Minecraft is a game about placing blocks to build anything you can imagine. At night monsters come out, make sure to build a shelter before that happens." />
+        <meta name="author" content="Mojang AB" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="shortcut icon" href="favicon.png" />
+        <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <link rel="stylesheet" media="handheld" href="assets/css/handheld.css" />
+
+        <!--[if !IE 7]>
+            <style type="text/css">
+                #wrap {
+                    display: table;
+                    height: 100%;
+                }
+            </style>
+        <![endif]-->
+        <script src="assets/js/libs/modernizr.min.js"></script>
+    </head>
+    <body>
+        <div id="wrap">
+            <header>
+                <div id="header_container" class="clearfix">
+                    <a id="logo" href="./index.html">Minecraft</a>
+                    <ul id="menu">
+                        <li><a href="./index.html">Home</a></li>
+                        <li>
+                            <a href="game.html">Game</a>
+                            <ul>
+                                <li><a href="game.html">What is Minecraft?</a></li>
+                                <li><a href="credits.html">Credits</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="community.html">Community</a></li>
+                    </ul>
+                </div>
+            </header>
+
+            <noscript>
+                <div id="javascript-warning" class="warning warning-yellow">
+                    Please, please enable JavaScript to use this site.
+                </div>
+            </noscript>
+
+            <div id="main" role="main" class="clearfix controller-Site action-download">
+                <section class="left">
+                    <h1>Download</h1>
+                    <p>
+                        When you have bought the game, you can download the stand-alone launcher for Minecraft here. It will automatically update the game files with the latest version. You'll be able to play the game without an Internet
+                        connection if you've been online at least once.
+                    </p>
+                    <script>
+                        var operating_system = "win";
+                    </script>
+                    <div id="platform-win" class="platform">
+                        <h2>Minecraft for Windows</h2>
+                        <p>
+                            Download and run 
+							<a href="https://launcher.mojang.com/download/MinecraftInstaller.msi" class="download-link" data-dist="client" data-platform="windows" onclick="recordOutboundLink(this, 'Downloads', 'Download-link', 'Windows-Client');return false;">Minecraft.msi</a>. 
+							This will install Minecraft and create a shortcut in your start menu. If you'd like a version without an installer, you may use 
+							<a href="https://launcher.mojang.com/download/Minecraft.exe" class="download-link" data-dist="client" data-platform="windows" onclick="recordOutboundLink(this, 'Downloads', 'Download-link', 'Windows-Client');return false;">Minecraft.exe</a> 
+							instead. You do not need Java installed to run either of these.
+                        </p>
+
+                        <h3>Minecraft for Windows (alternative)</h3>
+                        <p>
+                            If you have issues with the new Windows download, you can try the old one by downloading 
+							<a href="https://s3.amazonaws.com/Minecraft.Download/launcher/Minecraft.exe" class="download-link" data-dist="client" data-platform="windows" onclick="recordOutboundLink(this, 'Downloads', 'Download-link', 'Windows-Client');return false;">Minecraft.exe</a>. 
+							If given the option, save the file instead of running it. Save the file anywhere you'd like, then double-click the program to run. This does require Java to be installed, however.
+                        </p>
+                    </div>
+                    <div id="platform-osx" class="platform">
+                        <h2>Minecraft for Mac OS X</h2>
+                        <p>
+                            Download 
+							<a href="https://launcher.mojang.com/download/Minecraft.dmg" class="download-link" data-dist="client" data-platform="osx" onclick="recordOutboundLink(this, 'Downloads', 'Download-link', 'OSX-Client');return false;">Minecraft.dmg</a>.
+                        </p>
+
+                        <h3>Minecraft for Mac OS X (alternative)</h3>
+                        <p>
+                            If you are using an older version of Mac OS X and are having issues with the new download, you can try the old one by downloading 
+							<a href="http://launcher.mojang.com/download/Minecraft_legacy.dmg" class="download-link" data-dist="client" data-platform="windows" onclick="recordOutboundLink(this, 'Downloads', 'Download-link', 'Mac-Client');return false;">Minecraft_legacy.dmg</a>.
+                        </p>
+                    </div>
+                    <div id="platform-linux" class="platform">
+                        <h2>Minecraft for Linux / Other</h2>
+                        <p>
+                            Download 
+							<a href="https://s3.amazonaws.com/Minecraft.Download/launcher/Minecraft.jar" class="download-link" data-dist="client" data-platform="linux" onclick="recordOutboundLink(this, 'Downloads', 'Download-link', 'Linux-Client');return false;">Minecraft.jar</a>. 
+							The jar is executable and should work as-is, also please use Oracle's JVM.
+                        </p>
+                    </div>
+                    <p class="small"><a href="#all" id="platform-all">Show all platforms</a></p>
+                    <h2>Multiplayer Server</h2>
+                    <p>
+                        If you're running on Windows and just want to set up a server easily, download
+                        <a href="https://s3.amazonaws.com/Minecraft.Download/versions/1.8.8/minecraft_server.1.8.8.exe" class="download-link" data-dist="server" data-platform="windows" onclick="recordOutboundLink(this, 'Downloads', 'Download-link', 'Windows-Server');return false;">minecraft_server.1.8.8.exe</a> and run it.
+                    </p>
+                    <p>
+                        If you want to run the server on any other OS or without GUI it's a bit more involved (see <a href="http://www.minecraftwiki.net/wiki/Setting_up_a_server">this wiki article for a tutorial</a>). First make sure you
+                        can use <span class="code">java</span> from the command line. On Linux and Mac OS X this should already be set up but on Windows you might have to tinker with the PATH environment variable. Download and run
+                        <a href="https://s3.amazonaws.com/Minecraft.Download/versions/1.8.8/minecraft_server.1.8.8.jar" class="download-link" data-dist="server" data-platform="linux" onclick="recordOutboundLink(this, 'Downloads', 'Download-link', 'Linux-Server');return false;">minecraft_server.1.8.8.jar</a> with <span class="code">java -Xmx1024M -Xms1024M -jar minecraft_server.jar nogui</span>.
+                    </p>
+                </section>
+            </div>
+        </div>
+
+        <footer style="padding-top: 0px !important;">
+			<center>Site resources &amp; design are &copy; Mojang. &mdash; "Minecraft" is a trademark of Mojang Synergies AB.<br>This site is not officially affiliated/endorsed by Mojang and/or Microsoft! &mdash; This page exists for historical preservation.</center>
+        </footer>
+
+        <script src="assets/js/libs/json2.js"></script>
+        <script src="assets/js/jquery-1.8.2.min.js"></script>
+        <script src="assets/js/libs/jquery.dataTables.min.js"></script>
+        <script src="assets/js/libs/jquery.timeago.js"></script>
+        <script src="assets/js/libs/jquery.scrollTo-1.4.2-min.js"></script>
+        <script src="assets/js/plugins.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
