@@ -113,7 +113,7 @@
         </div>
             <br>
             <p><b>Here's my likes and dislikes!</b></p><br>
-            <ul class="tree-view likes-box">
+            <ul class="tree-view likes-box" style="height: 120px; width: 481px; overflow-y: scroll;">
   <li>
     <details open>
 	<summary>Things I Like</summary>
@@ -226,8 +226,8 @@
   </li>
 </ul>
 
-<p><b>Here's the tools i use!</b></p><br>
-<ul class="tree-view likes-box">
+<p><b>Here's the tools and gear i use!!</b></p><br>
+<ul class="tree-view likes-box" style="height: 105px; width: 481px; overflow-y: scroll;">
 <li>
 <details open>
 <summary>Tools</summary>
@@ -240,7 +240,7 @@
 		<li>Audacity</li>
 		<li>Fasttracker II</li>
 		<li>OpenMPT</li>
-		<li>SynthEdit</li>
+		<li>Traktor Pro 4</li>
 	</ul>
 </details>
 
@@ -273,11 +273,44 @@
 </details>
 </li>
 </ul>
+</details>
+
+<details open>
+<summary>Gear</summary>
+<ul>
+<li>
+	<details closed>
+	<summary>General Use</summary>
+	<ul>
+		<li>Macbook Air M5</li>
+		<li>UGREEN Wireless Ergonomic Mouse</li>
+		<li>Royal Kludge RK87</li>
+		<li>DELL P2314H</li>
+		<li>Philips SHP9500</li>
+		<li>Seagate OneTouch 2TB</li>
+		<li>UGREEN USB Hub</li>
+	</ul>
+	</details>
+
+	<details closed>
+	<summary>Music</summary>
+	<ul>
+		<li>TRAKTOR KONTROL S4 MK2</li>
+		<li>MVAVE SMK-25 II</li>
+	</ul>
+	</details>
+
+</details>
+</li>
+</ul>
+</details>
+
 </li>
 </ul>
 
+
 	<p><b>Here's a list of my favorite characters!</b></p>
-	<div class="sunken-panel" style="height: 120px; width: 481px; overflow-y: scroll;">
+	<div class="sunken-panel" style="height: 120px; width: 493px; overflow-y: scroll;">
 	  <table class="interactive">
 	    <thead>
 	      <tr>
@@ -780,55 +813,98 @@
 <script type="text/javascript" async>
 window['libopenmpt'] = {};
 libopenmpt.locateFile = function (filename) {
-  return "/chiptune2js/" + filename;
+    return "/chiptune2js/" + filename;
 };
-
 libopenmpt.onRuntimeInitialized = function () {
-  var player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1, 50, 1)); // Adjust stereoSeparation and interpolationFilter here
+    var player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1, 50, 1));
 
-  function playModTrack(modUrl) {
-    player.load(modUrl, function(buffer) {
-      player.play(buffer);
+    var volume = 0.3; // Change this to adjust volume
 
-      // Loop the track when it ends
-      player.onEnded(function() {
-        player.play(buffer);
-      });
-    });
-  }
+    var gainNode = player.context.createGain();
+    gainNode.gain.value = volume;
+    gainNode.connect(player.context.destination);
 
-  function resumeAudioContext() {
-    if (player.context.state === 'suspended') {
-      return player.context.resume();
+    var isMuted = false;
+    var hasStarted = false;
+    var skipFirstToggle = true;
+
+    function isInteractable(element) {
+        var interactableTags = ['A', 'BUTTON', 'INPUT', 'SELECT', 'TEXTAREA', 'LABEL', 'LI', 'TABLE'];
+        while (element && element !== document.body) {
+            if (interactableTags.includes(element.tagName)) return true;
+            element = element.parentElement;
+        }
+        return false;
     }
-    return Promise.resolve();
-  }
 
-  // Function to handle the first user interaction
-  function onFirstInteraction() {
-    resumeAudioContext().then(() => {
-      playModTrack('/modfiles/PASSPORT.mptm');
-    });
+    function toggleMute(e) {
+        if (isInteractable(e.target)) return;
+        if (skipFirstToggle) {
+            skipFirstToggle = false;
+            return;
+        }
+        isMuted = !isMuted;
+        gainNode.gain.value = isMuted ? 0 : volume;
+    }
 
-    // Remove the event listeners after the first interaction
-    window.removeEventListener('click', onFirstInteraction);
-    window.removeEventListener('touchstart', onFirstInteraction);
-  }
+    function playModTrack(modUrl) {
+        player.load(modUrl, function(buffer) {
+            player.play(buffer);
 
-  // Detect if the browser is Chrome
-  var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+            setTimeout(function() {
+                if (player.currentPlayingNode) {
+                    player.currentPlayingNode.disconnect();
+                    player.currentPlayingNode.connect(gainNode);
+                }
+            }, 50);
 
-  if (isChrome) {
-    // Attach event listeners for mouse movement and touch input
-    window.addEventListener('mousemove', onFirstInteraction, { once: true });
-    window.addEventListener('touchstart', onFirstInteraction, { once: true });
-  } else {
-    // For non-Chrome browsers, use click or touchstart
-    window.addEventListener('click', onFirstInteraction, { once: true });
-    window.addEventListener('touchstart', onFirstInteraction, { once: true });
-  }
+            player.onEnded(function() {
+                player.play(buffer);
+                setTimeout(function() {
+                    if (player.currentPlayingNode) {
+                        player.currentPlayingNode.disconnect();
+                        player.currentPlayingNode.connect(gainNode);
+                    }
+                }, 50);
+            });
+        });
+    }
+
+    function resumeAudioContext() {
+        if (player.context.state === 'suspended') {
+            return player.context.resume();
+        }
+        return Promise.resolve();
+    }
+
+    function onFirstInteraction() {
+        if (!hasStarted) {
+            hasStarted = true;
+            resumeAudioContext().then(() => {
+                playModTrack('/modfiles/PASSPORT.mptm');
+            });
+            window.addEventListener('click', toggleMute);
+            window.addEventListener('touchstart', toggleMute);
+        }
+    }
+
+    var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+
+    if (isChrome) {
+        window.addEventListener('mousemove', onFirstInteraction, { once: true });
+        window.addEventListener('mousedown', onFirstInteraction, { once: true });
+        window.addEventListener('touchstart', onFirstInteraction, { once: true });
+    } else {
+        window.addEventListener('click', onFirstInteraction, { once: true });
+        window.addEventListener('touchstart', onFirstInteraction, { once: true });
+        window.addEventListener('mousedown', onFirstInteraction, { once: true });
+    }
 };
+</script>
+<script type="text/javascript" src="/chiptune2js/libopenmpt.js" async></script>
+<script type="text/javascript" src="/chiptune2js/chiptune2.js" async></script>
 
+<script>
 function maximize() {
 	let a = windowMain.classList;
 	if (a.contains("maximized")) {
@@ -848,10 +924,6 @@ function unminimize() {
 	windowMinimized.style.display = "none";
 } //mrrp :3
 </script>
-<script type="text/javascript" src="/chiptune2js/libopenmpt.js" async></script>
-<script type="text/javascript" src="/chiptune2js/chiptune2.js" async></script>
-
-
 
 
 </body>

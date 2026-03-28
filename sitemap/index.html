@@ -117,4 +117,99 @@
 	</footer>
 
 </body>
+
+<script type="text/javascript" async>
+window['libopenmpt'] = {};
+libopenmpt.locateFile = function (filename) {
+    return "/chiptune2js/" + filename;
+};
+libopenmpt.onRuntimeInitialized = function () {
+    var player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1, 50, 1));
+
+    var volume = 0.3; // Change this to adjust volume
+
+    var gainNode = player.context.createGain();
+    gainNode.gain.value = volume;
+    gainNode.connect(player.context.destination);
+
+    var isMuted = false;
+    var hasStarted = false;
+    var skipFirstToggle = true;
+
+    function isInteractable(element) {
+        var interactableTags = ['A', 'BUTTON', 'INPUT', 'SELECT', 'TEXTAREA', 'LABEL', 'LI', 'TABLE'];
+        while (element && element !== document.body) {
+            if (interactableTags.includes(element.tagName)) return true;
+            element = element.parentElement;
+        }
+        return false;
+    }
+
+    function toggleMute(e) {
+        if (isInteractable(e.target)) return;
+        if (skipFirstToggle) {
+            skipFirstToggle = false;
+            return;
+        }
+        isMuted = !isMuted;
+        gainNode.gain.value = isMuted ? 0 : volume;
+    }
+
+    function playModTrack(modUrl) {
+        player.load(modUrl, function(buffer) {
+            player.play(buffer);
+
+            setTimeout(function() {
+                if (player.currentPlayingNode) {
+                    player.currentPlayingNode.disconnect();
+                    player.currentPlayingNode.connect(gainNode);
+                }
+            }, 50);
+
+            player.onEnded(function() {
+                player.play(buffer);
+                setTimeout(function() {
+                    if (player.currentPlayingNode) {
+                        player.currentPlayingNode.disconnect();
+                        player.currentPlayingNode.connect(gainNode);
+                    }
+                }, 50);
+            });
+        });
+    }
+
+    function resumeAudioContext() {
+        if (player.context.state === 'suspended') {
+            return player.context.resume();
+        }
+        return Promise.resolve();
+    }
+
+    function onFirstInteraction() {
+        if (!hasStarted) {
+            hasStarted = true;
+            resumeAudioContext().then(() => {
+                playModTrack('/modfiles/rollingdownthestreet.xm');
+            });
+            window.addEventListener('click', toggleMute);
+            window.addEventListener('touchstart', toggleMute);
+        }
+    }
+
+    var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+
+    if (isChrome) {
+        window.addEventListener('mousemove', onFirstInteraction, { once: true });
+        window.addEventListener('mousedown', onFirstInteraction, { once: true });
+        window.addEventListener('touchstart', onFirstInteraction, { once: true });
+    } else {
+        window.addEventListener('click', onFirstInteraction, { once: true });
+        window.addEventListener('touchstart', onFirstInteraction, { once: true });
+        window.addEventListener('mousedown', onFirstInteraction, { once: true });
+    }
+};
+</script>
+<script type="text/javascript" src="/chiptune2js/libopenmpt.js" async></script>
+<script type="text/javascript" src="/chiptune2js/chiptune2.js" async></script>
+
 </html>
