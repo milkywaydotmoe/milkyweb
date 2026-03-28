@@ -15,3 +15,5 @@
 {"name": "jb_", "image": "https://disk.milkyway.moe/web/pfps/jb.png", "site": "https://jbc.lol"}
 {"name": "Michi", "image": "https://disk.milkyway.moe/web/pfps/michi.gif", "site": "https://youtube.com/nekomichi"}
 {"name": "sophie", "image": "https://disk.milkyway.moe/web/pfps/nep.webp", "site": "https://iamsoph.ie/"}
+
+{"name": "ddnikki", "image": "https://disk.milkyway.moe/web/pfps/ddnikki.jpg", "site": "https://ddnikki.moe"}

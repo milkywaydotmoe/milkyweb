@@ -208,11 +208,12 @@
                 <div id="maintxt">
                   <p class="rain" style="font-size:24px; font-family: Daydream;"><b>Welcome to my site!</b></p>
                   <div style="text-align: justify;">
-                    <p class="main">Hi, i'm Milky! a 19 y/o Filipino designer, programmer, musician, artist, student, wafmoe admin, and mamehinata, and this is my personal site :3! I am currently feeling...
+                    <p class="main">Hi, i'm Milky! a <span id="age_milky"></span> y/o Filipino designer, programmer, musician, artist, student, wafmoe admin, and mamehinata, and this is my personal site :3! I am currently feeling...
                       <a href="https://www.imood.com/users/milkywaydotmoe">
                         <img src="https://moods.imood.com/display/uname-milkywaydotmoe/bg-ffffff/imood.gif" alt="The current mood of milkywaydotmoe at www.imood.com">
                       </a>
                     </p>
+
                     <p class="main">For more info about me, click the "ABOUT ME" area of my site!</p>
                     <p class="main">This site was just recently optimized for mobile so feel free to browse it on whatever device you please. The device must have support for HTTPS, modern HTML, CSS, and JS. Chrome or Firefox at 1080p is recommended though. This site was built with Sublime Text/VSCode and pain. This site may not run well on weaker devices so please keep that in mind!</p>
                     <p class="main">You probably ended up here through one of my videos, my bio, or maybe through scrolling the depths of the internet. If so, welcome to my site! I got archives of my music up here.</p>
@@ -300,6 +301,12 @@
         </div>
         <p style="text-align:center;"><span class="visitor-count"></span></p>
         <p align="center"><img src="/assets/barraconstruction.gif"></p>
+
+        <div style="text-align: center; margin-top: -5%;">
+          <a href="https://nonbot.org/pledged/view/a1688398-a1bb-4105-ba2d-575503b14c4f" target="_blank">
+            <img style="height:64px;margin-top:10px;margin-bottom:10px;" src="https://nonbot.org/images/nonbot_pledged_logo.svg" alt="Human-made Content">
+          </a>
+        </div>
       </div>
       
   <!-- left sidebox 1 -->
@@ -729,6 +736,17 @@
     // Run the function
     updateButtonCount();
     </script>
+
+<script>
+  const birthday = new Date(2006, 5, 30); // June 30, 2006 (month is 0-indexed)
+  const today = new Date();
+  let age = today.getFullYear() - birthday.getFullYear();
+  const hasHadBirthdayThisYear =
+    today.getMonth() > birthday.getMonth() ||
+    (today.getMonth() === birthday.getMonth() && today.getDate() >= birthday.getDate());
+  if (!hasHadBirthdayThisYear) age--;
+  document.getElementById("age_milky").textContent = age;
+</script>
 
   </body>
 </html>
