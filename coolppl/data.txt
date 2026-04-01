@@ -17,3 +17,5 @@
 {"name": "sophie", "image": "https://disk.milkyway.moe/web/pfps/nep.webp", "site": "https://iamsoph.ie/"}
 
 {"name": "ddnikki", "image": "https://disk.milkyway.moe/web/pfps/ddnikki.jpg", "site": "https://ddnikki.moe"}
+{"name": "goo", "image": "https://disk.milkyway.moe/web/pfps/goo.png", "site": "https://goo.nekoweb.org/"}
+{"name": "gwenbnuuy", "image": "https://disk.milkyway.moe/web/pfps/gwennuy.webp", "site": "https://gwenbnuuy.moe/"}
