@@ -206,7 +206,8 @@
 
               <div class="bodytxt">
                 <div id="maintxt">
-                  <p class="rain" style="font-size:24px; font-family: Daydream;"><b>Welcome to my site!</b></p>
+                  <p class="rain" style="font-size:20px; font-family: Daydream, DenkiChip;"><b id="r-text"></b></p>
+                  <noscript><p class="rain" style="font-size:20px; font-family: Daydream;"><b>Please turn on Javascript!</b></p></noscript>
                   <div style="text-align: justify;">
                     <p class="main">Hi, i'm Milky! a <span id="age_milky"></span> y/o Filipino designer, programmer, musician, artist, student, wafmoe admin, and mamehinata, and this is my personal site :3! I am currently feeling...
                       <a href="https://www.imood.com/users/milkywaydotmoe">
@@ -745,6 +746,27 @@
     (today.getMonth() === birthday.getMonth() && today.getDate() >= birthday.getDate());
   if (!hasHadBirthdayThisYear) age--;
   document.getElementById("age_milky").textContent = age;
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const messages = [
+    "Welcome to my site!",
+    "Wonderhoy!",
+    "Yaoyaro!!!!",
+    "MiLKY welcomes you!",
+    "Welcome to the autism zone.",
+    "haiiii :3",
+    "Present day, Present time.",
+    "Hello World!",
+    "Please Read The Channel Description."
+  ];
+  
+  const el = document.getElementById("r-text");
+  if (el) {
+    el.innerText = messages[Math.floor(Math.random() * messages.length)];
+  }
+});
 </script>
 
   </body>
