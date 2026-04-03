@@ -2,8 +2,8 @@
 // CONFIGURATION
 // ==========================
 const AUDIO_SRC = "/assets/1derhoy.ogg";
-const DEFAULT_IMAGE_URL = "https://disk.milkyway.moe/web/other%20assets/stelle_scrunk.png";
-const RARE_IMAGE_URL = "https://june.ie/img/june-proud.png"; // 🔥 Replace with your actual rare image URL
+const DEFAULT_IMAGE_URL = "https://disk.milkyway.moe/web/other%20assets/stelle_scrunk.avif";
+const RARE_IMAGE_URL = "https://disk.milkyway.moe/web/other%20assets/june-proud.avif";
 const POPUP_ID = "popupImage";
 
 // Initialize audio once (and set volume)
