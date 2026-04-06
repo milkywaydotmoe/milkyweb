@@ -46,6 +46,7 @@ var sites = [
 'https://kimberlygb.nekoweb.org',
 'https://ructoon.neocities.org',
 'https://bisq.neocities.org',
+'https://april.nekoweb.org',
 ];
 
 //the name of the ring
