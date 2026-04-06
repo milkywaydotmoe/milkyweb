@@ -100,53 +100,92 @@ a {
 <script type="text/javascript" async>
 window['libopenmpt'] = {};
 libopenmpt.locateFile = function (filename) {
-  return "/chiptune2js/" + filename;
+    return "/chiptune2js/" + filename;
 };
-
 libopenmpt.onRuntimeInitialized = function () {
-  var player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1, 50, 1)); // Adjust stereoSeparation and interpolationFilter here
+    var player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1, 50, 1));
 
-  function playModTrack(modUrl) {
-    player.load(modUrl, function(buffer) {
-      player.play(buffer);
+    var volume = 0.3; // Change this to adjust volume
 
-      // Loop the track when it ends
-      player.onEnded(function() {
-        player.play(buffer);
-      });
-    });
-  }
+    var gainNode = player.context.createGain();
+    gainNode.gain.value = volume;
+    gainNode.connect(player.context.destination);
 
-  function resumeAudioContext() {
-    if (player.context.state === 'suspended') {
-      return player.context.resume();
+    var isMuted = false;
+    var hasStarted = false;
+    var skipFirstToggle = true;
+
+    function isInteractable(element) {
+        var interactableTags = ['A', 'BUTTON', 'INPUT', 'SELECT', 'TEXTAREA', 'LABEL', 'LI', 'TABLE'];
+        while (element && element !== document.body) {
+            if (interactableTags.includes(element.tagName)) return true;
+            element = element.parentElement;
+        }
+        return false;
     }
-    return Promise.resolve();
-  }
 
-  // Function to handle the first user interaction
-  function onFirstInteraction() {
-    resumeAudioContext().then(() => {
-      playModTrack('/modfiles/thepenis.it');
-    });
+    function toggleMute(e) {
+        if (isInteractable(e.target)) return;
+        if (skipFirstToggle) {
+            skipFirstToggle = false;
+            return;
+        }
+        isMuted = !isMuted;
+        gainNode.gain.value = isMuted ? 0 : volume;
+    }
 
-    // Remove the event listeners after the first interaction
-    window.removeEventListener('click', onFirstInteraction);
-    window.removeEventListener('touchstart', onFirstInteraction);
-  }
+    function playModTrack(modUrl) {
+        player.load(modUrl, function(buffer) {
+            player.play(buffer);
 
-  // Detect if the browser is Chrome
-  var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+            setTimeout(function() {
+                if (player.currentPlayingNode) {
+                    player.currentPlayingNode.disconnect();
+                    player.currentPlayingNode.connect(gainNode);
+                }
+            }, 50);
 
-  if (isChrome) {
-    // Attach event listeners for mouse movement and touch input
-    window.addEventListener('mousemove', onFirstInteraction, { once: true });
-    window.addEventListener('touchstart', onFirstInteraction, { once: true });
-  } else {
-    // For non-Chrome browsers, use click or touchstart
-    window.addEventListener('click', onFirstInteraction, { once: true });
-    window.addEventListener('touchstart', onFirstInteraction, { once: true });
-  }
+            player.onEnded(function() {
+                player.play(buffer);
+                setTimeout(function() {
+                    if (player.currentPlayingNode) {
+                        player.currentPlayingNode.disconnect();
+                        player.currentPlayingNode.connect(gainNode);
+                    }
+                }, 50);
+            });
+        });
+    }
+
+    function resumeAudioContext() {
+        if (player.context.state === 'suspended') {
+            return player.context.resume();
+        }
+        return Promise.resolve();
+    }
+
+    function onFirstInteraction() {
+        if (!hasStarted) {
+            hasStarted = true;
+            resumeAudioContext().then(() => {
+                playModTrack('/modfiles/thepenis.it');
+            });
+            window.addEventListener('click', toggleMute);
+            window.addEventListener('touchstart', toggleMute);
+        }
+    }
+
+    var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+
+    if (isChrome) {
+        window.addEventListener('mousemove', onFirstInteraction, { once: true });
+        window.addEventListener('mousedown', onFirstInteraction, { once: true });
+        window.addEventListener('touchstart', onFirstInteraction, { once: true });
+    } else {
+        window.addEventListener('click', onFirstInteraction, { once: true });
+        window.addEventListener('touchstart', onFirstInteraction, { once: true });
+        window.addEventListener('mousedown', onFirstInteraction, { once: true });
+    }
 };
 </script>
 <script type="text/javascript" src="/chiptune2js/libopenmpt.js" async></script>

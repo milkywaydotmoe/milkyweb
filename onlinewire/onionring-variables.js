@@ -18,9 +18,8 @@ var sites = [
 'https://mechagic.party',
 'https://xan.lol',
 'https://beaus-silly-folder.nekoweb.org',
-'https://mytreehouse.nekoweb.org',
 'https://alexzeecomedy.com',
-'https://stupied.neocities.org',
+'https://stupied.net',
 'https://s1nez.nekoweb.org',
 'https://backtick.nekoweb.org',
 'https://squircle.computer/',
@@ -40,7 +39,13 @@ var sites = [
 'https://ytd.wtf',
 'https://gr13f3r.com',
 'https://bisq.neocities.org',
-'https://nandraid.moe'
+'https://nandraid.moe',
+'https://axlraimi.nekoweb.org',
+'https://ayotomcs.me',
+'https://korumeow.dev',
+'https://kimberlygb.nekoweb.org',
+'https://ructoon.neocities.org',
+'https://bisq.neocities.org',
 ];
 
 //the name of the ring
