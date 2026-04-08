@@ -1,22 +1,22 @@
-{"name": "cass", "image": "https://disk.milkyway.moe/web/pfps/cass.avif", "site": "https://owly.fans/"}
-{"name": "sapero", "image": "https://disk.milkyway.moe/web/pfps/julia.avif", "site": "https://icosahedr.online/"}
-{"name": "kosune", "image": "https://disk.milkyway.moe/web/pfps/ko2ne.avif", "site": "https://www.twitch.tv/kosunetv"}
-{"name": "dimden", "image": "https://disk.milkyway.moe/web/pfps/dimdennnn.avif", "site": "https://dimden.dev/"}
-{"name": "gd colon", "image": "https://disk.milkyway.moe/web/pfps/cowon.avif", "site": "https://gdcolon.com/ "}
+{"name": "cass", "image": "/coolppl/pfps/cass.avif", "site": "https://owly.fans/"}
+{"name": "sapero", "image": "/coolppl/pfps/julia.avif", "site": "https://icosahedr.online/"}
+{"name": "kosune", "image": "/coolppl/pfps/ko2ne.avif", "site": "https://www.twitch.tv/kosunetv"}
+{"name": "dimden", "image": "/coolppl/pfps/dimdennnn.avif", "site": "https://dimden.dev/"}
+{"name": "gd colon", "image": "/coolppl/pfps/cowon.avif", "site": "https://gdcolon.com/ "}
 
-{"name": "kokoscript", "image": "https://disk.milkyway.moe/web/pfps/koko.avif", "site": "https://kokoscript.com/"}
-{"name": "tepiloxtl", "image": "https://disk.milkyway.moe/web/pfps/bundle.avif", "site": "https://tepiloxtl.net/"}
-{"name": "Kobayashi", "image": "https://disk.milkyway.moe/web/pfps/profile2.avif", "site": "https://ryuko.space/"}
-{"name": "yell0w", "image": "https://disk.milkyway.moe/web/pfps/yellow.avif", "site": "https://bsky.app/profile/yell0w.net"}
-{"name": "kittydog", "image": "https://disk.milkyway.moe/web/pfps/kittydog.avif", "site": "https://kittydog.carrd.co/"}
+{"name": "kokoscript", "image": "/coolppl/pfps/koko.avif", "site": "https://kokoscript.com/"}
+{"name": "tepiloxtl", "image": "/coolppl/pfps/bundle.avif", "site": "https://tepiloxtl.net/"}
+{"name": "Kobayashi", "image": "/coolppl/pfps/profile2.avif", "site": "https://ryuko.space/"}
+{"name": "yell0w", "image": "/coolppl/pfps/yellow.avif", "site": "https://bsky.app/profile/yell0w.net"}
+{"name": "kittydog", "image": "/coolppl/pfps/kittydog.avif", "site": "https://kittydog.carrd.co/"}
 
-{"name": "learke", "image": "https://disk.milkyway.moe/web/pfps/learke.avif", "site": "https://learke.xyz/"}
-{"name": "cTrix", "image": "https://disk.milkyway.moe/web/pfps/ctrix.avif", "site": "https://ctrix.net"}
-{"name": "jb_", "image": "https://disk.milkyway.moe/web/pfps/jb.avif", "site": "https://jbc.lol"}
-{"name": "Michi", "image": "https://disk.milkyway.moe/web/pfps/michi.avif", "site": "https://youtube.com/nekomichi"}
-{"name": "sophie", "image": "https://disk.milkyway.moe/web/pfps/nep.avif", "site": "https://iamsoph.ie/"}
+{"name": "learke", "image": "/coolppl/pfps/learke.avif", "site": "https://learke.xyz/"}
+{"name": "cTrix", "image": "/coolppl/pfps/ctrix.avif", "site": "https://ctrix.net"}
+{"name": "jb_", "image": "/coolppl/pfps/jb.avif", "site": "https://jbc.lol"}
+{"name": "Michi", "image": "/coolppl/pfps/michi.avif", "site": "https://youtube.com/nekomichi"}
+{"name": "sophie", "image": "/coolppl/pfps/nep.avif", "site": "https://iamsoph.ie/"}
 
-{"name": "ddnikki", "image": "https://disk.milkyway.moe/web/pfps/ddnikki.avif", "site": "https://ddnikki.moe"}
-{"name": "goo", "image": "https://disk.milkyway.moe/web/pfps/goo.avif", "site": "https://goo.nekoweb.org/"}
-{"name": "gwenbnuuy", "image": "https://disk.milkyway.moe/web/pfps/gwennuy.avif", "site": "https://gwenbnuuy.moe/"}
-{"name": "dustwyn", "image": "https://disk.milkyway.moe/web/pfps/dustwyn.avif", "site": "https://dustwyn.com/"}
+{"name": "ddnikki", "image": "/coolppl/pfps/ddnikki.avif", "site": "https://ddnikki.moe"}
+{"name": "goo", "image": "/coolppl/pfps/goo.avif", "site": "https://goo.nekoweb.org/"}
+{"name": "gwenbnuuy", "image": "/coolppl/pfps/gwennuy.avif", "site": "https://gwenbnuuy.moe/"}
+{"name": "dustwyn", "image": "/coolppl/pfps/dustwyn.avif", "site": "https://dustwyn.com/"}
