@@ -1,5 +1,5 @@
 window.onload = function () {
-  fetch("data.txt")
+  fetch("data.json")
     .then(response => {
       if (!response.ok) {
         throw new Error(`Failed to fetch data.txt: ${response.status} ${response.statusText}`);
@@ -38,24 +38,36 @@ window.onload = function () {
         }
 
         try {
-          const { name, image, site } = JSON.parse(line);
+          const { name, image, fallback, site } = JSON.parse(line);
 
           // Create profile card container
           const profileCard = document.createElement("div");
           profileCard.classList.add("profile");
 
-          // Image element
-          const img = document.createElement("img");
-          img.src = image;
-          img.alt = name;
+          // Picture Element
+          const picture = document.createElement("picture");
 
+          // Source Element
+          const sourceIMG = document.createElement("source");
+          sourceIMG.srcset = image;
+          sourceIMG.type = "image/avif";
+
+          // Image element
+          const fallbackIMG = document.createElement("img");
+          fallbackIMG.src = fallback;
+          fallbackIMG.alt = name;
+
+          // Assemble Picture
+          picture.appendChild(sourceIMG);
+          picture.appendChild(fallbackIMG);
+          
           // Overlay (title)
           const overlay = document.createElement("div");
           overlay.classList.add("overlay");
           overlay.textContent = name;
 
           // Assemble the card
-          profileCard.appendChild(img);
+          profileCard.appendChild(picture);
           profileCard.appendChild(overlay);
 
           // Add click handler to navigate to site
