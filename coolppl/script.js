@@ -38,7 +38,7 @@ window.onload = function () {
         }
 
         try {
-          const { name, image, fallback, site } = JSON.parse(line);
+          const { name, image, site } = JSON.parse(line);
 
           // Create profile card container
           const profileCard = document.createElement("div");
@@ -49,12 +49,12 @@ window.onload = function () {
 
           // Source Element
           const sourceIMG = document.createElement("source");
-          sourceIMG.srcset = image;
+          sourceIMG.srcset = "/coolppl/pfps/" + image + ".avif";
           sourceIMG.type = "image/avif";
 
           // Image element
           const fallbackIMG = document.createElement("img");
-          fallbackIMG.src = fallback;
+          fallbackIMG.src = "/coolppl/pfps/" + image + ".jpg";
           fallbackIMG.alt = name;
 
           // Assemble Picture
