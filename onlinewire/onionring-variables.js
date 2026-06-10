@@ -49,6 +49,9 @@ var sites = [
 'https://april.nekoweb.org',
 'https://kaorisu.nekoweb.org',
 'https://thenamelessarchiv3.neocities.org',
+'https://flcl.moe',
+'https://wavegrave.nekoweb.org',
+'https://kuur0.neocities.org',
 ];
 
 //the name of the ring
