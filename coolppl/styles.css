@@ -10,15 +10,8 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 20px;
-}
-
-.row {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 10px; /* Add some margin between rows */
-  margin-left: 10%;
-  margin-right: 10%;
+  margin: auto;
+  max-width: 1100px;
 }
 
 .profile {
@@ -27,6 +20,7 @@ body {
   margin: 5px;
   position: relative;
   border: 2px solid #fff; /* Adding stroke to the border */
+  overflow: hidden;
 }
 
 .profile img {
@@ -34,12 +28,16 @@ body {
   height: 100%;
   object-fit: cover; /* Ensure image covers the entire profile div */
   border-radius: inherit; /* Preserve border-radius from parent div */
-  transition: transform 0.3s ease;
+}
 
+.profile a {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .profile:hover {
-  transform: scale(1.1); /* Scale the profile container */
+  animation: profileHighlight 220ms ease-out forwards;
   font-family: cgafont;
 }
 
@@ -52,20 +50,23 @@ body {
   padding: 5px 10px;
   border-radius: 5px;
   opacity: 0;
-  transition: opacity 0.3s ease;
   font-family: cgafont;
+  pointer-events: none;
 }
 
 .profile:hover .overlay {
-  opacity: 1;
+  animation: overlayReveal 220ms ease-out forwards;
+}
+
+.profile:hover img {
+  animation: profileZoom 220ms ease-out forwards;
 }
 
 .banner-logo {
   display: block;
-  margin: 0 auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 25%; /* Set the width to 50% */
+  margin: 20px auto;
+  height: 200px;
+  width: auto;
   -webkit-font-smoothing: none;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeSpeed;
@@ -111,6 +112,31 @@ a:hover {
     87.5% {color: #ff69dc;}
 }
 
-* {
+@keyframes profileHighlight {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
 
+@keyframes profileZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.04);
+  }
+}
+
+@keyframes overlayReveal {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
