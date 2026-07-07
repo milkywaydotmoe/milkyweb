@@ -18,28 +18,28 @@ audio.volume = 0.5;
  */
 function togglePopupImage() {
   const popup = document.getElementById(POPUP_ID);
-  
+
   // Safety: exit if element not found
   if (!popup) return console.error(`#${POPUP_ID} not found in DOM`);
 
   // Determine current state: is it hidden?
   const isHidden = popup.style.display === "none" || popup.style.display === "";
-  
+
   // Toggle visibility
   popup.style.display = isHidden ? "block" : "none";
 
   if (isHidden) {
     // 👉 POPUP IS BEING OPENED (hidden → visible)
-    
+
     // 🎨 10% chance to show rare image
     const useRareImage = Math.random() < 0.1;
-    popup.src = useRareImage 
-      ? RARE_IMAGE_URL 
+    popup.src = useRareImage
+      ? RARE_IMAGE_URL
       : DEFAULT_IMAGE_URL;
 
     // 🎧 Audio: reset & play
     audio.currentTime = 0;
-    
+
     // Handle potential autoplay blocking (e.g., in some browsers)
     const playPromise = audio.play();
     if (playPromise !== undefined) {
@@ -49,10 +49,10 @@ function togglePopupImage() {
     }
 
     // Optional: log for debugging
-    console.log(`Popup opened. ${useRareImage ? "🔥 RARE image loaded!" : "Default image"}`);
+    console.log(`Popup opened. ${useRareImage ? "RARE image loaded!" : "Default image"}`);
   } else {
     // 👉 POPUP IS BEING CLOSED (visible → hidden)
-    
+
     audio.pause();
     audio.currentTime = 0;
     console.log("Popup closed. Audio paused & reset.");
@@ -64,7 +64,7 @@ function togglePopupImage() {
 // ==========================
 document.addEventListener("DOMContentLoaded", () => {
   const titles = document.querySelectorAll(".title");
-  
+
   if (titles.length === 0) {
     console.warn('No elements with class ".title" found — togglePopupImage will not be triggered.');
   }
