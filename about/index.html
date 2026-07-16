@@ -781,6 +781,11 @@
 		  <td>Indie</td>
 		  <td>Internet / VTuber</td>
 		</tr>
+		<tr>
+		  <td>Kit Bodega</td>
+		  <td>Gameoverse</td>
+		  <td>Internet / Animation</td>
+		</tr>
 	    </tbody>
 	  </table>
 	</div>
@@ -834,23 +839,8 @@
             var years = currentDate.getFullYear() - birthDate.getFullYear();
             var months = currentDate.getMonth() - birthDate.getMonth();
             var days = currentDate.getDate() - birthDate.getDate();
-            var hours = currentDate.getHours() - birthDate.getHours();
-            var minutes = currentDate.getMinutes() - birthDate.getMinutes();
-            var seconds = currentDate.getSeconds() - birthDate.getSeconds();
 
             // Adjust for negative values
-            if (seconds < 0) {
-                seconds += 60;
-                minutes--;
-            }
-            if (minutes < 0) {
-                minutes += 60;
-                hours--;
-            }
-            if (hours < 0) {
-                hours += 24;
-                days--;
-            }
             if (days < 0) {
                 var lastMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0);
                 days += lastMonth.getDate();
@@ -863,7 +853,7 @@
 
             // Display the age
             var ageElement = document.getElementById('age');
-            ageElement.textContent = years + " years, " + months + " months, " + days + " days, " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds";
+            ageElement.textContent = years + " years, " + months + " months, " + days + " days";
         }
 
         // Call updateAge initially
